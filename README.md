@@ -100,5 +100,5 @@ Rules:
 - **Sets (newest first):** Relational Data (100, `rel-001`–`rel-100`, PDF Episode 2) · Core Data Concepts (50, `cdc-001`–`cdc-050`, `dp900.py`)
 - **Total questions:** 150 — always visible on the landing page hero + cards
 - **Relational distribution:** easy 41 · medium 46 · scenario 12 · hard 1
-- **Random Practice:** pools all sets live (15 / 30 / 50 per attempt, reshuffled)
+- **Random Practice:** pools all sets live (15 / 30 / 50 per attempt, reshuffled) with a topic-scope dropdown (All topics by default)
 - **Session length:** 15 random per single-set attempt

@@ -26,6 +26,7 @@
     bankTopicId: "all",
     bankDifficulty: "all",
     bankQuery: "",
+    randomScope: "all", // random-practice pool: "all" or a topic id
     topicQuery: "",
     topicFilter: "all", // all | new | practiced | mastered
     soundOn: false,
@@ -452,7 +453,9 @@
       '<p class="section-sub">Random for mixed drills, Exam to simulate, Daily to build the habit — or master one set at a time below.</p>' +
       '<div class="mode-grid">' +
       '<div class="mode-card"><span class="mode-ico">🎲</span><h3>Random Practice</h3>' +
-      "<p>Live-mixed from <strong>all</strong> sets below — reshuffled every attempt. Nothing stored, instant feedback.</p>" +
+      "<p>Live-mixed and reshuffled every attempt. Nothing stored, instant feedback.</p>" +
+      '<label class="sr-only" for="random-scope">Random Practice topic scope</label>' +
+      '<select class="select" id="random-scope">' + randomScopeOptions() + "</select>" +
       '<div class="size-btns" role="group" aria-label="Random Practice size">' +
       '<button class="btn small" data-mode="random" data-count="15" type="button">15</button>' +
       '<button class="btn small" data-mode="random" data-count="30" type="button">30</button>' +
@@ -505,7 +508,7 @@
       '<div class="how-card"><h3>3 · Track &amp; retry</h3><p>Dashboard, streaks and achievements update after every completed quiz. Retry for a fresh draw.</p></div></div>';
 
     /* wire up */
-    document.getElementById("hero-start").addEventListener("click", function () { playSound("click"); startMixed("random", 15); });
+    document.getElementById("hero-start").addEventListener("click", function () { playSound("click"); startMixed("random", 15, state.randomScope); });
     document.getElementById("hero-topics").addEventListener("click", function () { playSound("click"); scrollToId("topics-heading"); });
     var bc = document.getElementById("btn-continue");
     if (bc) bc.addEventListener("click", function () {
@@ -516,8 +519,15 @@
     Array.prototype.forEach.call(app.querySelectorAll("[data-mode]"), function (b) {
       b.addEventListener("click", function () {
         playSound("click");
-        startMixed(b.getAttribute("data-mode"), parseInt(b.getAttribute("data-count") || "15", 10));
+        var mode = b.getAttribute("data-mode");
+        startMixed(mode, parseInt(b.getAttribute("data-count") || "15", 10),
+          mode === "random" ? state.randomScope : undefined);
       });
+    });
+    var scopeSel = document.getElementById("random-scope");
+    if (scopeSel) scopeSel.addEventListener("change", function (e) {
+      state.randomScope = e.target.value;
+      playSound("click");
     });
     document.getElementById("topic-search").addEventListener("input", function (e) {
       state.topicQuery = e.target.value;
@@ -545,6 +555,17 @@
       if (!e || !e.bestTotal || (e.bestScore / e.bestTotal) < 0.8) return false;
     }
     return true;
+  }
+
+  /** Options for the Random Practice scope dropdown (All + every set). */
+  function randomScopeOptions() {
+    var opts = '<option value="all"' + (state.randomScope === "all" ? " selected" : "") + ">All topics</option>";
+    opts += sortedTopics().map(function (t) {
+      var c = topicCount(t);
+      return '<option value="' + escapeHtml(t.id) + '"' + (state.randomScope === t.id ? " selected" : "") + ">" +
+        escapeHtml(topicTitle(t)) + (c === null ? "" : " (" + c + ")") + "</option>";
+    }).join("");
+    return opts;
   }
 
   /** Render topic cards — pure function of topics.json + stats (future-proof). */
@@ -671,20 +692,32 @@
     }).catch(renderFetchError);
   }
 
-  /** Random / Exam / Daily: questions pooled LIVE across every bank.
+  function questionsOf(topicId) {
+    var c = state.topicCache[topicId];
+    return (c && c.questions) ? c.questions.slice() : [];
+  }
+
+  /** Random / Exam / Daily: questions pooled LIVE across banks (or one scoped set).
       Nothing is stored — each attempt reshuffles a fresh combination. */
-  function startMixed(kind, count) {
+  function startMixed(kind, count, scopeId) {
     if (kind === "quick") kind = "random"; // legacy alias
     count = Math.max(1, count || QUESTIONS_PER_SESSION);
+    if (kind === "random") scopeId = scopeId || state.randomScope || "all";
+    var scopeTitle = "All topics";
+    if (kind === "random" && scopeId && scopeId !== "all") {
+      state.topics.forEach(function (t) { if (t.id === scopeId) scopeTitle = topicTitle(t); });
+    }
     var labels = {
-      random: "🎲 Random Practice · " + count + " questions",
+      random: "🎲 Random Practice · " + scopeTitle,
       exam: "🎯 Exam Mode · Mixed topics",
       daily: "🔥 Daily Practice · " + todayKey()
     };
     var meta = { id: "__mixed__", title: labels[kind] || "Mixed Practice", name: labels[kind] || "Mixed Practice" };
+    meta.scopeId = (kind === "random") ? scopeId : "all";
+    meta.scopeLabel = scopeTitle;
     app.innerHTML = '<div class="loading-card" role="status"><div class="skeleton skeleton-hero"></div><p>Drawing ' + count + " random questions…</p></div>";
     ensureAllLoaded().then(function () {
-      var pool = allQuestions();
+      var pool = (kind === "random" && scopeId && scopeId !== "all") ? questionsOf(scopeId) : allQuestions();
       if (!pool.length) {
         app.innerHTML = '<div class="card error-card"><h2>No questions available yet.</h2><p><button class="btn" id="btn-back" type="button">Back</button></p></div>';
         document.getElementById("btn-back").addEventListener("click", renderHome);
@@ -790,7 +823,7 @@
     }
 
     var modeTag = s.kind === "exam" ? "Exam Mode · " + formatTime(s.remaining != null ? s.remaining : EXAM_SECONDS) + " left"
-      : s.kind === "daily" ? "Daily Practice" : s.kind === "random" ? "Random Practice · " + s.questions.length + " questions" : topicTitle(s.topic);
+      : s.kind === "daily" ? "Daily Practice" : s.kind === "random" ? "Random Practice · " + randomScopeName(s) + " · " + s.questions.length + " questions" : topicTitle(s.topic);
 
     app.innerHTML =
       '<div class="quiz-shell"><div class="quiz-topbar">' +
@@ -895,6 +928,12 @@
 
   /* ================= results ================= */
 
+  /** Scope display name for a random session ("All topics" or the set title). */
+  function randomScopeName(s) {
+    if (s && s.topic && s.topic.scopeLabel) return s.topic.scopeLabel;
+    return "All topics";
+  }
+
   /** Grade the session. */
   function calculateResult() {
     var s = state.session, correct = 0, incorrect = 0, skipped = 0;
@@ -949,7 +988,7 @@
       var v = byTopic[k], p = Math.round(100 * v.correct / v.total);
       return '<span class="pill">' + escapeHtml(k) + ": " + v.correct + "/" + v.total + " (" + p + "%)</span>";
     }).join("");
-    var kindLabel = s.kind === "exam" ? "🎯 Exam Mode" : s.kind === "daily" ? "🔥 Daily Practice" : s.kind === "random" ? "🎲 Random Practice" : topicTitle(s.topic);
+    var kindLabel = s.kind === "exam" ? "🎯 Exam Mode" : s.kind === "daily" ? "🔥 Daily Practice" : s.kind === "random" ? "🎲 Random Practice · " + randomScopeName(s) : topicTitle(s.topic);
 
     app.innerHTML =
       '<div class="card" aria-labelledby="res-title"><div class="result-hero">' +
@@ -988,9 +1027,10 @@
     document.getElementById("btn-retry").addEventListener("click", function () {
       playSound("click");
       if (s.kind === "practice") startQuiz(s.topic.id, { kind: "practice" });
-      else startMixed(s.kind === "daily" ? "daily" : s.kind, s.count || QUESTIONS_PER_SESSION);
+      else startMixed(s.kind === "daily" ? "daily" : s.kind, s.count || QUESTIONS_PER_SESSION,
+        s.topic.scopeId || undefined);
     });
-    document.getElementById("btn-quick").addEventListener("click", function () { playSound("click"); startMixed("random", s.count || 15); });
+    document.getElementById("btn-quick").addEventListener("click", function () { playSound("click"); startMixed("random", s.count || 15, s.topic.scopeId || undefined); });
     document.getElementById("btn-home").addEventListener("click", function () { state.session = null; renderHome(); });
     window.scrollTo({ top: 0, behavior: "smooth" });
   }

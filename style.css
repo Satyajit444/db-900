@@ -147,6 +147,7 @@ code, kbd { font-family: var(--mono); font-size: 0.86em; background: var(--surfa
 .mode-card h3 { margin: 0; font-size: 1.05rem; }
 .mode-card p { margin: 0; color: var(--muted); font-size: 0.9rem; flex: 1; }
 .mode-ico { font-size: 1.6rem; }
+.mode-card .select { margin: 2px 0 4px; font-size: 0.88rem; padding: 9px 11px; }
 .size-btns { display: flex; gap: 8px; margin-top: 4px; }
 .size-btns .btn { flex: 1 1 0; }
 .new-badge { display: inline-block; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; background: var(--success); color: #fff; border-radius: 999px; padding: 2px 9px; vertical-align: middle; margin-left: 6px; }
