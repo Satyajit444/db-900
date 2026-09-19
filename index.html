@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DP-900 Azure Data Fundamentals — free static practice quiz. Core Data Concepts, 15 questions per session, instant feedback, review mode. No backend, GitHub Pages ready." />
+  <meta name="description" content="DP-900 Azure Data Fundamentals — engaging static practice platform. Practice mode, exam mode, daily practice, progress dashboard, dark mode. No backend, GitHub Pages ready." />
+  <meta name="color-scheme" content="light dark" />
   <title>DP-900 Practice Center · Azure Data Fundamentals</title>
   <link rel="stylesheet" href="./style.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232563eb'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='system-ui' font-weight='700'%3E9%3C/text%3E%3C/svg%3E" />
@@ -14,7 +15,9 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#" id="brand-home" aria-label="DP-900 Practice Center home">
-        <span class="brand-badge" aria-hidden="true">DP</span>
+        <span class="brand-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7" ry="2.8"/><path d="M5 5.5v13c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-13"/><path d="M5 12c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8"/></svg>
+        </span>
         <span class="brand-text">
           <strong>DP-900 Practice Center</strong>
           <small>Azure Data Fundamentals</small>
@@ -22,15 +25,19 @@
       </a>
       <nav class="header-nav" aria-label="Primary">
         <button class="nav-btn" id="nav-topics" type="button">Topics</button>
-        <button class="nav-btn" id="nav-bank" type="button">Question bank</button>
-        <button class="nav-btn" id="nav-how" type="button">How it works</button>
+        <button class="nav-btn" id="nav-modes" type="button">Modes</button>
+        <button class="nav-btn" id="nav-progress" type="button">Progress</button>
+        <button class="nav-btn" id="nav-bank" type="button">Bank</button>
+        <button class="icon-btn" id="btn-sound" type="button" aria-label="Sound off" aria-pressed="false" title="Toggle sound (off by default)">🔇</button>
+        <button class="icon-btn" id="btn-theme" type="button" aria-label="Switch to dark mode" title="Toggle dark mode">🌙</button>
       </nav>
     </div>
   </header>
 
   <main id="app" class="container" aria-live="polite">
     <div class="loading-card" role="status">
-      <div class="spinner" aria-hidden="true"></div>
+      <div class="skeleton skeleton-hero"></div>
+      <div class="skeleton-row"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
       <p>Loading DP-900 question sets…</p>
     </div>
     <noscript>
@@ -41,10 +48,12 @@
     </noscript>
   </main>
 
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+
   <footer class="site-footer">
     <div class="container footer-inner">
       <p><strong>DP-900 Practice Center</strong> · Static HTML + CSS + Vanilla JS · No backend · GitHub Pages ready</p>
-      <p class="footer-hint">Tip: each attempt picks 15 random questions and shuffles answer order. Your best scores stay in this browser (<code>localStorage</code>).</p>
+      <p class="footer-hint">Tip: each attempt picks 15 random questions and shuffles answer order. Best scores, streaks and achievements stay in this browser (<code>localStorage</code>). Press <kbd>1</kbd>–<kbd>4</kbd> to answer, <kbd>Enter</kbd> for next.</p>
     </div>
   </footer>
 
