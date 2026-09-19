@@ -206,7 +206,7 @@
     }, 3400);
   }
 
-  /* ================= sound (Web Audio, OFF by default) + haptics ================= */
+  /* ================= sound (Web Audio, OFF by default) ================= */
 
   function isSoundOn() { return state.soundOn; }
 
@@ -244,10 +244,6 @@
     else if (name === "click") { tone(520, 0.04, "square", 0.025, 0); }
     else if (name === "complete") { tone(523, 0.1, "sine", 0.06, 0); tone(659, 0.1, "sine", 0.06, 0.1); tone(784, 0.16, "sine", 0.06, 0.2); }
     else if (name === "achievement") { tone(880, 0.1, "sine", 0.055, 0); tone(1174, 0.14, "sine", 0.05, 0.1); }
-  }
-
-  function vibrate(pattern) {
-    try { if (navigator.vibrate) navigator.vibrate(pattern); } catch (e) {}
   }
 
   /* ================= theme ================= */
@@ -826,7 +822,7 @@
       : s.kind === "daily" ? "Daily Practice" : s.kind === "random" ? "Random Practice · " + randomScopeName(s) + " · " + s.questions.length + " questions" : topicTitle(s.topic);
 
     app.innerHTML =
-      '<div class="quiz-shell"><div class="quiz-topbar">' +
+      '<div class="quiz-shell' + (state.softRefresh ? " no-anim" : "") + '"><div class="quiz-topbar">' +
       '<div class="quiz-top-row"><div><div class="quiz-topic">DP-900 · ' + escapeHtml(modeTag) + "</div>" +
       '<div class="quiz-counter">Question ' + (s.index + 1) + " of " + total + "</div></div>" +
       '<div class="quiz-timer' + (s.kind === "exam" && s.remaining < 120 ? " urgent" : "") + '" id="quiz-timer" aria-label="Timer">' +
@@ -890,8 +886,12 @@
     s.answers[s.index] = optIndex;
     var ok = optIndex === s.questions[s.index].correctIndex;
     playSound(ok ? "correct" : "incorrect");
-    vibrate(ok ? 15 : [30, 40, 30]);
+    // Soft refresh: same question, no slide animation, no scroll jump.
+    state.softRefresh = true;
+    var y = window.scrollY || document.documentElement.scrollTop || 0;
     showAnswerFeedback();
+    window.scrollTo(0, y);
+    state.softRefresh = false;
   }
 
   function showAnswerFeedback() { renderQuestion(); }
@@ -960,7 +960,6 @@
     var storeId = (s.kind === "practice" && s.topic.id.indexOf("__") !== 0) ? s.topic.id : s.topic.id;
     saveAttempt(storeId, r.correct, r.total, { kind: s.kind });
     playSound("complete");
-    vibrate(25);
     renderResult(r, !!auto);
   }
 
