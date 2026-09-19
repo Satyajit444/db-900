@@ -1,0 +1,802 @@
+[
+  {
+    "id": "cdc-001",
+    "question": "Which type of data is normally represented in rows and columns with a predefined schema?",
+    "options": [
+      "Unstructured",
+      "Structured",
+      "Semi-structured",
+      "Streaming"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Structured data follows a defined schema and is commonly stored in rows and columns.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Data Types",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-002",
+    "question": "Which is a common example of semi-structured data?",
+    "options": [
+      "JSON",
+      "JPEG",
+      "MP4",
+      "A fixed SQL table"
+    ],
+    "correctAnswer": 0,
+    "explanation": "JSON contains keys, values, arrays, and nested objects, making it semi-structured.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Data Types",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-003",
+    "question": "Which is an example of unstructured data?",
+    "options": [
+      "SQL table",
+      "CSV table",
+      "Video",
+      "Relational row"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Video does not follow a predefined tabular schema and is unstructured data.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Data Types",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-004",
+    "question": "Which statement best describes structured data?",
+    "options": [
+      "It has no organization",
+      "It follows a defined schema",
+      "It can only contain images",
+      "It must be stored in Blob Storage"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Structured data is organized according to a predefined schema.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Data Types",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-005",
+    "question": "Why is JSON generally considered semi-structured?",
+    "options": [
+      "It has no information about structure",
+      "It can contain keys, values, arrays, and nested objects",
+      "It is always stored in SQL",
+      "It only stores numbers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "JSON has organizational features but does not require a rigid table structure.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts",
+    "subtopic": "Data Types",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-006",
+    "question": "Which format is commonly used for API responses?",
+    "options": [
+      "JSON",
+      "BMP",
+      "MP4",
+      "WAV"
+    ],
+    "correctAnswer": 0,
+    "explanation": "JSON is a common text-based format used by APIs and applications.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "File Formats",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-007",
+    "question": "Which format uses tags to represent hierarchical information?",
+    "options": [
+      "XML",
+      "JPEG",
+      "Parquet",
+      "MP3"
+    ],
+    "correctAnswer": 0,
+    "explanation": "XML uses tags and can represent hierarchical data.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts",
+    "subtopic": "File Formats",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-008",
+    "question": "Which format is commonly associated with column-oriented analytical storage?",
+    "options": [
+      "Parquet",
+      "JPEG",
+      "TXT",
+      "MP4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Parquet is a column-oriented file format commonly used in analytical workloads.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts",
+    "subtopic": "File Formats",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-009",
+    "question": "Which option is a relational database characteristic?",
+    "options": [
+      "Tables with rows and columns",
+      "Only binary files",
+      "No schema at all",
+      "Only video storage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Relational databases organize data into tables with rows and columns.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Databases",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-010",
+    "question": "What is the main purpose of a database?",
+    "options": [
+      "Only store images",
+      "Store, manage, and query data",
+      "Replace all applications",
+      "Compress videos"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Databases provide capabilities for storing, managing, querying, and securing data.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Databases",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-011",
+    "question": "Which is an example of a transactional operation?",
+    "options": [
+      "Calculating five-year sales trends",
+      "Creating a customer order",
+      "Building a management dashboard",
+      "Comparing yearly revenue"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Creating a customer order is an individual business transaction.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Workloads",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-012",
+    "question": "Which is an example of an analytical operation?",
+    "options": [
+      "Updating inventory after a sale",
+      "Processing a payment",
+      "Finding sales trends over five years",
+      "Creating a new user account"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Finding long-term sales trends requires analysis of historical data.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Workloads",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-013",
+    "question": "OLTP is primarily associated with:",
+    "options": [
+      "Transactional processing",
+      "Image processing",
+      "Data visualization",
+      "Machine learning only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "OLTP means Online Transaction Processing.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Workloads",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-014",
+    "question": "OLAP is primarily associated with:",
+    "options": [
+      "Transactional processing",
+      "Analytical processing",
+      "Password management",
+      "Network routing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "OLAP means Online Analytical Processing.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Workloads",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-015",
+    "question": "A bank records every deposit and withdrawal. What type of workload is this?",
+    "options": [
+      "Analytical",
+      "Transactional",
+      "Visualization",
+      "Unstructured"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Recording deposits and withdrawals involves frequent operational transactions.",
+    "difficulty": "scenario",
+    "topic": "Core Data Concepts",
+    "subtopic": "Workloads",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-016",
+    "question": "A retailer asks which product category grew fastest over the last three years. What type of workload is this?",
+    "options": [
+      "Transactional",
+      "Analytical",
+      "Operational update",
+      "Authentication"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The question requires historical comparison and analysis.",
+    "difficulty": "scenario",
+    "topic": "Core Data Concepts",
+    "subtopic": "Workloads",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-017",
+    "question": "Which role commonly manages database availability and backup/recovery?",
+    "options": [
+      "Data Analyst",
+      "DBA",
+      "UI Developer",
+      "Product Designer"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A database administrator manages availability, backups, recovery, security, and performance.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Roles",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-018",
+    "question": "Which role commonly builds data pipelines?",
+    "options": [
+      "Data Engineer",
+      "DBA only",
+      "Graphic Designer",
+      "End user"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data engineers build and maintain data ingestion and transformation pipelines.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Roles",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-019",
+    "question": "Which role commonly creates reports and analyzes business data?",
+    "options": [
+      "Data Analyst",
+      "DBA",
+      "Network Engineer",
+      "System Administrator"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data analysts create reports, analyze data, and communicate insights.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Roles",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-020",
+    "question": "A data engineer receives files from multiple sources, transforms them, and loads them into an analytics platform. What is this primarily?",
+    "options": [
+      "Data engineering",
+      "Data entry",
+      "Graphic design",
+      "Database backup"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Ingesting, transforming, and loading data are data engineering activities.",
+    "difficulty": "scenario",
+    "topic": "Core Data Concepts",
+    "subtopic": "Roles",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-021",
+    "question": "A DBA notices a query is slow and investigates indexes and database configuration. Which responsibility is this?",
+    "options": [
+      "Database administration",
+      "Data visualization",
+      "Front-end development",
+      "Marketing"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Query performance, indexes, and configuration are database administration responsibilities.",
+    "difficulty": "scenario",
+    "topic": "Core Data Concepts",
+    "subtopic": "Roles",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-022",
+    "question": "A data analyst creates a dashboard showing monthly revenue by region. Which role is being performed?",
+    "options": [
+      "Data analyst",
+      "DBA",
+      "Data center operator",
+      "Network administrator"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Creating dashboards and analyzing revenue data are data analyst activities.",
+    "difficulty": "scenario",
+    "topic": "Core Data Concepts",
+    "subtopic": "Roles",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-023",
+    "question": "Which Azure service is a relational database service?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Blob Storage",
+      "Azure Table Storage",
+      "Azure Storage Queue"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Azure SQL Database is a managed relational database service.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Azure Services",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-024",
+    "question": "Which Azure service is commonly used for object/file-like storage of unstructured data such as images and videos?",
+    "options": [
+      "Azure Blob Storage",
+      "Azure SQL Database",
+      "Azure SQL Managed Instance",
+      "Azure Database only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Azure Blob Storage is designed for large amounts of unstructured object data.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Azure Services",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-025",
+    "question": "Which Azure service is designed as a globally distributed NoSQL database?",
+    "options": [
+      "Azure Cosmos DB",
+      "Azure SQL Database",
+      "Azure Files only",
+      "Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Azure Cosmos DB is a globally distributed NoSQL database service.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Azure Services",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-026",
+    "question": "Which Azure service is primarily associated with analytics and large-scale data workloads?",
+    "options": [
+      "Azure Synapse Analytics",
+      "Azure DNS",
+      "Azure Key Vault",
+      "Azure App Service only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Azure Synapse Analytics supports large-scale analytics and data warehousing workloads.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Azure Services",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-027",
+    "question": "Which Microsoft platform is used for business intelligence, reports, and interactive visualizations?",
+    "options": [
+      "Power BI",
+      "Azure DNS",
+      "Azure Firewall",
+      "Azure Key Vault"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Power BI is used to create reports, dashboards, and interactive visualizations.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Azure Services",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-028",
+    "question": "Which service is commonly associated with data integration and orchestration?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Front Door",
+      "Azure DNS",
+      "Azure VPN Gateway"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Azure Data Factory supports data integration, movement, and orchestration.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts",
+    "subtopic": "Azure Services",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-029",
+    "question": "A photo uploaded by a customer is best classified as:",
+    "options": [
+      "Structured",
+      "Semi-structured",
+      "Unstructured",
+      "Relational"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A photo does not follow a predefined table or document schema.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Data Types",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-030",
+    "question": "A JSON customer profile containing nested addresses and arrays is best classified as:",
+    "options": [
+      "Structured",
+      "Semi-structured",
+      "Unstructured",
+      "Binary-only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "JSON uses keys, values, arrays, and nested objects but does not require a rigid table.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts",
+    "subtopic": "Data Types",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-031",
+    "question": "A table with CustomerID, Name, Email, and City is:",
+    "options": [
+      "Structured",
+      "Unstructured",
+      "Audio",
+      "Streaming"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A table with defined columns and rows is structured data.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Data Types",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-032",
+    "question": "Which scenario most strongly indicates OLTP?",
+    "options": [
+      "Thousands of small order transactions per minute",
+      "Five-year trend analysis",
+      "Executive dashboard",
+      "Historical data mining"
+    ],
+    "correctAnswer": 0,
+    "explanation": "OLTP is designed for frequent, small, operational transactions.",
+    "difficulty": "scenario",
+    "topic": "Core Data Concepts",
+    "subtopic": "Workloads",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-033",
+    "question": "Which scenario most strongly indicates OLAP?",
+    "options": [
+      "Updating one order",
+      "Recording a payment",
+      "Aggregating years of sales data",
+      "Creating a new account"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Aggregating historical sales data is an analytical OLAP workload.",
+    "difficulty": "scenario",
+    "topic": "Core Data Concepts",
+    "subtopic": "Workloads",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-034",
+    "question": "Why can analytical queries be expensive?",
+    "options": [
+      "They may scan and aggregate large amounts of data",
+      "They always contain images",
+      "They never use indexes",
+      "They only process one row"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Analytical queries often scan, join, and aggregate large datasets.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts",
+    "subtopic": "Workloads",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-035",
+    "question": "Which statement about transactional workloads is generally true?",
+    "options": [
+      "They commonly involve frequent reads and writes",
+      "They only contain historical data",
+      "They are only used for dashboards",
+      "They cannot have concurrent users"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Transactional systems commonly process frequent reads and writes from concurrent users.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts",
+    "subtopic": "Workloads",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-036",
+    "question": "Which statement about analytical workloads is generally true?",
+    "options": [
+      "They are focused on insights and analysis",
+      "They only insert single rows",
+      "They cannot use historical data",
+      "They are limited to payment processing"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Analytical workloads examine data to identify trends, patterns, and insights.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts",
+    "subtopic": "Workloads",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-037",
+    "question": "A food delivery application creates an order, charges the customer, and updates order status. This is primarily:",
+    "options": [
+      "Transactional",
+      "Analytical",
+      "Unstructured",
+      "Visualization"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Creating orders, processing payments, and updating statuses are transactions.",
+    "difficulty": "scenario",
+    "topic": "Core Data Concepts",
+    "subtopic": "Workloads",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-038",
+    "question": "The same company analyzes delivery times by city for the last 24 months. This is primarily:",
+    "options": [
+      "Transactional",
+      "Analytical",
+      "Authentication",
+      "File compression"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Analyzing historical delivery times is an analytical workload.",
+    "difficulty": "scenario",
+    "topic": "Core Data Concepts",
+    "subtopic": "Workloads",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-039",
+    "question": "Which pairing correctly describes a database administrator (DBA) responsibility?",
+    "options": [
+      "DBA → manages databases",
+      "Data Analyst → repairs servers",
+      "Data Engineer → designs logos",
+      "Data Analyst → configures routers"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A DBA manages database systems and their availability, security, and performance.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Roles",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-040",
+    "question": "Which pairing correctly describes a data engineer responsibility?",
+    "options": [
+      "Data Engineer → data pipelines",
+      "DBA → marketing campaigns",
+      "Data Analyst → network cabling",
+      "DBA → product photography"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data engineers build and maintain data pipelines.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Roles",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-041",
+    "question": "Which pairing correctly describes a data analyst responsibility?",
+    "options": [
+      "Data Analyst → insights and reports",
+      "Data Engineer → only manual data entry",
+      "DBA → social media management",
+      "Analyst → physical server repair"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data analysts use data to create reports and communicate insights.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts",
+    "subtopic": "Roles",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-042",
+    "question": "Which Azure service would be more appropriate for storing large numbers of image files?",
+    "options": [
+      "Azure Blob Storage",
+      "Azure SQL Database",
+      "Azure SQL Managed Instance",
+      "Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Azure Blob Storage is suitable for large numbers of image files.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts",
+    "subtopic": "Azure Services",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-043",
+    "question": "Which Azure service would be more appropriate for a relational application database?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Blob Storage",
+      "Power BI",
+      "Azure Data Factory"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Azure SQL Database is a relational database service for applications.",
+    "difficulty": "scenario",
+    "topic": "Core Data Concepts",
+    "subtopic": "Azure Services",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-044",
+    "question": "Which statement best distinguishes files from databases?",
+    "options": [
+      "Databases generally provide data management and querying capabilities beyond simple file storage",
+      "Files cannot contain data",
+      "Databases can only store images",
+      "Files always require SQL"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Databases add capabilities such as querying, indexing, transactions, security, and recovery.",
+    "difficulty": "hard",
+    "topic": "Core Data Concepts",
+    "subtopic": "Databases",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-045",
+    "question": "A CSV file containing sales records is best described as:",
+    "options": [
+      "A file containing structured/tabular data",
+      "An unstructured video",
+      "A relational database",
+      "A NoSQL database"
+    ],
+    "correctAnswer": 0,
+    "explanation": "CSV files commonly contain structured, tabular data, although a CSV file is not itself a database.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts",
+    "subtopic": "File Formats",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-046",
+    "question": "Which of these is NOT normally considered unstructured data?",
+    "options": [
+      "Video",
+      "Audio",
+      "JPEG image",
+      "SQL table"
+    ],
+    "correctAnswer": 3,
+    "explanation": "An SQL table is structured data.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts",
+    "subtopic": "Data Types",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-047",
+    "question": "Which of these is NOT normally considered semi-structured?",
+    "options": [
+      "JSON",
+      "XML",
+      "Relational SQL table",
+      "Document-style data"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A relational SQL table is structured data, not semi-structured data.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts",
+    "subtopic": "Data Types",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-048",
+    "question": "Which question is analytical?",
+    "options": [
+      "What was total revenue by region last year?",
+      "Create order #10025",
+      "Update a customer's phone number",
+      "Process a payment"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Revenue by region for a previous year requires analysis and aggregation.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts",
+    "subtopic": "Workloads",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-049",
+    "question": "Which question is transactional?",
+    "options": [
+      "Which region grew fastest?",
+      "Create a new order for customer 1001",
+      "What is the five-year trend?",
+      "Which product has the highest lifetime revenue?"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Creating a new order is an operational transaction.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts",
+    "subtopic": "Workloads",
+    "source": "dp900.py"
+  },
+  {
+    "id": "cdc-050",
+    "question": "Why might an organization separate operational and analytical systems?",
+    "options": [
+      "Their workloads have different access patterns and requirements",
+      "Data can never be copied",
+      "Analytical systems cannot store data",
+      "Transactional systems cannot use databases"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Operational systems handle transactions, while analytical systems are optimized for large queries and aggregations.",
+    "difficulty": "hard",
+    "topic": "Core Data Concepts",
+    "subtopic": "Workloads",
+    "source": "dp900.py"
+  }
+]
