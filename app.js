@@ -74,6 +74,40 @@
     return "medium";
   }
 
+  /* ============ question-set registry (topics.json) ============
+     Canonical schema: id, title, sourceType, sourceName, createdAt,
+     questionFile, questionCount. Legacy aliases (name/file) are still
+     accepted so old banks keep working. Each source gets its OWN set —
+     never merged unless the user explicitly says "merge with X". */
+  var NEW_BADGE_DAYS = 30;
+
+  function topicTitle(t) { return (t && (t.title || t.name)) || "Untitled set"; }
+  function topicFile(t) { return t && (t.questionFile || t.file); }
+  function topicDesc(t) { return (t && t.description) || ""; }
+
+  function topicCreatedAt(t) {
+    var ms = t && t.createdAt ? Date.parse(t.createdAt) : NaN;
+    return isNaN(ms) ? 0 : ms;
+  }
+
+  /** Newest sets first — new sources automatically float to the top. */
+  function sortedTopics() {
+    return state.topics.slice().sort(function (a, b) { return topicCreatedAt(b) - topicCreatedAt(a); });
+  }
+
+  function isNewTopic(t) {
+    var ms = topicCreatedAt(t);
+    return !!ms && (Date.now() - ms) < NEW_BADGE_DAYS * 24 * 3600 * 1000;
+  }
+
+  /** Live count from loaded JSON; falls back to stored questionCount. */
+  function topicCount(t) {
+    var s = state.topicStats[t.id];
+    if (s && !s.error) return s.total;
+    if (t && typeof t.questionCount === "number") return t.questionCount;
+    return null;
+  }
+
   /* ================= persistence ================= */
 
   function loadProgress() {
@@ -265,7 +299,7 @@
   /* ================= topic icons (inline SVG, no external assets) ================= */
 
   function topicIcon(topic) {
-    var key = ((topic && topic.id) + " " + (topic && topic.name)).toLowerCase();
+    var key = ((topic && topic.id) + " " + topicTitle(topic)).toLowerCase();
     var stroke = "currentColor";
     function svg(inner) {
       return '<svg viewBox="0 0 24 24" fill="none" stroke="' + stroke + '" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + inner + "</svg>";
@@ -315,11 +349,11 @@
       state.topics = Array.isArray(topics) ? topics : [];
       renderHome();
       var loaders = state.topics.map(function (t) {
-        return fetchJSON(t.file).then(function (qs) {
+        return fetchJSON(topicFile(t)).then(function (qs) {
           state.topicCache[t.id] = { meta: t, questions: qs };
           state.topicStats[t.id] = summarize(qs);
         }).catch(function (err) {
-          console.error("Failed to load " + t.file, err);
+          console.error("Failed to load " + topicFile(t), err);
           state.topicStats[t.id] = { total: 0, byDifficulty: {}, error: true };
         });
       });
@@ -390,7 +424,7 @@
       '<div class="hero-stats" role="list">' +
       '<div class="hero-stat" role="listitem"><strong>' + tq + "</strong><span>Questions</span></div>" +
       '<div class="hero-stat" role="listitem"><strong>' + state.topics.length + "</strong><span>Topics</span></div>" +
-      '<div class="hero-stat" role="listitem"><strong>' + QUESTIONS_PER_SESSION + "/quiz</strong><span>Per session</span></div>" +
+      '<div class="hero-stat" role="listitem"><strong>15–50</strong><span>Random sizes</span></div>' +
       (streak ? '<div class="hero-stat" role="listitem"><strong>🔥 ' + streak + "</strong><span>Day streak</span></div>" : "") +
       "</div></div>" +
       '<div class="hero-visual" aria-hidden="true">' +
@@ -403,7 +437,7 @@
     /* continue learning */
     var cont = last
       ? '<section class="card continue-card" aria-labelledby="cont-title"><div><span class="eyebrow">Continue Learning</span>' +
-        '<h3 id="cont-title" style="margin:2px 0 4px">' + escapeHtml(last.meta.name) + "</h3>" +
+        '<h3 id="cont-title" style="margin:2px 0 4px">' + escapeHtml(topicTitle(last.meta)) + "</h3>" +
         '<p class="section-sub" style="margin:0">Last score: <strong>' + last.entry.lastScore + " / " + last.entry.lastTotal + "</strong> · Best: <strong>" +
         last.entry.bestScore + " / " + last.entry.bestTotal + "</strong> · " + last.entry.attempts + " attempt(s)</p></div>" +
         '<button class="btn" id="btn-continue" type="button">Continue Practice →</button></section>'
@@ -415,11 +449,15 @@
     /* quick modes */
     var modes =
       '<h2 class="section-title" id="modes-heading">Choose your mode</h2>' +
-      '<p class="section-sub">Practice to learn, Exam to simulate, Daily to build the habit.</p>' +
+      '<p class="section-sub">Random for mixed drills, Exam to simulate, Daily to build the habit — or master one set at a time below.</p>' +
       '<div class="mode-grid">' +
-      '<div class="mode-card"><span class="mode-ico">⚡</span><h3>Quick Practice</h3>' +
-      "<p>15 random DP-900 questions across all topics. Mixed difficulty, instant feedback.</p>" +
-      '<button class="btn" data-mode="quick" type="button">Start Quick Practice</button></div>' +
+      '<div class="mode-card"><span class="mode-ico">🎲</span><h3>Random Practice</h3>' +
+      "<p>Live-mixed from <strong>all</strong> sets below — reshuffled every attempt. Nothing stored, instant feedback.</p>" +
+      '<div class="size-btns" role="group" aria-label="Random Practice size">' +
+      '<button class="btn small" data-mode="random" data-count="15" type="button">15</button>' +
+      '<button class="btn small" data-mode="random" data-count="30" type="button">30</button>' +
+      '<button class="btn small" data-mode="random" data-count="50" type="button">50</button>' +
+      "</div></div>" +
       '<div class="mode-card"><span class="mode-ico">🎯</span><h3>Exam Mode</h3>' +
       "<p>15 mixed questions, 15:00 timer, answers locked in — feedback only at the end.</p>" +
       '<button class="btn secondary" data-mode="exam" type="button">Start Exam Mode</button></div>' +
@@ -462,21 +500,24 @@
 
     app.innerHTML = hero + cont + modes + topicsHtml + dash +
       '<h2 class="section-title">How it works</h2><div class="how-grid">' +
-      '<div class="how-card"><h3>1 · Pick a mode</h3><p>Topic practice, mixed Quick Practice, timed Exam, or Daily streak builder.</p></div>' +
+      '<div class="how-card"><h3>1 · Pick a mode</h3><p>Single-set practice, mixed Random (15/30/50), timed Exam, or Daily streak builder.</p></div>' +
       '<div class="how-card"><h3>2 · Answer &amp; learn</h3><p>Practice shows instant feedback + explanations. Exam holds everything until the end.</p></div>' +
       '<div class="how-card"><h3>3 · Track &amp; retry</h3><p>Dashboard, streaks and achievements update after every completed quiz. Retry for a fresh draw.</p></div></div>';
 
     /* wire up */
-    document.getElementById("hero-start").addEventListener("click", function () { playSound("click"); startMixed("quick"); });
+    document.getElementById("hero-start").addEventListener("click", function () { playSound("click"); startMixed("random", 15); });
     document.getElementById("hero-topics").addEventListener("click", function () { playSound("click"); scrollToId("topics-heading"); });
     var bc = document.getElementById("btn-continue");
     if (bc) bc.addEventListener("click", function () {
       playSound("click");
       if (last) startQuiz(last.meta.id, { kind: "practice" });
-      else if (state.topics.length) startQuiz(state.topics[0].id, { kind: "practice" });
+      else if (sortedTopics().length) startQuiz(sortedTopics()[0].id, { kind: "practice" });
     });
     Array.prototype.forEach.call(app.querySelectorAll("[data-mode]"), function (b) {
-      b.addEventListener("click", function () { playSound("click"); startMixed(b.getAttribute("data-mode")); });
+      b.addEventListener("click", function () {
+        playSound("click");
+        startMixed(b.getAttribute("data-mode"), parseInt(b.getAttribute("data-count") || "15", 10));
+      });
     });
     document.getElementById("topic-search").addEventListener("input", function (e) {
       state.topicQuery = e.target.value;
@@ -495,7 +536,7 @@
 
   function topicMatchesFilter(t, p) {
     var q = (state.topicQuery || "").toLowerCase().trim();
-    if (q && ((t.name + " " + (t.description || "")).toLowerCase().indexOf(q) < 0)) return false;
+    if (q && ((topicTitle(t) + " " + topicDesc(t) + " " + (t.sourceName || "")).toLowerCase().indexOf(q) < 0)) return false;
     var e = p[t.id];
     var att = e && e.attempts > 0;
     if (state.topicFilter === "new" && att) return false;
@@ -512,25 +553,29 @@
   }
 
   function topicCardsHtml(progress) {
-    var list = state.topics.filter(function (t) { return topicMatchesFilter(t, progress); });
+    var list = sortedTopics().filter(function (t) { return topicMatchesFilter(t, progress); });
     if (!state.topics.length) return '<div class="card"><p>No question sets found. Add a question bank to <code>data/</code> and list it in <code>data/topics.json</code> to get started.</p></div>';
     if (!list.length) return '<div class="card"><p>No question sets match this search. Clear the search or choose another filter.</p></div>';
     return list.map(function (t) {
       var s = state.topicStats[t.id];
-      var count = s && !s.error ? s.total : 0;
+      var count = topicCount(t);
       var e = progress[t.id];
       var bestPct = e && e.bestTotal ? Math.round(100 * e.bestScore / e.bestTotal) : 0;
       var statusLine = e && e.attempts
         ? "Best: " + e.bestScore + "/" + e.bestTotal + " · " + e.attempts + (e.attempts === 1 ? " attempt" : " attempts")
         : "Not started";
-      return '<article class="topic-card" aria-label="' + escapeHtml(t.name) + '">' +
+      var sourceLine = t.sourceName
+        ? '<div class="topic-source">Source: ' + escapeHtml(t.sourceName) + (t.sourceType ? " · " + escapeHtml(t.sourceType) : "") + "</div>"
+        : "";
+      return '<article class="topic-card" aria-label="' + escapeHtml(topicTitle(t)) + '">' +
         '<div class="topic-top"><div class="topic-icon">' + topicIcon(t) + "</div>" +
-        "<div><h3>" + escapeHtml(t.name) + "</h3>" +
+        "<div><h3>" + escapeHtml(topicTitle(t)) +
+        (isNewTopic(t) ? ' <span class="new-badge">NEW</span>' : "") + "</h3>" +
         (t.examWeight ? '<div class="exam-weight">' + escapeHtml(t.examWeight) + "</div>" : "") + "</div></div>" +
-        '<p class="desc">' + escapeHtml(t.description || "") + "</p>" +
-        '<div class="topic-meta"><span class="pill"><strong>' + (s && s.error ? "Unavailable" : count + (count === 1 ? " question" : " questions")) + "</strong></span>" +
+        '<p class="desc">' + escapeHtml(topicDesc(t)) + "</p>" + sourceLine +
+        '<div class="topic-meta"><span class="pill"><strong>' + (s && s.error ? "Unavailable" : count === null ? "…" : count + (count === 1 ? " question" : " questions")) + "</strong></span>" +
         '<span class="pill">' + escapeHtml(statusLine) + "</span></div>" +
-        '<div class="meter" role="progressbar" aria-valuenow="' + bestPct + '" aria-valuemin="0" aria-valuemax="100" aria-label="Best score for ' + escapeHtml(t.name) + '"><div style="width:' + bestPct + '%"></div></div>' +
+        '<div class="meter" role="progressbar" aria-valuenow="' + bestPct + '" aria-valuemin="0" aria-valuemax="100" aria-label="Best score for ' + escapeHtml(topicTitle(t)) + '"><div style="width:' + bestPct + '%"></div></div>' +
         '<div class="card-actions"><button class="btn small" type="button" data-start="' + escapeHtml(t.id) + '">Start Practice →</button>' +
         '<button class="btn secondary small" type="button" data-browse="' + escapeHtml(t.id) + '">Browse</button></div></article>';
     }).join("");
@@ -558,7 +603,7 @@
     var meta = null;
     state.topics.forEach(function (t) { if (t.id === topicId) meta = t; });
     if (!meta) return Promise.reject(new Error("Unknown topic " + topicId));
-    return fetchJSON(meta.file).then(function (qs) {
+    return fetchJSON(topicFile(meta)).then(function (qs) {
       state.topicCache[topicId] = { meta: meta, questions: qs };
       state.topicStats[topicId] = summarize(qs);
       return qs;
@@ -569,11 +614,11 @@
     var missing = state.topics.filter(function (t) { return !state.topicCache[t.id]; });
     if (!missing.length) return Promise.resolve();
     return Promise.all(missing.map(function (t) {
-      return fetchJSON(t.file).then(function (qs) {
+      return fetchJSON(topicFile(t)).then(function (qs) {
         state.topicCache[t.id] = { meta: t, questions: qs };
         state.topicStats[t.id] = summarize(qs);
       }).catch(function (err) {
-        console.error("Failed to load " + t.file, err);
+        console.error("Failed to load " + topicFile(t), err);
         state.topicStats[t.id] = { total: 0, byDifficulty: {}, error: true };
       });
     })).then(function () {});
@@ -589,8 +634,9 @@
   }
 
   /** Build a session: pick N random, shuffle options while preserving the key. */
-  function buildSession(meta, pool, kind) {
-    var picked = shuffle(pool).slice(0, QUESTIONS_PER_SESSION);
+  function buildSession(meta, pool, kind, count) {
+    var n = Math.max(1, Math.min(count || QUESTIONS_PER_SESSION, pool.length));
+    var picked = shuffle(pool).slice(0, n);
     var sessionQs = picked.map(function (q) {
       var indexed = q.options.map(function (text, i) { return { text: text, isCorrect: i === q.correctAnswer }; });
       var sh = shuffle(indexed), nc = 0;
@@ -599,7 +645,7 @@
     });
     var now = Date.now();
     state.session = {
-      kind: kind, topic: meta, questions: sessionQs, index: 0,
+      kind: kind, count: n, topic: meta, questions: sessionQs, index: 0,
       answers: sessionQs.map(function () { return null; }),
       startTime: now, elapsed: 0, remaining: kind === "exam" ? EXAM_SECONDS : null,
       timerId: null, finished: false, hideFeedback: kind === "exam"
@@ -614,7 +660,7 @@
     var meta = null;
     state.topics.forEach(function (t) { if (t.id === topicId) meta = t; });
     if (!meta) return;
-    app.innerHTML = '<div class="loading-card" role="status"><div class="skeleton skeleton-hero"></div><p>Loading ' + escapeHtml(meta.name) + "…</p></div>";
+    app.innerHTML = '<div class="loading-card" role="status"><div class="skeleton skeleton-hero"></div><p>Loading ' + escapeHtml(topicTitle(meta)) + "…</p></div>";
     loadQuestionSet(topicId).then(function (qs) {
       if (!qs.length) {
         app.innerHTML = '<div class="card error-card"><h2>Unable to load this question set.</h2><p>Please try again — other topics should still work.</p><p><button class="btn" id="btn-back" type="button">Back to topics</button></p></div>';
@@ -625,15 +671,18 @@
     }).catch(renderFetchError);
   }
 
-  /** Quick / Exam / Daily: 15 random questions pooled across every bank. */
-  function startMixed(kind) {
+  /** Random / Exam / Daily: questions pooled LIVE across every bank.
+      Nothing is stored — each attempt reshuffles a fresh combination. */
+  function startMixed(kind, count) {
+    if (kind === "quick") kind = "random"; // legacy alias
+    count = Math.max(1, count || QUESTIONS_PER_SESSION);
     var labels = {
-      quick: "⚡ Quick Practice · Mixed topics",
+      random: "🎲 Random Practice · " + count + " questions",
       exam: "🎯 Exam Mode · Mixed topics",
       daily: "🔥 Daily Practice · " + todayKey()
     };
-    var meta = { id: "__mixed__" + (kind === "daily" ? "-" + todayKey() : ""), name: labels[kind] || "Mixed Practice" };
-    app.innerHTML = '<div class="loading-card" role="status"><div class="skeleton skeleton-hero"></div><p>Drawing 15 random questions…</p></div>';
+    var meta = { id: "__mixed__", title: labels[kind] || "Mixed Practice", name: labels[kind] || "Mixed Practice" };
+    app.innerHTML = '<div class="loading-card" role="status"><div class="skeleton skeleton-hero"></div><p>Drawing ' + count + " random questions…</p></div>";
     ensureAllLoaded().then(function () {
       var pool = allQuestions();
       if (!pool.length) {
@@ -643,8 +692,8 @@
       }
       if (kind === "daily") meta.id = "__daily__";
       if (kind === "exam") meta.id = "__exam__";
-      if (kind === "quick") meta.id = "__mixed__";
-      buildSession(meta, pool, kind === "daily" ? "daily" : kind);
+      if (kind === "random") meta.id = "__random__";
+      buildSession(meta, pool, kind === "daily" ? "daily" : kind, count);
     });
   }
 
@@ -741,7 +790,7 @@
     }
 
     var modeTag = s.kind === "exam" ? "Exam Mode · " + formatTime(s.remaining != null ? s.remaining : EXAM_SECONDS) + " left"
-      : s.kind === "daily" ? "Daily Practice" : s.kind === "quick" ? "Quick Practice" : s.topic.name;
+      : s.kind === "daily" ? "Daily Practice" : s.kind === "random" ? "Random Practice · " + s.questions.length + " questions" : topicTitle(s.topic);
 
     app.innerHTML =
       '<div class="quiz-shell"><div class="quiz-topbar">' +
@@ -756,7 +805,7 @@
       '<article class="question-card" aria-labelledby="q-text">' +
       '<p class="q-kicker">Question ' + (s.index + 1) + " of " + total + "</p>" +
       '<div class="q-badges"><span class="badge ' + difficultyLabel(cur.src.difficulty) + '">' + escapeHtml(difficultyLabel(cur.src.difficulty)) + "</span>" +
-      '<span class="badge">' + escapeHtml(cur.src.topic || s.topic.name) + "</span>" +
+      '<span class="badge">' + escapeHtml(cur.src.topic || topicTitle(s.topic)) + "</span>" +
       (cur.src.subtopic ? '<span class="badge">' + escapeHtml(cur.src.subtopic) + "</span>" : "") + "</div>" +
       '<h2 class="question-text" id="q-text" tabindex="-1">' + escapeHtml(cur.src.question) + "</h2>" +
       '<ol class="options">' + optionsHtml + "</ol>" + feedbackHtml + "</article>" +
@@ -877,7 +926,7 @@
   }
 
   function performanceMessage(pct) {
-    if (pct >= 90) return ["Outstanding! 🎉", "Exam-ready on this set. Do a mixed Quick Practice next to confirm it holds across topics."];
+    if (pct >= 90) return ["Outstanding! 🎉", "Exam-ready on this set. Do a mixed Random Practice next to confirm it holds across topics."];
     if (pct >= 75) return ["Great job! 💪", "Strong understanding. Review the ones you missed below, then retry for a fresh draw."];
     if (pct >= 60) return ["Good progress. 📈", "Moderate understanding — reread the explanations for your misses, then try again."];
     return ["Keep practicing. 🌱", "Short, frequent retries beat long cramming. Review each explanation, then go again."];
@@ -890,7 +939,7 @@
     var pm = performanceMessage(r.pct);
     var byTopic = {};
     s.questions.forEach(function (q, i) {
-      var key = q.src.topic || s.topic.name;
+      var key = q.src.topic || topicTitle(s.topic);
       if (s.kind === "practice") key = q.src.subtopic || key;
       byTopic[key] = byTopic[key] || { correct: 0, total: 0 };
       byTopic[key].total++;
@@ -900,7 +949,7 @@
       var v = byTopic[k], p = Math.round(100 * v.correct / v.total);
       return '<span class="pill">' + escapeHtml(k) + ": " + v.correct + "/" + v.total + " (" + p + "%)</span>";
     }).join("");
-    var kindLabel = s.kind === "exam" ? "🎯 Exam Mode" : s.kind === "daily" ? "🔥 Daily Practice" : s.kind === "quick" ? "⚡ Quick Practice" : s.topic.name;
+    var kindLabel = s.kind === "exam" ? "🎯 Exam Mode" : s.kind === "daily" ? "🔥 Daily Practice" : s.kind === "random" ? "🎲 Random Practice" : topicTitle(s.topic);
 
     app.innerHTML =
       '<div class="card" aria-labelledby="res-title"><div class="result-hero">' +
@@ -917,7 +966,7 @@
       '<div class="card-actions" style="margin-top:14px">' +
       '<button class="btn" id="btn-review" type="button">Review answers</button>' +
       '<button class="btn secondary" id="btn-retry" type="button">Retry quiz</button>' +
-      '<button class="btn secondary" id="btn-quick" type="button">Quick Practice</button>' +
+      '<button class="btn secondary" id="btn-quick" type="button">Random Practice</button>' +
       '<button class="btn ghost" id="btn-home" type="button">Back to topics</button></div>' +
       '<div id="review-slot" style="margin-top:16px"></div></div>';
 
@@ -939,9 +988,9 @@
     document.getElementById("btn-retry").addEventListener("click", function () {
       playSound("click");
       if (s.kind === "practice") startQuiz(s.topic.id, { kind: "practice" });
-      else startMixed(s.kind === "daily" ? "daily" : s.kind);
+      else startMixed(s.kind === "daily" ? "daily" : s.kind, s.count || QUESTIONS_PER_SESSION);
     });
-    document.getElementById("btn-quick").addEventListener("click", function () { playSound("click"); startMixed("quick"); });
+    document.getElementById("btn-quick").addEventListener("click", function () { playSound("click"); startMixed("random", s.count || 15); });
     document.getElementById("btn-home").addEventListener("click", function () { state.session = null; renderHome(); });
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -984,7 +1033,7 @@
   function renderBank() {
     state.view = "bank";
     var topicOptions = '<option value="all">All topics</option>' + state.topics.map(function (t) {
-      return '<option value="' + escapeHtml(t.id) + '"' + (state.bankTopicId === t.id ? " selected" : "") + ">" + escapeHtml(t.name) + "</option>";
+      return '<option value="' + escapeHtml(t.id) + '"' + (state.bankTopicId === t.id ? " selected" : "") + ">" + escapeHtml(topicTitle(t)) + "</option>";
     }).join("");
     app.innerHTML =
       '<section class="card" aria-labelledby="bank-title"><span class="eyebrow">Self-study</span>' +
@@ -1023,7 +1072,7 @@
     list.innerHTML = '<p class="section-sub">' + items.length + " question(s) · click any item to reveal the answer.</p>" +
       items.map(function (row, i) {
         var q = row.q, correctText = q.options[q.correctAnswer];
-        return '<details class="bank-item"><summary>Q' + (i + 1) + " · [" + escapeHtml(row.topicMeta.name) + "] " + escapeHtml(q.question) + "</summary>" +
+        return '<details class="bank-item"><summary>Q' + (i + 1) + " · [" + escapeHtml(topicTitle(row.topicMeta)) + "] " + escapeHtml(q.question) + "</summary>" +
           '<div class="bank-meta"><span class="badge ' + difficultyLabel(q.difficulty) + '">' + escapeHtml(difficultyLabel(q.difficulty)) + "</span>" +
           (q.subtopic ? '<span class="badge">' + escapeHtml(q.subtopic) + "</span>" : "") +
           '<span class="badge">' + escapeHtml(q.id) + "</span></div><ol>" +

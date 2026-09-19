@@ -1,10 +1,15 @@
 [
   {
     "id": "core-data-concepts",
-    "name": "Core Data Concepts",
+    "title": "Core Data Concepts",
     "description": "Data types, file formats, databases, OLTP vs OLAP workloads, data roles, and core Azure data services.",
+    "sourceType": "py",
+    "sourceName": "core_data_concepts.py",
+    "createdAt": "2026-09-19",
+    "questionFile": "data/core-data-concepts.json",
+    "questionCount": 50,
+    "name": "Core Data Concepts",
     "file": "data/core-data-concepts.json",
-    "icon": "◈",
     "examWeight": "DP-900 · Describe core data concepts"
   }
 ]

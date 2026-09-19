@@ -57,18 +57,26 @@ Every question:
 }
 ```
 
-`topics.json`:
+`topics.json` (one entry per source — newest first on the landing page):
 
 ```json
 [
   {
     "id": "core-data-concepts",
-    "name": "Core Data Concepts",
+    "title": "Core Data Concepts",
     "description": "…",
-    "file": "data/core-data-concepts.json"
+    "sourceType": "py",
+    "sourceName": "core_data_concepts.py",
+    "createdAt": "2026-09-19",
+    "questionFile": "data/core-data-concepts.json",
+    "questionCount": 50
   }
 ]
 ```
+
+`questionCount` is stored for visibility but the UI always shows the live
+count loaded from the JSON file. Random Practice pools all sets dynamically
+at runtime — no random-question JSON file is ever created.
 
 ## Add a new `.py` file (workflow)
 
@@ -80,7 +88,9 @@ READ FILE → UNDERSTAND TOPIC → EXTRACT QUESTIONS → GENERATE MORE IF NEEDED
 
 Rules:
 
-- Merge into the existing topic file when the topic matches (e.g. `core_data_concepts_2.py` → `core-data-concepts.json`), new IDs only (`cdc-051…`), never reuse IDs.
+- Every new source becomes its OWN set + card. Never merge into an existing
+  set unless explicitly told to ("merge with X").
+- New IDs only per set, never reuse IDs.
 - Deduplicate exact + semantic duplicates; keep the stronger version.
 - Every question needs 4+ options, a valid `correctAnswer` index, explanation, difficulty, topic, source.
 - Validate JSON before commit. Quick check: `python -m json.tool data/core-data-concepts.json > /dev/null`.
