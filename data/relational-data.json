@@ -1,0 +1,1602 @@
+[
+  {
+    "id": "rel-001",
+    "question": "Which statement best describes a relational database?",
+    "options": [
+      "It stores only JSON",
+      "It organizes related data into tables with defined structure and relationships",
+      "It stores only media",
+      "It cannot enforce rules"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Relational databases organize related data into tables with a defined schema and relationships.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Concepts",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-002",
+    "question": "In a relational table, a row normally represents:",
+    "options": [
+      "A database server",
+      "A column definition",
+      "A relationship",
+      "One record or entity instance"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Each row is one record, i.e. one instance of the entity the table stores.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Tables & Columns",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-003",
+    "question": "What does a column normally represent?",
+    "options": [
+      "An attribute of records",
+      "The whole database",
+      "A connection",
+      "A backup"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A column holds one attribute (e.g. Name, City) for every record.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Tables & Columns",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-004",
+    "question": "Which is the strongest candidate for a Customers primary key?",
+    "options": [
+      "City",
+      "LastName",
+      "CustomerID",
+      "Age"
+    ],
+    "correctAnswer": 2,
+    "explanation": "CustomerID is unique per customer; city, name and age can repeat.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Keys",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-005",
+    "question": "Why is City usually a poor primary key?",
+    "options": [
+      "Cities cannot be indexed",
+      "Multiple customers can share a city",
+      "SQL cannot store city names",
+      "City must be numeric"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A primary key must be unique, but many customers can share one city.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Keys",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-006",
+    "question": "Which property is required of a primary key?",
+    "options": [
+      "It must be a string",
+      "It must be duplicated",
+      "It must allow NULL",
+      "It must uniquely identify each row"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A primary key is unique and NOT NULL so every row is identifiable.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Keys",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-007",
+    "question": "Orders.CustomerID references Customers.CustomerID. Orders.CustomerID is most likely a:",
+    "options": [
+      "Foreign key",
+      "View",
+      "Index only",
+      "Stored procedure"
+    ],
+    "correctAnswer": 0,
+    "explanation": "It references a key in another table, which is the definition of a foreign key.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Keys",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-008",
+    "question": "One customer can have many orders. This is a:",
+    "options": [
+      "One-to-one",
+      "Many-to-many",
+      "One-to-many",
+      "Zero-to-zero"
+    ],
+    "correctAnswer": 2,
+    "explanation": "One customer row relates to many order rows: one-to-many.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Relationships",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-009",
+    "question": "Students can take many courses and courses can have many students. This is:",
+    "options": [
+      "One-to-one",
+      "Many-to-many",
+      "One-to-many",
+      "No relationship"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Both sides have many related rows: many-to-many.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Relationships",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-010",
+    "question": "What commonly implements a many-to-many relationship?",
+    "options": [
+      "Junction/bridge table",
+      "A single text field containing all IDs",
+      "A view only",
+      "A backup table"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A junction table stores associations between rows of the two entities.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Relationships",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-011",
+    "question": "What is the primary purpose of a foreign key?",
+    "options": [
+      "Sort rows",
+      "Compress tables",
+      "Establish a relationship to a referenced key",
+      "Encrypt the database"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Foreign keys link a row to a key in another table, enforcing the relationship.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Keys",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-012",
+    "question": "Referential integrity helps prevent:",
+    "options": [
+      "Slow internet",
+      "Invalid references between related tables",
+      "Duplicate backups",
+      "Large files"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Referential integrity keeps relationships valid by blocking dangling references.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Integrity",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-013",
+    "question": "Which best demonstrates referential integrity?",
+    "options": [
+      "Every order references an existing customer",
+      "Every customer has the same city",
+      "Every table has ten rows",
+      "Every column has one data type"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Every order pointing to a real customer is referential integrity in action.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Integrity",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-014",
+    "question": "What is a major goal of normalization?",
+    "options": [
+      "Increase duplication",
+      "Eliminate all joins",
+      "Reduce redundancy and improve consistency",
+      "Store everything in one table"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Normalization removes repeated data so facts are stored once and stay consistent.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Normalization",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-015",
+    "question": "A phone number is repeated in thousands of order rows. Which change addresses redundancy?",
+    "options": [
+      "Duplicate it in more tables",
+      "Store customer details once and reference CustomerID",
+      "Make phone number the database name",
+      "Remove the customer"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Storing customer details once in Customers and referencing them removes the repetition.",
+    "difficulty": "scenario",
+    "topic": "Relational Data",
+    "subtopic": "Normalization",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-016",
+    "question": "A trade-off of normalization can be:",
+    "options": [
+      "More joins may be needed",
+      "Primary keys become impossible",
+      "Relationships disappear",
+      "SQL stops working"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Split tables must be recombined with JOINs when querying.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Normalization",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-017",
+    "question": "Which SQL statement retrieves data?",
+    "options": [
+      "UPDATE",
+      "SELECT",
+      "DELETE",
+      "INSERT"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SELECT reads/retrieves rows from tables.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-018",
+    "question": "Which statement adds a new row?",
+    "options": [
+      "SELECT",
+      "ALTER",
+      "INSERT",
+      "UPDATE"
+    ],
+    "correctAnswer": 2,
+    "explanation": "INSERT adds new rows to a table.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-019",
+    "question": "Which statement modifies existing rows?",
+    "options": [
+      "UPDATE",
+      "CREATE",
+      "SELECT",
+      "INSERT"
+    ],
+    "correctAnswer": 0,
+    "explanation": "UPDATE changes values in existing rows.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-020",
+    "question": "Which statement removes rows?",
+    "options": [
+      "JOIN",
+      "GROUP BY",
+      "UPDATE",
+      "DELETE"
+    ],
+    "correctAnswer": 3,
+    "explanation": "DELETE removes rows from a table.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-021",
+    "question": "Which clause filters rows?",
+    "options": [
+      "ORDER BY",
+      "WHERE",
+      "GROUP BY",
+      "VALUES"
+    ],
+    "correctAnswer": 1,
+    "explanation": "WHERE restricts which rows a statement affects or returns.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-022",
+    "question": "Which clause sorts results?",
+    "options": [
+      "ORDER BY",
+      "WHERE",
+      "JOIN",
+      "VALUES"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ORDER BY sorts the result set.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-023",
+    "question": "Which clause groups rows for aggregation?",
+    "options": [
+      "WHERE",
+      "ORDER BY",
+      "GROUP BY",
+      "VALUES"
+    ],
+    "correctAnswer": 2,
+    "explanation": "GROUP BY groups rows so aggregates like SUM and COUNT apply per group.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-024",
+    "question": "Which technique combines related tables?",
+    "options": [
+      "JOIN",
+      "DELETE",
+      "ALTER",
+      "CHECK"
+    ],
+    "correctAnswer": 0,
+    "explanation": "JOIN combines related tables, usually on matching keys.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-025",
+    "question": "Which query retrieves customers from Bhubaneswar?",
+    "options": [
+      "UPDATE Customers SET City='Bhubaneswar'",
+      "DELETE FROM Customers WHERE City='Bhubaneswar'",
+      "SELECT * FROM Customers WHERE City='Bhubaneswar'",
+      "INSERT INTO Customers VALUES ('Bhubaneswar')"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Retrieval needs SELECT with a WHERE filter on City.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-026",
+    "question": "CREATE is generally used to:",
+    "options": [
+      "Read rows",
+      "Define/create database objects",
+      "Sort rows",
+      "Change one value"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CREATE defines new database objects such as tables.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-027",
+    "question": "ALTER generally:",
+    "options": [
+      "Changes an existing object's definition",
+      "Reads rows",
+      "Inserts rows",
+      "Creates a chart"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ALTER modifies the definition of an existing object.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-028",
+    "question": "Which object provides a query-defined, table-like result?",
+    "options": [
+      "Index",
+      "Foreign key",
+      "View",
+      "Primary key"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A view is a saved query presented as a virtual table.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Objects",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-029",
+    "question": "A common purpose of an index is to:",
+    "options": [
+      "Enforce every business rule",
+      "Improve retrieval performance for suitable queries",
+      "Replace tables",
+      "Store passwords"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Indexes speed up lookups and suitable queries.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Objects",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-030",
+    "question": "An index trade-off is:",
+    "options": [
+      "It can consume storage and add maintenance overhead",
+      "It prevents SELECT",
+      "It removes keys",
+      "It makes every write faster"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Indexes cost storage and must be maintained on writes.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Objects",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-031",
+    "question": "Which object can contain saved executable SQL logic?",
+    "options": [
+      "Column",
+      "Stored procedure",
+      "Row",
+      "Primary key"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A stored procedure holds saved, executable SQL logic.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Objects",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-032",
+    "question": "Which is a database constraint?",
+    "options": [
+      "PRIMARY KEY",
+      "Power BI",
+      "Blob",
+      "VM"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRIMARY KEY is a constraint that enforces uniqueness rules.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Objects",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-033",
+    "question": "NOT NULL generally means:",
+    "options": [
+      "Values must be unique",
+      "A value must be supplied",
+      "Values must be encrypted",
+      "A foreign key is required"
+    ],
+    "correctAnswer": 1,
+    "explanation": "NOT NULL requires a value in every row for that column.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Objects",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-034",
+    "question": "UNIQUE generally means:",
+    "options": [
+      "A value cannot repeat within the constrained key/column set",
+      "Values must be NULL",
+      "A table has one row",
+      "Every row references another table"
+    ],
+    "correctAnswer": 0,
+    "explanation": "UNIQUE prevents duplicate values in the constrained columns.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Objects",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-035",
+    "question": "Which Azure service is a managed relational database?",
+    "options": [
+      "Azure Blob Storage",
+      "Azure SQL Database",
+      "Azure Table Storage",
+      "Azure Files"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Azure SQL Database is the managed relational database service.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-036",
+    "question": "Which option runs SQL Server in an Azure virtual machine?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Cosmos DB",
+      "SQL Server on Azure Virtual Machines",
+      "Azure Table Storage"
+    ],
+    "correctAnswer": 2,
+    "explanation": "SQL Server on Azure VMs runs the engine inside a VM you control.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-037",
+    "question": "Which managed Azure SQL service is designed for high SQL Server compatibility?",
+    "options": [
+      "Azure SQL Managed Instance",
+      "Blob Storage",
+      "Azure Files",
+      "Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Managed Instance targets near-complete SQL Server compatibility.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-038",
+    "question": "Which generally gives the most direct control over the underlying VM environment?",
+    "options": [
+      "Azure SQL Database",
+      "SQL Server on Azure VM",
+      "Azure SQL Managed Instance",
+      "Power BI"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A VM deployment leaves OS and SQL Server control with you.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-039",
+    "question": "A company wants a managed relational DB and does not want to manage the OS. Which is aligned?",
+    "options": [
+      "SQL Server on a local PC",
+      "Azure SQL Database",
+      "CSV file",
+      "Image storage"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Azure SQL Database is managed, so no OS management is needed.",
+    "difficulty": "scenario",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-040",
+    "question": "A legacy SQL Server app needs strong compatibility with SQL Server and a managed Azure service. Consider:",
+    "options": [
+      "Blob Storage",
+      "Azure SQL Managed Instance",
+      "Table Storage",
+      "Power BI"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Managed Instance combines broad SQL Server compatibility with managed operations.",
+    "difficulty": "scenario",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-041",
+    "question": "An application explicitly requires PostgreSQL. Investigate:",
+    "options": [
+      "Azure SQL Database only",
+      "Azure Database for PostgreSQL",
+      "Blob Storage",
+      "Data Factory"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An explicit engine requirement should drive you to its managed Azure offering.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-042",
+    "question": "An application explicitly requires MySQL. Investigate:",
+    "options": [
+      "Azure Database for MySQL",
+      "Cosmos DB only",
+      "Table Storage",
+      "Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Azure Database for MySQL is the managed service for that engine.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-043",
+    "question": "Azure SQL Database is best described as:",
+    "options": [
+      "Object storage",
+      "Managed relational database service",
+      "NoSQL document store",
+      "Visualization tool"
+    ],
+    "correctAnswer": 1,
+    "explanation": "It is Azure's managed relational database service.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-044",
+    "question": "SQL Server on Azure VM is best described as:",
+    "options": [
+      "SQL Server running inside an Azure VM",
+      "Object storage",
+      "Power BI dataset",
+      "JSON-only database"
+    ],
+    "correctAnswer": 0,
+    "explanation": "It is SQL Server installed on an Azure virtual machine.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-045",
+    "question": "Which scenario best fits relational data?",
+    "options": [
+      "Well-defined customer/order system with relationships",
+      "Folder of videos",
+      "JPEG archive",
+      "Raw audio archive"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Structured entities with relationships are the relational sweet spot.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Scenarios",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-046",
+    "question": "Orders contains CustomerID but not CustomerName, which is stored in Customers. This mainly demonstrates:",
+    "options": [
+      "Duplication",
+      "Separation of entities with a relationship",
+      "Unstructured storage",
+      "Compression"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Distinct entities live in their own tables, linked by keys.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Normalization",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-047",
+    "question": "Why might deleting a customer be blocked?",
+    "options": [
+      "Orders may still reference that customer",
+      "SQL cannot delete text",
+      "Primary keys cannot exist",
+      "Views cannot be created"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Referential integrity blocks deletes that would orphan related rows.",
+    "difficulty": "scenario",
+    "topic": "Relational Data",
+    "subtopic": "Integrity",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-048",
+    "question": "An orphaned record is one that:",
+    "options": [
+      "References a related record that does not exist",
+      "Has a primary key",
+      "Has many columns",
+      "Is returned by SELECT"
+    ],
+    "correctAnswer": 0,
+    "explanation": "An orphan points to a parent record that is missing.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Integrity",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-049",
+    "question": "Why are relationships important?",
+    "options": [
+      "They connect related entities without repeating all information",
+      "They remove columns",
+      "They eliminate SQL",
+      "They make data unstructured"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Relationships connect entities so facts are stored once, not repeated.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Relationships",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-050",
+    "question": "Which is not a normal relational database object?",
+    "options": [
+      "Table",
+      "View",
+      "Index",
+      "JPEG image"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Tables, views and indexes are database objects; an image is not.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Objects",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-051",
+    "question": "A query needs orders over 10,000. Which concept is most relevant?",
+    "options": [
+      "WHERE",
+      "PRIMARY KEY",
+      "CREATE",
+      "ALTER"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Filtering rows by a threshold is a WHERE job.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-052",
+    "question": "To calculate total order amount for each customer, which concepts are likely needed?",
+    "options": [
+      "GROUP BY plus an aggregate such as SUM",
+      "DELETE and DROP",
+      "ALTER only",
+      "Keys only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Per-customer totals need grouping plus an aggregate function.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-053",
+    "question": "To show customers sorted by name, use:",
+    "options": [
+      "GROUP BY",
+      "ORDER BY",
+      "WHERE only",
+      "VALUES"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ORDER BY sorts the results.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-054",
+    "question": "To retrieve customer and order details together, use:",
+    "options": [
+      "JOIN",
+      "DROP",
+      "CHECK",
+      "ALTER"
+    ],
+    "correctAnswer": 0,
+    "explanation": "JOIN combines the related Customers and Orders rows.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-055",
+    "question": "Which statement about a primary key is FALSE?",
+    "options": [
+      "It uniquely identifies a row",
+      "It can be referenced by another table",
+      "It can contain NULL as its identifying value",
+      "It identifies an entity instance"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A primary key cannot contain NULL — that statement is false.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Keys",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-056",
+    "question": "Which statement about a foreign key is most accurate?",
+    "options": [
+      "It must always be the primary key of its own table",
+      "It can reference a key in another table",
+      "It is only for sorting",
+      "It replaces indexes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A foreign key references a key (usually primary) in another table.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Keys",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-057",
+    "question": "Orders.CustomerID references Customers.CustomerID. What does Orders.CustomerID represent?",
+    "options": [
+      "The customer associated with that order",
+      "The order's unique identifier",
+      "The table name",
+      "The server name"
+    ],
+    "correctAnswer": 0,
+    "explanation": "It identifies which customer each order belongs to.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Keys",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-058",
+    "question": "One department has many employees. This is:",
+    "options": [
+      "Many-to-many",
+      "One-to-one",
+      "One-to-many",
+      "No relationship"
+    ],
+    "correctAnswer": 2,
+    "explanation": "One department to many employees is one-to-many.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Relationships",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-059",
+    "question": "Many products can appear in many orders. A good design uses:",
+    "options": [
+      "One text field with every product",
+      "An OrderItems detail/junction table",
+      "No product IDs",
+      "One image"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A detail/junction table models many-to-many cleanly.",
+    "difficulty": "scenario",
+    "topic": "Relational Data",
+    "subtopic": "Relationships",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-060",
+    "question": "Why is one giant table often problematic?",
+    "options": [
+      "It can create duplication and update anomalies",
+      "It prevents SQL",
+      "It cannot contain numbers",
+      "It cannot have keys"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Unnormalized giant tables duplicate facts and cause update anomalies.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Normalization",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-061",
+    "question": "Which is an update anomaly?",
+    "options": [
+      "A customer phone change requires many copies to be updated and one may be missed",
+      "SELECT returns rows",
+      "A primary key identifies a row",
+      "A foreign key references another table"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Repeated facts force multi-copy updates that can be missed.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Normalization",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-062",
+    "question": "Why separate Customers and Orders?",
+    "options": [
+      "To avoid all data types",
+      "To model distinct entities and reduce repetition",
+      "To make queries impossible",
+      "To remove relationships"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Separate tables model distinct entities and cut repetition.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Normalization",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-063",
+    "question": "A SQL query returns 100 customer rows. Conceptually each row is:",
+    "options": [
+      "A server",
+      "A result record",
+      "A schema",
+      "An index"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Each returned row is one result record.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-064",
+    "question": "Which is commonly considered a DML operation?",
+    "options": [
+      "SELECT",
+      "CREATE TABLE",
+      "ALTER TABLE",
+      "CREATE DATABASE"
+    ],
+    "correctAnswer": 0,
+    "explanation": "SELECT manipulates/reads data, grouping it with DML statements.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-065",
+    "question": "Which statement defines database structure?",
+    "options": [
+      "CREATE TABLE",
+      "SELECT",
+      "UPDATE",
+      "DELETE"
+    ],
+    "correctAnswer": 0,
+    "explanation": "CREATE TABLE defines a new table's structure.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-066",
+    "question": "Which action changes existing customer data?",
+    "options": [
+      "INSERT",
+      "UPDATE",
+      "CREATE",
+      "SELECT"
+    ],
+    "correctAnswer": 1,
+    "explanation": "UPDATE modifies existing rows.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-067",
+    "question": "Which action removes selected rows?",
+    "options": [
+      "DELETE",
+      "ALTER",
+      "INSERT",
+      "JOIN"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DELETE removes the selected rows.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-068",
+    "question": "Why use WHERE with UPDATE or DELETE?",
+    "options": [
+      "To restrict which rows are affected",
+      "To create a primary key",
+      "To create an index",
+      "To choose the DB engine"
+    ],
+    "correctAnswer": 0,
+    "explanation": "WHERE limits the statement to the intended rows.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-069",
+    "question": "Why is UPDATE/DELETE without an appropriate WHERE dangerous?",
+    "options": [
+      "It may affect all rows",
+      "It cannot execute",
+      "It affects only indexes",
+      "It creates tables"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Without WHERE the change can hit every row in the table.",
+    "difficulty": "scenario",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-070",
+    "question": "Which Azure service is a poor match for a traditional relational customer/order app?",
+    "options": [
+      "Azure SQL Database",
+      "Azure SQL Managed Instance",
+      "SQL Server on Azure VM",
+      "Azure Blob Storage"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Blob Storage is object storage, not a relational engine.",
+    "difficulty": "scenario",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-071",
+    "question": "What should influence Azure SQL Database vs SQL Server on VM?",
+    "options": [
+      "Required control and management responsibility",
+      "Whether names exist",
+      "Whether values are alphabetical",
+      "Number of columns only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Choose by how much control vs managed operation you need.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-072",
+    "question": "Which generally means Microsoft manages more of the database platform?",
+    "options": [
+      "Self-managed SQL Server VM",
+      "Managed database service such as Azure SQL Database",
+      "CSV on laptop",
+      "Application log"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A managed service shifts platform operations to Microsoft.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-073",
+    "question": "The app requires PostgreSQL compatibility. Which is appropriate?",
+    "options": [
+      "Azure SQL Database automatically",
+      "Azure PostgreSQL offering",
+      "Blob Storage",
+      "Power BI"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Match an engine requirement to its managed Azure offering.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-074",
+    "question": "Which scenario suits SQL Server on Azure VM?",
+    "options": [
+      "Need significant OS/SQL Server control or VM-based compatibility",
+      "Need image storage",
+      "Need a BI dashboard",
+      "Need a key-value store"
+    ],
+    "correctAnswer": 0,
+    "explanation": "VMs fit when you need OS-level control or VM-based compatibility.",
+    "difficulty": "scenario",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-075",
+    "question": "Which scenario suits Azure SQL Database?",
+    "options": [
+      "Managed relational app DB with minimal infrastructure management",
+      "Video archive",
+      "File share",
+      "Graph database only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Azure SQL Database fits managed relational apps with minimal ops.",
+    "difficulty": "scenario",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-076",
+    "question": "Which statement about normalization is most accurate?",
+    "options": [
+      "It guarantees every query is faster",
+      "It reduces redundancy and improves integrity",
+      "It stores everything in one table",
+      "It eliminates foreign keys"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Normalization cuts redundancy and protects data integrity.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Normalization",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-077",
+    "question": "Poor normalization can result in:",
+    "options": [
+      "More duplicated data and inconsistent updates",
+      "No data storage",
+      "SQL failure",
+      "No keys"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Duplicated facts drift out of sync when updated.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Normalization",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-078",
+    "question": "Which is a relationship between entities?",
+    "options": [
+      "Customer places Order",
+      "Table has font",
+      "Column has color",
+      "Database has password"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Customer places Order links two entities.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Relationships",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-079",
+    "question": "Which would normally identify an Order row?",
+    "options": [
+      "CustomerCity",
+      "OrderID",
+      "CustomerName",
+      "ProductCategory"
+    ],
+    "correctAnswer": 1,
+    "explanation": "OrderID uniquely identifies each order.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Keys",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-080",
+    "question": "Customers to Orders commonly has which cardinality?",
+    "options": [
+      "One customer to many orders",
+      "One order to many customers",
+      "One customer to one server",
+      "Many customers to one database"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The classic one-to-many: one customer, many orders.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Relationships",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-081",
+    "question": "Can a customer exist without any orders in a one-to-many model?",
+    "options": [
+      "No",
+      "Yes, zero or many orders can be associated",
+      "Only after deletion",
+      "Only in NoSQL"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The 'many' side allows zero related rows.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Relationships",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-082",
+    "question": "What does a junction table record?",
+    "options": [
+      "Associations between rows of two related entities",
+      "The database server",
+      "Images",
+      "Passwords"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each junction row links one row from each side.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Relationships",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-083",
+    "question": "Which best describes a view?",
+    "options": [
+      "A saved query presented as a virtual table-like result",
+      "A network server",
+      "A primary key",
+      "A storage account"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A view presents a saved query as a virtual table.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Objects",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-084",
+    "question": "Why might a view be created?",
+    "options": [
+      "To simplify or control access to commonly queried data",
+      "To eliminate tables",
+      "To replace the engine",
+      "To store OS files"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Views simplify queries and control data access.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Objects",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-085",
+    "question": "Why create an index?",
+    "options": [
+      "Improve performance of suitable lookups and queries",
+      "Store every table twice",
+      "Enforce every relationship",
+      "Replace foreign keys"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Indexes accelerate suitable lookups.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Objects",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-086",
+    "question": "Why not index every column?",
+    "options": [
+      "Indexes can consume storage and add write/maintenance overhead",
+      "SQL permits only one index",
+      "Indexes cannot be queried",
+      "Indexes delete rows"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Every index costs storage and slows writes, so index selectively.",
+    "difficulty": "hard",
+    "topic": "Relational Data",
+    "subtopic": "Objects",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-087",
+    "question": "Customers and Orders are joined where CustomerID matches. Which operation is used?",
+    "options": [
+      "JOIN",
+      "DELETE",
+      "ALTER",
+      "DROP"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Matching rows across tables is a JOIN.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-088",
+    "question": "Which is an aggregate function?",
+    "options": [
+      "SUM",
+      "INSERT",
+      "UPDATE",
+      "DELETE"
+    ],
+    "correctAnswer": 0,
+    "explanation": "SUM aggregates many values into one.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-089",
+    "question": "Which scenario suggests GROUP BY?",
+    "options": [
+      "Total sales for each region",
+      "Find one email",
+      "Delete one order",
+      "Create a table"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Per-region totals need grouping plus aggregation.",
+    "difficulty": "scenario",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-090",
+    "question": "Which scenario suggests ORDER BY?",
+    "options": [
+      "Products sorted by price",
+      "Average price per category",
+      "Add a customer",
+      "Delete an order"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sorted output calls for ORDER BY.",
+    "difficulty": "scenario",
+    "topic": "Relational Data",
+    "subtopic": "SQL",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-091",
+    "question": "Orders.CustomerID is a foreign key to Customers.CustomerID. Which is correct?",
+    "options": [
+      "Orders.CustomerID identifies the database",
+      "Orders.CustomerID links an order to a customer",
+      "CustomerID must be a city",
+      "Foreign keys cannot reference primary keys"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The foreign key ties each order to its customer.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Keys",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-092",
+    "question": "A foreign key references a customer that does not exist. What is violated?",
+    "options": [
+      "Referential integrity",
+      "Sorting",
+      "Visualization",
+      "Indexing"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Dangling references violate referential integrity.",
+    "difficulty": "easy",
+    "topic": "Relational Data",
+    "subtopic": "Integrity",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-093",
+    "question": "A managed database service generally means:",
+    "options": [
+      "The provider manages significant platform infrastructure and service operations",
+      "Customer manages the physical data center",
+      "It is always a local file",
+      "It cannot run SQL"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The provider operates the platform; you use the database.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-094",
+    "question": "Key distinction between Azure SQL Database and SQL Server on Azure VM:",
+    "options": [
+      "SQL Database is managed; VM deployment gives more environment control",
+      "SQL Database stores only images",
+      "SQL Server VM cannot run SQL Server",
+      "Both are object storage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Managed convenience versus VM-level control.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-095",
+    "question": "For a managed PostgreSQL database, investigate:",
+    "options": [
+      "Azure Database for PostgreSQL",
+      "Azure Files",
+      "Azure SQL Database only",
+      "Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Azure Database for PostgreSQL is the managed option.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-096",
+    "question": "For a managed MySQL database, investigate:",
+    "options": [
+      "Azure Files",
+      "Azure Database for MySQL",
+      "Azure SQL Managed Instance only",
+      "Data Factory"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Azure Database for MySQL is the managed option.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-097",
+    "question": "Which best describes a relational schema?",
+    "options": [
+      "It can define tables, columns, types, constraints and relationships",
+      "It is only a backup",
+      "It is always an image",
+      "It cannot define types"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A schema defines structure: tables, types, constraints, relationships.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Concepts",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-098",
+    "question": "To ensure an email value is present, which is relevant?",
+    "options": [
+      "NOT NULL",
+      "ORDER BY",
+      "GROUP BY",
+      "JOIN"
+    ],
+    "correctAnswer": 0,
+    "explanation": "NOT NULL forces a value to be supplied.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Objects",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-099",
+    "question": "To ensure usernames are different, which is relevant?",
+    "options": [
+      "FOREIGN KEY",
+      "UNIQUE",
+      "ORDER BY",
+      "JOIN"
+    ],
+    "correctAnswer": 1,
+    "explanation": "UNIQUE prevents repeated values.",
+    "difficulty": "medium",
+    "topic": "Relational Data",
+    "subtopic": "Objects",
+    "source": "relational-data-episode2.pdf"
+  },
+  {
+    "id": "rel-100",
+    "question": "Which sequence is sensible for an Azure relational database?",
+    "options": [
+      "Choose service → provision/configure → connect securely → create/query/manage data",
+      "Create chart → delete database → choose service",
+      "Upload images → ignore connectivity",
+      "Create indexes → choose engine → define requirements"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Plan first: choose, provision, connect, then build and query.",
+    "difficulty": "scenario",
+    "topic": "Relational Data",
+    "subtopic": "Azure Services",
+    "source": "relational-data-episode2.pdf"
+  }
+]

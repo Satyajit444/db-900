@@ -1,5 +1,18 @@
 [
   {
+    "id": "relational-data",
+    "title": "Relational Data",
+    "description": "Tables, keys, relationships, normalization, SQL, database objects, Azure SQL services, and open-source relational databases. 100 competitive MCQs.",
+    "sourceType": "pdf",
+    "sourceName": "DP-900 Episode 2 - Relational Data.pdf",
+    "createdAt": "2026-09-19",
+    "questionFile": "data/relational-data.json",
+    "questionCount": 100,
+    "name": "Relational Data",
+    "file": "data/relational-data.json",
+    "examWeight": "DP-900 · Describe relational data on Azure"
+  },
+  {
     "id": "core-data-concepts",
     "title": "Core Data Concepts",
     "description": "Data types, file formats, databases, OLTP vs OLAP workloads, data roles, and core Azure data services.",

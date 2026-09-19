@@ -97,8 +97,8 @@ Rules:
 
 ## Current content
 
-- **Topic added:** Core Data Concepts
-- **Questions added:** 50 (`cdc-001`–`cdc-050`, from `dp900.py`)
-- **Distribution:** easy 24 · medium 14 · scenario 10 · hard 2
-- **Subtopics:** Workloads 16 · Data Types 10 · Roles 9 · Azure Services 8 · File Formats 4 · Databases 3
-- **Session length:** 15 random per attempt
+- **Sets (newest first):** Relational Data (100, `rel-001`–`rel-100`, PDF Episode 2) · Core Data Concepts (50, `cdc-001`–`cdc-050`, `dp900.py`)
+- **Total questions:** 150 — always visible on the landing page hero + cards
+- **Relational distribution:** easy 41 · medium 46 · scenario 12 · hard 1
+- **Random Practice:** pools all sets live (15 / 30 / 50 per attempt, reshuffled)
+- **Session length:** 15 random per single-set attempt
