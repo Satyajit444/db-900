@@ -413,7 +413,7 @@
     var hero =
       '<section class="hero" aria-labelledby="hero-title">' +
       '<div class="hero-grid"><div>' +
-      '<span class="eyebrow" style="background:rgba(255,255,255,.16);color:#fff">DP-900 · Azure Data Fundamentals</span>' +
+      '<span class="eyebrow" style="background:rgba(154,106,69,.14);color:#7d5334">DP-900 · Azure Data Fundamentals</span>' +
       '<h1 id="hero-title">Practice. Test. Improve.</h1>' +
       '<p class="sub">Master data concepts through focused practice and realistic exam-style questions.</p>' +
       '<p class="desc">Practice mode gives instant feedback. Exam mode simulates the real thing. Every run draws fresh random questions.</p>' +
@@ -428,7 +428,7 @@
       (streak ? '<div class="hero-stat" role="listitem"><strong>🔥 ' + streak + "</strong><span>Day streak</span></div>" : "") +
       "</div></div>" +
       '<div class="hero-visual" aria-hidden="true">' +
-      '<svg class="wires" viewBox="0 0 300 170"><path d="M40 40 L150 85 L255 55 M70 140 L150 85 L230 130" stroke="#9fd8ff" stroke-width="1.4" fill="none" stroke-dasharray="5 5"/></svg>' +
+      '<svg class="wires" viewBox="0 0 300 170"><path d="M40 40 L150 85 L255 55 M70 140 L150 85 L230 130" stroke="#c99a68" stroke-width="1.4" fill="none" stroke-dasharray="5 5"/></svg>' +
       '<span class="particle" style="left:18%"></span><span class="particle p2"></span><span class="particle p3"></span>' +
       '<span class="node n1">🗄️</span><span class="node n2">📊</span><span class="node n3">🧪</span>' +
       '<span class="code-chip">SELECT * FROM confidence WHERE topic = \'DP-900\'</span>' +
