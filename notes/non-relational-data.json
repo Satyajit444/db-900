@@ -1,0 +1,170 @@
+{
+  "id": "non-relational-data",
+  "title": "Non-Relational Database",
+  "subtitle": "Blob, Data Lake, Files, Tables and Cosmos DB without the jargon.",
+  "practiceTopicId": "non-relational-data-azure",
+  "updatedAt": "2026-09-19",
+  "what": {
+    "body": "Non-relational (NoSQL) storage drops rigid tables for flexible models that scale out worldwide: documents, key-values, graphs, files and objects. Choose it when shape varies, volume explodes, or users are everywhere.",
+    "example": "A chat app stores each message as JSON (fields differ per message type), photos in Blob Storage, and serves both from the nearest region with Cosmos DB."
+  },
+  "concepts": [
+    {
+      "term": "NoSQL in one line",
+      "body": "Flexible schemas + horizontal scale-out + tunable consistency. Built for huge, varied, distributed data."
+    },
+    {
+      "term": "Document model",
+      "body": "Self-contained JSON-like records. A customer document can nest addresses and order arrays inside itself."
+    },
+    {
+      "term": "Key-value model",
+      "body": "Every item = unique key + value. Fastest lookups when you always fetch by key: sessions, carts, settings."
+    },
+    {
+      "term": "Graph model",
+      "body": "Nodes plus edges. Friends, fraud rings, recommendations — anything where relationships ARE the data."
+    },
+    {
+      "term": "Scale-out",
+      "body": "Add more servers instead of a bigger one. How NoSQL absorbs viral growth."
+    },
+    {
+      "term": "Partition key",
+      "body": "The field Azure uses to spread data and traffic across partitions. Pick something high-cardinality like UserID — never a field with 3 values."
+    },
+    {
+      "term": "Request Units (RU/s)",
+      "body": "Cosmos DB's throughput currency: how many reads/writes per second you provision. Bigger queries cost more RUs."
+    },
+    {
+      "term": "Consistency levels",
+      "body": "How fresh reads must be: Strong (strictest) → Bounded Staleness → Session (the default) → Consistent Prefix → Eventual (fastest)."
+    },
+    {
+      "term": "TTL + Change feed",
+      "body": "TTL auto-deletes old items (sessions, carts). Change feed streams every insert/update to Functions or analytics."
+    }
+  ],
+  "examples": [
+    {
+      "title": "One chat message as a document",
+      "body": "Text, image and poll messages share one store — each carries only its own fields.",
+      "code": "{\n  \"id\": \"msg-42\",\n  \"type\": \"poll\",\n  \"options\": [\"Goa\", \"Jaipur\"],\n  \"votes\": { \"Goa\": 7 }\n}"
+    },
+    {
+      "title": "Table Storage addressing",
+      "body": "PartitionKey groups, RowKey identifies. Fastest reads use both.",
+      "table": {
+        "head": ["PartitionKey", "RowKey", "Attributes…"],
+        "rows": [
+          ["sensor-berhampur", "2026-09-19T10:00", "temp: 31"],
+          ["sensor-berhampur", "2026-09-19T10:05", "temp: 32"]
+        ]
+      }
+    },
+    {
+      "title": "Blob tiers at a glance",
+      "body": "Match tier to how often you read: Hot (daily) → Cool (monthly) → Archive (almost never, rehydrate first)."
+    }
+  ],
+  "comparisons": [
+    {
+      "title": "Relational vs Non-relational",
+      "head": ["", "Relational", "Non-relational"],
+      "rows": [
+        ["Schema", "Fixed tables", "Flexible documents/keys/graphs"],
+        ["Scaling", "Scale up (bigger box)", "Scale out (more nodes)"],
+        ["Best for", "Orders, finance, reports", "Catalogs, chats, IoT, global apps"]
+      ]
+    },
+    {
+      "title": "Cosmos DB APIs — pick by workload",
+      "head": ["API", "Model", "Reach for it when…"],
+      "rows": [
+        ["Core (SQL)", "Document", "JSON + SQL-like queries"],
+        ["MongoDB", "Document", "Migrating a Mongo app unchanged"],
+        ["Cassandra", "Wide-column", "IoT telemetry at scale"],
+        ["Gremlin", "Graph", "Friends, fraud, recommendations"],
+        ["Table", "Key-value", "Outgrowing Table Storage globally"]
+      ]
+    },
+    {
+      "title": "Blob vs Files vs Table vs Cosmos",
+      "head": ["Service", "Stores", "Use when"],
+      "rows": [
+        ["Blob", "Objects: images, video, backups", "Files, not rows"],
+        ["Data Lake Gen2", "Blobs + folders for analytics", "Spark-scale analytics"],
+        ["Files", "SMB/NFS shares", "Lift-and-shift file servers"],
+        ["Table", "Key-addressed entities", "Cheap semi-structured scale"],
+        ["Cosmos DB", "Global NoSQL", "Milliseconds, worldwide"]
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "Azure Blob Storage",
+      "what": "Object store for massive files.",
+      "data": "Unstructured: images, video, backups, logs.",
+      "when": "You have files or archives, not rows.",
+      "scenario": "Millions of product photos with Hot/Cool/Archive tiers."
+    },
+    {
+      "name": "Data Lake Storage Gen2",
+      "what": "Blob Storage plus a folder hierarchy.",
+      "data": "Huge analytic datasets.",
+      "when": "Spark/Hadoop analytics over lakes of files.",
+      "scenario": "Training models on years of clickstream logs."
+    },
+    {
+      "name": "Azure Files",
+      "what": "Cloud file shares over SMB/NFS.",
+      "data": "Shared files and folders.",
+      "when": "Apps expect a network drive.",
+      "scenario": "Retiring the office file server without rewrites."
+    },
+    {
+      "name": "Azure Table Storage",
+      "what": "Cheap key-attribute NoSQL store.",
+      "data": "Semi-structured records at scale.",
+      "when": "Billions of small lookups, tiny budget.",
+      "scenario": "Device readings keyed by sensor + timestamp."
+    },
+    {
+      "name": "Azure Cosmos DB",
+      "what": "Globally distributed multi-model database.",
+      "data": "JSON, key-value, graph, tables — worldwide.",
+      "when": "Millisecond reads/writes for users everywhere.",
+      "scenario": "Game leaderboards and carts on every continent."
+    }
+  ],
+  "remember": [
+    "Flexible schema + scale-out = NoSQL. Fixed schema + scale-up = relational.",
+    "Hot = often · Cool = monthly · Archive = almost never (rehydrate first).",
+    "Table Storage = PartitionKey + RowKey, cheapest. Cosmos Table API = same model, global + SLA.",
+    "Cosmos APIs: SQL→JSON queries · Mongo→migration · Cassandra→telemetry · Gremlin→relationships · Table→key-value.",
+    "API is fixed at account creation · Session is default consistency · Throughput = RU/s · TTL expires old items."
+  ],
+  "quickCheck": [
+    {
+      "q": "Video archive, rarely watched. Where + which tier?",
+      "a": "Blob Storage, Archive tier (rehydrate before reading)."
+    },
+    {
+      "q": "Migrating a MongoDB app with minimal changes?",
+      "a": "Cosmos DB MongoDB API."
+    },
+    {
+      "q": "Fraud ring detection across accounts?",
+      "a": "Gremlin (graph) API — relationships are the query."
+    },
+    {
+      "q": "Fastest Table Storage reads use…?",
+      "a": "PartitionKey + RowKey lookups."
+    },
+    {
+      "q": "Default Cosmos DB consistency?",
+      "a": "Session."
+    }
+  ]
+}

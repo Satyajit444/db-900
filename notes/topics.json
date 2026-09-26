@@ -1,0 +1,26 @@
+[
+  {
+    "id": "core-data-concepts",
+    "title": "Core Data Concepts",
+    "description": "Data types, workloads, roles and the ideas every DP-900 question builds on.",
+    "file": "notes/core-data-concepts.json",
+    "practiceTopicId": "core-data-concepts",
+    "updatedAt": "2026-09-19"
+  },
+  {
+    "id": "relational-data",
+    "title": "Relational Database",
+    "description": "Tables, keys, SQL and Azure relational services in plain language.",
+    "file": "notes/relational-data.json",
+    "practiceTopicId": "relational-data",
+    "updatedAt": "2026-09-19"
+  },
+  {
+    "id": "non-relational-data",
+    "title": "Non-Relational Database",
+    "description": "Blob, Data Lake, Files, Tables and Cosmos DB without the jargon.",
+    "file": "notes/non-relational-data.json",
+    "practiceTopicId": "non-relational-data-azure",
+    "updatedAt": "2026-09-19"
+  }
+]

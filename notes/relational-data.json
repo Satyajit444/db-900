@@ -1,0 +1,164 @@
+{
+  "id": "relational-data",
+  "title": "Relational Database",
+  "subtitle": "Tables, keys, SQL and Azure relational services in plain language.",
+  "practiceTopicId": "relational-data",
+  "updatedAt": "2026-09-19",
+  "what": {
+    "body": "Relational data lives in tables linked by keys, guarded by rules, and queried with SQL. If the data has a stable shape and relationships — customers, orders, employees — this is the model.",
+    "example": "Customers holds each shopper once. Orders holds every purchase plus the shopper's CustomerID. That one shared ID connects the whole business."
+  },
+  "concepts": [
+    {
+      "term": "Table, row, column",
+      "body": "Table = one entity type. Row = one record (one customer). Column = one attribute (City) with a data type."
+    },
+    {
+      "term": "Primary key",
+      "body": "Uniquely identifies each row: unique and never NULL. CustomerID and OrderID are classic examples. City or Name are not — they repeat."
+    },
+    {
+      "term": "Foreign key",
+      "body": "A column referencing another table's key. Orders.CustomerID points at Customers.CustomerID and ties the two tables together."
+    },
+    {
+      "term": "One-to-many",
+      "body": "One customer, many orders. The most common relationship: the 'many' side carries the foreign key."
+    },
+    {
+      "term": "Many-to-many + junction table",
+      "body": "Students take many courses; courses hold many students. A bridge table (OrderItems) stores the pairings."
+    },
+    {
+      "term": "Referential integrity",
+      "body": "No dangling references: an order may not point to a customer that does not exist. This is why deletes can be blocked."
+    },
+    {
+      "term": "Normalization",
+      "body": "Store each fact once and reference it. Customer details live in Customers, not copied into every order. Trade-off: more JOINs at query time."
+    },
+    {
+      "term": "Core SQL verbs",
+      "body": "SELECT reads · INSERT adds · UPDATE changes · DELETE removes · CREATE defines objects · ALTER redefines them."
+    },
+    {
+      "term": "Filtering, combining, grouping, sorting",
+      "body": "WHERE filters rows · JOIN merges related tables · GROUP BY aggregates per group (with SUM/COUNT) · ORDER BY sorts."
+    },
+    {
+      "term": "Views, indexes, procedures, constraints",
+      "body": "View = saved query as a virtual table. Index = faster lookups, costs storage + write overhead. Stored procedure = saved SQL logic. Constraints (PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL, CHECK) enforce rules."
+    }
+  ],
+  "examples": [
+    {
+      "title": "Two tables, one link",
+      "body": "CustomerID appears once in Customers and many times in Orders — that is the relationship.",
+      "table": {
+        "head": ["Customers", "", "Orders", ""],
+        "rows": [
+          ["CustomerID ⭐", "Name", "OrderID ⭐", "CustomerID 🔗"],
+          ["101", "Asha", "9001", "101"],
+          ["102", "Ravi", "9002", "101"]
+        ]
+      }
+    },
+    {
+      "title": "Normalization in one move",
+      "body": "Before: phone number copied into 1,000 order rows — one change means 1,000 edits. After: phone stored once in Customers, orders reference CustomerID. One edit, always consistent."
+    },
+    {
+      "title": "Read this query",
+      "body": "SELECT * FROM Customers WHERE City='Bhubaneswar' — SELECT reads, * means all columns, WHERE keeps only matching rows.",
+      "code": "SELECT * FROM Customers\nWHERE City = 'Bhubaneswar';"
+    }
+  ],
+  "comparisons": [
+    {
+      "title": "Primary Key vs Foreign Key",
+      "head": ["", "Primary Key", "Foreign Key"],
+      "rows": [
+        ["Job", "Identifies its own row", "Points at another table's row"],
+        ["Rules", "Unique + NOT NULL", "May repeat; must reference existing values"],
+        ["Example", "Customers.CustomerID", "Orders.CustomerID"]
+      ]
+    },
+    {
+      "title": "Azure SQL Database vs Managed Instance vs SQL on VM",
+      "head": ["", "SQL Database", "Managed Instance", "SQL on VM"],
+      "rows": [
+        ["Management", "Fully managed", "Managed, high compatibility", "You manage OS + SQL"],
+        ["Best when", "New cloud apps", "Migrating SQL Server apps", "Need full control"],
+        ["Compatibility", "Standard", "Broadest SQL Server match", "Complete (it IS SQL Server)"]
+      ]
+    },
+    {
+      "title": "Giant table vs Normalized tables",
+      "head": ["", "One giant table", "Normalized"],
+      "rows": [
+        ["Duplication", "Facts repeated everywhere", "Each fact stored once"],
+        ["Updates", "Anomalies: miss one copy, data lies", "One edit, always consistent"],
+        ["Queries", "No JOINs needed", "JOINs recombine tables"]
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "Azure SQL Database",
+      "what": "Managed relational database service.",
+      "data": "Structured app data in tables.",
+      "when": "You want SQL without managing servers or the OS.",
+      "scenario": "A startup's order system, online in minutes."
+    },
+    {
+      "name": "Azure SQL Managed Instance",
+      "what": "Managed SQL with near-full Server compatibility.",
+      "data": "Existing SQL Server databases.",
+      "when": "Migrating a legacy app that needs broad compatibility.",
+      "scenario": "Moving the company ERP to Azure almost unchanged."
+    },
+    {
+      "name": "SQL Server on Azure VMs",
+      "what": "SQL Server you install on your VM.",
+      "data": "Anything SQL Server runs.",
+      "when": "You need OS-level control or exact version behavior.",
+      "scenario": "An app requiring a specific SQL Server patch and custom agents."
+    },
+    {
+      "name": "Azure Database for PostgreSQL / MySQL",
+      "what": "Managed open-source relational engines.",
+      "data": "PostgreSQL or MySQL workloads.",
+      "when": "The app explicitly requires that engine.",
+      "scenario": "A Django app that only speaks PostgreSQL."
+    }
+  ],
+  "remember": [
+    "Row = one record · Column = one attribute · PK = unique + NOT NULL · FK = points elsewhere.",
+    "One-to-many carries the FK on the 'many' side; many-to-many needs a junction table.",
+    "SELECT/INSERT/UPDATE/DELETE + WHERE/JOIN/GROUP BY/ORDER BY answer most syntax questions.",
+    "No WHERE on UPDATE/DELETE can hit every row — the exam's favorite trap.",
+    "Managed + compatible = Managed Instance · Managed + simple = SQL Database · Control = VM · Engine required = its managed offering."
+  ],
+  "quickCheck": [
+    {
+      "q": "Can City be a good primary key?",
+      "a": "No — many customers share a city, so it is not unique."
+    },
+    {
+      "q": "Deleting a customer fails. Likely cause?",
+      "a": "Orders still reference them — referential integrity blocks orphans."
+    },
+    {
+      "q": "Total sales per region needs…?",
+      "a": "GROUP BY region plus SUM — grouping with an aggregate."
+    },
+    {
+      "q": "Index on every column — good idea?",
+      "a": "No — indexes cost storage and slow down writes."
+    },
+    {
+      "q": "Legacy app, must stay very SQL-Server-compatible, but managed?",
+      "a": "Azure SQL Managed Instance."
+    }
+  ]
+}

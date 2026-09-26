@@ -9,6 +9,7 @@
   var QUESTIONS_PER_SESSION = 15;
   var EXAM_SECONDS = 15 * 60;
   var TOPICS_URL = "./data/topics.json";
+  var NOTES_URL = "./notes/topics.json";
   var PROGRESS_KEY = "dp900-progress-v1"; // per-topic (kept backward compatible)
   var STATS_KEY = "dp900-stats-v1";       // global dashboard/streak/achievements
   var THEME_KEY = "dp900-theme";
@@ -28,6 +29,9 @@
     bankTopicId: "all",
     bankDifficulty: "all",
     bankQuery: "",
+    notesTopics: [],     // notes index (Concept Notes cards)
+    notesCache: {},      // notesId -> doc
+    randomScope: "all", // random-practice pool: "all" or a topic id
     randomScope: "all", // random-practice pool: "all" or a topic id
     topicQuery: "",
     topicFilter: "all", // all | new | practiced | mastered
@@ -343,6 +347,7 @@
     e.preventDefault(); stopTimer(); renderHome();
   });
   document.getElementById("nav-topics").addEventListener("click", function () { stopTimer(); renderHome(); scrollToId("topics-heading"); });
+  document.getElementById("nav-notes").addEventListener("click", function () { stopTimer(); renderHome(); scrollToId("notes-heading"); });
   document.getElementById("nav-modes").addEventListener("click", function () { stopTimer(); renderHome(); scrollToId("modes-heading"); });
   document.getElementById("nav-progress").addEventListener("click", function () { stopTimer(); renderHome(); scrollToId("progress-heading"); });
   document.getElementById("nav-bank").addEventListener("click", function () { stopTimer(); playSound("click"); renderBank(); });
@@ -379,6 +384,15 @@
       });
       Promise.all(loaders).then(function () { if (state.view === "home") renderHome(); });
     }).catch(function (err) { renderFetchError(err); });
+    // Concept Notes index loads independently — never blocks the quiz.
+    fetchJSON(NOTES_URL).then(function (nt) {
+      state.notesTopics = Array.isArray(nt) ? nt : [];
+      if (state.view === "home") paintNotesGrid();
+    }).catch(function (err) {
+      console.error("Failed to load notes index", err);
+      state.notesTopics = [];
+      if (state.view === "home") paintNotesGrid();
+    });
   }
 
   function summarize(questions) {
@@ -466,6 +480,12 @@
         '<p class="section-sub" style="margin:0">Fifteen questions, instant explanations, zero setup.</p></div>' +
         '<button class="btn" id="btn-continue" type="button">Start now →</button></section>';
 
+    /* concept notes (Learn before you Practice) */
+    var notesHtml =
+      '<h2 class="section-title" id="notes-heading">Concept Notes</h2>' +
+      '<p class="section-sub">Understand first, then practice. Short, visual, phone-friendly.</p>' +
+      '<div class="topic-grid" id="notes-grid"><div class="card"><div class="skeleton skeleton-hero"></div><p class="section-sub">Loading notes…</p></div></div>';
+
     /* quick modes */
     var modes =
       '<h2 class="section-title" id="modes-heading">Choose your mode</h2>' +
@@ -520,7 +540,7 @@
         return '<div class="ach' + (a.done || un ? " unlocked" : "") + '"><span class="em">' + a.em + "</span><strong>" + escapeHtml(a.name) + "</strong><small>" + escapeHtml(a.done || un ? "Unlocked ✓" : a.desc) + "</small></div>";
       }).join("") + "</div>";
 
-    app.innerHTML = hero + cont + modes + topicsHtml + dash +
+    app.innerHTML = hero + cont + notesHtml + modes + topicsHtml + dash +
       '<h2 class="section-title">How it works</h2><div class="how-grid">' +
       '<div class="how-card"><h3>1 · Pick a mode</h3><p>Single-set practice, mixed Random (15/30/50), timed Exam, or Daily streak builder.</p></div>' +
       '<div class="how-card"><h3>2 · Answer &amp; learn</h3><p>Practice shows instant feedback + explanations. Exam holds everything until the end.</p></div>' +
@@ -559,6 +579,150 @@
       wireTopicCards();
     });
     wireTopicCards();
+    paintNotesGrid();
+  }
+
+  /* ================= concept notes (reusable renderer) =================
+     New topic = one notes/*.json + one entry in notes/topics.json. */
+
+  function paintNotesGrid() {
+    var grid = document.getElementById("notes-grid");
+    if (!grid) return;
+    if (!state.notesTopics.length) {
+      grid.innerHTML = '<div class="card"><p>No notes yet. Add a file to <code>notes/</code> and list it in <code>notes/topics.json</code>.</p></div>';
+      return;
+    }
+    grid.innerHTML = state.notesTopics.map(function (n) {
+      return '<article class="topic-card note-card" aria-label="Notes: ' + escapeHtml(n.title) + '">' +
+        '<div class="topic-top"><div class="topic-icon">' + topicIcon({ id: n.id, name: n.title }) + "</div>" +
+        "<div><h3>" + escapeHtml(n.title) + "</h3>" +
+        (n.updatedAt ? '<div class="exam-weight">Updated ' + escapeHtml(n.updatedAt) + "</div>" : "") + "</div></div>" +
+        '<p class="desc">' + escapeHtml(n.description || "") + "</p>" +
+        '<div class="card-actions"><button class="btn small" type="button" data-notes="' + escapeHtml(n.id) + '">Read Notes →</button>' +
+        '<button class="btn secondary small" type="button" data-notes-practice="' + escapeHtml(n.id) + '">Practice →</button></div></article>';
+    }).join("");
+    wireNotesCards();
+  }
+
+  function wireNotesCards() {
+    Array.prototype.forEach.call(app.querySelectorAll("[data-notes]"), function (b) {
+      b.addEventListener("click", function () { playSound("click"); renderNotes(b.getAttribute("data-notes")); });
+    });
+    Array.prototype.forEach.call(app.querySelectorAll("[data-notes-practice]"), function (b) {
+      b.addEventListener("click", function () { playSound("click"); startNotesPractice(b.getAttribute("data-notes-practice")); });
+    });
+  }
+
+  function notesMeta(id) {
+    var found = null;
+    state.notesTopics.forEach(function (n) { if (n.id === id) found = n; });
+    return found;
+  }
+
+  function startNotesPractice(notesId) {
+    var meta = notesMeta(notesId);
+    if (meta && meta.practiceTopicId) {
+      var exists = state.topics.some(function (t) { return t.id === meta.practiceTopicId; });
+      if (exists) { startQuiz(meta.practiceTopicId, { kind: "practice" }); return; }
+    }
+    showToast("Question set coming soon", "Try Random Practice meanwhile.");
+  }
+
+  function loadNotesDoc(id) {
+    if (state.notesCache[id]) return Promise.resolve(state.notesCache[id]);
+    var meta = notesMeta(id);
+    if (!meta) return Promise.reject(new Error("Unknown notes topic " + id));
+    return fetchJSON(meta.file).then(function (doc) {
+      state.notesCache[id] = doc;
+      return doc;
+    });
+  }
+
+  function notesTable(t) {
+    if (!t || !t.rows || !t.rows.length) return "";
+    return '<div class="tbl-wrap"><table class="tbl"><thead><tr>' +
+      t.head.map(function (c) { return "<th>" + escapeHtml(c) + "</th>"; }).join("") +
+      "</tr></thead><tbody>" +
+      t.rows.map(function (r) {
+        return "<tr>" + r.map(function (c) { return "<td>" + escapeHtml(c) + "</td>"; }).join("") + "</tr>";
+      }).join("") + "</tbody></table></div>";
+  }
+
+  /** Full notes reading view: sticky nav, progress, expandables, practice CTAs. */
+  function renderNotes(id) {
+    stopTimer();
+    state.view = "notes-loading";
+    app.innerHTML = '<div class="loading-card" role="status"><div class="skeleton skeleton-hero"></div><p>Loading notes…</p></div>';
+    window.scrollTo(0, 0);
+    loadNotesDoc(id).then(function (doc) {
+      state.view = "notes";
+      var meta = notesMeta(id) || {};
+      var chips = [["n-what", "What"], ["n-concepts", "Concepts"], ["n-examples", "Examples"],
+        ["n-compare", "Compare"], ["n-services", "Services"], ["n-remember", "Remember"], ["n-check", "Quick Check"]]
+        .map(function (c) { return '<a class="chip" href="#' + c[0] + '">' + c[1] + "</a>"; }).join("");
+      var concepts = (doc.concepts || []).map(function (c, i) {
+        return '<details class="concept"' + (i === 0 ? " open" : "") + ">" +
+          "<summary>" + escapeHtml(c.term) + "</summary><p>" + escapeHtml(c.body) + "</p></details>";
+      }).join("");
+      var examples = (doc.examples || []).map(function (x) {
+        return '<div class="example-card"><h4>' + escapeHtml(x.title) + "</h4><p>" + escapeHtml(x.body || "") + "</p>" +
+          (x.code ? '<pre class="code">' + escapeHtml(x.code) + "</pre>" : "") + notesTable(x.table) + "</div>";
+      }).join("");
+      var compares = (doc.comparisons || []).map(function (t) {
+        return '<div class="example-card"><h4>' + escapeHtml(t.title) + "</h4>" + notesTable(t) + "</div>";
+      }).join("");
+      var services = (doc.services || []).map(function (s) {
+        return '<div class="service-card"><h4>' + escapeHtml(s.name) + "</h4>" +
+          "<p><strong>What:</strong> " + escapeHtml(s.what || "") + "</p>" +
+          "<p><strong>Data:</strong> " + escapeHtml(s.data || "") + "</p>" +
+          "<p><strong>Use when:</strong> " + escapeHtml(s.when || "") + "</p>" +
+          '<p class="scenario"><strong>Scenario:</strong> ' + escapeHtml(s.scenario || "") + "</p></div>";
+      }).join("");
+      var remember = '<ul class="remember-list">' + (doc.remember || []).map(function (r) {
+        return "<li>" + escapeHtml(r) + "</li>";
+      }).join("") + "</ul>";
+      var check = (doc.quickCheck || []).map(function (q, i) {
+        return '<details class="concept qc"><summary><span class="pill">Q' + (i + 1) + "</span> " + escapeHtml(q.q) + "</summary>" +
+          "<p><strong>Answer:</strong> " + escapeHtml(q.a) + "</p></details>";
+      }).join("");
+
+      app.innerHTML =
+        '<div class="notes-bar"><button class="btn ghost small" id="notes-back" type="button">← Notes</button>' +
+        '<nav class="chips" aria-label="Notes sections">' + chips + '</nav><div class="read-progress"><div id="read-progress"></div></div></div>' +
+        '<article class="notes-doc" aria-labelledby="notes-title">' +
+        '<span class="eyebrow">Concept Notes · DP-900</span>' +
+        '<h2 id="notes-title">' + escapeHtml(doc.title) + "</h2>" +
+        '<p class="section-sub">' + escapeHtml(doc.subtitle || meta.description || "") + "</p>" +
+        '<section id="n-what" class="nsec"><h3>1 · What is it?</h3><p>' + escapeHtml(doc.what.body) + "</p>" +
+        '<div class="example-card"><h4>Real-world example</h4><p>' + escapeHtml(doc.what.example) + "</p></div></section>" +
+        '<section id="n-concepts" class="nsec"><h3>2 · Key Concepts</h3><p class="section-sub">Tap any card to expand.</p>' + concepts + "</section>" +
+        '<section id="n-examples" class="nsec"><h3>3 · Examples</h3>' + examples + "</section>" +
+        '<section id="n-compare" class="nsec"><h3>4 · Compare Similar Concepts</h3>' + compares + "</section>" +
+        '<section id="n-services" class="nsec"><h3>5 · Azure Services</h3>' + services + "</section>" +
+        '<section id="n-remember" class="nsec remember-box"><h3>6 · Remember This ⭐</h3>' + remember + "</section>" +
+        '<section id="n-check" class="nsec"><h3>7 · Quick Check</h3>' +
+        '<p class="section-sub">Learning only — not scored, not part of the question bank.</p>' + check + "</section>" +
+        '<div class="card-actions notes-cta"><button class="btn" id="notes-practice" type="button">Start Practice →</button>' +
+        '<button class="btn secondary" id="notes-random" type="button">🎲 Random Practice</button>' +
+        '<button class="btn ghost" id="notes-home" type="button">All Topics</button></div>' +
+        "</article>";
+
+      document.getElementById("notes-back").addEventListener("click", function () {
+        renderHome(); scrollToId("notes-heading");
+      });
+      document.getElementById("notes-practice").addEventListener("click", function () {
+        playSound("click"); startNotesPractice(id);
+      });
+      document.getElementById("notes-random").addEventListener("click", function () {
+        playSound("click"); startMixed("random", 15, state.randomScope);
+      });
+      document.getElementById("notes-home").addEventListener("click", function () { renderHome(); });
+      window.scrollTo(0, 0);
+    }).catch(function () {
+      app.innerHTML = '<div class="card error-card"><h2>Unable to load these notes.</h2>' +
+        '<p>Please try again — the quiz still works.</p><p><button class="btn" id="btn-back" type="button">Back</button></p></div>';
+      document.getElementById("btn-back").addEventListener("click", renderHome);
+    });
   }
 
   function stUnlocked(id) { return loadStats().achievements.indexOf(id) >= 0; }
@@ -954,6 +1118,16 @@
     playSound("click");
     if (s.index > 0) { s.index--; renderQuestion(); focusQuestion(); }
   }
+
+  /* Reading progress for the notes view (passive, notes-only). */
+  window.addEventListener("scroll", function () {
+    if (state.view !== "notes") return;
+    var bar = document.getElementById("read-progress");
+    if (!bar) return;
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? Math.round(100 * (h.scrollTop || 0) / max) : 0) + "%";
+  }, { passive: true });
 
   document.addEventListener("keydown", function (e) {
     if (state.view !== "quiz" || !state.session) return;

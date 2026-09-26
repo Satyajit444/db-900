@@ -294,6 +294,48 @@ code, kbd { font-family: var(--mono); font-size: 0.86em; background: var(--surfa
 .footer-inner p { margin: 0; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
+/* ---------- concept notes ---------- */
+.note-card::before { background: linear-gradient(90deg, #e9c46a, #a3b18a); }
+.notes-bar { position: sticky; top: 0; z-index: 35; display: flex; gap: 8px; align-items: center; background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: blur(10px); border: 1px solid var(--line); border-radius: 14px; padding: 8px 10px; margin-bottom: 12px; box-shadow: var(--shadow-sm); }
+.chips { display: flex; gap: 6px; overflow-x: auto; flex: 1; padding-bottom: 2px; }
+.chip { flex: 0 0 auto; font-size: 0.78rem; font-weight: 700; color: var(--muted); background: var(--surface-2); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; text-decoration: none; }
+.chip:hover { color: var(--ink); border-color: var(--primary); }
+.read-progress { position: absolute; left: 12px; right: 12px; bottom: -1px; height: 3px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+.read-progress > div { height: 100%; width: 0; background: linear-gradient(90deg, #a3b18a, #e9c46a, #e79fb0); border-radius: 999px; transition: width 0.1s linear; }
+.notes-doc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: clamp(16px, 3vw, 26px); }
+.notes-doc h2 { margin: 0 0 4px; font-size: clamp(1.3rem, 3.4vw, 1.8rem); letter-spacing: -0.01em; }
+.nsec { margin-top: 20px; scroll-margin-top: 130px; }
+.nsec > h3 { margin: 0 0 8px; font-size: 1.05rem; }
+details.concept { background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; padding: 11px 13px; margin-bottom: 8px; }
+details.concept summary { cursor: pointer; font-weight: 750; font-size: 0.95rem; list-style: none; display: flex; align-items: center; gap: 8px; }
+details.concept summary::-webkit-details-marker { display: none; }
+details.concept summary::after { content: "+"; margin-left: auto; flex: 0 0 24px; width: 24px; height: 24px; border-radius: 50%; background: var(--surface); border: 1px solid var(--line); display: inline-flex; align-items: center; justify-content: center; font-weight: 800; }
+details.concept[open] summary::after { content: "−"; background: var(--primary); border-color: var(--primary); color: #fff; }
+details.concept summary:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; border-radius: 8px; }
+details.concept p { margin: 8px 0 2px; font-size: 0.92rem; }
+details.concept .pill { font-size: 0.7rem; }
+.example-card, .service-card { background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 10px; }
+.example-card h4, .service-card h4 { margin: 0 0 6px; font-size: 0.98rem; }
+.example-card p, .service-card p { margin: 4px 0; font-size: 0.9rem; }
+.service-card .scenario { background: var(--surface); border: 1px dashed var(--line); border-radius: 8px; padding: 6px 9px; }
+pre.code { font-family: var(--mono); font-size: 0.8rem; background: var(--ink); color: var(--bg); border-radius: 10px; padding: 10px 12px; overflow-x: auto; margin: 8px 0 2px; }
+.tbl-wrap { overflow-x: auto; margin: 8px 0 2px; border: 1px solid var(--line); border-radius: 10px; }
+table.tbl { border-collapse: collapse; width: 100%; min-width: 420px; font-size: 0.83rem; background: var(--surface); }
+table.tbl th, table.tbl td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.tbl thead th { background: var(--primary-soft); color: var(--primary-dark); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
+table.tbl tbody tr:last-child td { border-bottom: none; }
+.remember-box { background: linear-gradient(140deg, var(--primary-soft), var(--surface-2)); border: 1px solid var(--primary); border-radius: var(--radius-sm); padding: 14px 16px; }
+.remember-list { margin: 0; padding-left: 20px; display: grid; gap: 8px; font-size: 0.92rem; }
+.remember-list li::marker { content: "⭐ "; }
+.notes-cta { margin-top: 18px; }
+@media (max-width: 720px) {
+  .notes-bar { padding: 6px 8px; border-radius: 12px; }
+  .notes-doc { padding: 14px; border-radius: 18px; }
+  .nsec { scroll-margin-top: 110px; }
+  details.concept summary { font-size: 0.88rem; }
+  .notes-cta .btn { flex: 1 1 100%; }
+}
+
 /* ---------- responsive ---------- */
 @media (max-width: 860px) {
   .hero-grid { grid-template-columns: 1fr; }

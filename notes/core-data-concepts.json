@@ -1,0 +1,172 @@
+{
+  "id": "core-data-concepts",
+  "title": "Core Data Concepts",
+  "subtitle": "The ideas behind every DP-900 question: data types, workloads and roles.",
+  "practiceTopicId": "core-data-concepts",
+  "updatedAt": "2026-09-19",
+  "what": {
+    "body": "Before choosing any Azure service, you describe your data: how it is shaped, how apps use it, and who works with it. Get these three right and most DP-900 questions answer themselves.",
+    "example": "An online store keeps orders in neat tables, product reviews as JSON, and product photos as image files — structured, semi-structured and unstructured data in one business."
+  },
+  "concepts": [
+    {
+      "term": "Structured data",
+      "body": "Follows a fixed schema of rows and columns with defined types. Think SQL tables: CustomerID, Name, City. Easy to query, strict about shape."
+    },
+    {
+      "term": "Semi-structured data",
+      "body": "Has organizational tags but no rigid table: JSON and XML with keys, arrays and nesting. Flexible when fields vary per record."
+    },
+    {
+      "term": "Unstructured data",
+      "body": "No predefined model at all: photos, videos, audio, PDFs. Stored as files/objects, not rows."
+    },
+    {
+      "term": "Schema",
+      "body": "The blueprint: tables, columns, types, rules and relationships. Structured data always has one; semi-structured only hints at one."
+    },
+    {
+      "term": "OLTP (transactional)",
+      "body": "Many small, fast operational writes and reads: placing orders, payments, updating stock. Optimized for speed per transaction."
+    },
+    {
+      "term": "OLAP (analytical)",
+      "body": "Big scans over history to find trends: yearly revenue by region. Optimized for aggregations, not single rows."
+    },
+    {
+      "term": "Database vs file",
+      "body": "A file just holds bytes. A database adds querying, indexing, transactions, security and recovery on top of storage."
+    },
+    {
+      "term": "Data Analyst",
+      "body": "Turns data into reports, dashboards and insights for decisions. Lives in Power BI."
+    },
+    {
+      "term": "Data Engineer",
+      "body": "Builds pipelines that ingest, transform and load data from sources into analytics platforms."
+    },
+    {
+      "term": "Database Administrator (DBA)",
+      "body": "Keeps databases available, backed up, secure and fast: recovery, indexes, configuration."
+    }
+  ],
+  "examples": [
+    {
+      "title": "One store, three data types",
+      "body": "Orders table (structured), review JSON (semi-structured), product photo (unstructured).",
+      "table": {
+        "head": ["Item", "Shape", "Type"],
+        "rows": [
+          ["Order #10025", "row: ID, date, total", "Structured"],
+          ["Review JSON", "{\"stars\": 5, \"tags\": [...]}", "Semi-structured"],
+          ["shoe-photo.jpg", "pixels, no schema", "Unstructured"]
+        ]
+      }
+    },
+    {
+      "title": "Spot the workload",
+      "body": "'Charge this customer now' is OLTP. 'Which city grew fastest in 3 years?' is OLAP. Exam questions love this pair — look for time words like trends, history, aggregate."
+    }
+  ],
+  "comparisons": [
+    {
+      "title": "Structured vs Semi-structured vs Unstructured",
+      "head": ["", "Structured", "Semi-structured", "Unstructured"],
+      "rows": [
+        ["Schema", "Fixed, predefined", "Flexible tags", "None"],
+        ["Example", "SQL table, CSV", "JSON, XML", "Photo, video, audio"],
+        ["Azure home", "Azure SQL", "Cosmos DB", "Blob Storage"]
+      ]
+    },
+    {
+      "title": "OLTP vs OLAP",
+      "head": ["", "OLTP", "OLAP"],
+      "rows": [
+        ["Job", "Run the business", "Understand the business"],
+        ["Pattern", "Many tiny reads/writes", "Few huge scans + aggregates"],
+        ["Example", "Create order, payment", "5-year sales trend"]
+      ]
+    },
+    {
+      "title": "DBA vs Data Engineer vs Data Analyst",
+      "head": ["Role", "Owns"],
+      "rows": [
+        ["DBA", "Availability, backup/recovery, performance"],
+        ["Data Engineer", "Pipelines: ingest, transform, load"],
+        ["Data Analyst", "Reports, dashboards, insights"]
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "Azure SQL Database",
+      "what": "Managed relational database.",
+      "data": "Structured, tabular app data.",
+      "when": "You need tables, schemas and SQL without managing servers.",
+      "scenario": "The store's order database."
+    },
+    {
+      "name": "Azure Blob Storage",
+      "what": "Object store for huge files.",
+      "data": "Unstructured: images, video, backups.",
+      "when": "You have files, not rows.",
+      "scenario": "All product photos and videos."
+    },
+    {
+      "name": "Azure Cosmos DB",
+      "what": "Globally distributed NoSQL database.",
+      "data": "Semi-structured JSON at worldwide scale.",
+      "when": "JSON data with global users and instant reads.",
+      "scenario": "Reviews and catalogs served on every continent."
+    },
+    {
+      "name": "Azure Synapse Analytics",
+      "what": "Large-scale analytics engine.",
+      "data": "Historical data for analysis.",
+      "when": "OLAP questions over years of data.",
+      "scenario": "'Which category grew fastest since 2021?'"
+    },
+    {
+      "name": "Power BI",
+      "what": "Business-intelligence reports and dashboards.",
+      "data": "Whatever analysts visualize.",
+      "when": "Humans need charts and insights.",
+      "scenario": "Monthly revenue-by-region dashboard."
+    },
+    {
+      "name": "Azure Data Factory",
+      "what": "Data integration and orchestration.",
+      "data": "Data moving between sources.",
+      "when": "Engineers must copy and transform on a schedule.",
+      "scenario": "Nightly load of sales files into analytics."
+    }
+  ],
+  "remember": [
+    "Structured = schema + rows/columns. JSON/XML = semi-structured. Media = unstructured.",
+    "Creating an order is transactional (OLTP); analyzing years of sales is analytical (OLAP).",
+    "DBA manages databases · Engineer builds pipelines · Analyst builds reports.",
+    "SQL Database = relational · Blob = unstructured files · Cosmos DB = global NoSQL · Synapse = analytics · Power BI = dashboards · Data Factory = pipelines."
+  ],
+  "quickCheck": [
+    {
+      "q": "A CSV of sales rows is…?",
+      "a": "Structured (tabular) data — though a CSV file alone is not a database."
+    },
+    {
+      "q": "Recording 1,000 bank deposits: OLTP or OLAP?",
+      "a": "OLTP — frequent small operational transactions."
+    },
+    {
+      "q": "Who tunes a slow query's indexes?",
+      "a": "The DBA — performance and configuration are DBA duties."
+    },
+    {
+      "q": "Where do a million product photos belong?",
+      "a": "Azure Blob Storage — object storage for unstructured files."
+    },
+    {
+      "q": "Why separate operational and analytical systems?",
+      "a": "Different access patterns: tiny fast transactions vs huge aggregations."
+    }
+  ]
+}
