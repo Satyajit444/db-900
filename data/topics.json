@@ -68,5 +68,20 @@
     "name": "Core Data Concepts",
     "file": "data/core-data-concepts.json",
     "examWeight": "DP-900 · Describe core data concepts"
+  },
+  {
+    "id": "challenge-mode",
+    "title": "Challenge Mode",
+    "description": "Hard competitive DP-900 scenarios: service selection, comparisons and reasoning across all four areas. Separate bank, separate count.",
+    "sourceType": "Advanced Question Bank",
+    "sourceName": "DP-900 Challenge Mode",
+    "createdAt": "2026-09-26",
+    "questionFile": "data/challenge-mode.json",
+    "questionCount": 40,
+    "name": "Challenge Mode",
+    "file": "data/challenge-mode.json",
+    "examWeight": "DP-900 · Competitive practice",
+    "excludeFromRandom": true,
+    "pinned": "last"
   }
 ]

@@ -1,0 +1,642 @@
+[
+  {
+    "id": "ch-001",
+    "question": "A startup stores user profiles where every profile has different fields, and profiles must be readable worldwide in milliseconds. The MOST appropriate option is:",
+    "options": [
+      "Azure Blob Storage, because objects scale globally",
+      "Azure Cosmos DB, because it queries flexible JSON with global distribution",
+      "Azure Table Storage, because key-value lookups are fastest",
+      "Azure SQL Database, because schemas enforce quality"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cosmos DB alone meets both demands: schema-flexible JSON querying plus turnkey global distribution. Table Storage lacks rich queries and a global SLA; Blob stores files, not queryable documents; SQL forces one rigid schema and scales poorly across regions.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Core Data Concepts",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-002",
+    "question": "An analyst must aggregate a 10-million-row CSV every month with minimal infrastructure to manage. The MOST appropriate option is:",
+    "options": [
+      "Azure Cosmos DB, because it ingests CSV natively",
+      "Azure Data Factory alone, because it moves data on a schedule",
+      "Azure Synapse Analytics, because it processes huge datasets for reporting",
+      "Power BI alone, because dashboards compute aggregates"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Synapse provides the compute for large-scale aggregation. Data Factory only orchestrates movement; Power BI visualizes but needs a prepared model; Cosmos DB is the wrong model for tabular batch analytics.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Core Data Concepts",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-003",
+    "question": "An hourly dashboard over five years of history is slowing the order-entry application that shares its database. The BEST fix is:",
+    "options": [
+      "Scaling up the shared database, because more power fixes contention",
+      "Moving analytical queries to a dedicated analytical system such as Synapse",
+      "Switching the dashboard to Cosmos DB for speed",
+      "Storing history in Blob Archive tier for cost"
+    ],
+    "correctAnswer": 1,
+    "explanation": "OLTP and OLAP have conflicting access patterns and must be separated. Scaling the shared box is costly and temporary; Cosmos DB does not run historical aggregations; Archive is offline and unreadable for dashboards.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Core Data Concepts",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-004",
+    "question": "A company needs nightly ingestion from several APIs, transformations, and loads into a warehouse. This design work belongs to a:",
+    "options": [
+      "Data Analyst, because reports are the goal",
+      "Data Engineer, because it is pipeline design and ETL orchestration",
+      "End user, because they consume the output",
+      "Database Administrator, because databases are involved"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Designing ingestion/transformation pipelines is data engineering. DBAs operate database systems, analysts consume prepared data, end users only read results.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Core Data Concepts",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-005",
+    "question": "A product catalog stores JSON items with different attributes per category and serves shoppers on every continent. The MOST appropriate option is:",
+    "options": [
+      "Azure SQL Database, because catalogs need schemas",
+      "Azure Cosmos DB Core (SQL) API, because it queries varied JSON globally",
+      "Azure Table Storage, because catalogs are key-value data",
+      "Azure Blob Storage, because catalogs are files"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Only Cosmos DB combines document flexibility, rich queries and global distribution. Table Storage is flat with weak querying; Blob cannot query inside files; SQL demands uniform columns.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Core Data Concepts",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-006",
+    "question": "Application event logs arrive as Avro records whose fields evolve over time. These logs are BEST classified as:",
+    "options": [
+      "Relational data, because logs have rows",
+      "Structured data, because Avro is a file format",
+      "Semi-structured data, because fields carry organization but evolve",
+      "Unstructured data, because logs have no schema"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Evolving tagged fields are the textbook semi-structured case. They are not fixed-schema tables, not schemaless media, and not relational.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Core Data Concepts",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-007",
+    "question": "A payment gateway must approve or decline each card transaction instantly as it occurs. This workload is:",
+    "options": [
+      "Analytical, because fraud patterns need history",
+      "Transactional (OLTP), because each payment is an operational event",
+      "Visualization, because merchants see dashboards",
+      "Batch, because settlements run nightly"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Per-transaction instant decisions are OLTP. Analytics studies history afterward, dashboards only display, and batch settlement happens later.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Core Data Concepts",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-008",
+    "question": "Designing backup schedules, high-availability topology and patching for the SQL estate belongs to a:",
+    "options": [
+      "Data Analyst, because downtime skews reports",
+      "Database Administrator, because availability and recovery are DBA duties",
+      "End user, because they feel outages first",
+      "Data Engineer, because pipelines need databases"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Availability, backup/recovery and configuration are core DBA responsibilities, not pipeline, reporting or consumption work.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Core Data Concepts",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-009",
+    "question": "Five clerks must edit shared records concurrently with rollback if any step fails. The appropriate foundation is:",
+    "options": [
+      "A spreadsheet on a network drive, because everyone knows it",
+      "A database, because transactions give concurrency plus rollback",
+      "A file share, because files are simple to share",
+      "Blob Storage, because blobs support versions"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Only a database offers ACID transactions across concurrent users. Files, blobs and spreadsheets cannot roll back partial multi-user edits.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Core Data Concepts",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-010",
+    "question": "Ad-hoc analysis over 8 TB of historical records with no prebuilt model is MOST appropriate in:",
+    "options": [
+      "Azure Synapse Analytics, because it crunches terabytes for analysis",
+      "Power BI alone, because visuals answer questions",
+      "Azure Data Factory, because it moves 8 TB easily",
+      "Azure Cosmos DB, because it scales"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Synapse is the large-scale analytics engine. Power BI needs a model first, Data Factory only moves data, Cosmos serves operational NoSQL — not bulk ad-hoc analysis.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Core Data Concepts",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-011",
+    "question": "A shop tracks customers, orders and products, where each order holds many products and each product appears in many orders. The BEST design is:",
+    "options": [
+      "A JSON list of products inside each order row, for simplicity",
+      "One giant table holding customers, orders and products together",
+      "A separate database per order, for isolation",
+      "An OrderItems junction table linking orders to products"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Many-to-many needs a junction table preserving integrity and queryability. JSON lists break constraints and queries; giant tables cause anomalies; per-order databases are unmanageable.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-012",
+    "question": "A new SaaS product needs standard SQL with almost no operational overhead and no legacy dependencies. The MOST appropriate option is:",
+    "options": [
+      "SQL Server on Azure VMs, for full control",
+      "Azure Cosmos DB, for global scale",
+      "Azure SQL Database, for managed relational with minimal ops",
+      "Azure SQL Managed Instance, for maximum compatibility"
+    ],
+    "correctAnswer": 2,
+    "explanation": "SQL Database fits greenfield managed relational exactly. Managed Instance targets legacy compatibility, VMs burden you with the OS, Cosmos is non-relational.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-013",
+    "question": "A bank must control the OS, install auditing agents and pin exact SQL Server builds for compliance. The MOST appropriate option is:",
+    "options": [
+      "SQL Server on Azure VMs, for OS-level control",
+      "Azure Cosmos DB, for global distribution",
+      "Azure SQL Database, for managed compliance",
+      "Azure SQL Managed Instance, for managed compatibility"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Only the VM deployment gives OS access and exact-build control. The managed options abstract the OS away, and Cosmos is the wrong model entirely.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-014",
+    "question": "A legacy application using SQL Server Agent jobs and cross-database queries must move to a managed Azure service with minimal rewrites. Choose:",
+    "options": [
+      "Azure SQL Managed Instance, for Agent and broad compatibility while managed",
+      "Azure SQL Database, because it is the cheapest managed option",
+      "SQL Server on Azure VMs, to avoid all changes",
+      "Azure Cosmos DB, for modern scale"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Managed Instance uniquely combines SQL Agent support and broad compatibility with managed operations. SQL Database lacks Agent; VMs are unmanaged; Cosmos cannot run the workload.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-015",
+    "question": "After full normalization, management reports scanning millions of rows are too slow. The BEST response is:",
+    "options": [
+      "Normalize further to remove all redundancy",
+      "Model reporting data as a star schema that denormalizes for analytics",
+      "Delete all indexes to speed writes",
+      "Buy a bigger server and change nothing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Analytical queries favor denormalized star schemas; further normalization worsens JOIN costs. Dropping indexes hurts reads, and bigger hardware masks rather than fixes the model.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-016",
+    "question": "A cleanup script runs DELETE without a WHERE clause in production. The correct action is:",
+    "options": [
+      "Stop it, then reissue scoped with WHERE after testing in a transaction",
+      "Drop the table to prevent further damage",
+      "Disable all keys so deletes fail safely",
+      "Let it finish, then restore from backup if needed"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Unscoped DELETE hits every row, so scope with WHERE and verify in a transaction first. Finishing blindly, dropping objects or disabling keys all cause more harm.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-017",
+    "question": "Listing customers whose lifetime order total exceeds 10,000 requires:",
+    "options": [
+      "JOIN alone, because customers and orders must combine",
+      "GROUP BY customer with HAVING on the aggregate",
+      "WHERE total > 10000, because WHERE filters everything",
+      "ORDER BY total, because sorting isolates big spenders"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Aggregates filter with HAVING after GROUP BY; WHERE cannot see totals, ORDER BY only sorts, JOIN alone never aggregates.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-018",
+    "question": "A write-heavy logging table with 14 indexes is missing its insert targets. The BEST first step is:",
+    "options": [
+      "Dropping the primary key to speed inserts",
+      "Adding covering indexes for every query",
+      "Removing unused indexes that tax every write",
+      "Moving the log to Blob Storage immediately"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Each index is maintained per insert, so pruning unused ones directly relieves writes. More indexes worsen it, Blob abandons relational querying, and dropping the PK destroys integrity.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-019",
+    "question": "An application built for MySQL must move to Azure with minimal changes. Choose:",
+    "options": [
+      "Azure SQL Database, because SQL is SQL",
+      "Azure SQL Managed Instance, for SQL Server compatibility",
+      "Azure Cosmos DB for MongoDB, because it is NoSQL",
+      "Azure Database for MySQL, because it runs the required engine managed"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Engine requirements dictate the service: only the MySQL offering runs MySQL. SQL Database/Managed Instance are SQL Server engines; the Mongo API speaks a different protocol.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-020",
+    "question": "Finance may see customer names and order totals but never salaries stored in the same table. The BEST approach is:",
+    "options": [
+      "Deleting the salary column permanently",
+      "Creating an index on the salary column",
+      "Creating a view exposing only permitted columns",
+      "Copying visible columns into a second table nightly"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A view restricts visibility without duplicating or destroying data. Copies drift stale, deletion loses data, indexes do not hide anything.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-021",
+    "question": "Medical images are read weekly for a month, then yearly for seven years under retention rules. The MOST cost-effective valid design is:",
+    "options": [
+      "Deleting images after one month to save cost",
+      "Hot, then lifecycle rules moving them through Cool to Archive",
+      "Archive tier immediately, because it is cheapest",
+      "Hot tier forever, because access must be instant"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Lifecycle tiers match falling access frequency while retention rules forbid deletion. Immediate Archive penalizes weekly reads with rehydration; permanent Hot wastes money.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Non-Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-022",
+    "question": "An application must keep serving reads even during a full regional outage. Choose:",
+    "options": [
+      "RA-GRS, because the secondary copy is readable",
+      "LRS, because it is cheapest",
+      "ZRS, because zones are enough",
+      "GRS, because it copies to a second region"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Only RA-GRS offers a readable secondary during failover. LRS/ZRS never leave the primary region, and plain GRS secondaries are not readable.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Non-Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-023",
+    "question": "Global shopping sessions need 10 ms reads and writes from every continent. The MOST appropriate option is:",
+    "options": [
+      "Azure Table Storage, because sessions are key-value data",
+      "Azure SQL Database, because sessions need transactions",
+      "Azure Blob Storage, because sessions are small objects",
+      "Cosmos DB Table API, because it adds global distribution and SLAs to key-value"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Only Cosmos DB delivers single-digit-ms global reads/writes with an SLA. Table Storage is single-region, SQL cannot hit global latency, Blob is not a database.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Non-Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-024",
+    "question": "Detecting fraud rings requires traversing account-to-device-to-account links several hops deep. The BEST fit is:",
+    "options": [
+      "Cosmos DB Cassandra API, because writes are fast",
+      "Cosmos DB Table API, because lookups are cheap",
+      "Cosmos DB Gremlin API, because graph traversals express multi-hop paths",
+      "Cosmos DB Core (SQL) API, because JSON is flexible"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Multi-hop relationship queries are Gremlin's purpose. Document, wide-column and key-value APIs cannot traverse edges natively.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Non-Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-025",
+    "question": "Millions of sensors emit time-series telemetry ingested at extreme write rates. The BEST fit is:",
+    "options": [
+      "Cosmos DB Core (SQL) API, for SQL familiarity",
+      "Cosmos DB Cassandra API, for write-optimized wide-column series",
+      "Cosmos DB Gremlin API, for relationship modeling",
+      "Cosmos DB MongoDB API, for flexible documents"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cassandra's wide-column model is built for massive time-series writes. Graph, document and core APIs serve different shapes.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Non-Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-026",
+    "question": "An inventory system must never sell an item twice, even across regions. The required consistency is:",
+    "options": [
+      "Strong, because every read must see the latest write",
+      "Session, because it is the default",
+      "Eventual, because it is fastest",
+      "Bounded Staleness, because lag is bounded"
+    ],
+    "correctAnswer": 0,
+    "explanation": "No-oversell demands linearizability: Strong. Session, bounded and eventual all permit stale reads that double-sell, trading correctness for speed.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Non-Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-027",
+    "question": "A container with steady baseline traffic gets throttled (429) only during evening peaks. The BEST fix is:",
+    "options": [
+      "Adding read regions in more continents",
+      "Moving cold data to Archive tier",
+      "Reducing provisioned RU/s to save money",
+      "Enabling autoscale throughput to absorb peaks"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Autoscale raises RU/s for peaks and drops back after. Regions fix geography not throughput, Archive fits blobs not live containers, cutting RU/s worsens throttling.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Non-Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-028",
+    "question": "Petabyte-scale Spark jobs need folder semantics plus file-level access control. Choose:",
+    "options": [
+      "Azure Files, because shares are familiar",
+      "Azure SQL Database, because queries are easier",
+      "Data Lake Storage Gen2, for hierarchical namespace plus ACLs",
+      "Plain Blob Storage, because capacity is identical"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Only ADLS Gen2 adds directories and POSIX-like ACLs over blob-scale storage. Plain Blob lacks both, Files serves SMB shares, SQL cannot hold file lakes.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Non-Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-029",
+    "question": "A legacy application requires drive letters and shared folders with no code changes. Choose:",
+    "options": [
+      "Azure Cosmos DB with Gremlin",
+      "Azure Files with SMB shares",
+      "Azure Blob Storage with access keys",
+      "Azure Table Storage with PartitionKeys"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SMB shares mount like network drives, enabling lift-and-shift. Blob/Table/Cosmos expose different APIs the app cannot speak.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Non-Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-030",
+    "question": "An orders container partitioned by Country (3 values) throttles despite modest volume. The BEST fix is:",
+    "options": [
+      "Redesigning the partition key to a high-cardinality field such as CustomerId",
+      "Adding more Azure regions",
+      "Raising RU/s permanently",
+      "Archiving old orders to Blob"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Three partitions create hot partitions no RU increase cures; regions and archiving dodge the skew. A high-cardinality key spreads load evenly.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Non-Relational Data",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-031",
+    "question": "Finance needs yesterday's complete, reconciled sales figures every morning. The BEST fit is:",
+    "options": [
+      "Stream Analytics per transaction, for immediacy",
+      "A scheduled batch pipeline into a warehouse with Power BI",
+      "Manual spreadsheet consolidation",
+      "A dashboard with no underlying data refresh"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Closed-book daily figures are textbook batch: complete, cheap, on schedule. Streaming adds needless complexity, manual work errors, and dashboards need refreshed data first.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Analytics",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-032",
+    "question": "Ten thousand machines stream telemetry and must also receive firmware commands. Choose:",
+    "options": [
+      "Stream Analytics alone, because it processes streams",
+      "Blob Storage, because telemetry is files",
+      "IoT Hub, because it adds device management and two-way communication",
+      "Event Hubs alone, because it ingests millions of events"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Commands back to devices plus device management make it IoT Hub. Event Hubs ingests only, Stream Analytics processes but never manages devices, Blob merely stores.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Analytics",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-033",
+    "question": "One sensor stream must feed a live dashboard AND a cheap multi-year archive. The BEST design is:",
+    "options": [
+      "Power BI alone reading sensors directly",
+      "Stream Analytics with one input and outputs to Power BI plus Blob Storage",
+      "Two independent ingestion pipelines for isolation",
+      "Nightly batch ETL for both targets"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A single job fanning out to hot and cold paths avoids duplicate ingestion. Twin pipelines double cost, batch kills liveness, Power BI cannot ingest streams itself.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Analytics",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-034",
+    "question": "A startup wants ingestion, engineering, warehousing and BI with minimal integration work. Choose:",
+    "options": [
+      "Microsoft Fabric as the unified SaaS analytics platform",
+      "Assembling Synapse plus Data Factory plus Power BI separately",
+      "Virtual machines running each open-source tool",
+      "Cosmos DB as the analytics engine"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Fabric's unified SaaS removes integration glue. Best-of-breed assembly costs engineering time, VMs add operations, Cosmos is operational storage — not analytics.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Analytics",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-035",
+    "question": "Data scientists need shared Spark notebooks with ML libraries at scale. The BEST fit is:",
+    "options": [
+      "Power BI alone, because notebooks are visuals",
+      "Data Factory alone, because pipelines move data",
+      "Synapse serverless SQL alone, because SQL is familiar",
+      "Azure Databricks, for collaborative Spark notebooks with ML support"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Databricks is the Spark-first collaborative workspace. Power BI visualizes, Data Factory orchestrates, serverless SQL queries — none replace notebook-based ML collaboration.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Analytics",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-036",
+    "question": "Executives want key numbers at a glance while analysts must drill into detail. Deliver:",
+    "options": [
+      "Raw CSV downloads for self-service",
+      "A printed monthly pack for executives",
+      "A Power BI dashboard for executives plus reports for analysts",
+      "One more paginated report for everyone"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Dashboards glance, reports explore — each audience gets its tool. Forcing one artifact on both, printing, or dumping CSVs all fail one side.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Analytics",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-037",
+    "question": "In 'Total Profit by Quarter', Total Profit is best classified as a:",
+    "options": [
+      "Measure, because it is the calculated number",
+      "Gateway, because it connects sources",
+      "Dimension, because it groups the data",
+      "Hierarchy, because it drills down"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Measures are computed numbers; Quarter is the dimension slicing them. Hierarchies are drill paths and gateways connect data — neither computes.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Analytics",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-038",
+    "question": "'Which customers are likely to cancel next quarter?' requires:",
+    "options": [
+      "Predictive analytics forecasting future behavior",
+      "Descriptive analytics of past totals",
+      "Diagnostic analysis of last year's churn reasons",
+      "A bigger dashboard with more charts"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Likelihood about the future is prediction. Descriptive/diagnostic explain the past, and more charts never forecast by themselves.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Analytics",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-039",
+    "question": "Five years of transactions must be scanned for yearly aggregates as cheaply as possible. Store them as:",
+    "options": [
+      "CSV text, because every tool reads it",
+      "JSON documents, because they are flexible",
+      "JPEG images, because compression is high",
+      "Parquet files, because columnar layout minimizes scanned data"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Columnar Parquet reads only needed columns, slashing scan cost. CSV/JSON force full-row reads; JPEG is not data storage for analytics.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Analytics",
+    "source": "challenge-mode-bank"
+  },
+  {
+    "id": "ch-040",
+    "question": "Analysts must interactively query billions of log rows in seconds. The BEST fit is:",
+    "options": [
+      "Power BI alone, because visuals query anything",
+      "A relational warehouse for all logs",
+      "KQL against an Eventhouse, built for high-speed log analytics",
+      "Blob Storage alone, because logs are files"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Kusto/Eventhouse is purpose-built for interactive log-scale queries. Raw Blob cannot query, Power BI needs a model, and relational warehouses scan logs expensively.",
+    "difficulty": "hard",
+    "topic": "Challenge Mode",
+    "subtopic": "Analytics",
+    "source": "challenge-mode-bank"
+  }
+]

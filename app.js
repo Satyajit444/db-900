@@ -31,6 +31,7 @@
     bankQuery: "",
     notesTopics: [],     // notes index (Concept Notes cards)
     notesCache: {},      // notesId -> doc
+    challengeSize: 15,   // challenge-mode session length picker
     randomScope: "all", // random-practice pool: "all" or a topic id
     randomScope: "all", // random-practice pool: "all" or a topic id
     topicQuery: "",
@@ -97,10 +98,18 @@
     return isNaN(ms) ? 0 : ms;
   }
 
-  /** Newest sets first — new sources automatically float to the top. */
+  /** Newest sets first — new sources automatically float to the top.
+      Sets flagged pinned:"last" (e.g. Challenge Mode) always sink last. */
   function sortedTopics() {
-    return state.topics.slice().sort(function (a, b) { return topicCreatedAt(b) - topicCreatedAt(a); });
+    return state.topics.slice().sort(function (a, b) {
+      var pa = a && a.pinned === "last" ? 1 : 0, pb = b && b.pinned === "last" ? 1 : 0;
+      if (pa !== pb) return pa - pb;
+      return topicCreatedAt(b) - topicCreatedAt(a);
+    });
   }
+
+  /** Standalone banks (Challenge Mode) never join mixed pools or totals. */
+  function isChallenge(t) { return !!(t && t.excludeFromRandom); }
 
   function isNewTopic(t) {
     var ms = topicCreatedAt(t);
@@ -411,6 +420,7 @@
 
   function totalQuestions() {
     return state.topics.reduce(function (n, t) {
+      if (isChallenge(t)) return n; // independent count, never in the normal total
       var s = state.topicStats[t.id];
       return n + (s && !s.error ? s.total : 0);
     }, 0);
@@ -745,10 +755,10 @@
     return true;
   }
 
-  /** Options for the Random Practice scope dropdown (All + every set). */
+  /** Options for the Random Practice scope dropdown (All + normal sets). */
   function randomScopeOptions() {
     var opts = '<option value="all"' + (state.randomScope === "all" ? " selected" : "") + ">All topics</option>";
-    opts += sortedTopics().map(function (t) {
+    opts += sortedTopics().filter(function (t) { return !isChallenge(t); }).map(function (t) {
       var c = topicCount(t);
       return '<option value="' + escapeHtml(t.id) + '"' + (state.randomScope === t.id ? " selected" : "") + ">" +
         escapeHtml(topicTitle(t)) + (c === null ? "" : " (" + c + ")") + "</option>";
@@ -776,6 +786,20 @@
       var sourceLine = t.sourceName
         ? '<div class="topic-source">Source: ' + escapeHtml(t.sourceName) + (t.sourceType ? " · " + escapeHtml(t.sourceType) : "") + "</div>"
         : "";
+      var actions;
+      if (isChallenge(t)) {
+        // Challenge Mode keeps the same card design, plus a session-size picker.
+        var sel = state.challengeSize || 15;
+        var pills = [15, 30, 50].map(function (n) {
+          return '<button class="btn ghost small' + (sel === n ? " selected" : "") + '" type="button" data-csize="' + n + '">' + n + "</button>";
+        }).join("");
+        actions = '<div class="size-btns" role="group" aria-label="Challenge session size">' + pills + "</div>" +
+          '<div class="card-actions"><button class="btn small" type="button" data-start-challenge="' + escapeHtml(t.id) + '">Start Challenge →</button>' +
+          '<button class="btn secondary small" type="button" data-browse="' + escapeHtml(t.id) + '">Browse</button></div>';
+      } else {
+        actions = '<div class="card-actions"><button class="btn small" type="button" data-start="' + escapeHtml(t.id) + '">Start Practice →</button>' +
+          '<button class="btn secondary small" type="button" data-browse="' + escapeHtml(t.id) + '">Browse</button></div>';
+      }
       return '<article class="topic-card" aria-label="' + escapeHtml(topicTitle(t)) + '">' +
         '<div class="topic-top"><div class="topic-icon">' + topicIcon(t) + "</div>" +
         "<div><h3>" + escapeHtml(topicTitle(t)) +
@@ -785,14 +809,28 @@
         '<div class="topic-meta"><span class="pill"><strong>' + (s && s.error ? "Unavailable" : count === null ? "…" : count + (count === 1 ? " question" : " questions")) + "</strong></span>" +
         '<span class="pill">' + escapeHtml(statusLine) + "</span></div>" +
         '<div class="meter" role="progressbar" aria-valuenow="' + bestPct + '" aria-valuemin="0" aria-valuemax="100" aria-label="Best score for ' + escapeHtml(topicTitle(t)) + '"><div style="width:' + bestPct + '%"></div></div>' +
-        '<div class="card-actions"><button class="btn small" type="button" data-start="' + escapeHtml(t.id) + '">Start Practice →</button>' +
-        '<button class="btn secondary small" type="button" data-browse="' + escapeHtml(t.id) + '">Browse</button></div></article>';
+        actions + "</article>";
     }).join("");
   }
 
   function wireTopicCards() {
     Array.prototype.forEach.call(app.querySelectorAll("[data-start]"), function (b) {
       b.addEventListener("click", function () { playSound("click"); startQuiz(b.getAttribute("data-start"), { kind: "practice" }); });
+    });
+    Array.prototype.forEach.call(app.querySelectorAll("[data-csize]"), function (b) {
+      b.addEventListener("click", function () {
+        playSound("click");
+        state.challengeSize = parseInt(b.getAttribute("data-csize"), 10) || 15;
+        Array.prototype.forEach.call(app.querySelectorAll("[data-csize]"), function (x) {
+          x.classList.toggle("selected", x === b);
+        });
+      });
+    });
+    Array.prototype.forEach.call(app.querySelectorAll("[data-start-challenge]"), function (b) {
+      b.addEventListener("click", function () {
+        playSound("click");
+        startQuiz(b.getAttribute("data-start-challenge"), { kind: "practice", count: state.challengeSize || 15 });
+      });
     });
     Array.prototype.forEach.call(app.querySelectorAll("[data-browse]"), function (b) {
       b.addEventListener("click", function () {
@@ -836,6 +874,7 @@
   function allQuestions() {
     var out = [];
     state.topics.forEach(function (t) {
+      if (isChallenge(t)) return; // Challenge Mode has its own independent pool
       var c = state.topicCache[t.id];
       if (c && c.questions) c.questions.forEach(function (q) { out.push(q); });
     });
@@ -890,6 +929,7 @@
 
   function startQuiz(topicId, opts) {
     var kind = (opts && opts.kind) || "practice";
+    var count = (opts && opts.count) || QUESTIONS_PER_SESSION;
     var meta = null;
     state.topics.forEach(function (t) { if (t.id === topicId) meta = t; });
     if (!meta) return;
@@ -900,7 +940,7 @@
         document.getElementById("btn-back").addEventListener("click", renderHome);
         return;
       }
-      buildSession(meta, qs, kind);
+      buildSession(meta, qs, kind, count);
     }).catch(renderFetchError);
   }
 
@@ -929,7 +969,19 @@
     meta.scopeLabel = scopeTitle;
     app.innerHTML = '<div class="loading-card" role="status"><div class="skeleton skeleton-hero"></div><p>Drawing ' + count + " random questions…</p></div>";
     ensureAllLoaded().then(function () {
-      var pool = (kind === "random" && scopeId && scopeId !== "all") ? questionsOf(scopeId) : allQuestions();
+      var scoped = null;
+      if (kind === "random" && scopeId && scopeId !== "all") {
+        state.topics.forEach(function (t) {
+          if (t.id === scopeId && !isChallenge(t)) scoped = t;
+        });
+      }
+      if (scoped) {
+        scopeTitle = topicTitle(scoped);
+        meta.title = meta.name = labels.random = "🎲 Random Practice · " + scopeTitle;
+        meta.scopeId = scopeId;
+        meta.scopeLabel = scopeTitle;
+      }
+      var pool = scoped ? questionsOf(scopeId) : allQuestions();
       if (!pool.length) {
         app.innerHTML = '<div class="card error-card"><h2>No questions available yet.</h2><p><button class="btn" id="btn-back" type="button">Back</button></p></div>';
         document.getElementById("btn-back").addEventListener("click", renderHome);
@@ -1270,7 +1322,7 @@
     document.getElementById("btn-review").addEventListener("click", function () { playSound("click"); renderReview(); });
     document.getElementById("btn-retry").addEventListener("click", function () {
       playSound("click");
-      if (s.kind === "practice") startQuiz(s.topic.id, { kind: "practice" });
+      if (s.kind === "practice") startQuiz(s.topic.id, { kind: "practice", count: s.count || QUESTIONS_PER_SESSION });
       else startMixed(s.kind === "daily" ? "daily" : s.kind, s.count || QUESTIONS_PER_SESSION,
         s.topic.scopeId || undefined);
     });
