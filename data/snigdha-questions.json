@@ -1,0 +1,178 @@
+[
+  {
+    "id": "snig-001",
+    "question": "Descriptive analytics tells you:",
+    "options": [
+      "what is most likely to occur in the future.",
+      "what occurred in the past.",
+      "which actions you can perform to affect outcomes.",
+      "why something occurred in the past."
+    ],
+    "correctAnswer": 1,
+    "explanation": "Descriptive analytics summarizes what already happened.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Analytics",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-002",
+    "question": "Three statements are made about normalization: (1) Normalization involves eliminating relationships between database tables. (2) Normalizing a database reduces data redundancy. (3) Normalization improves data integrity. Which evaluations (Yes/No) are correct?",
+    "options": [
+      "Yes, Yes, Yes",
+      "No, Yes, Yes",
+      "Yes, No, No",
+      "No, No, Yes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Normalization keeps relationships but removes duplication, which protects integrity — so (1) is No, (2) and (3) are Yes.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Normalization",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-003",
+    "question": "An extract, transform, and load (ETL) process requires:",
+    "options": [
+      "a matching schema in the data source and the data target.",
+      "a target data store powerful enough to transform data.",
+      "data that is fully processed before being loaded to the target data store.",
+      "that the data target be a relational database."
+    ],
+    "correctAnswer": 2,
+    "explanation": "In ETL, transformation happens before loading, unlike ELT where the target does the work.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Pipelines",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-004",
+    "question": "In batch processing:",
+    "options": [
+      "data is always inserted one row at a time.",
+      "data is processed in real-time.",
+      "latency in delivering data processing results is acceptable.",
+      "processing can only execute serially."
+    ],
+    "correctAnswer": 2,
+    "explanation": "Batch runs on a schedule, so delayed results are expected and acceptable.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Workloads",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-005",
+    "question": "Transcribing audio files is an example of:",
+    "options": [
+      "cognitive analytics.",
+      "descriptive analytics.",
+      "predictive analytics.",
+      "prescriptive analytics."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Speech-to-text understands content like a human sense, which is cognitive analytics.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Analytics",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-006",
+    "question": "'Why did sales increase last month?' is answered with which analytics type?",
+    "options": [
+      "Diagnostic",
+      "Descriptive",
+      "Predictive",
+      "Prescriptive"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Asking why something happened is diagnostic analytics.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Analytics",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-007",
+    "question": "'How do I allocate my budget to buy different inventory items?' is answered with which analytics type?",
+    "options": [
+      "Descriptive",
+      "Diagnostic",
+      "Predictive",
+      "Prescriptive"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Choosing actions to shape future outcomes is prescriptive analytics.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Analytics",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-008",
+    "question": "A JSON document holds customer, address and social media sections. Which mapping of JSON structures is correct?",
+    "options": [
+      "Customer is a root object, Address is a nested object, Social media is a nested array",
+      "Customer is a nested array, Address is a root object, Social media is a nested object",
+      "Customer is a nested object, Address is a nested array, Social media is a root object",
+      "Customer is a root object, Address is a nested array, Social media is a nested object"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The top-level customer object contains a nested address object and a social-media array.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Data Formats",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-009",
+    "question": "A Sales model centers on a Sales table linked to Customer, Product, SalesPerson and Warehouse tables. Which mapping is correct?",
+    "options": [
+      "The model is a star schema and Customer is a dimension table",
+      "The model is a snowflake schema and Customer is a fact table",
+      "The model is a transactional model and Customer is a bridge table",
+      "The model is a star schema and Customer is a fact table"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A central fact table with surrounding dimensions is a star schema; Customer describes the sale, so it is a dimension.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Modeling",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-010",
+    "question": "The massively parallel processing (MPP) engine of Azure Synapse Analytics:",
+    "options": [
+      "distributes processing across compute nodes.",
+      "distributes processing across control nodes.",
+      "redirects client connections across compute nodes.",
+      "redirects client connections across control nodes."
+    ],
+    "correctAnswer": 0,
+    "explanation": "MPP splits query work across many compute nodes running in parallel.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Synapse",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-011",
+    "question": "Which object is associated with a table and sorts and stores the data rows based on their key values?",
+    "options": [
+      "A clustered index",
+      "A FileTable",
+      "A foreign key",
+      "A stored procedure"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A clustered index dictates the physical row order by key values.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Indexes",
+    "source": "ExamTopics DP-900"
+  }
+]

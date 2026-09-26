@@ -1,5 +1,18 @@
 [
   {
+    "id": "snigdha-questions",
+    "title": "Snigdha Questions",
+    "description": "Exam-style DP-900 questions from ExamTopics: analytics, normalization, pipelines, JSON, modeling, Synapse and indexes.",
+    "sourceType": "External Question Bank",
+    "sourceName": "ExamTopics DP-900",
+    "createdAt": "2026-09-26",
+    "questionFile": "data/snigdha-questions.json",
+    "questionCount": 11,
+    "name": "Snigdha Questions",
+    "file": "data/snigdha-questions.json",
+    "examWeight": "DP-900 · Exam-style practice"
+  },
+  {
     "id": "analytics-visualization",
     "title": "Analytics & Visualization",
     "description": "Analytics workloads, Fabric and Databricks, streaming and real-time analytics, Power BI reports and dashboards. 56 exam-style MCQs from Episodes 4-6.",
