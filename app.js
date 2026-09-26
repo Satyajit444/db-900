@@ -13,6 +13,8 @@
   var STATS_KEY = "dp900-stats-v1";       // global dashboard/streak/achievements
   var THEME_KEY = "dp900-theme";
   var SOUND_KEY = "dp900-sound";          // "on" | "off", default off
+  var RECENT_KEY = "dp900-recent-v1"; // { questionId: lastPresentedTimestamp }
+  var RECENT_MAX = 150;             // sliding window keeps the pool fresh
 
   var app = document.getElementById("app");
   var toastRegion = document.getElementById("toast-region");
@@ -131,6 +133,27 @@
   }
   function saveStats(s) {
     try { localStorage.setItem(STATS_KEY, JSON.stringify(s)); } catch (e) {}
+  }
+
+  /* ============ recently-practiced history (Random Practice only) ============
+     Maps questionId -> timestamp last presented. Bounded sliding window so
+     the pool always stays fresh; used ONLY to pick random sessions. */
+  function loadRecent() {
+    try { return JSON.parse(localStorage.getItem(RECENT_KEY)) || {}; }
+    catch (e) { return {}; }
+  }
+  function saveRecent(map) {
+    try {
+      var keys = Object.keys(map).sort(function (a, b) { return map[a] - map[b]; });
+      while (keys.length > RECENT_MAX) delete map[keys.shift()];
+      localStorage.setItem(RECENT_KEY, JSON.stringify(map));
+    } catch (e) {}
+  }
+  function recordPracticed(ids) {
+    if (!ids || !ids.length) return;
+    var map = loadRecent(), now = Date.now();
+    ids.forEach(function (id) { map[id] = now; });
+    saveRecent(map);
   }
 
   /** Record a finished quiz: per-topic best + global dashboard counters. */
@@ -650,10 +673,33 @@
     return out;
   }
 
+  /** Random Practice picker: unseen-first, repeats capped at 10% of the
+      session (15->1, 30->3, 50->5), least-recently-seen fill, never a
+      duplicate inside one session, always shuffled. Other modes untouched. */
+  function pickRandom(pool, count) {
+    count = Math.max(1, Math.min(count || QUESTIONS_PER_SESSION, pool.length));
+    var recent = loadRecent(), unseen = [], seen = [];
+    pool.forEach(function (q) {
+      if (recent[q.id]) seen.push(q); else unseen.push(q);
+    });
+    unseen = shuffle(unseen);
+    seen.sort(function (a, b) { return (recent[a.id] || 0) - (recent[b.id] || 0); });
+    var maxRepeat = Math.floor(count * 0.1);
+    var takeUnseen = Math.min(count, unseen.length);
+    var takeSeen = Math.min(count - takeUnseen, maxRepeat);
+    var picked = unseen.slice(0, takeUnseen).concat(seen.slice(0, takeSeen));
+    if (picked.length < count) {
+      // Pool too exhausted for the cap (e.g. re-rolling a 50/50 set):
+      // deliver the full count from least-recently-seen first.
+      picked = picked.concat(seen.slice(takeSeen, takeSeen + (count - picked.length)));
+    }
+    return shuffle(picked);
+  }
+
   /** Build a session: pick N random, shuffle options while preserving the key. */
   function buildSession(meta, pool, kind, count) {
     var n = Math.max(1, Math.min(count || QUESTIONS_PER_SESSION, pool.length));
-    var picked = shuffle(pool).slice(0, n);
+    var picked = (kind === "random") ? pickRandom(pool, n) : shuffle(pool).slice(0, n);
     var sessionQs = picked.map(function (q) {
       var indexed = q.options.map(function (text, i) { return { text: text, isCorrect: i === q.correctAnswer }; });
       var sh = shuffle(indexed), nc = 0;
@@ -661,6 +707,7 @@
       return { src: q, options: sh.map(function (o) { return o.text; }), correctIndex: nc };
     });
     var now = Date.now();
+    recordPracticed(sessionQs.map(function (q) { return q.src.id; }));
     state.session = {
       kind: kind, count: n, topic: meta, questions: sessionQs, index: 0,
       answers: sessionQs.map(function () { return null; }),

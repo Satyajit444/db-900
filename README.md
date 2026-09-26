@@ -101,5 +101,5 @@ Rules:
 - **Total questions:** 206 — always visible on the landing page hero + cards
 - **Non-relational distribution:** easy 16 · medium 23 · hard 17
 - **Relational distribution:** easy 41 · medium 46 · scenario 12 · hard 1
-- **Random Practice:** pools all sets live (15 / 30 / 50 per attempt, reshuffled) with a topic-scope dropdown (All topics by default)
+- **Random Practice:** pools all sets live (15 / 30 / 50 per attempt, reshuffled) with a topic-scope dropdown (All topics by default); unseen-first with repeats capped at 10% via `localStorage` history
 - **Session length:** 15 random per single-set attempt
