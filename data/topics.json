@@ -1,5 +1,23 @@
 [
   {
+    "id": "analytics-visualization",
+    "title": "Analytics & Visualization",
+    "description": "Analytics workloads, Fabric and Databricks, streaming and real-time analytics, Power BI reports and dashboards. 56 exam-style MCQs from Episodes 4-6.",
+    "sourceType": "YouTube",
+    "sourceName": "YouTube · DP-900 Episodes 4-6 (Microsoft Learn)",
+    "sources": [
+      "https://youtu.be/QuQNIWYjV0E",
+      "https://youtu.be/5zbCjFFXLC0",
+      "https://youtu.be/uG69dAmpANA"
+    ],
+    "createdAt": "2026-09-26",
+    "questionFile": "data/analytics-visualization.json",
+    "questionCount": 56,
+    "name": "Analytics & Visualization",
+    "file": "data/analytics-visualization.json",
+    "examWeight": "DP-900 · Describe analytics workloads on Azure"
+  },
+  {
     "id": "non-relational-data-azure",
     "title": "Non-Relational Data in Azure",
     "description": "NoSQL concepts, Blob Storage, Data Lake Gen2, Azure Files, Table Storage, Cosmos DB and its APIs, provisioning and scenarios. 56 exam-style MCQs.",

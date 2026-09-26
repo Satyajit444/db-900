@@ -1,0 +1,214 @@
+{
+  "id": "analytics-visualization",
+  "title": "Analytics & Visualization",
+  "subtitle": "Episodes 4–6 in one place: analytics workloads, streaming and Power BI.",
+  "practiceTopicId": "analytics-visualization",
+  "updatedAt": "2026-09-26",
+  "what": {
+    "body": "Analytics turns raw data into decisions in three moves: land the data, process it at the right speed, and show it so humans act. Episodes 4–6 cover each move: workloads and platforms, real-time streaming, and visualization.",
+    "example": "Factory sensors stream readings (Episode 5), Spark crunches them at scale (Episode 4), and a live Power BI dashboard alerts the floor manager (Episode 6) — one pipeline, three episodes."
+  },
+  "concepts": [
+    {
+      "term": "Analytics workload",
+      "body": "Any pipeline that ingests, processes, stores and analyzes data to produce insights — from nightly reports to live dashboards."
+    },
+    {
+      "term": "Descriptive → Diagnostic → Predictive → Prescriptive",
+      "body": "What happened → why → what will happen → what to do. Each step needs more modeling than the last."
+    },
+    {
+      "term": "Batch processing",
+      "body": "Collect data over time, process it together on a schedule. Nightly sales summaries are the classic example."
+    },
+    {
+      "term": "Stream processing",
+      "body": "Analyze an endless flow of events as they arrive, in seconds. Fraud detection and live telemetry live here."
+    },
+    {
+      "term": "Event stream",
+      "body": "A continuous sequence of events: sensor readings, clicks, card swipes. Unbounded — it never 'finishes'."
+    },
+    {
+      "term": "Windowing",
+      "body": "Chopping a stream into time slices (per minute, sliding 5 minutes) so aggregates like counts and averages work."
+    },
+    {
+      "term": "ETL vs ELT",
+      "body": "ETL transforms before loading; ELT lands raw data first and transforms inside the lake or warehouse at scale."
+    },
+    {
+      "term": "Data lake vs warehouse vs lakehouse",
+      "body": "Lake = cheap raw storage of anything. Warehouse = curated structured data for reporting. Lakehouse = both at once."
+    },
+    {
+      "term": "Measure",
+      "body": "A numeric calculation in Power BI: Total Sales, Average Order. The numbers you aggregate."
+    },
+    {
+      "term": "Dimension",
+      "body": "A categorical attribute you slice by: Region, Product, Month. The 'by' in every chart."
+    },
+    {
+      "term": "Hierarchy",
+      "body": "Leveled drill path such as Year → Quarter → Month for digging into detail."
+    },
+    {
+      "term": "Dataset, report, dashboard",
+      "body": "Dataset = prepared data model. Report = multi-page interactive visuals. Dashboard = one page of pinned highlight tiles."
+    }
+  ],
+  "examples": [
+    {
+      "title": "Batch or stream?",
+      "body": "Morning sales summary = batch. Card-fraud block in 2 seconds = stream. Ask: does anyone act on each event instantly?",
+      "table": {
+        "head": ["Signal", "Batch", "Stream"],
+        "rows": [
+          ["Data arrives", "In chunks, on schedule", "Continuously"],
+          ["Latency", "Minutes to hours", "Seconds"],
+          ["Example", "Nightly revenue report", "Fraud alert, live dashboard"]
+        ]
+      }
+    },
+    {
+      "title": "The full pipeline, mapped",
+      "body": "One flow across all three episodes.",
+      "table": {
+        "head": ["Stage", "Episode", "Services"],
+        "rows": [
+          ["Ingest", "4–5", "Data Factory, Event Hubs, IoT Hub"],
+          ["Process", "4–5", "Databricks/Spark, Stream Analytics"],
+          ["Store", "4", "Lake, warehouse, lakehouse"],
+          ["Visualize", "6", "Power BI reports and dashboards"]
+        ]
+      }
+    },
+    {
+      "title": "Measure vs dimension in one sentence",
+      "body": "'Total Sales (measure) by Region (dimension), drilled from Year to Month (hierarchy).'"
+    }
+  ],
+  "comparisons": [
+    {
+      "title": "Batch vs Stream processing",
+      "head": ["", "Batch", "Stream"],
+      "rows": [
+        ["Data", "Bounded historical chunks", "Unbounded live flow"],
+        ["When", "On a schedule", "Continuously"],
+        ["Tools", "Data Factory, Databricks jobs", "Event Hubs, Stream Analytics"],
+        ["Example", "Daily sales summary", "Fraud block, live KPIs"]
+      ]
+    },
+    {
+      "title": "Warehouse vs Lake vs Lakehouse",
+      "head": ["", "Warehouse", "Lake", "Lakehouse"],
+      "rows": [
+        ["Holds", "Curated structured data", "Raw anything", "Both"],
+        ["Best for", "Reporting, BI", "Unknown future analysis", "Unified analytics"],
+        ["Format", "Tables", "Parquet/CSV/JSON raw", "Open table formats"]
+      ]
+    },
+    {
+      "title": "Report vs Dashboard",
+      "head": ["", "Report", "Dashboard"],
+      "rows": [
+        ["Pages", "Many, interactive", "One page of tiles"],
+        ["Source", "Built on a dataset", "Pinned from reports"],
+        ["Use", "Explore deeply", "Glance at KPIs"]
+      ]
+    },
+    {
+      "title": "Commonly confused: the streaming trio",
+      "head": ["Service", "Job"],
+      "rows": [
+        ["Event Hubs", "Ingest millions of events per second"],
+        ["IoT Hub", "Event ingestion PLUS device management and two-way device talk"],
+        ["Stream Analytics", "SQL-like real-time processing with windows, to Power BI/storage"]
+      ]
+    },
+    {
+      "title": "Commonly confused: measure vs dimension vs hierarchy",
+      "head": ["Term", "Is", "Example"],
+      "rows": [
+        ["Measure", "A number you calculate", "Total Sales"],
+        ["Dimension", "A category you slice by", "Region"],
+        ["Hierarchy", "Drill path of levels", "Year → Quarter → Month"]
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "Microsoft Fabric",
+      "what": "SaaS analytics platform on OneLake.",
+      "data": "Everything from ingestion to BI.",
+      "when": "You want one unified platform instead of wiring services.",
+      "scenario": "A new company doing ingestion, engineering and reporting in one place."
+    },
+    {
+      "name": "Azure Databricks",
+      "what": "Spark analytics with shared notebooks.",
+      "data": "Huge datasets needing distributed compute.",
+      "when": "Data teams explore and process at scale with code.",
+      "scenario": "Scientists crunching incident logs together in notebooks."
+    },
+    {
+      "name": "Event Hubs",
+      "what": "Massive event ingestion front door.",
+      "data": "Millions of events per second.",
+      "when": "Streams pour in from apps and devices.",
+      "scenario": "Clickstream feeding live dashboards."
+    },
+    {
+      "name": "IoT Hub",
+      "what": "Device messaging plus management.",
+      "data": "Sensor telemetry, commands.",
+      "when": "Devices need monitoring, updates and two-way talk.",
+      "scenario": "Factory sensors with alerts and remote commands."
+    },
+    {
+      "name": "Stream Analytics",
+      "what": "Real-time stream processor.",
+      "data": "Live queries with windows.",
+      "when": "SQL-like logic must run on moving data.",
+      "scenario": "Counting checkouts per minute into Power BI and Blob."
+    },
+    {
+      "name": "Power BI",
+      "what": "Interactive reports and dashboards.",
+      "data": "Modeled datasets, measures, visuals.",
+      "when": "Humans must explore trends and decide.",
+      "scenario": "Executives watching live revenue KPIs."
+    }
+  ],
+  "remember": [
+    "Flow order: ingest → process → store → analyze → visualize.",
+    "Batch = scheduled chunks (Data Factory). Stream = always-on flow (Event Hubs → Stream Analytics → Power BI).",
+    "IoT Hub = Event Hubs + device management + two-way talk.",
+    "Report = multi-page deep dive · Dashboard = one page of pinned tiles.",
+    "Measure = number calculated · Dimension = category sliced by · Hierarchy = drill path.",
+    "Fabric = unified SaaS on OneLake · Databricks = Spark + notebooks · Parquet = analytic scans."
+  ],
+  "quickCheck": [
+    {
+      "q": "Fraud must be blocked per transaction in seconds: batch or stream?",
+      "a": "Stream — Event Hubs plus Stream Analytics evaluates each event live."
+    },
+    {
+      "q": "Dataset vs report vs dashboard?",
+      "a": "Dataset feeds visuals; report explores across pages; dashboard pins highlights on one page."
+    },
+    {
+      "q": "'Sales by Region, drilled to Month' — label each part?",
+      "a": "Sales = measure, Region = dimension, Year→Month = hierarchy."
+    },
+    {
+      "q": "Keep raw clicks for unknown future questions: where?",
+      "a": "A data lake — cheap raw retention."
+    },
+    {
+      "q": "One service for ingestion through BI with minimal glue?",
+      "a": "Microsoft Fabric on OneLake."
+    }
+  ]
+}

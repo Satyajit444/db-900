@@ -1,0 +1,898 @@
+[
+  {
+    "id": "anv-001",
+    "question": "An analytics workload is best described as:",
+    "options": [
+      "Turning raw data into insights that support decisions",
+      "Compressing log files",
+      "Managing user passwords",
+      "Backing up virtual machines"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Analytics exists to extract meaning and guide decisions.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Workloads",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-002",
+    "question": "Descriptive analytics answers:",
+    "options": [
+      "What will happen next",
+      "What happened",
+      "Why it happened",
+      "What action to take"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Descriptive summarizes the past: sales totals, dashboards of what occurred.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Workloads",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-003",
+    "question": "Diagnostic analytics answers:",
+    "options": [
+      "How to store data",
+      "What happened",
+      "What will happen",
+      "Why it happened"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Diagnostic digs into causes behind observed results.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Workloads",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-004",
+    "question": "Predictive analytics answers:",
+    "options": [
+      "Which database to buy",
+      "How to back up data",
+      "What happened last year",
+      "What is likely to happen"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Predictive uses history to forecast likely outcomes like churn.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Workloads",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-005",
+    "question": "Prescriptive analytics answers:",
+    "options": [
+      "Why it happened",
+      "What is likely",
+      "What action to take",
+      "What happened"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Prescriptive recommends the best action from analysis.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Workloads",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-006",
+    "question": "Large-scale analytics fundamentally requires the ability to:",
+    "options": [
+      "Avoid all storage",
+      "Ingest, process, store and analyze massive data",
+      "Delete old reports",
+      "Use one laptop"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Scale analytics means a pipeline from ingestion to insight over huge volumes.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Workloads",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-007",
+    "question": "Batch processing means:",
+    "options": [
+      "Streaming video to users",
+      "Processing each event the millisecond it arrives",
+      "Collecting data over time and processing it together on a schedule",
+      "Deleting data continuously"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Batch = bounded chunks on a schedule, e.g. nightly sales loads.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Workloads",
+    "source": "https://youtu.be/5zbCjFFXLC0"
+  },
+  {
+    "id": "anv-008",
+    "question": "ELT differs from ETL mainly because ELT:",
+    "options": [
+      "Only works on laptops",
+      "Deletes the source data",
+      "Skips transformation entirely",
+      "Loads raw data first, then transforms inside the target platform"
+    ],
+    "correctAnswer": 3,
+    "explanation": "ELT lands raw data in the lake/warehouse, then transforms at scale there.",
+    "difficulty": "hard",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Workloads",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-009",
+    "question": "A data warehouse differs from a data lake in that the warehouse holds:",
+    "options": [
+      "Raw data of any format",
+      "Curated structured data optimized for reporting",
+      "Temporary passwords",
+      "Only video files"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Warehouses serve clean modeled data; lakes keep raw everything.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Workloads",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-010",
+    "question": "A lakehouse architecture combines:",
+    "options": [
+      "Email and chat",
+      "Lake flexibility for raw data with warehouse-style performance and management",
+      "Two relational databases",
+      "Backup and DNS"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Lakehouse = store anything like a lake, query reliably like a warehouse.",
+    "difficulty": "hard",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Workloads",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-011",
+    "question": "Parquet is preferred for large analytic scans because it is:",
+    "options": [
+      "A database engine",
+      "Row-based and uncompressed",
+      "Columnar and compressed, so queries read only needed columns",
+      "An image format"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Columnar layout drastically cuts data scanned by aggregations.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Workloads",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-012",
+    "question": "Data ingestion in an analytics solution is the stage that:",
+    "options": [
+      "Trains end users",
+      "Sells reports",
+      "Deletes stale dashboards",
+      "Brings data from source systems into the platform"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Ingestion (Data Factory, Event Hubs) feeds everything downstream.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Workloads",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-013",
+    "question": "Microsoft Fabric is best described as:",
+    "options": [
+      "A SaaS analytics platform unifying workloads on OneLake",
+      "A backup tool",
+      "A programming language",
+      "A virtual machine size"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Fabric bundles ingestion, engineering, warehousing and BI as one SaaS.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Fabric & Databricks",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-014",
+    "question": "OneLake in Microsoft Fabric provides:",
+    "options": [
+      "A single logical data lake for the whole organization",
+      "One database table",
+      "A password vault",
+      "A video stream"
+    ],
+    "correctAnswer": 0,
+    "explanation": "OneLake gives every workload one shared lake to build on.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Fabric & Databricks",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-015",
+    "question": "Azure Databricks is built for:",
+    "options": [
+      "Password rotation",
+      "DNS management",
+      "Spark-based collaborative analytics with notebooks",
+      "File archiving"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Databricks runs Apache Spark with shared notebooks for data teams.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Fabric & Databricks",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-016",
+    "question": "Notebooks help data teams because they combine:",
+    "options": [
+      "Backups and firewalls",
+      "Emails and calendars",
+      "Code, results and documentation in one explorable place",
+      "Hardware and cables"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Notebooks mix live code, charts and notes for exploration.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Fabric & Databricks",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-017",
+    "question": "Apache Spark fits workloads that need:",
+    "options": [
+      "Distributed processing of huge datasets in parallel",
+      "Printing invoices",
+      "Storing passwords",
+      "Single-row lookups"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Spark splits massive jobs across many workers.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Fabric & Databricks",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-018",
+    "question": "Fabric, Databricks and Power BI typically work together as:",
+    "options": [
+      "Three competing backups",
+      "Ingest and prepare, process at scale, then visualize for decisions",
+      "Identical copies of one database",
+      "Unrelated products"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A pipeline: land data, engineer it, analyze, then report.",
+    "difficulty": "hard",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Fabric & Databricks",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-019",
+    "question": "Stream processing analyzes data that is:",
+    "options": [
+      "Deleted immediately",
+      "Archived for ten years",
+      "Arriving continuously, close to real time",
+      "Printed on paper"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Streams are unbounded flows analyzed as they arrive.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Streaming",
+    "source": "https://youtu.be/5zbCjFFXLC0"
+  },
+  {
+    "id": "anv-020",
+    "question": "The core difference between batch and stream processing is:",
+    "options": [
+      "Programming language",
+      "File size",
+      "Cost only",
+      "Bounded historical chunks on a schedule versus unbounded continuous flow"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Batch = scheduled chunks; stream = always-on flow.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Streaming",
+    "source": "https://youtu.be/5zbCjFFXLC0"
+  },
+  {
+    "id": "anv-021",
+    "question": "Which is a classic event-stream example?",
+    "options": [
+      "IoT sensor readings arriving every second",
+      "A static employee handbook",
+      "A backup tape",
+      "A printed annual report"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sensor telemetry, clicks and transactions are endless streams.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Streaming",
+    "source": "https://youtu.be/5zbCjFFXLC0"
+  },
+  {
+    "id": "anv-022",
+    "question": "Windowing in stream analytics is used to:",
+    "options": [
+      "Resize application windows",
+      "Group events into time slices for aggregates like counts per minute",
+      "Delete old hardware",
+      "Compress videos"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Windows (tumbling/hopping/sliding) bound the endless stream for math.",
+    "difficulty": "hard",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Streaming",
+    "source": "https://youtu.be/5zbCjFFXLC0"
+  },
+  {
+    "id": "anv-023",
+    "question": "Azure Event Hubs is designed to:",
+    "options": [
+      "Store passwords",
+      "Host static websites",
+      "Ingest millions of events per second",
+      "Run SQL Server"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Event Hubs is the front door for massive event streams.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Streaming",
+    "source": "https://youtu.be/5zbCjFFXLC0"
+  },
+  {
+    "id": "anv-024",
+    "question": "IoT Hub goes beyond Event Hubs mainly by adding:",
+    "options": [
+      "Faster CPUs",
+      "Free domains",
+      "Cheaper blob tiers",
+      "Device management and two-way device-to-cloud communication"
+    ],
+    "correctAnswer": 3,
+    "explanation": "IoT Hub manages devices and talks back to them, not just ingests.",
+    "difficulty": "hard",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Streaming",
+    "source": "https://youtu.be/5zbCjFFXLC0"
+  },
+  {
+    "id": "anv-025",
+    "question": "Azure Stream Analytics lets you process streams using:",
+    "options": [
+      "Familiar SQL-like queries over live data",
+      "Paper forms",
+      "Manual spreadsheets",
+      "Only machine code"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Stream Analytics applies SQL-style logic to moving data.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Streaming",
+    "source": "https://youtu.be/5zbCjFFXLC0"
+  },
+  {
+    "id": "anv-026",
+    "question": "A Stream Analytics job typically reads from Event Hubs or IoT Hub and writes to:",
+    "options": [
+      "Only printers",
+      "Power BI, Blob Storage, SQL or Cosmos DB",
+      "Floppy disks",
+      "Email inboxes only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "One job fans out to live dashboards and durable stores at once.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Streaming",
+    "source": "https://youtu.be/5zbCjFFXLC0"
+  },
+  {
+    "id": "anv-027",
+    "question": "KQL (Kusto Query Language) is used to:",
+    "options": [
+      "Write mobile apps",
+      "Style web pages",
+      "Query massive log and telemetry data in Eventhouse",
+      "Configure firewalls"
+    ],
+    "correctAnswer": 2,
+    "explanation": "KQL explores logs/metrics fast in Kusto/Eventhouse stores.",
+    "difficulty": "hard",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Streaming",
+    "source": "https://youtu.be/5zbCjFFXLC0"
+  },
+  {
+    "id": "anv-028",
+    "question": "Spark Structured Streaming appeals because it handles:",
+    "options": [
+      "Only emails",
+      "Only images",
+      "Only static files",
+      "Batch and streaming with one unified engine"
+    ],
+    "correctAnswer": 3,
+    "explanation": "One Spark model covers historical batches and live streams.",
+    "difficulty": "hard",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Streaming",
+    "source": "https://youtu.be/5zbCjFFXLC0"
+  },
+  {
+    "id": "anv-029",
+    "question": "Credit-card fraud detection needs streaming because:",
+    "options": [
+      "Each transaction must be scored instantly to block abuse",
+      "Storage is cheaper",
+      "Batch jobs are illegal",
+      "Reports look nicer"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Per-event low latency is the whole point of fraud screening.",
+    "difficulty": "hard",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Streaming",
+    "source": "https://youtu.be/5zbCjFFXLC0"
+  },
+  {
+    "id": "anv-030",
+    "question": "A live Power BI dashboard showing factory output is typically fed by:",
+    "options": [
+      "A yearly CSV upload",
+      "A streaming dataset from Stream Analytics or Event Hubs",
+      "A printed logbook",
+      "A backup restore"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Live tiles need a continuous push from the stream pipeline.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Streaming",
+    "source": "https://youtu.be/5zbCjFFXLC0"
+  },
+  {
+    "id": "anv-031",
+    "question": "Power BI's core value is turning data into:",
+    "options": [
+      "Encrypted disks",
+      "Backups",
+      "Interactive reports and dashboards that reveal trends",
+      "Virtual networks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Power BI visualizes data for exploration and decisions.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Power BI",
+    "source": "https://youtu.be/uG69dAmpANA"
+  },
+  {
+    "id": "anv-032",
+    "question": "A Power BI report differs from a dashboard in that a report is:",
+    "options": [
+      "Printed once a year",
+      "Unshareable",
+      "Single tile only",
+      "Multi-page and interactive over a dataset; a dashboard pins key tiles on one page"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Reports explore deeply; dashboards glance at pinned highlights.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Power BI",
+    "source": "https://youtu.be/uG69dAmpANA"
+  },
+  {
+    "id": "anv-033",
+    "question": "A Power BI dataset is:",
+    "options": [
+      "The prepared data model that visuals are built on",
+      "A firewall rule",
+      "A backup file",
+      "A printer driver"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Datasets (built with Power Query/modeling) feed every visual.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Power BI",
+    "source": "https://youtu.be/uG69dAmpANA"
+  },
+  {
+    "id": "anv-034",
+    "question": "A measure in Power BI is:",
+    "options": [
+      "A categorical label like Region",
+      "A numeric calculation such as Total Sales",
+      "A color theme",
+      "A user password"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Measures compute numbers; dimensions slice them.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Power BI",
+    "source": "https://youtu.be/uG69dAmpANA"
+  },
+  {
+    "id": "anv-035",
+    "question": "A dimension in Power BI is:",
+    "options": [
+      "A refresh schedule",
+      "A calculated total",
+      "A categorical attribute used to slice data, like Product or Region",
+      "A server name"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Dimensions are the 'by' in 'sales by region'.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Power BI",
+    "source": "https://youtu.be/uG69dAmpANA"
+  },
+  {
+    "id": "anv-036",
+    "question": "A hierarchy like Year → Quarter → Month lets users:",
+    "options": [
+      "Delete data",
+      "Change passwords",
+      "Log in faster",
+      "Drill up and down through levels of detail"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Hierarchies define drill paths for exploration.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Power BI",
+    "source": "https://youtu.be/uG69dAmpANA"
+  },
+  {
+    "id": "anv-037",
+    "question": "A slicer on a report is used to:",
+    "options": [
+      "Let viewers filter visuals interactively",
+      "Cut printing costs",
+      "Backup datasets",
+      "Slice servers physically"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Slicers are on-canvas filters for consumers.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Power BI",
+    "source": "https://youtu.be/uG69dAmpANA"
+  },
+  {
+    "id": "anv-038",
+    "question": "The Q&A visual in Power BI allows users to:",
+    "options": [
+      "Chat with support",
+      "Ask questions in natural language and get charts",
+      "Queue print jobs",
+      "Query DNS"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Type 'sales by city' and Q&A builds the visual.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Power BI",
+    "source": "https://youtu.be/uG69dAmpANA"
+  },
+  {
+    "id": "anv-039",
+    "question": "Scheduled refresh in Power BI exists to:",
+    "options": [
+      "Speed up laptops",
+      "Change passwords",
+      "Keep reports current automatically",
+      "Delete old users"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Refresh reruns queries so numbers stay fresh.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Power BI",
+    "source": "https://youtu.be/uG69dAmpANA"
+  },
+  {
+    "id": "anv-040",
+    "question": "To show sales trends across months you would choose a:",
+    "options": [
+      "KPI with no context",
+      "Table of passwords",
+      "Pie chart of one total",
+      "Line chart over time"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Lines show change over time; bars compare categories.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Power BI",
+    "source": "https://youtu.be/uG69dAmpANA"
+  },
+  {
+    "id": "anv-041",
+    "question": "A KPI visual communicates:",
+    "options": [
+      "Progress toward a target at a glance",
+      "Server locations",
+      "User passwords",
+      "Raw log lines"
+    ],
+    "correctAnswer": 0,
+    "explanation": "KPIs pair a value with its goal and status.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Power BI",
+    "source": "https://youtu.be/uG69dAmpANA"
+  },
+  {
+    "id": "anv-042",
+    "question": "Sharing Power BI content across teams mainly enables:",
+    "options": [
+      "Slower decisions",
+      "Collaborative data-driven decisions",
+      "Larger backups",
+      "More servers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Shared dashboards align everyone on the same numbers.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Power BI",
+    "source": "https://youtu.be/uG69dAmpANA"
+  },
+  {
+    "id": "anv-043",
+    "question": "The standard analytics flow runs in which order?",
+    "options": [
+      "Decide, then collect data",
+      "Visualize, ingest, delete, decide",
+      "Ingest, process, store, analyze, visualize",
+      "Buy servers, print reports, archive"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Land data, prepare it, keep it, analyze, then show it.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-044",
+    "question": "A retailer needs yesterday's sales summarized every morning. Best fit?",
+    "options": [
+      "Manual whiteboard",
+      "Archive tier only",
+      "Stream Analytics per millisecond",
+      "A scheduled batch pipeline into a warehouse plus Power BI"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Daily summaries are textbook batch + report workloads.",
+    "difficulty": "hard",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-045",
+    "question": "Factory sensors must raise alerts within seconds of failure. Best fit?",
+    "options": [
+      "IoT Hub ingestion with Stream Analytics to a live dashboard",
+      "Annual survey",
+      "Archive blobs",
+      "Nightly batch CSV"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Seconds matter: ingest streams and evaluate continuously.",
+    "difficulty": "hard",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/5zbCjFFXLC0"
+  },
+  {
+    "id": "anv-046",
+    "question": "Data scientists exploring incidents with shared notebooks should use:",
+    "options": [
+      "Azure Files",
+      "Azure Databricks",
+      "Archive Storage",
+      "DNS zones"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Collaborative notebook exploration is Databricks' home turf.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-047",
+    "question": "Executives want key numbers on one live page. Deliver with:",
+    "options": [
+      "A backup vault",
+      "A 40-page paginated export",
+      "A Power BI dashboard of pinned tiles",
+      "Raw CSV downloads"
+    ],
+    "correctAnswer": 2,
+    "explanation": "One-page live KPIs are exactly what dashboards are for.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/uG69dAmpANA"
+  },
+  {
+    "id": "anv-048",
+    "question": "Clicks and receipts must be kept raw for analyses not yet imagined. Store in:",
+    "options": [
+      "An email inbox",
+      "A KPI card",
+      "A dashboard",
+      "A data lake"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Unknown future questions demand cheap raw retention: a lake.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-049",
+    "question": "Predicting which customers may cancel next quarter needs:",
+    "options": [
+      "Descriptive totals only",
+      "Historical data plus predictive modeling",
+      "Deleting history",
+      "Prescriptive dashboards only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Forecasts learn from history — predictive analytics.",
+    "difficulty": "hard",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-050",
+    "question": "Why would a new company pick Microsoft Fabric for analytics?",
+    "options": [
+      "It replaces all databases",
+      "One SaaS platform covers ingestion to BI with less integration glue",
+      "It is a hardware store",
+      "It removes the need for data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Fabric unifies the analytics stack instead of wiring many services.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-051",
+    "question": "Scanning years of transactions runs fastest from:",
+    "options": [
+      "Printed reports",
+      "Row-based CSV text",
+      "Columnar Parquet files",
+      "JPEG images"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Columnar Parquet minimizes IO for analytic queries.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/QuQNIWYjV0E"
+  },
+  {
+    "id": "anv-052",
+    "question": "Stream Analytics jobs are written in a language that is:",
+    "options": [
+      "Only Python",
+      "Latin",
+      "Pure binary",
+      "SQL-like"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Its query language mirrors SQL with streaming extensions.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/5zbCjFFXLC0"
+  },
+  {
+    "id": "anv-053",
+    "question": "Event Hubs handles huge parallel load partly through:",
+    "options": [
+      "Partitions that consumers read in parallel",
+      "Manual file copies",
+      "Single-threaded queues",
+      "Printers"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Partitions split streams so many readers scale out.",
+    "difficulty": "hard",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/5zbCjFFXLC0"
+  },
+  {
+    "id": "anv-054",
+    "question": "A sales manager wants an alert when revenue drops below target. Use:",
+    "options": [
+      "A static screenshot",
+      "Power BI data alerts on the KPI",
+      "A longer password",
+      "A new virtual machine"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Data alerts watch tiles and notify on threshold breaches.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/uG69dAmpANA"
+  },
+  {
+    "id": "anv-055",
+    "question": "Sending the same stream to a live dashboard AND to Blob storage needs:",
+    "options": [
+      "A printer",
+      "Two separate factories",
+      "A Stream Analytics job with multiple outputs",
+      "Deleting one copy"
+    ],
+    "correctAnswer": 2,
+    "explanation": "One job can fan out to hot (dashboard) and cold (storage) paths.",
+    "difficulty": "medium",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/5zbCjFFXLC0"
+  },
+  {
+    "id": "anv-056",
+    "question": "Year → Quarter → Month navigation in a report is an example of:",
+    "options": [
+      "A gateway",
+      "A partition",
+      "A measure",
+      "A hierarchy"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Leveled drill paths are hierarchies.",
+    "difficulty": "easy",
+    "topic": "Analytics & Visualization",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/uG69dAmpANA"
+  }
+]

@@ -1,5 +1,13 @@
 [
   {
+    "id": "analytics-visualization",
+    "title": "Analytics & Visualization",
+    "description": "Workloads, streaming and Power BI from Episodes 4–6 — one consolidated guide.",
+    "file": "notes/analytics-visualization.json",
+    "practiceTopicId": "analytics-visualization",
+    "updatedAt": "2026-09-26"
+  },
+  {
     "id": "core-data-concepts",
     "title": "Core Data Concepts",
     "description": "Data types, workloads, roles and the ideas every DP-900 question builds on.",
