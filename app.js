@@ -341,18 +341,23 @@
     return svg('<ellipse cx="12" cy="5.5" rx="7" ry="2.8"/><path d="M5 5.5v13c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-13"/><path d="M5 12c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8"/>');
   }
 
-  /* ================= boot ================= */
+  /* ============ boot (null-safe: survives stale cached shells) ============ */
 
-  document.getElementById("brand-home").addEventListener("click", function (e) {
+  function on(id, ev, fn) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener(ev, fn);
+  }
+
+  on("brand-home", "click", function (e) {
     e.preventDefault(); stopTimer(); renderHome();
   });
-  document.getElementById("nav-topics").addEventListener("click", function () { stopTimer(); renderHome(); scrollToId("topics-heading"); });
-  document.getElementById("nav-notes").addEventListener("click", function () { stopTimer(); renderHome(); scrollToId("notes-heading"); });
-  document.getElementById("nav-modes").addEventListener("click", function () { stopTimer(); renderHome(); scrollToId("modes-heading"); });
-  document.getElementById("nav-progress").addEventListener("click", function () { stopTimer(); renderHome(); scrollToId("progress-heading"); });
-  document.getElementById("nav-bank").addEventListener("click", function () { stopTimer(); playSound("click"); renderBank(); });
-  document.getElementById("btn-theme").addEventListener("click", toggleTheme);
-  document.getElementById("btn-sound").addEventListener("click", toggleSound);
+  on("nav-topics", "click", function () { stopTimer(); renderHome(); scrollToId("topics-heading"); });
+  on("nav-notes", "click", function () { stopTimer(); renderHome(); scrollToId("notes-heading"); });
+  on("nav-modes", "click", function () { stopTimer(); renderHome(); scrollToId("modes-heading"); });
+  on("nav-progress", "click", function () { stopTimer(); renderHome(); scrollToId("progress-heading"); });
+  on("nav-bank", "click", function () { stopTimer(); playSound("click"); renderBank(); });
+  on("btn-theme", "click", toggleTheme);
+  on("btn-sound", "click", toggleSound);
 
   initThemeSound();
   init();
