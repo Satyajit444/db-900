@@ -1054,11 +1054,12 @@
       (cur.src.subtopic ? '<span class="badge">' + escapeHtml(cur.src.subtopic) + "</span>" : "") + "</div>" +
       '<h2 class="question-text" id="q-text" tabindex="-1">' + escapeHtml(cur.src.question) + "</h2>" +
       '<ol class="options">' + optionsHtml + "</ol>" + feedbackHtml + "</article>" +
-      '<div class="quiz-nav"><div class="nav-group"><button class="btn ghost" id="btn-quit" type="button">← Exit</button>' +
-      '<span class="kbd-hint"><kbd>←</kbd><kbd>→</kbd> move · <kbd>1</kbd>–<kbd>4</kbd> answer · <kbd>Enter</kbd> next</span></div>' +
+      '<div class="quiz-nav">' +
       '<div class="nav-group"><button class="btn secondary" id="btn-prev" type="button"' + (s.index === 0 ? " disabled" : "") + ">← Previous</button>" +
       (s.index < total - 1 ? '<button class="btn" id="btn-next" type="button">Next →</button>'
-        : '<button class="btn" id="btn-finish" type="button">Submit ✓</button>') + "</div></div></div>";
+        : '<button class="btn" id="btn-finish" type="button">Submit ✓</button>') +
+      '<span class="kbd-hint"><kbd>←</kbd><kbd>→</kbd> move · <kbd>1</kbd>–<kbd>4</kbd> answer · <kbd>Enter</kbd> next</span></div>' +
+      '<button class="btn ghost small" id="btn-quit" type="button">← Exit practice</button></div></div>';
 
     Array.prototype.forEach.call(app.querySelectorAll("[data-opt]"), function (b) {
       b.addEventListener("click", function () { selectAnswer(parseInt(b.getAttribute("data-opt"), 10)); });
@@ -1070,7 +1071,25 @@
         renderQuestion(); focusQuestion();
       });
     });
-    document.getElementById("btn-quit").addEventListener("click", function () { stopTimer(); state.session = null; renderHome(); });
+    /* Exit sits at the bottom and needs a confirming second tap,
+       so an accidental touch can never kill a practice session. */
+    var quitBtn = document.getElementById("btn-quit");
+    var quitArmed = false, quitTimer = null;
+    quitBtn.addEventListener("click", function () {
+      if (!quitArmed) {
+        quitArmed = true;
+        quitBtn.classList.add("armed");
+        quitBtn.textContent = "Tap again to exit";
+        quitTimer = setTimeout(function () {
+          quitArmed = false;
+          quitBtn.classList.remove("armed");
+          quitBtn.textContent = "← Exit practice";
+        }, 3000);
+      } else {
+        if (quitTimer) clearTimeout(quitTimer);
+        stopTimer(); state.session = null; renderHome();
+      }
+    });
     var prev = document.getElementById("btn-prev");
     if (prev) prev.addEventListener("click", function () { previousQuestion(); });
     var next = document.getElementById("btn-next");

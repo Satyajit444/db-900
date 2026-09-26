@@ -243,6 +243,8 @@ code, kbd { font-family: var(--mono); font-size: 0.86em; background: var(--surfa
 .feedback p { margin: 0; }
 .quiz-nav { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: space-between; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
 .nav-group { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+#btn-quit { opacity: 0.8; }
+#btn-quit.armed { border-color: var(--danger); color: var(--danger); opacity: 1; }
 .kbd-hint { font-size: 0.78rem; color: var(--muted); }
 
 /* ---------- results ---------- */
@@ -388,8 +390,9 @@ table.tbl tbody tr:last-child td { border-bottom: none; }
   .option-state { font-size: 0.72rem; }
   .feedback { margin-top: 10px; padding: 10px 12px; font-size: 0.82rem; }
   .quiz-nav { position: sticky; bottom: 0; z-index: 15; flex-direction: column; align-items: stretch; gap: 8px; padding: 10px 12px; border-radius: 16px; }
-  .quiz-nav .nav-group { justify-content: space-between; }
-  .quiz-nav .btn { flex: 1 1 auto; padding: 10px; font-size: 0.88rem; }
+  .quiz-nav .nav-group { justify-content: space-between; order: 1; }
+  .quiz-nav .nav-group .btn { flex: 1 1 auto; padding: 10px; font-size: 0.88rem; }
+  #btn-quit { order: 2; width: 100%; padding: 7px; font-size: 0.8rem; }
   .kbd-hint { display: none; }
   .review-item { padding: 12px; }
   .toast-region { bottom: 86px; }
