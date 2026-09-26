@@ -141,7 +141,7 @@ code, kbd { font-family: var(--mono); font-size: 0.86em; background: var(--surfa
 /* ---------- continue / modes / dashboard ---------- */
 .continue-card { display: flex; gap: 14px; align-items: center; justify-content: space-between; flex-wrap: wrap; background: linear-gradient(120deg, var(--surface), var(--surface-2)); }
 .streak-flame { font-size: 1.4rem; }
-.mode-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.mode-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
 .mode-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 18px; display: flex; flex-direction: column; gap: 8px; transition: transform 0.12s ease, box-shadow 0.15s ease; }
 .mode-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 .mode-card h3 { margin: 0; font-size: 1.05rem; }

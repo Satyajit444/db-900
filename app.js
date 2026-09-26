@@ -518,6 +518,13 @@
       '<div class="mode-card"><span class="mode-ico">🎯</span><h3>Exam Mode</h3>' +
       "<p>15 mixed questions, 15:00 timer, answers locked in — feedback only at the end.</p>" +
       '<button class="btn secondary" data-mode="exam" type="button">Start Exam Mode</button></div>' +
+      '<div class="mode-card"><span class="mode-ico">🏆</span><h3>Challenge Mode</h3>' +
+      "<p>Hard questions only, with tricky closely-related options. Instant feedback.</p>" +
+      '<div class="size-btns" role="group" aria-label="Challenge Mode size">' +
+      '<button class="btn secondary small" data-mode="challenge" data-count="15" type="button">15</button>' +
+      '<button class="btn secondary small" data-mode="challenge" data-count="30" type="button">30</button>' +
+      '<button class="btn secondary small" data-mode="challenge" data-count="50" type="button">50</button>' +
+      "</div></div>" +
       '<div class="mode-card"><span class="mode-ico">🔥</span><h3>Daily Practice</h3>' +
       (dailyDone
         ? "<p>Today's practice ✓ completed — " + stats.daily[dk].score + "/" + stats.daily[dk].total + ". Come back tomorrow to extend the streak.</p><button class=\"btn ghost\" data-mode=\"daily\" type=\"button\">Practice again</button>"
@@ -962,7 +969,8 @@
     var labels = {
       random: "🎲 Random Practice · " + scopeTitle,
       exam: "🎯 Exam Mode · Mixed topics",
-      daily: "🔥 Daily Practice · " + todayKey()
+      daily: "🔥 Daily Practice · " + todayKey(),
+      challenge: "🏆 Challenge Mode · hard questions only"
     };
     var meta = { id: "__mixed__", title: labels[kind] || "Mixed Practice", name: labels[kind] || "Mixed Practice" };
     meta.scopeId = (kind === "random") ? scopeId : "all";
@@ -982,6 +990,7 @@
         meta.scopeLabel = scopeTitle;
       }
       var pool = scoped ? questionsOf(scopeId) : allQuestions();
+      if (kind === "challenge") pool = questionsOf("challenge-mode");
       if (!pool.length) {
         app.innerHTML = '<div class="card error-card"><h2>No questions available yet.</h2><p><button class="btn" id="btn-back" type="button">Back</button></p></div>';
         document.getElementById("btn-back").addEventListener("click", renderHome);
@@ -990,6 +999,7 @@
       if (kind === "daily") meta.id = "__daily__";
       if (kind === "exam") meta.id = "__exam__";
       if (kind === "random") meta.id = "__random__";
+      if (kind === "challenge") meta.id = "__challenge__";
       buildSession(meta, pool, kind === "daily" ? "daily" : kind, count);
     });
   }
@@ -1087,7 +1097,7 @@
     }
 
     var modeTag = s.kind === "exam" ? "Exam Mode · " + formatTime(s.remaining != null ? s.remaining : EXAM_SECONDS) + " left"
-      : s.kind === "daily" ? "Daily Practice" : s.kind === "random" ? "Random Practice · " + randomScopeName(s) + " · " + s.questions.length + " questions" : topicTitle(s.topic);
+      : s.kind === "daily" ? "Daily Practice" : s.kind === "random" ? "Random Practice · " + randomScopeName(s) + " · " + s.questions.length + " questions" : s.kind === "challenge" ? "Challenge Mode · hard questions · " + s.questions.length + " questions" : topicTitle(s.topic);
 
     app.innerHTML =
       '<div class="quiz-shell' + (state.softRefresh ? " no-anim" : "") + '"><div class="quiz-topbar">' +
@@ -1284,7 +1294,7 @@
       var v = byTopic[k], p = Math.round(100 * v.correct / v.total);
       return '<span class="pill">' + escapeHtml(k) + ": " + v.correct + "/" + v.total + " (" + p + "%)</span>";
     }).join("");
-    var kindLabel = s.kind === "exam" ? "🎯 Exam Mode" : s.kind === "daily" ? "🔥 Daily Practice" : s.kind === "random" ? "🎲 Random Practice · " + randomScopeName(s) : topicTitle(s.topic);
+    var kindLabel = s.kind === "exam" ? "🎯 Exam Mode" : s.kind === "daily" ? "🔥 Daily Practice" : s.kind === "random" ? "🎲 Random Practice · " + randomScopeName(s) : s.kind === "challenge" ? "🏆 Challenge Mode" : topicTitle(s.topic);
 
     app.innerHTML =
       '<div class="card" aria-labelledby="res-title"><div class="result-hero">' +
