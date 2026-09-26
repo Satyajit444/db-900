@@ -1,0 +1,898 @@
+[
+  {
+    "id": "nrel-001",
+    "question": "Which statement best describes non-relational data?",
+    "options": [
+      "Data that must always fit rigid tables with fixed columns",
+      "Data stored without a fixed tabular schema, often with flexible structure",
+      "Data that can only be stored on virtual machines",
+      "Data that cannot be queried"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Non-relational data drops the rigid table schema, allowing flexible structures.",
+    "difficulty": "easy",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Concepts",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-002",
+    "question": "A key reason modern apps choose NoSQL stores is:",
+    "options": [
+      "They scale out across servers and accept flexible, varied data shapes",
+      "They remove the need for backups",
+      "They only support one programming language",
+      "They always use less storage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "NoSQL systems scale horizontally and handle large volumes of varied data.",
+    "difficulty": "easy",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Concepts",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-003",
+    "question": "Schema flexibility in a NoSQL store means:",
+    "options": [
+      "Schemas are stored on virtual machines",
+      "Queries must always use JOINs",
+      "Every record must have identical fields",
+      "Different records can carry different fields without altering a schema"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Dynamic schemas let each item hold the fields it needs.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Concepts",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-004",
+    "question": "Which workload fits non-relational storage best?",
+    "options": [
+      "Printing fixed monthly invoices",
+      "Payroll with strict fixed reporting tables",
+      "A fast-growing app with varied semi-structured data and global users",
+      "A single-user desktop spreadsheet"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Varied, fast-growing, globally distributed data suits NoSQL.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Concepts",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-005",
+    "question": "Compared with relational systems, many NoSQL stores emphasize:",
+    "options": [
+      "Rigid schemas and vertical scaling only",
+      "Flexible schemas, horizontal scale-out, and tunable consistency",
+      "Storing only numeric data",
+      "Manual sharding by end users in all cases"
+    ],
+    "correctAnswer": 1,
+    "explanation": "NoSQL trades rigid guarantees for scale, flexibility and options like eventual consistency.",
+    "difficulty": "hard",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Concepts",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-006",
+    "question": "Horizontal scaling (scale-out) means:",
+    "options": [
+      "Adding more servers or nodes to share the load",
+      "Compressing all data into one file",
+      "Deleting old data automatically",
+      "Buying a bigger single server"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Scale-out distributes load across many machines.",
+    "difficulty": "easy",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Concepts",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-007",
+    "question": "Which is a typical semi-structured example in Azure?",
+    "options": [
+      "An MP3 recording",
+      "A printed invoice",
+      "A video file in Blob Storage",
+      "A JSON customer document in Cosmos DB"
+    ],
+    "correctAnswer": 3,
+    "explanation": "JSON documents with keys, arrays and nesting are semi-structured.",
+    "difficulty": "easy",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Concepts",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-008",
+    "question": "Which is a typical unstructured example in Azure?",
+    "options": [
+      "A PartitionKey",
+      "A SQL table",
+      "A JSON document",
+      "A video stored in Blob Storage"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Video has no predefined data model, so it is unstructured.",
+    "difficulty": "easy",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Concepts",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-009",
+    "question": "In a key-value data model, each item consists of:",
+    "options": [
+      "A table and a view",
+      "A unique key plus its associated value",
+      "A node plus an edge",
+      "A partition plus an index"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Key-value stores look up each value by its unique key.",
+    "difficulty": "easy",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Models",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-010",
+    "question": "In a document data model, data is stored as:",
+    "options": [
+      "Self-contained JSON-like documents",
+      "Binary virtual machine images",
+      "Network packets",
+      "Rows with identical columns"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Documents bundle related fields, arrays and nesting together.",
+    "difficulty": "easy",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Models",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-011",
+    "question": "In a graph data model, information is represented with:",
+    "options": [
+      "Folders and files",
+      "Blobs and containers",
+      "Tables and foreign keys only",
+      "Nodes connected by edges that show relationships"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Graphs model entities as nodes and their relationships as edges.",
+    "difficulty": "easy",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Models",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-012",
+    "question": "Azure Blob Storage is best suited for:",
+    "options": [
+      "Virtual machine operating systems only",
+      "Small relational lookup tables",
+      "Massive unstructured objects such as images, videos and backups",
+      "Active Directory authentication"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Blob Storage holds huge volumes of object data.",
+    "difficulty": "easy",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Blob Storage",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-013",
+    "question": "Images accessed frequently by a live website should use which access tier?",
+    "options": [
+      "Archive",
+      "Cool",
+      "Hot",
+      "Cold"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Hot is for frequently accessed data.",
+    "difficulty": "easy",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Blob Storage",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-014",
+    "question": "Backups accessed rarely (around once a month) fit which tier?",
+    "options": [
+      "Premium SSD",
+      "Cool",
+      "Transaction optimized",
+      "Hot"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cool suits infrequently accessed data at lower storage cost.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Blob Storage",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-015",
+    "question": "Compliance archives almost never read again belong in:",
+    "options": [
+      "Cold",
+      "Archive",
+      "Hot",
+      "Cool"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Archive is the cheapest tier for rarely-read, long-retention data.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Blob Storage",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-016",
+    "question": "Before an archived blob can be read, you must first:",
+    "options": [
+      "Disable redundancy",
+      "Delete its container",
+      "Rehydrate it to an online tier",
+      "Convert it to a table"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Archive blobs are offline and must be rehydrated first.",
+    "difficulty": "hard",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Blob Storage",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-017",
+    "question": "Block blobs are primarily used for:",
+    "options": [
+      "Random read/write virtual disks",
+      "Discrete objects such as images, videos and documents",
+      "Appending log lines over time",
+      "File shares over SMB"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Block blobs store everyday discrete objects.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Blob Storage",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-018",
+    "question": "Append blobs are a good fit for:",
+    "options": [
+      "Streaming video playback",
+      "Log data that grows by appending",
+      "Relational tables",
+      "Virtual machine disks"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Append blobs are optimized for append operations like logging.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Blob Storage",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-019",
+    "question": "Page blobs are commonly used for:",
+    "options": [
+      "Long-term archives",
+      "Static website assets",
+      "Storing photos",
+      "Random read/write workloads such as virtual hard disks"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Page blobs support random access, e.g. VHDs.",
+    "difficulty": "hard",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Blob Storage",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-020",
+    "question": "Which redundancy option is cheapest and keeps copies in one datacenter?",
+    "options": [
+      "RA-GZRS",
+      "RA-GRS",
+      "GZRS",
+      "LRS"
+    ],
+    "correctAnswer": 3,
+    "explanation": "LRS replicates within a single datacenter at the lowest cost.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Blob Storage",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-021",
+    "question": "An app must keep working with readable data if its primary region fails. Choose:",
+    "options": [
+      "LRS",
+      "ZRS",
+      "RA-GRS",
+      "Premium page blobs"
+    ],
+    "correctAnswer": 2,
+    "explanation": "RA-GRS adds a readable secondary copy in another region.",
+    "difficulty": "hard",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Blob Storage",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-022",
+    "question": "Automatically moving aging blobs to cooler tiers is done with:",
+    "options": [
+      "Lifecycle management policies",
+      "Foreign keys",
+      "Views",
+      "Stored procedures"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Lifecycle policies transition or delete blobs by age and rules.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Blob Storage",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-023",
+    "question": "Azure Data Lake Storage Gen2 adds what on top of Blob Storage?",
+    "options": [
+      "A graph query language",
+      "An email service",
+      "A relational query engine",
+      "A hierarchical namespace with directories and files"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Hierarchical namespace brings file-system semantics to object storage.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Data Lake",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-024",
+    "question": "Which workload best fits Data Lake Storage Gen2?",
+    "options": [
+      "DNS hosting",
+      "Small office file shares",
+      "Big-data analytics with engines like Spark over huge datasets",
+      "Single-row transactions"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Data Lake Gen2 is built for large-scale analytics workloads.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Data Lake",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-025",
+    "question": "Data Lake Storage Gen2 is fundamentally built on:",
+    "options": [
+      "Azure Blob Storage",
+      "Azure SQL Database",
+      "Azure Cosmos DB",
+      "Virtual machine disks"
+    ],
+    "correctAnswer": 0,
+    "explanation": "It extends Blob Storage with analytics-focused capabilities.",
+    "difficulty": "easy",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Data Lake",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-026",
+    "question": "Fine-grained security on individual Data Lake folders and files uses:",
+    "options": [
+      "Access control lists (ACLs)",
+      "Foreign keys",
+      "RowVersion columns",
+      "Shared passwords"
+    ],
+    "correctAnswer": 0,
+    "explanation": "POSIX-like ACLs secure directories and files individually.",
+    "difficulty": "hard",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Data Lake",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-027",
+    "question": "Azure Files provides:",
+    "options": [
+      "A document database",
+      "A container registry",
+      "Block storage for virtual disks only",
+      "Fully managed file shares in the cloud"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Azure Files offers SMB/NFS cloud file shares.",
+    "difficulty": "easy",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Azure Files",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-028",
+    "question": "A company wants to retire on-premises file servers without rewriting apps. Best fit?",
+    "options": [
+      "Azure Table Storage",
+      "Azure Blob Storage with Cool tier",
+      "Azure Files shares mounted like network drives",
+      "Cosmos DB Gremlin API"
+    ],
+    "correctAnswer": 2,
+    "explanation": "File shares lift-and-shift existing file-server workloads.",
+    "difficulty": "hard",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Azure Files",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-029",
+    "question": "Azure Files can be accessed from Windows, Linux and macOS mainly because it supports:",
+    "options": [
+      "Only FTP",
+      "SMB and NFS protocols",
+      "Only RDP",
+      "Graph queries"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Standard SMB/NFS protocols make shares mountable everywhere.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Azure Files",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-030",
+    "question": "Controlling share access with corporate identities points to:",
+    "options": [
+      "Azure Files with identity-based authentication",
+      "Local CSV files",
+      "Archive tier",
+      "Anonymous blob access"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Azure Files integrates with identity providers for access control.",
+    "difficulty": "hard",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Azure Files",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-031",
+    "question": "Azure Table Storage holds data as:",
+    "options": [
+      "Virtual machine images",
+      "Email queues",
+      "Relational tables with enforced schemas",
+      "Schemaless entities with keys plus attributes"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Table entities carry a key and a flexible set of attributes.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Table Storage",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-032",
+    "question": "Each Table Storage entity is uniquely identified by:",
+    "options": [
+      "Account plus share",
+      "Container plus blob name",
+      "PartitionKey plus RowKey",
+      "Database plus schema"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The PartitionKey/RowKey pair addresses every entity.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Table Storage",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-033",
+    "question": "A cheap store for billions of small semi-structured records like device readings fits:",
+    "options": [
+      "Azure SQL Database",
+      "Azure Table Storage",
+      "Azure Files Premium",
+      "SQL Server on VMs"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Table Storage scales cheaply for key-addressed semi-structured data.",
+    "difficulty": "hard",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Table Storage",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-034",
+    "question": "Compared with Table Storage, the Cosmos DB Table API adds:",
+    "options": [
+      "Global distribution, SLAs and dedicated throughput",
+      "SMB file sharing",
+      "Lower availability",
+      "A fixed relational schema"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cosmos DB brings global scale, SLAs and provisioned throughput to tables.",
+    "difficulty": "hard",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Table Storage",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-035",
+    "question": "Different entities in one Table Storage table may:",
+    "options": [
+      "Only store images",
+      "Require identical columns",
+      "Never coexist",
+      "Have different sets of attributes"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Schemaless design allows varying attributes per entity.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Table Storage",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-036",
+    "question": "Querying Table Storage most efficiently uses:",
+    "options": [
+      "Graph traversals",
+      "Full table scans for every request",
+      "PartitionKey and RowKey lookups",
+      "JOINs across accounts"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Key-based lookups are the fast access path.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Table Storage",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-037",
+    "question": "Azure Cosmos DB is best described as a:",
+    "options": [
+      "Single-region file share",
+      "Globally distributed multi-model database service",
+      "Relational-only engine",
+      "Backup vault"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cosmos DB spans regions and supports multiple data models.",
+    "difficulty": "easy",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Cosmos DB",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-038",
+    "question": "Cosmos DB throughput is measured in:",
+    "options": [
+      "Request Units per second (RU/s)",
+      "Transactions per database file",
+      "Indexes per container",
+      "Gigabytes per account"
+    ],
+    "correctAnswer": 0,
+    "explanation": "You provision throughput as RU/s (autoscale, manual or serverless).",
+    "difficulty": "easy",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Cosmos DB",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-039",
+    "question": "Choosing a good partition key in Cosmos DB matters because it:",
+    "options": [
+      "Creates file shares",
+      "Defines backup schedules",
+      "Encrypts the data",
+      "Distributes data and throughput across partitions"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The partition key spreads storage and request load evenly.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Cosmos DB",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-040",
+    "question": "The default consistency level for a new Cosmos DB account is:",
+    "options": [
+      "Eventual",
+      "Strong",
+      "Bounded Staleness",
+      "Session"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Session consistency is the default balance of consistency and performance.",
+    "difficulty": "hard",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Cosmos DB",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-041",
+    "question": "Which consistency level gives the strongest guarantee?",
+    "options": [
+      "Eventual",
+      "Consistent Prefix",
+      "Session",
+      "Strong"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Strong consistency linearizes reads and writes globally.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Cosmos DB",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-042",
+    "question": "Time-to-live (TTL) in Cosmos DB is used to:",
+    "options": [
+      "Automatically expire old items such as sessions or carts",
+      "Replicate data across regions",
+      "Create indexes",
+      "Back up containers nightly"
+    ],
+    "correctAnswer": 0,
+    "explanation": "TTL deletes items automatically after their lifetime passes.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Cosmos DB",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-043",
+    "question": "The Cosmos DB change feed provides:",
+    "options": [
+      "A firewall rule set",
+      "A billing report",
+      "A backup of virtual machines",
+      "A persistent log of container changes for triggers, sync and materialized views"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Change feed streams inserts/updates to Functions, Spark or other processors.",
+    "difficulty": "hard",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Cosmos DB",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-044",
+    "question": "Enabling multi-region writes in Cosmos DB mainly gives:",
+    "options": [
+      "Free throughput",
+      "Cheaper storage",
+      "Low-latency writes close to users plus higher availability",
+      "Automatic schema design"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Writes land in the nearest region instead of traveling to one write region.",
+    "difficulty": "hard",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Cosmos DB",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-045",
+    "question": "A JSON product catalog queried with SQL-like syntax fits which Cosmos DB API?",
+    "options": [
+      "Gremlin API",
+      "Core (SQL) API",
+      "Cassandra API",
+      "Table API"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Core (SQL) API stores JSON documents queried with familiar SQL syntax.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Cosmos DB APIs",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-046",
+    "question": "An existing MongoDB app should move to Azure with minimal code changes using:",
+    "options": [
+      "Table API",
+      "Cassandra API",
+      "MongoDB API for Cosmos DB",
+      "Gremlin API"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The MongoDB API speaks the MongoDB wire protocol.",
+    "difficulty": "hard",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Cosmos DB APIs",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-047",
+    "question": "Friend networks, fraud rings and recommendation paths are best modeled with:",
+    "options": [
+      "MongoDB API",
+      "Gremlin (graph) API",
+      "Table API",
+      "Cassandra API"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Gremlin traverses nodes and edges for relationship queries.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Cosmos DB APIs",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-048",
+    "question": "High-volume IoT telemetry in wide-column form fits:",
+    "options": [
+      "Cassandra API",
+      "Gremlin API",
+      "Table API",
+      "Core (SQL) API"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The Cassandra API serves wide-column workloads like telemetry.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Cosmos DB APIs",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-049",
+    "question": "Simple key-value data outgrowing Table Storage with global needs fits:",
+    "options": [
+      "Gremlin API",
+      "MongoDB API",
+      "Table API for Cosmos DB",
+      "Cassandra API"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Table API upgrades key-value tables to global distribution.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Cosmos DB APIs",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-050",
+    "question": "The Cosmos DB API for an account is chosen:",
+    "options": [
+      "At account creation and cannot be changed later",
+      "Automatically by Azure each day",
+      "Per document inserted",
+      "Per query at runtime"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Pick the API when creating the account — it is fixed afterwards.",
+    "difficulty": "hard",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Cosmos DB APIs",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-051",
+    "question": "Millions of product images served worldwide belong in:",
+    "options": [
+      "Azure Blob Storage",
+      "Azure Files Premium only",
+      "Azure SQL Database",
+      "Azure Table Storage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Large image libraries are classic unstructured blob workloads.",
+    "difficulty": "easy",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-052",
+    "question": "A global mobile game needs single-digit-millisecond leaderboards everywhere. Choose:",
+    "options": [
+      "Azure Cosmos DB with global distribution",
+      "Azure Files",
+      "Azure Blob Cool tier",
+      "Azure Table Storage only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cosmos DB replicates data near players with fast reads/writes.",
+    "difficulty": "hard",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-053",
+    "question": "A chat app storing JSON messages with unpredictable fields fits:",
+    "options": [
+      "A fixed relational schema",
+      "Cosmos DB document storage",
+      "Page blobs",
+      "Archive tier"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Flexible JSON messages suit a document database.",
+    "difficulty": "hard",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-054",
+    "question": "An on-premises app using a shared network drive should move to:",
+    "options": [
+      "Azure Blob Archive tier",
+      "Azure Files",
+      "Table Storage",
+      "Cosmos DB Gremlin API"
+    ],
+    "correctAnswer": 1,
+    "explanation": "File shares replace network drives without app rewrites.",
+    "difficulty": "hard",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-055",
+    "question": "The typical first step to use any of these services is:",
+    "options": [
+      "Writing a custom database engine",
+      "Disabling all redundancy",
+      "Buying physical servers",
+      "Provisioning the chosen service in the Azure portal"
+    ],
+    "correctAnswer": 3,
+    "explanation": "You provision the service (portal, CLI or templates), then store data.",
+    "difficulty": "easy",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  },
+  {
+    "id": "nrel-056",
+    "question": "Fast-changing shopping-cart sessions with flexible fields fit best in:",
+    "options": [
+      "An archive blob",
+      "A rigid reporting table",
+      "A non-relational store such as Cosmos DB",
+      "A file share"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Session state needs speed plus schema flexibility.",
+    "difficulty": "medium",
+    "topic": "Non-Relational Data in Azure",
+    "subtopic": "Scenarios",
+    "source": "https://youtu.be/3hS06n0RAC0"
+  }
+]

@@ -1,5 +1,18 @@
 [
   {
+    "id": "non-relational-data-azure",
+    "title": "Non-Relational Data in Azure",
+    "description": "NoSQL concepts, Blob Storage, Data Lake Gen2, Azure Files, Table Storage, Cosmos DB and its APIs, provisioning and scenarios. 56 exam-style MCQs.",
+    "sourceType": "YouTube",
+    "sourceName": "https://youtu.be/3hS06n0RAC0",
+    "createdAt": "2026-09-19",
+    "questionFile": "data/non-relational-data-azure.json",
+    "questionCount": 56,
+    "name": "Non-Relational Data in Azure",
+    "file": "data/non-relational-data-azure.json",
+    "examWeight": "DP-900 · Describe non-relational data on Azure"
+  },
+  {
     "id": "relational-data",
     "title": "Relational Data",
     "description": "Tables, keys, relationships, normalization, SQL, database objects, Azure SQL services, and open-source relational databases. 100 competitive MCQs.",
