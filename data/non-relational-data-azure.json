@@ -3,9 +3,9 @@
     "id": "nrel-001",
     "question": "Which statement best describes non-relational data?",
     "options": [
-      "Data that must always fit rigid tables with fixed columns",
-      "Data stored without a fixed tabular schema, often with flexible structure",
-      "Data that can only live on virtual machines",
+      "Tabular data with a fixed rigid schema",
+      "Flexible data without a fixed tabular schema",
+      "Data living only on virtual machines",
       "Data that can never be queried at all"
     ],
     "correctAnswer": 1,
@@ -19,7 +19,7 @@
     "id": "nrel-002",
     "question": "A key reason modern apps choose NoSQL stores is:",
     "options": [
-      "They scale out across servers and accept flexible, varied data shapes",
+      "They scale out and accept varied flexible data",
       "They eliminate the need for backups entirely",
       "They work with only one programming language",
       "They always use less storage than SQL"
@@ -35,10 +35,10 @@
     "id": "nrel-003",
     "question": "Schema flexibility in a NoSQL store means:",
     "options": [
-      "All schemas must be stored on virtual machines",
-      "Queries must always use JOINs",
+      "Schemas must live on virtual machines",
+      "All queries must use JOINs",
       "Every record must have identical fields",
-      "Different records can carry different fields without altering a schema"
+      "Records may carry different fields freely"
     ],
     "correctAnswer": 3,
     "explanation": "Dynamic schemas let each item hold the fields it needs.",
@@ -53,7 +53,7 @@
     "options": [
       "Printing identical monthly invoices",
       "Payroll with strict fixed reporting tables",
-      "A fast-growing app with varied semi-structured data and global users",
+      "A growing app with varied data and global users",
       "A single-user spreadsheet on one laptop"
     ],
     "correctAnswer": 2,
@@ -68,7 +68,7 @@
     "question": "Compared with relational systems, many NoSQL stores emphasize:",
     "options": [
       "Rigid schemas and vertical scaling only",
-      "Flexible schemas, horizontal scale-out, and tunable consistency",
+      "Flexible schemas with scale-out design",
       "Storing only numeric measurements",
       "Manual sharding done by end users"
     ],
@@ -83,7 +83,7 @@
     "id": "nrel-006",
     "question": "Horizontal scaling (scale-out) means:",
     "options": [
-      "Adding more servers or nodes to share the load",
+      "More servers sharing the load",
       "Compressing all data into one file",
       "Deleting old data automatically",
       "Buying a bigger single server"
@@ -99,10 +99,10 @@
     "id": "nrel-007",
     "question": "Which is a typical semi-structured example in Azure?",
     "options": [
-      "An MP3 recording",
-      "A printed invoice",
+      "An MP3 audio recording",
+      "A printed paper invoice",
       "A video file in Blob Storage",
-      "A JSON customer document in Cosmos DB"
+      "JSON customer file in Cosmos DB"
     ],
     "correctAnswer": 3,
     "explanation": "JSON documents with keys, arrays and nesting are semi-structured.",
@@ -131,10 +131,10 @@
     "id": "nrel-009",
     "question": "In a key-value data model, each item consists of:",
     "options": [
-      "A table and a view",
-      "A unique key plus its associated value",
-      "A node plus an edge",
-      "A partition plus an index"
+      "A database table plus a view",
+      "One key plus its value",
+      "A graph node plus an edge",
+      "A partition plus a local index"
     ],
     "correctAnswer": 1,
     "explanation": "Key-value stores look up each value by its unique key.",
@@ -166,7 +166,7 @@
       "Folders holding files inside",
       "Blobs stored inside containers",
       "Tables linked by foreign keys",
-      "Nodes connected by edges that show relationships"
+      "Nodes linked by relationship edges"
     ],
     "correctAnswer": 3,
     "explanation": "Graphs model entities as nodes and their relationships as edges.",
@@ -181,7 +181,7 @@
     "options": [
       "Only virtual machine operating systems",
       "Small relational lookup tables",
-      "Massive unstructured objects such as images, videos and backups",
+      "Big unstructured media and backups",
       "Active Directory authentication services"
     ],
     "correctAnswer": 2,
@@ -243,10 +243,10 @@
     "id": "nrel-016",
     "question": "Before an archived blob can be read, you must first:",
     "options": [
-      "Disable redundancy",
-      "Delete its container",
-      "Rehydrate it to an online tier",
-      "Convert it to a table"
+      "Disable all redundancy",
+      "Delete the whole container",
+      "Rehydrate to an online tier",
+      "Convert it into a table"
     ],
     "correctAnswer": 2,
     "explanation": "Archive blobs are offline and must be rehydrated first.",
@@ -259,10 +259,10 @@
     "id": "nrel-017",
     "question": "Block blobs are primarily used for:",
     "options": [
-      "Random read/write virtual disks",
-      "Discrete objects such as images, videos and documents",
-      "Appending log lines over time",
-      "File shares over SMB"
+      "Virtual disks with random read/write",
+      "Discrete objects like images and documents",
+      "Log lines appended over time",
+      "File shares served over SMB"
     ],
     "correctAnswer": 1,
     "explanation": "Block blobs store everyday discrete objects.",
@@ -294,7 +294,7 @@
       "Long-term compliance archives",
       "Static website assets and images",
       "Storing photo collections",
-      "Random read/write workloads like virtual disks"
+      "Random read/write like virtual disks"
     ],
     "correctAnswer": 3,
     "explanation": "Page blobs support random access, e.g. VHDs.",
@@ -355,10 +355,10 @@
     "id": "nrel-023",
     "question": "Azure Data Lake Storage Gen2 adds what on top of Blob Storage?",
     "options": [
-      "A graph query language",
-      "An email service",
-      "A relational query engine",
-      "A hierarchical namespace with directories and files"
+      "A graph query language layer",
+      "An email delivery service",
+      "A relational query engine service",
+      "File-and-folder hierarchy"
     ],
     "correctAnswer": 3,
     "explanation": "Hierarchical namespace brings file-system semantics to object storage.",
@@ -371,10 +371,10 @@
     "id": "nrel-024",
     "question": "Which workload best fits Data Lake Storage Gen2?",
     "options": [
-      "DNS hosting",
-      "Small office file shares",
-      "Big-data analytics with engines like Spark over huge datasets",
-      "Single-row transactions"
+      "Managed DNS hosting zones",
+      "Small office file-sharing needs",
+      "Big-data analytics over huge datasets",
+      "Single-row OLTP transactions"
     ],
     "correctAnswer": 2,
     "explanation": "Data Lake Gen2 is built for large-scale analytics workloads.",
@@ -404,9 +404,9 @@
     "question": "Fine-grained security on individual Data Lake folders and files uses:",
     "options": [
       "Access control lists (ACLs)",
-      "Foreign keys",
-      "RowVersion columns",
-      "Shared passwords"
+      "Relational foreign keys",
+      "RowVersion concurrency columns",
+      "Shared account passwords"
     ],
     "correctAnswer": 0,
     "explanation": "POSIX-like ACLs secure directories and files individually.",
@@ -435,10 +435,10 @@
     "id": "nrel-028",
     "question": "A company wants to retire on-premises file servers without rewriting apps. Best fit?",
     "options": [
-      "Azure Table Storage",
-      "Azure Blob Storage with Cool tier",
-      "Azure Files shares mounted like network drives",
-      "Cosmos DB Gremlin API"
+      "Azure Table Storage entities",
+      "Cool-tier Azure Blob Storage",
+      "Files shares mapped as drives",
+      "Cosmos DB Gremlin graph API"
     ],
     "correctAnswer": 2,
     "explanation": "File shares lift-and-shift existing file-server workloads.",
@@ -451,10 +451,10 @@
     "id": "nrel-029",
     "question": "Azure Files can be accessed from Windows, Linux and macOS mainly because it supports:",
     "options": [
-      "Only FTP",
+      "Only the FTP file protocol",
       "SMB and NFS protocols",
-      "Only RDP",
-      "Graph queries"
+      "Only the RDP protocol",
+      "Graph query language"
     ],
     "correctAnswer": 1,
     "explanation": "Standard SMB/NFS protocols make shares mountable everywhere.",
@@ -467,10 +467,10 @@
     "id": "nrel-030",
     "question": "Controlling share access with corporate identities points to:",
     "options": [
-      "Azure Files with identity-based authentication",
-      "Local CSV files",
-      "Archive tier",
-      "Anonymous blob access"
+      "Azure Files with identity authentication",
+      "Local CSV files on a file share",
+      "The cold Archive storage tier",
+      "Anonymous public blob container access"
     ],
     "correctAnswer": 0,
     "explanation": "Azure Files integrates with identity providers for access control.",
@@ -531,10 +531,10 @@
     "id": "nrel-034",
     "question": "Compared with Table Storage, the Cosmos DB Table API adds:",
     "options": [
-      "Global distribution, SLAs and dedicated throughput",
-      "SMB file sharing",
-      "Lower availability",
-      "A fixed relational schema"
+      "Global distribution with SLAs",
+      "SMB file sharing support",
+      "Lower overall availability",
+      "A fixed relational table schema"
     ],
     "correctAnswer": 0,
     "explanation": "Cosmos DB brings global scale, SLAs and provisioned throughput to tables.",
@@ -547,10 +547,10 @@
     "id": "nrel-035",
     "question": "Different entities in one Table Storage table may:",
     "options": [
-      "Only store images",
+      "Only store image blobs",
       "Require identical columns",
-      "Never coexist",
-      "Have different sets of attributes"
+      "Never coexist in one table",
+      "Differing attribute sets"
     ],
     "correctAnswer": 3,
     "explanation": "Schemaless design allows varying attributes per entity.",
@@ -579,10 +579,10 @@
     "id": "nrel-037",
     "question": "Azure Cosmos DB is best described as a:",
     "options": [
-      "Single-region file share",
-      "Globally distributed multi-model database service",
-      "Relational-only engine",
-      "Backup vault"
+      "A single-region file share service",
+      "Global multi-model database",
+      "A strictly relational engine",
+      "A scheduled backup vault"
     ],
     "correctAnswer": 1,
     "explanation": "Cosmos DB spans regions and supports multiple data models.",
@@ -611,10 +611,10 @@
     "id": "nrel-039",
     "question": "Choosing a good partition key in Cosmos DB matters because it:",
     "options": [
-      "Creates file shares",
-      "Defines backup schedules",
-      "Encrypts the data",
-      "Distributes data and throughput across partitions"
+      "Creates managed file shares",
+      "Defines backup schedule policies",
+      "Encrypts the stored data",
+      "Even data and load spread"
     ],
     "correctAnswer": 3,
     "explanation": "The partition key spreads storage and request load evenly.",
@@ -659,10 +659,10 @@
     "id": "nrel-042",
     "question": "Time-to-live (TTL) in Cosmos DB is used to:",
     "options": [
-      "Automatically expire old items such as sessions or carts",
+      "Auto-expire old items like sessions",
       "Replicate data across regions",
-      "Create indexes",
-      "Back up containers nightly"
+      "Create and maintain indexes",
+      "Back up containers every night"
     ],
     "correctAnswer": 0,
     "explanation": "TTL deletes items automatically after their lifetime passes.",
@@ -675,10 +675,10 @@
     "id": "nrel-043",
     "question": "The Cosmos DB change feed provides:",
     "options": [
-      "A firewall rule set",
-      "A billing report",
-      "A backup of virtual machines",
-      "A persistent log of container changes for triggers, sync and materialized views"
+      "A network firewall rule set",
+      "A monthly billing report",
+      "A backup of virtual machine disks",
+      "Change log feeding triggers and sync"
     ],
     "correctAnswer": 3,
     "explanation": "Change feed streams inserts/updates to Functions, Spark or other processors.",
@@ -691,10 +691,10 @@
     "id": "nrel-044",
     "question": "Enabling multi-region writes in Cosmos DB mainly gives:",
     "options": [
-      "Free throughput",
-      "Cheaper storage",
-      "Low-latency writes close to users plus higher availability",
-      "Automatic schema design"
+      "Free unlimited request throughput",
+      "Cheaper monthly storage rates",
+      "Near-user writes plus higher availability",
+      "Automatic schema generation"
     ],
     "correctAnswer": 2,
     "explanation": "Writes land in the nearest region instead of traveling to one write region.",
@@ -723,10 +723,10 @@
     "id": "nrel-046",
     "question": "An existing MongoDB app should move to Azure with minimal code changes using:",
     "options": [
-      "Table API",
-      "Cassandra API",
+      "Table API for Cosmos DB",
+      "Cassandra API for Cosmos DB",
       "MongoDB API for Cosmos DB",
-      "Gremlin API"
+      "Gremlin API for Cosmos DB"
     ],
     "correctAnswer": 2,
     "explanation": "The MongoDB API speaks the MongoDB wire protocol.",
@@ -771,10 +771,10 @@
     "id": "nrel-049",
     "question": "Simple key-value data outgrowing Table Storage with global needs fits:",
     "options": [
-      "Gremlin API",
-      "MongoDB API",
+      "Gremlin graph API",
+      "MongoDB document API",
       "Table API for Cosmos DB",
-      "Cassandra API"
+      "Cassandra wide-column API"
     ],
     "correctAnswer": 2,
     "explanation": "The Table API upgrades key-value tables to global distribution.",
@@ -787,10 +787,10 @@
     "id": "nrel-050",
     "question": "The Cosmos DB API for an account is chosen:",
     "options": [
-      "At account creation and cannot be changed later",
-      "Automatically by Azure each day",
-      "Per document inserted",
-      "Per query at runtime"
+      "Chosen at creation, fixed afterward",
+      "Automatically by Azure every day",
+      "Per individual document inserted",
+      "Per query executed at runtime"
     ],
     "correctAnswer": 0,
     "explanation": "Pick the API when creating the account — it is fixed afterwards.",
@@ -819,10 +819,10 @@
     "id": "nrel-052",
     "question": "A global mobile game needs single-digit-millisecond leaderboards everywhere. Choose:",
     "options": [
-      "Azure Cosmos DB with global distribution",
-      "Azure Files",
-      "Azure Blob Cool tier",
-      "Azure Table Storage only"
+      "Cosmos DB with global distribution",
+      "Azure Files shares",
+      "Cool-tier Azure Blob Storage",
+      "Single-region Table Storage"
     ],
     "correctAnswer": 0,
     "explanation": "Cosmos DB replicates data near players with fast reads/writes.",
@@ -868,9 +868,9 @@
     "question": "The typical first step to use any of these services is:",
     "options": [
       "Writing a custom database engine",
-      "Disabling all redundancy",
-      "Buying physical servers",
-      "Provisioning the chosen service in the Azure portal"
+      "Disabling all storage redundancy",
+      "Buying physical database servers",
+      "Provision the service via portal"
     ],
     "correctAnswer": 3,
     "explanation": "You provision the service (portal, CLI or templates), then store data.",
@@ -883,10 +883,10 @@
     "id": "nrel-056",
     "question": "Fast-changing shopping-cart sessions with flexible fields fit best in:",
     "options": [
-      "An archive blob",
+      "A cold archive blob",
       "A rigid reporting table",
-      "A non-relational store such as Cosmos DB",
-      "A file share"
+      "Cosmos DB for flexible sessions",
+      "A shared network file share"
     ],
     "correctAnswer": 2,
     "explanation": "Session state needs speed plus schema flexibility.",

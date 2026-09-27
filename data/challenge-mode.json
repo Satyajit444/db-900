@@ -35,10 +35,10 @@
     "id": "ch-003",
     "question": "An hourly dashboard over five years of history is slowing the order-entry application that shares its database. The BEST fix is:",
     "options": [
-      "Moving analytical queries to a dedicated analytical system",
-      "Shifting the dashboard to Cosmos DB for speed",
-      "Archiving history to the Blob Archive tier",
-      "Scaling up the shared database for more power"
+      "Shift the dashboard to Cosmos DB",
+      "Archive history to cold Blob tiers",
+      "Scale up the shared database",
+      "Move analytics to a dedicated system"
     ],
     "correctAnswer": 0,
     "explanation": "OLTP and OLAP have conflicting access patterns and must be separated. Scaling the shared box is costly and temporary; Cosmos DB does not run historical aggregations; Archive is offline and unreadable for dashboards.",
@@ -99,7 +99,7 @@
     "id": "ch-007",
     "question": "A payment gateway must approve or decline each card transaction instantly as it occurs. This workload is:",
     "options": [
-      "Transactional (OLTP), deciding each payment instantly",
+      "Transactional: instant per-payment calls",
       "Visualization, displaying merchant dashboards",
       "Batch, settling payments in nightly runs",
       "Analytical (OLAP), studying history afterward"
@@ -118,7 +118,7 @@
       "End user, consuming application output",
       "Data Engineer, building ingestion pipelines",
       "Data Analyst, reporting on prepared data",
-      "Database Administrator, owning availability and recovery"
+      "Database Administrator for uptime and recovery"
     ],
     "correctAnswer": 3,
     "explanation": "Availability, backup/recovery and configuration are core DBA responsibilities, not pipeline, reporting or consumption work.",
@@ -195,7 +195,7 @@
     "id": "ch-013",
     "question": "A bank must control the OS, install auditing agents and pin exact SQL Server builds for compliance. The MOST appropriate option is:",
     "options": [
-      "SQL Server on Azure VMs, with OS and build control",
+      "VMs with OS and build control",
       "Cosmos DB, distributing NoSQL worldwide",
       "Azure SQL Database, abstracting the OS away",
       "Managed Instance, abstracting the OS away"
@@ -324,7 +324,7 @@
     "question": "Medical images are read weekly for a month, then yearly for seven years under retention rules. The MOST cost-effective valid design is:",
     "options": [
       "Deleting images after the first month",
-      "Lifecycle rules moving images Hot to Cool to Archive",
+      "Hot-Cool-Archive lifecycle rules",
       "Archive tier immediately for the lowest price",
       "Hot tier forever for instant access"
     ],
@@ -339,7 +339,7 @@
     "id": "ch-022",
     "question": "An application must keep serving reads even during a full regional outage. Choose:",
     "options": [
-      "RA-GRS, with a readable secondary in another region",
+      "RA-GRS with a readable secondary",
       "LRS, the cheapest single-datacenter option",
       "ZRS, spreading copies across nearby zones",
       "GRS, copying to a second region unreadably"
@@ -387,10 +387,10 @@
     "id": "ch-025",
     "question": "Millions of sensors emit time-series telemetry ingested at extreme write rates. The BEST fit is:",
     "options": [
-      "Core (SQL) API, querying JSON with SQL",
-      "Cassandra API, built for massive time-series writes",
       "Gremlin API, modeling relationship graphs",
-      "MongoDB API, storing flexible documents"
+      "Cassandra API for fast series writes",
+      "MongoDB API, storing flexible documents",
+      "Core (SQL) API, querying JSON with SQL"
     ],
     "correctAnswer": 1,
     "explanation": "Cassandra's wide-column model is built for massive time-series writes. Graph, document and core APIs serve different shapes.",
@@ -403,7 +403,7 @@
     "id": "ch-026",
     "question": "An inventory system must never sell an item twice, even across regions. The required consistency is:",
     "options": [
-      "Strong, linearizing every read with the latest write",
+      "Strong for linearizable reads",
       "Session, the default with possible staleness",
       "Eventual, the fastest with weakest guarantees",
       "Bounded Staleness, allowing limited lag"
@@ -467,7 +467,7 @@
     "id": "ch-030",
     "question": "An orders container partitioned by Country (3 values) throttles despite modest volume. The BEST fix is:",
     "options": [
-      "Redesign the partition key to a high-cardinality field",
+      "A high-cardinality partition key redesign",
       "Add more Azure regions for capacity",
       "Raise RU/s permanently for headroom",
       "Archive old orders out to Blob Storage"
@@ -486,7 +486,7 @@
       "Manual spreadsheet consolidation by staff",
       "A dashboard with no refreshed data behind it",
       "Per-transaction Stream Analytics for immediacy",
-      "A scheduled batch pipeline with warehouse plus Power BI"
+      "Scheduled batches plus warehouse and BI"
     ],
     "correctAnswer": 3,
     "explanation": "Closed-book daily figures are textbook batch: complete, cheap, on schedule. Streaming adds needless complexity, manual work errors, and dashboards need refreshed data first.",
@@ -516,8 +516,8 @@
     "question": "One sensor stream must feed a live dashboard AND a cheap multi-year archive. The BEST design is:",
     "options": [
       "Power BI alone reading sensors directly",
-      "Stream Analytics with outputs to Power BI plus Blob",
-      "Two independent ingestion pipelines",
+      "Stream Analytics feeding Power BI and Blob",
+      "Two fully independent ingestion pipelines",
       "Nightly batch ETL for both targets"
     ],
     "correctAnswer": 1,
@@ -565,7 +565,7 @@
     "options": [
       "Raw CSV downloads for self-service",
       "A printed monthly pack for executives",
-      "A dashboard for executives plus reports for analysts",
+      "Executive dashboards plus analyst reports",
       "One more paginated report for everyone"
     ],
     "correctAnswer": 2,
@@ -742,7 +742,7 @@
       "Product catalogs with varying attributes",
       "Chat messages with flexible fields",
       "Session stores with TTL expiry",
-      "A general ledger needing multi-row ACID transactions"
+      "Ledgers needing multi-row ACID deals"
     ],
     "correctAnswer": 3,
     "explanation": "Ledgers need strict multi-row transactions — relational territory. Catalogs, chats and sessions exploit document flexibility.",

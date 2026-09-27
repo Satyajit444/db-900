@@ -3,7 +3,7 @@
     "id": "anv-001",
     "question": "An analytics workload is best described as:",
     "options": [
-      "Turning raw data into insights that support decisions",
+      "Raw data refined into decision insights",
       "Backing up virtual machines on a schedule",
       "Compressing archived logs to save storage",
       "Managing user passwords and access rights"
@@ -101,7 +101,7 @@
     "options": [
       "Streaming video content to end users",
       "Processing each event the instant it arrives",
-      "Collecting data over time for scheduled joint processing",
+      "Gathered over time, processed on schedule",
       "Deleting accumulated data continuously"
     ],
     "correctAnswer": 2,
@@ -118,7 +118,7 @@
       "Works only on laptop-scale datasets",
       "Deletes source data after each load",
       "Skips the transformation step entirely",
-      "Loads raw data first, then transforms inside the target platform"
+      "Raw data lands first, transforms after"
     ],
     "correctAnswer": 3,
     "explanation": "ELT lands raw data in the lake/warehouse, then transforms at scale there.",
@@ -132,7 +132,7 @@
     "question": "A data warehouse differs from a data lake in that the warehouse holds:",
     "options": [
       "Raw data of absolutely any format",
-      "Curated structured data optimized for reporting",
+      "Curated structured data for reporting",
       "Temporary password vault entries",
       "Only archived video files"
     ],
@@ -148,7 +148,7 @@
     "question": "A lakehouse architecture combines:",
     "options": [
       "Email and chat combined into one inbox",
-      "Lake flexibility for raw data with warehouse-style performance and management",
+      "Lake flexibility plus warehouse speed",
       "Two relational databases running side by side",
       "Backups combined with DNS management"
     ],
@@ -165,7 +165,7 @@
     "options": [
       "A managed database engine service",
       "Row-based and entirely uncompressed",
-      "Columnar and compressed, so queries read only needed columns",
+      "Columnar and compressed for fast scans",
       "An image format for pictures"
     ],
     "correctAnswer": 2,
@@ -182,7 +182,7 @@
       "Trains end users on new reports",
       "Sells finished reports to customers",
       "Deletes stale dashboards every night",
-      "Brings data from source systems into the platform"
+      "Moves source data into the platform"
     ],
     "correctAnswer": 3,
     "explanation": "Ingestion (Data Factory, Event Hubs) feeds everything downstream.",
@@ -195,7 +195,7 @@
     "id": "anv-013",
     "question": "Microsoft Fabric is best described as:",
     "options": [
-      "A SaaS analytics platform unifying workloads on OneLake",
+      "A SaaS analytics platform on OneLake",
       "A scheduled backup and restore tool",
       "A general-purpose programming language",
       "A virtual machine size family"
@@ -211,7 +211,7 @@
     "id": "anv-014",
     "question": "OneLake in Microsoft Fabric provides:",
     "options": [
-      "A single logical data lake for the whole organization",
+      "One logical data lake for the whole org",
       "One shared database table for all teams",
       "A central vault for all passwords",
       "A live video streaming feed for events"
@@ -227,10 +227,10 @@
     "id": "anv-015",
     "question": "Azure Databricks is built for:",
     "options": [
-      "Automated password rotation service",
-      "Managed DNS name resolution",
-      "Spark-based collaborative analytics with notebooks",
-      "Long-term file archiving"
+      "Automated rotation of stored passwords",
+      "Managed DNS name resolution service",
+      "Spark analytics with collaborative notebooks",
+      "Long-term archival file storage"
     ],
     "correctAnswer": 2,
     "explanation": "Databricks runs Apache Spark with shared notebooks for data teams.",
@@ -243,10 +243,10 @@
     "id": "anv-016",
     "question": "Notebooks help data teams because they combine:",
     "options": [
-      "Backups plus firewall rulebooks",
-      "Emails plus shared calendars",
-      "Code, results and documentation in one explorable place",
-      "Hardware plus network cables"
+      "Backup schedules plus firewall rulebooks",
+      "Emails plus shared team calendars",
+      "Code, results and docs in one live notebook",
+      "Hardware plus network cable maps"
     ],
     "correctAnswer": 2,
     "explanation": "Notebooks mix live code, charts and notes for exploration.",
@@ -259,7 +259,7 @@
     "id": "anv-017",
     "question": "Apache Spark fits workloads that need:",
     "options": [
-      "Distributed processing of huge datasets in parallel",
+      "Distributed processing of huge datasets",
       "Printing customer invoices in bulk",
       "Storing encrypted user passwords",
       "Single-row key lookups in tables"
@@ -276,7 +276,7 @@
     "question": "Fabric, Databricks and Power BI typically work together as:",
     "options": [
       "Three competing backup products",
-      "Ingest and prepare, process at scale, then visualize",
+      "Ingest, process and visualize in sequence",
       "Identical copies of a single database",
       "Completely unrelated rival products"
     ],
@@ -293,8 +293,8 @@
     "options": [
       "Deleted immediately after arrival",
       "Archived untouched for ten years",
-      "Arriving continuously, close to real time",
-      "Printed onto paper reports"
+      "Arriving steadily in near real time",
+      "Printed onto paper reports daily"
     ],
     "correctAnswer": 2,
     "explanation": "Streams are unbounded flows analyzed as they arrive.",
@@ -310,7 +310,7 @@
       "Programming language choice for the code",
       "Maximum file size the store allows",
       "Total monthly cost of the service",
-      "Scheduled historical chunks versus continuous live flow"
+      "Scheduled chunks versus continuous flow"
     ],
     "correctAnswer": 3,
     "explanation": "Batch = scheduled chunks; stream = always-on flow.",
@@ -324,9 +324,9 @@
     "question": "Which is a classic event-stream example?",
     "options": [
       "IoT sensor readings arriving every second",
-      "A static employee handbook",
-      "A backup tape",
-      "A printed annual report"
+      "A static employee handbook document",
+      "A rotation of backup tapes",
+      "A printed annual financial report"
     ],
     "correctAnswer": 0,
     "explanation": "Sensor telemetry, clicks and transactions are endless streams.",
@@ -340,7 +340,7 @@
     "question": "Windowing in stream analytics is used to:",
     "options": [
       "Resize application windows on screens",
-      "Group events into time slices for aggregates like counts per minute",
+      "Slices events into time windows",
       "Delete outdated hardware devices",
       "Compress archived video files"
     ],
@@ -374,7 +374,7 @@
       "Faster underlying processor hardware",
       "Free custom domain names included",
       "Cheaper blob storage tier pricing",
-      "Device management and two-way device-to-cloud communication"
+      "Device management plus two-way device talk"
     ],
     "correctAnswer": 3,
     "explanation": "IoT Hub manages devices and talks back to them, not just ingests.",
@@ -388,9 +388,9 @@
     "question": "Azure Stream Analytics lets you process streams using:",
     "options": [
       "Familiar SQL-like queries over live data",
-      "Paper intake forms",
-      "Manual spreadsheet reviews",
-      "Raw machine code only"
+      "Paper intake forms filled by hand",
+      "Manual spreadsheet reviews by staff",
+      "Raw machine code written by hand"
     ],
     "correctAnswer": 0,
     "explanation": "Stream Analytics applies SQL-style logic to moving data.",
@@ -403,10 +403,10 @@
     "id": "anv-026",
     "question": "A Stream Analytics job typically reads from Event Hubs or IoT Hub and writes to:",
     "options": [
-      "Only network printers",
-      "Power BI, Blob Storage, SQL or Cosmos DB",
-      "Legacy floppy disk drives",
-      "Email inboxes only"
+      "Only networked office printers",
+      "Feeds Power BI, Blob, SQL, Cosmos",
+      "Legacy floppy disk drive arrays",
+      "Email inboxes for alerts only"
     ],
     "correctAnswer": 1,
     "explanation": "One job fans out to live dashboards and durable stores at once.",
@@ -419,10 +419,10 @@
     "id": "anv-027",
     "question": "KQL (Kusto Query Language) is used to:",
     "options": [
-      "Write mobile apps",
-      "Style web pages",
-      "Query massive log and telemetry data in Eventhouse",
-      "Configure firewalls"
+      "Write mobile applications",
+      "Style web pages with CSS",
+      "Query massive logs and telemetry",
+      "Configure network firewalls"
     ],
     "correctAnswer": 2,
     "explanation": "KQL explores logs/metrics fast in Kusto/Eventhouse stores.",
@@ -435,10 +435,10 @@
     "id": "anv-028",
     "question": "Spark Structured Streaming appeals because it handles:",
     "options": [
-      "Only emails",
-      "Only images",
-      "Only static files",
-      "Batch and streaming with one unified engine"
+      "Only inbound email messages",
+      "Only stored image files",
+      "Only static reference files",
+      "One engine for batch and streaming"
     ],
     "correctAnswer": 3,
     "explanation": "One Spark model covers historical batches and live streams.",
@@ -451,10 +451,10 @@
     "id": "anv-029",
     "question": "Credit-card fraud detection needs streaming because:",
     "options": [
-      "Each transaction must be scored instantly to block abuse",
-      "Storage is cheaper",
-      "Batch jobs are illegal",
-      "Reports look nicer"
+      "Instant per-transaction abuse scoring",
+      "Cold object storage costs far less",
+      "Batch processing is legally banned",
+      "Static report designs look nicer"
     ],
     "correctAnswer": 0,
     "explanation": "Per-event low latency is the whole point of fraud screening.",
@@ -467,10 +467,10 @@
     "id": "anv-030",
     "question": "A live Power BI dashboard showing factory output is typically fed by:",
     "options": [
-      "A yearly CSV upload",
-      "A streaming dataset from Stream Analytics or Event Hubs",
-      "A printed logbook",
-      "A backup restore"
+      "A single yearly CSV file upload",
+      "A live Stream Analytics feed",
+      "A printed paper operations logbook",
+      "A full nightly backup restore"
     ],
     "correctAnswer": 1,
     "explanation": "Live tiles need a continuous push from the stream pipeline.",
@@ -499,10 +499,10 @@
     "id": "anv-032",
     "question": "A Power BI report differs from a dashboard in that a report is:",
     "options": [
-      "Printed once a year",
-      "Unshareable",
-      "Single tile only",
-      "Multi-page and interactive over a dataset; a dashboard pins key tiles on one page"
+      "Printed once a year on paper",
+      "Unshareable with other users",
+      "A single pinned tile only",
+      "Multi-page visuals over a dataset"
     ],
     "correctAnswer": 3,
     "explanation": "Reports explore deeply; dashboards glance at pinned highlights.",
@@ -515,10 +515,10 @@
     "id": "anv-033",
     "question": "A Power BI dataset is:",
     "options": [
-      "The prepared data model that visuals are built on",
-      "A firewall rule",
-      "A backup file",
-      "A printer driver"
+      "The data model behind visuals",
+      "A network firewall access rule",
+      "A nightly backup archive file",
+      "A printer device driver"
     ],
     "correctAnswer": 0,
     "explanation": "Datasets (built with Power Query/modeling) feed every visual.",
@@ -532,7 +532,7 @@
     "question": "A measure in Power BI is:",
     "options": [
       "A categorical label like Region",
-      "A numeric calculation such as Total Sales",
+      "A number calculated from data",
       "A color theme",
       "A user password"
     ],
@@ -547,10 +547,10 @@
     "id": "anv-035",
     "question": "A dimension in Power BI is:",
     "options": [
-      "A refresh schedule",
-      "A calculated total",
-      "A categorical attribute used to slice data, like Product or Region",
-      "A server name"
+      "A scheduled refresh timetable",
+      "A calculated measure total",
+      "Product-like categories for slicing",
+      "A database server name"
     ],
     "correctAnswer": 2,
     "explanation": "Dimensions are the 'by' in 'sales by region'.",
@@ -563,10 +563,10 @@
     "id": "anv-036",
     "question": "A hierarchy like Year → Quarter → Month lets users:",
     "options": [
-      "Delete data",
-      "Change passwords",
-      "Log in faster",
-      "Drill up and down through levels of detail"
+      "Delete unwanted data rows",
+      "Change account passwords",
+      "Log in faster every day",
+      "Drill through levels of detail"
     ],
     "correctAnswer": 3,
     "explanation": "Hierarchies define drill paths for exploration.",
@@ -579,10 +579,10 @@
     "id": "anv-037",
     "question": "A slicer on a report is used to:",
     "options": [
-      "Let viewers filter visuals interactively",
-      "Cut printing costs",
-      "Backup datasets",
-      "Slice servers physically"
+      "Filter visuals interactively",
+      "Cut office printing costs",
+      "Back up report datasets",
+      "Physically slice server hardware"
     ],
     "correctAnswer": 0,
     "explanation": "Slicers are on-canvas filters for consumers.",
@@ -595,10 +595,10 @@
     "id": "anv-038",
     "question": "The Q&A visual in Power BI allows users to:",
     "options": [
-      "Chat with support",
-      "Ask questions in natural language and get charts",
-      "Queue print jobs",
-      "Query DNS"
+      "Chat with customer support",
+      "Ask questions, get charts back",
+      "Queue documents for printing",
+      "Query DNS server records"
     ],
     "correctAnswer": 1,
     "explanation": "Type 'sales by city' and Q&A builds the visual.",
@@ -611,10 +611,10 @@
     "id": "anv-039",
     "question": "Scheduled refresh in Power BI exists to:",
     "options": [
-      "Speed up laptops",
-      "Change passwords",
+      "Speed up slow laptop hardware",
+      "Change expired user passwords",
       "Keep reports current automatically",
-      "Delete old users"
+      "Delete old inactive users"
     ],
     "correctAnswer": 2,
     "explanation": "Refresh reruns queries so numbers stay fresh.",
@@ -643,10 +643,10 @@
     "id": "anv-041",
     "question": "A KPI visual communicates:",
     "options": [
-      "Progress toward a target at a glance",
-      "Server locations",
-      "User passwords",
-      "Raw log lines"
+      "Progress toward a target",
+      "Server farm locations",
+      "User account passwords",
+      "Raw unfiltered log lines"
     ],
     "correctAnswer": 0,
     "explanation": "KPIs pair a value with its goal and status.",
@@ -659,10 +659,10 @@
     "id": "anv-042",
     "question": "Sharing Power BI content across teams mainly enables:",
     "options": [
-      "Slower decisions",
-      "Collaborative data-driven decisions",
-      "Larger backups",
-      "More servers"
+      "Slower team decision-making",
+      "Joint data-driven decisions",
+      "Larger backup archives",
+      "More database servers"
     ],
     "correctAnswer": 1,
     "explanation": "Shared dashboards align everyone on the same numbers.",
@@ -677,7 +677,7 @@
     "options": [
       "Decide, then collect data",
       "Visualize, ingest, delete, decide",
-      "Ingest, process, store, analyze, visualize",
+      "Ingest, process, store, visualize",
       "Buy servers, print reports, archive"
     ],
     "correctAnswer": 2,
@@ -691,10 +691,10 @@
     "id": "anv-044",
     "question": "A retailer needs yesterday's sales summarized every morning. Best fit?",
     "options": [
-      "Manual whiteboard",
-      "Archive tier only",
+      "A manual office whiteboard",
+      "The Archive tier alone",
       "Stream Analytics per millisecond",
-      "A scheduled batch pipeline into a warehouse plus Power BI"
+      "Nightly batches to warehouse, Power BI"
     ],
     "correctAnswer": 3,
     "explanation": "Daily summaries are textbook batch + report workloads.",
@@ -707,10 +707,10 @@
     "id": "anv-045",
     "question": "Factory sensors must raise alerts within seconds of failure. Best fit?",
     "options": [
-      "IoT Hub ingestion with Stream Analytics to a live dashboard",
-      "Annual survey",
-      "Archive blobs",
-      "Nightly batch CSV"
+      "IoT Hub and Stream Analytics",
+      "A once-a-year customer survey",
+      "Cold Archive blob storage tier",
+      "A nightly batch CSV data export"
     ],
     "correctAnswer": 0,
     "explanation": "Seconds matter: ingest streams and evaluate continuously.",
@@ -739,10 +739,10 @@
     "id": "anv-047",
     "question": "Executives want key numbers on one live page. Deliver with:",
     "options": [
-      "A backup vault",
+      "A cloud backup vault service",
       "A 40-page paginated export",
-      "A Power BI dashboard of pinned tiles",
-      "Raw CSV downloads"
+      "A dashboard of pinned KPI tiles",
+      "Raw CSV file downloads"
     ],
     "correctAnswer": 2,
     "explanation": "One-page live KPIs are exactly what dashboards are for.",
@@ -772,8 +772,8 @@
     "question": "Predicting which customers may cancel next quarter needs:",
     "options": [
       "Descriptive totals only",
-      "Historical data plus predictive modeling",
-      "Deleting history",
+      "History plus predictive models",
+      "Deleting all history",
       "Prescriptive dashboards only"
     ],
     "correctAnswer": 1,
@@ -787,10 +787,10 @@
     "id": "anv-050",
     "question": "Why would a new company pick Microsoft Fabric for analytics?",
     "options": [
-      "It replaces all databases",
-      "One SaaS platform covers ingestion to BI with less integration glue",
-      "It is a hardware store",
-      "It removes the need for data"
+      "It replaces every database in use",
+      "One SaaS platform covering ingestion to BI",
+      "It is a computer hardware store",
+      "It removes the need for any data"
     ],
     "correctAnswer": 1,
     "explanation": "Fabric unifies the analytics stack instead of wiring many services.",
@@ -835,10 +835,10 @@
     "id": "anv-053",
     "question": "Event Hubs handles huge parallel load partly through:",
     "options": [
-      "Partitions that consumers read in parallel",
-      "Manual file copies",
-      "Single-threaded queues",
-      "Printers"
+      "Partitions consumed in parallel",
+      "Manual file copies by staff",
+      "Single-threaded message queues",
+      "Office network printers"
     ],
     "correctAnswer": 0,
     "explanation": "Partitions split streams so many readers scale out.",
@@ -851,10 +851,10 @@
     "id": "anv-054",
     "question": "A sales manager wants an alert when revenue drops below target. Use:",
     "options": [
-      "A static screenshot",
-      "Power BI data alerts on the KPI",
-      "A longer password",
-      "A new virtual machine"
+      "A static screenshot image",
+      "Data alerts on the KPI tile",
+      "A much longer password",
+      "A new virtual machine host"
     ],
     "correctAnswer": 1,
     "explanation": "Data alerts watch tiles and notify on threshold breaches.",
@@ -867,10 +867,10 @@
     "id": "anv-055",
     "question": "Sending the same stream to a live dashboard AND to Blob storage needs:",
     "options": [
-      "A printer",
-      "Two separate factories",
-      "A Stream Analytics job with multiple outputs",
-      "Deleting one copy"
+      "A networked office printer",
+      "Two fully separate pipelines",
+      "A single job with multiple outputs",
+      "Deleting the duplicate copy"
     ],
     "correctAnswer": 2,
     "explanation": "One job can fan out to hot (dashboard) and cold (storage) paths.",

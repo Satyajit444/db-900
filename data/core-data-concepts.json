@@ -68,7 +68,7 @@
     "question": "Why is JSON generally considered semi-structured?",
     "options": [
       "It carries no structural information at all",
-      "It can contain keys, values, arrays, and nested objects",
+      "Keys, values, arrays and nesting",
       "It is always stored inside SQL tables",
       "It can only store plain numbers"
     ],
@@ -132,9 +132,9 @@
     "question": "Which option is a relational database characteristic?",
     "options": [
       "Tables with rows and columns",
-      "Only binary files",
-      "No schema at all",
-      "Only video storage"
+      "Only binary data files",
+      "No schema whatsoever",
+      "Only video file storage"
     ],
     "correctAnswer": 0,
     "explanation": "Relational databases organize data into tables with rows and columns.",
@@ -499,7 +499,7 @@
     "id": "cdc-032",
     "question": "Which scenario most strongly indicates OLTP?",
     "options": [
-      "Thousands of small order transactions per minute",
+      "Constant tiny order transactions",
       "Five-year sales trend analysis",
       "Executive monthly dashboard",
       "Historical data mining project"
@@ -515,10 +515,10 @@
     "id": "cdc-033",
     "question": "Which scenario most strongly indicates OLAP?",
     "options": [
-      "Updating one order",
-      "Recording a payment",
+      "Updating a single customer order",
+      "Recording an online payment",
       "Aggregating years of sales data",
-      "Creating a new account"
+      "Creating a new user account"
     ],
     "correctAnswer": 2,
     "explanation": "Aggregating historical sales data is an analytical OLAP workload.",
@@ -531,7 +531,7 @@
     "id": "cdc-034",
     "question": "Why can analytical queries be expensive?",
     "options": [
-      "They may scan and aggregate large amounts of data",
+      "They scan and aggregate big data",
       "They always contain large image files",
       "They never use any indexes at all",
       "They only ever process a single row"
@@ -547,10 +547,10 @@
     "id": "cdc-035",
     "question": "Which statement about transactional workloads is generally true?",
     "options": [
-      "They commonly involve frequent reads and writes",
-      "They only contain historical data",
-      "They are only used for dashboards",
-      "They cannot have concurrent users"
+      "Frequent reads and writes",
+      "They only ever contain historical data",
+      "They are only ever used for dashboards",
+      "They cannot support concurrent users"
     ],
     "correctAnswer": 0,
     "explanation": "Transactional systems commonly process frequent reads and writes from concurrent users.",
@@ -691,7 +691,7 @@
     "id": "cdc-044",
     "question": "Which statement best distinguishes files from databases?",
     "options": [
-      "Databases add querying, indexing, transactions and recovery",
+      "Querying, transactions, recovery",
       "Files cannot contain any data at all",
       "Databases can only store image files",
       "Files always require SQL to open"
@@ -707,7 +707,7 @@
     "id": "cdc-045",
     "question": "A CSV file containing sales records is best described as:",
     "options": [
-      "A file containing structured/tabular data",
+      "A file of structured tabular data",
       "An unstructured video file",
       "A relational database server",
       "A NoSQL database service"
@@ -755,7 +755,7 @@
     "id": "cdc-048",
     "question": "Which question is analytical?",
     "options": [
-      "What was total revenue by region last year?",
+      "Total revenue by region last year?",
       "Create order number 10025",
       "Update one customer's phone number",
       "Process a single payment"

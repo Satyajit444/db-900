@@ -35,10 +35,10 @@
     "id": "snig-003",
     "question": "An extract, transform, and load (ETL) process requires:",
     "options": [
-      "a matching schema in the data source and the data target.",
-      "a target data store powerful enough to transform data.",
-      "data that is fully processed before being loaded to the target data store.",
-      "that the data target be a relational database."
+      "Matching schemas in source and target",
+      "A target powerful enough to transform",
+      "Data fully processed before loading",
+      "A strictly relational data target"
     ],
     "correctAnswer": 2,
     "explanation": "In ETL, transformation happens before loading, unlike ELT where the target does the work.",
@@ -53,7 +53,7 @@
     "options": [
       "data is always inserted one single row at a time.",
       "data is processed immediately in real-time.",
-      "latency in delivering data processing results is acceptable.",
+      "Some delay in results is acceptable.",
       "processing can only ever execute serially."
     ],
     "correctAnswer": 2,

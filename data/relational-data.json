@@ -4,7 +4,7 @@
     "question": "Which statement best describes a relational database?",
     "options": [
       "It stores only schemaless JSON documents",
-      "Related data in tables with defined structure and relationships",
+      "Related data in structured, linked tables",
       "It stores only audio and media files",
       "It cannot enforce integrity rules at all"
     ],
@@ -19,10 +19,10 @@
     "id": "rel-002",
     "question": "In a relational table, a row normally represents:",
     "options": [
-      "A database server",
-      "A column definition",
-      "A relationship",
-      "One record or entity instance"
+      "A database server machine",
+      "A table column definition",
+      "A table relationship link",
+      "One record or instance"
     ],
     "correctAnswer": 3,
     "explanation": "Each row is one record, i.e. one instance of the entity the table stores.",
@@ -68,7 +68,7 @@
     "question": "Why is City usually a poor primary key?",
     "options": [
       "Cities cannot be indexed",
-      "Multiple customers can share a city",
+      "Many customers share a city",
       "SQL cannot store city names",
       "City must be numeric"
     ],
@@ -83,9 +83,9 @@
     "id": "rel-006",
     "question": "Which property is required of a primary key?",
     "options": [
-      "It must be a string",
-      "It must be duplicated",
-      "It must allow NULL",
+      "It must use a string type",
+      "It must allow duplicate values",
+      "It must permit NULL entries",
       "It must uniquely identify each row"
     ],
     "correctAnswer": 3,
@@ -163,10 +163,10 @@
     "id": "rel-011",
     "question": "What is the primary purpose of a foreign key?",
     "options": [
-      "Sort rows into order",
-      "Compress tables to save space",
-      "Establish a relationship to a referenced key",
-      "Encrypt the whole database"
+      "Sort result rows into order",
+      "Compress tables to save disk space",
+      "Reference a key in a related table",
+      "Encrypt the entire database"
     ],
     "correctAnswer": 2,
     "explanation": "Foreign keys link a row to a key in another table, enforcing the relationship.",
@@ -179,10 +179,10 @@
     "id": "rel-012",
     "question": "Referential integrity helps prevent:",
     "options": [
-      "Slow network connections",
-      "Invalid references between related tables",
-      "Duplicate backup copies",
-      "Large files on disk"
+      "Slow network connection drops",
+      "Broken links between related tables",
+      "Duplicate backup file copies",
+      "Large files stored on disk"
     ],
     "correctAnswer": 1,
     "explanation": "Referential integrity keeps relationships valid by blocking dangling references.",
@@ -195,7 +195,7 @@
     "id": "rel-013",
     "question": "Which best demonstrates referential integrity?",
     "options": [
-      "Every order references an existing customer",
+      "Orders link to real customers",
       "Every customer has the same city",
       "Every table has ten rows",
       "Every column has one data type"
@@ -211,9 +211,9 @@
     "id": "rel-014",
     "question": "What is a major goal of normalization?",
     "options": [
-      "Increase duplication",
-      "Eliminate all joins",
-      "Reduce redundancy and improve consistency",
+      "Increase data duplication",
+      "Eliminate every JOIN clause",
+      "Less redundancy, more consistency",
       "Store everything in one table"
     ],
     "correctAnswer": 2,
@@ -227,10 +227,10 @@
     "id": "rel-015",
     "question": "A phone number is repeated in thousands of order rows. Which change addresses redundancy?",
     "options": [
-      "Duplicate it in more tables",
-      "Store customer details once and reference CustomerID",
-      "Make phone number the database name",
-      "Remove the customer"
+      "Duplicate it into more tables",
+      "Store customer once, reference by ID",
+      "Name the database after the phone",
+      "Delete the customer record"
     ],
     "correctAnswer": 1,
     "explanation": "Storing customer details once in Customers and referencing them removes the repetition.",
@@ -419,10 +419,10 @@
     "id": "rel-027",
     "question": "ALTER generally:",
     "options": [
-      "Changes an existing object's definition",
-      "Reads rows from a table",
-      "Inserts new rows",
-      "Creates a dashboard chart"
+      "Changes an object's definition",
+      "Reads rows from database tables",
+      "Inserts brand-new table rows",
+      "Creates a dashboard chart visual"
     ],
     "correctAnswer": 0,
     "explanation": "ALTER modifies the definition of an existing object.",
@@ -451,10 +451,10 @@
     "id": "rel-029",
     "question": "A common purpose of an index is to:",
     "options": [
-      "Enforce all business rules",
-      "Improve retrieval performance for suitable queries",
-      "Replace tables altogether",
-      "Store passwords securely"
+      "Enforce every business rule strictly",
+      "Speed up suitable query retrieval",
+      "Replace database tables entirely",
+      "Store user passwords securely"
     ],
     "correctAnswer": 1,
     "explanation": "Indexes speed up lookups and suitable queries.",
@@ -467,7 +467,7 @@
     "id": "rel-030",
     "question": "An index trade-off is:",
     "options": [
-      "It can consume storage and add maintenance overhead",
+      "Storage cost plus write overhead",
       "It prevents SELECT queries entirely",
       "It removes all primary keys",
       "It makes every single write faster"
@@ -531,9 +531,9 @@
     "id": "rel-034",
     "question": "UNIQUE generally means:",
     "options": [
-      "A value cannot repeat within the constrained key/column set",
-      "Values must be NULL",
-      "A table has one row",
+      "Columns reject repeated values",
+      "Every value must be NULL",
+      "Each table holds a single row",
       "Every row references another table"
     ],
     "correctAnswer": 0,
@@ -563,10 +563,10 @@
     "id": "rel-036",
     "question": "Which option runs SQL Server in an Azure virtual machine?",
     "options": [
-      "Azure SQL Database",
-      "Azure Cosmos DB",
-      "SQL Server on Azure Virtual Machines",
-      "Azure Table Storage"
+      "Azure SQL Database service",
+      "Azure Cosmos DB account",
+      "SQL Server on Azure VMs",
+      "Azure Table Storage tables"
     ],
     "correctAnswer": 2,
     "explanation": "SQL Server on Azure VMs runs the engine inside a VM you control.",
@@ -580,9 +580,9 @@
     "question": "Which managed Azure SQL service is designed for high SQL Server compatibility?",
     "options": [
       "Azure SQL Managed Instance",
-      "Blob Storage",
-      "Azure Files",
-      "Power BI"
+      "Azure Blob Storage account",
+      "Azure Files share service",
+      "Power BI dashboard app"
     ],
     "correctAnswer": 0,
     "explanation": "Managed Instance targets near-complete SQL Server compatibility.",
@@ -627,10 +627,10 @@
     "id": "rel-040",
     "question": "A legacy SQL Server app needs strong compatibility with SQL Server and a managed Azure service. Consider:",
     "options": [
-      "Blob Storage",
+      "Azure Blob Storage account",
       "Azure SQL Managed Instance",
-      "Table Storage",
-      "Power BI"
+      "Azure Table Storage tables",
+      "Power BI cloud service"
     ],
     "correctAnswer": 1,
     "explanation": "Managed Instance combines broad SQL Server compatibility with managed operations.",
@@ -660,9 +660,9 @@
     "question": "An application explicitly requires MySQL. Investigate:",
     "options": [
       "Azure Database for MySQL",
-      "Cosmos DB only",
-      "Table Storage",
-      "Power BI"
+      "Cosmos DB account only",
+      "Azure Table Storage",
+      "Power BI service"
     ],
     "correctAnswer": 0,
     "explanation": "Azure Database for MySQL is the managed service for that engine.",
@@ -675,10 +675,10 @@
     "id": "rel-043",
     "question": "Azure SQL Database is best described as:",
     "options": [
-      "Object storage",
-      "Managed relational database service",
-      "NoSQL document store",
-      "Visualization tool"
+      "Blob object storage",
+      "Managed relational database",
+      "NoSQL document database",
+      "BI visualization tool"
     ],
     "correctAnswer": 1,
     "explanation": "It is Azure's managed relational database service.",
@@ -691,10 +691,10 @@
     "id": "rel-044",
     "question": "SQL Server on Azure VM is best described as:",
     "options": [
-      "SQL Server running inside an Azure VM",
-      "Object storage",
-      "Power BI dataset",
-      "JSON-only database"
+      "SQL Server in an Azure VM",
+      "Blob object storage",
+      "A Power BI data model",
+      "A JSON-only document store"
     ],
     "correctAnswer": 0,
     "explanation": "It is SQL Server installed on an Azure virtual machine.",
@@ -707,10 +707,10 @@
     "id": "rel-045",
     "question": "Which scenario best fits relational data?",
     "options": [
-      "Well-defined customer/order system with relationships",
-      "Folder of videos",
-      "JPEG archive",
-      "Raw audio archive"
+      "Linked customer and order data",
+      "A shared folder of video files",
+      "A compressed JPEG photo archive",
+      "A raw audio recordings archive"
     ],
     "correctAnswer": 0,
     "explanation": "Structured entities with relationships are the relational sweet spot.",
@@ -723,10 +723,10 @@
     "id": "rel-046",
     "question": "Orders contains CustomerID but not CustomerName, which is stored in Customers. This mainly demonstrates:",
     "options": [
-      "Duplication",
-      "Separation of entities with a relationship",
-      "Unstructured storage",
-      "Compression"
+      "Wasteful duplication of all facts",
+      "Linked entities, no duplication",
+      "Unstructured file-based storage",
+      "Disk-space-saving compression"
     ],
     "correctAnswer": 1,
     "explanation": "Distinct entities live in their own tables, linked by keys.",
@@ -739,10 +739,10 @@
     "id": "rel-047",
     "question": "Why might deleting a customer be blocked?",
     "options": [
-      "Orders may still reference that customer",
-      "SQL cannot delete text",
-      "Primary keys cannot exist",
-      "Views cannot be created"
+      "Existing orders reference it",
+      "SQL cannot delete text values",
+      "Primary keys cannot exist here",
+      "Views cannot be created at all"
     ],
     "correctAnswer": 0,
     "explanation": "Referential integrity blocks deletes that would orphan related rows.",
@@ -755,10 +755,10 @@
     "id": "rel-048",
     "question": "An orphaned record is one that:",
     "options": [
-      "References a related record that does not exist",
-      "Has a primary key",
-      "Has many columns",
-      "Is returned by SELECT"
+      "Points to a missing related record",
+      "It has its own primary key",
+      "It contains many table columns",
+      "It is returned by a SELECT"
     ],
     "correctAnswer": 0,
     "explanation": "An orphan points to a parent record that is missing.",
@@ -771,10 +771,10 @@
     "id": "rel-049",
     "question": "Why are relationships important?",
     "options": [
-      "They connect related entities without repeating all information",
-      "They remove columns",
-      "They eliminate SQL",
-      "They make data unstructured"
+      "Link entities, skip duplication",
+      "They remove unneeded columns",
+      "They eliminate SQL entirely",
+      "They make all data unstructured"
     ],
     "correctAnswer": 0,
     "explanation": "Relationships connect entities so facts are stored once, not repeated.",
@@ -819,10 +819,10 @@
     "id": "rel-052",
     "question": "To calculate total order amount for each customer, which concepts are likely needed?",
     "options": [
-      "GROUP BY plus an aggregate such as SUM",
-      "DELETE and DROP",
-      "ALTER only",
-      "Keys only"
+      "GROUP BY with an aggregate SUM",
+      "DELETE combined with DROP",
+      "ALTER statements only",
+      "Primary keys only"
     ],
     "correctAnswer": 0,
     "explanation": "Per-customer totals need grouping plus an aggregate function.",
@@ -869,7 +869,7 @@
     "options": [
       "It uniquely identifies a row",
       "It can be referenced by another table",
-      "It can contain NULL as its identifying value",
+      "NULL is not a valid identifier",
       "It identifies an entity instance"
     ],
     "correctAnswer": 2,
@@ -899,10 +899,10 @@
     "id": "rel-057",
     "question": "Orders.CustomerID references Customers.CustomerID. What does Orders.CustomerID represent?",
     "options": [
-      "The customer associated with that order",
+      "Its order's customer",
       "The order's unique identifier",
-      "The table name",
-      "The server name"
+      "The database table name",
+      "The database server name"
     ],
     "correctAnswer": 0,
     "explanation": "It identifies which customer each order belongs to.",
@@ -947,10 +947,10 @@
     "id": "rel-060",
     "question": "Why is one giant table often problematic?",
     "options": [
-      "It can create duplication and update anomalies",
-      "It prevents SQL",
-      "It cannot contain numbers",
-      "It cannot have keys"
+      "Duplication plus update anomalies",
+      "It prevents SQL entirely",
+      "It cannot contain any numbers",
+      "It cannot define any keys"
     ],
     "correctAnswer": 0,
     "explanation": "Unnormalized giant tables duplicate facts and cause update anomalies.",
@@ -963,8 +963,8 @@
     "id": "rel-061",
     "question": "Which is an update anomaly?",
     "options": [
-      "A customer phone change requires many copies to be updated and one may be missed",
-      "SELECT returns rows",
+      "Phone change needs all copies updated",
+      "SELECT returns matching rows",
       "A primary key identifies a row",
       "A foreign key references another table"
     ],
@@ -979,10 +979,10 @@
     "id": "rel-062",
     "question": "Why separate Customers and Orders?",
     "options": [
-      "To avoid all data types",
-      "To model distinct entities and reduce repetition",
-      "To make queries impossible",
-      "To remove relationships"
+      "To avoid using all data types",
+      "Distinct entities, less repetition",
+      "To make all queries impossible",
+      "To remove every relationship"
     ],
     "correctAnswer": 1,
     "explanation": "Separate tables model distinct entities and cut repetition.",
@@ -995,10 +995,10 @@
     "id": "rel-063",
     "question": "A SQL query returns 100 customer rows. Conceptually each row is:",
     "options": [
-      "A server",
+      "A database server",
       "A result record",
-      "A schema",
-      "An index"
+      "A database schema",
+      "A table index"
     ],
     "correctAnswer": 1,
     "explanation": "Each returned row is one result record.",
@@ -1075,10 +1075,10 @@
     "id": "rel-068",
     "question": "Why use WHERE with UPDATE or DELETE?",
     "options": [
-      "To restrict which rows are affected",
+      "Limits rows the statement hits",
       "To create a primary key",
-      "To create an index",
-      "To choose the DB engine"
+      "To create a table index",
+      "To choose the database engine"
     ],
     "correctAnswer": 0,
     "explanation": "WHERE limits the statement to the intended rows.",
@@ -1123,10 +1123,10 @@
     "id": "rel-071",
     "question": "What should influence Azure SQL Database vs SQL Server on VM?",
     "options": [
-      "Required control and management responsibility",
-      "Whether names exist",
-      "Whether values are alphabetical",
-      "Number of columns only"
+      "Control needs versus managed operations",
+      "Whether table names exist",
+      "Whether values sort alphabetically",
+      "The number of columns only"
     ],
     "correctAnswer": 0,
     "explanation": "Choose by how much control vs managed operation you need.",
@@ -1139,10 +1139,10 @@
     "id": "rel-072",
     "question": "Which generally means Microsoft manages more of the database platform?",
     "options": [
-      "Self-managed SQL Server VM",
-      "Managed database service such as Azure SQL Database",
-      "CSV on laptop",
-      "Application log"
+      "A fully self-managed SQL Server VM",
+      "A managed Azure SQL service",
+      "A CSV file stored on a laptop",
+      "An application event log file"
     ],
     "correctAnswer": 1,
     "explanation": "A managed service shifts platform operations to Microsoft.",
@@ -1171,10 +1171,10 @@
     "id": "rel-074",
     "question": "Which scenario suits SQL Server on Azure VM?",
     "options": [
-      "Need significant OS/SQL Server control or VM-based compatibility",
-      "Need image storage",
-      "Need a BI dashboard",
-      "Need a key-value store"
+      "OS and VM-level control",
+      "Need bulk image storage",
+      "Need a BI reporting dashboard",
+      "Need a key-value data store"
     ],
     "correctAnswer": 0,
     "explanation": "VMs fit when you need OS-level control or VM-based compatibility.",
@@ -1187,10 +1187,10 @@
     "id": "rel-075",
     "question": "Which scenario suits Azure SQL Database?",
     "options": [
-      "Managed relational app DB with minimal infrastructure management",
-      "Video archive",
-      "File share",
-      "Graph database only"
+      "Managed DB, minimal admin",
+      "A long-term video file archive",
+      "A shared network file service",
+      "Exclusively a graph database"
     ],
     "correctAnswer": 0,
     "explanation": "Azure SQL Database fits managed relational apps with minimal ops.",
@@ -1204,7 +1204,7 @@
     "question": "Which statement about normalization is most accurate?",
     "options": [
       "It guarantees every query is faster",
-      "It reduces redundancy and improves integrity",
+      "Cuts redundancy, guards integrity",
       "It stores everything in one table",
       "It eliminates foreign keys"
     ],
@@ -1219,10 +1219,10 @@
     "id": "rel-077",
     "question": "Poor normalization can result in:",
     "options": [
-      "More duplicated data and inconsistent updates",
-      "No data storage",
-      "SQL failure",
-      "No keys"
+      "Copies drift out of sync",
+      "No data storage at all",
+      "Total SQL engine failure",
+      "No usable keys remain"
     ],
     "correctAnswer": 0,
     "explanation": "Duplicated facts drift out of sync when updated.",
@@ -1283,10 +1283,10 @@
     "id": "rel-081",
     "question": "Can a customer exist without any orders in a one-to-many model?",
     "options": [
-      "No",
-      "Yes, zero or many orders can be associated",
-      "Only after deletion",
-      "Only in NoSQL"
+      "No, never allowed",
+      "Yes, zero or many orders may link",
+      "Only right after deletion",
+      "Only in NoSQL stores"
     ],
     "correctAnswer": 1,
     "explanation": "The 'many' side allows zero related rows.",
@@ -1299,10 +1299,10 @@
     "id": "rel-082",
     "question": "What does a junction table record?",
     "options": [
-      "Associations between rows of two related entities",
-      "The database server",
-      "Images",
-      "Passwords"
+      "Row links across two tables",
+      "The database server name",
+      "Stored image files",
+      "User account passwords"
     ],
     "correctAnswer": 0,
     "explanation": "Each junction row links one row from each side.",
@@ -1315,10 +1315,10 @@
     "id": "rel-083",
     "question": "Which best describes a view?",
     "options": [
-      "A saved query presented as a virtual table-like result",
-      "A network server",
-      "A primary key",
-      "A storage account"
+      "A saved query shown as a virtual table",
+      "A network application server role",
+      "A relational table primary key",
+      "A cloud storage account service"
     ],
     "correctAnswer": 0,
     "explanation": "A view presents a saved query as a virtual table.",
@@ -1331,10 +1331,10 @@
     "id": "rel-084",
     "question": "Why might a view be created?",
     "options": [
-      "To simplify or control access to commonly queried data",
-      "To eliminate tables",
-      "To replace the engine",
-      "To store OS files"
+      "To simplify and govern data access",
+      "To eliminate tables entirely",
+      "To replace the database engine",
+      "To store operating system files"
     ],
     "correctAnswer": 0,
     "explanation": "Views simplify queries and control data access.",
@@ -1347,10 +1347,10 @@
     "id": "rel-085",
     "question": "Why create an index?",
     "options": [
-      "Improve performance of suitable lookups and queries",
-      "Store every table twice",
-      "Enforce every relationship",
-      "Replace foreign keys"
+      "Speed up suitable lookups",
+      "Store every table twice over",
+      "Enforce every single relationship",
+      "Replace all foreign keys"
     ],
     "correctAnswer": 0,
     "explanation": "Indexes accelerate suitable lookups.",
@@ -1363,10 +1363,10 @@
     "id": "rel-086",
     "question": "Why not index every column?",
     "options": [
-      "Indexes can consume storage and add write/maintenance overhead",
-      "SQL permits only one index",
-      "Indexes cannot be queried",
-      "Indexes delete rows"
+      "Storage and maintenance overhead",
+      "SQL permits only a single index",
+      "Indexes can never be queried",
+      "Indexes delete table rows"
     ],
     "correctAnswer": 0,
     "explanation": "Every index costs storage and slows writes, so index selectively.",
@@ -1412,9 +1412,9 @@
     "question": "Which scenario suggests GROUP BY?",
     "options": [
       "Total sales for each region",
-      "Find one email",
-      "Delete one order",
-      "Create a table"
+      "Find a single email",
+      "Delete a single order",
+      "Create a new table"
     ],
     "correctAnswer": 0,
     "explanation": "Per-region totals need grouping plus aggregation.",
@@ -1460,9 +1460,9 @@
     "question": "A foreign key references a customer that does not exist. What is violated?",
     "options": [
       "Referential integrity",
-      "Sorting",
-      "Visualization",
-      "Indexing"
+      "Sorting of results",
+      "Data visualization",
+      "Index maintenance"
     ],
     "correctAnswer": 0,
     "explanation": "Dangling references violate referential integrity.",
@@ -1475,10 +1475,10 @@
     "id": "rel-093",
     "question": "A managed database service generally means:",
     "options": [
-      "The provider manages significant platform infrastructure and service operations",
-      "Customer manages the physical data center",
-      "It is always a local file",
-      "It cannot run SQL"
+      "Provider runs platform and ops",
+      "Customer runs its own data centers",
+      "It is always a local data file",
+      "It cannot execute any SQL"
     ],
     "correctAnswer": 0,
     "explanation": "The provider operates the platform; you use the database.",
@@ -1491,7 +1491,7 @@
     "id": "rel-094",
     "question": "Key distinction between Azure SQL Database and SQL Server on Azure VM:",
     "options": [
-      "SQL Database is managed; VM deployment gives more environment control",
+      "Managed service versus controlled VM",
       "SQL Database stores only images",
       "SQL Server VM cannot run SQL Server",
       "Both are object storage"
@@ -1539,10 +1539,10 @@
     "id": "rel-097",
     "question": "Which best describes a relational schema?",
     "options": [
-      "It can define tables, columns, types, constraints and relationships",
-      "It is only a backup",
-      "It is always an image",
-      "It cannot define types"
+      "Schema: tables, types, links",
+      "It is only a backup copy",
+      "It is always an image file",
+      "It cannot define data types"
     ],
     "correctAnswer": 0,
     "explanation": "A schema defines structure: tables, types, constraints, relationships.",
@@ -1587,10 +1587,10 @@
     "id": "rel-100",
     "question": "Which sequence is sensible for an Azure relational database?",
     "options": [
-      "Choose service → provision/configure → connect securely → create/query/manage data",
-      "Create chart → delete database → choose service",
-      "Upload images → ignore connectivity",
-      "Create indexes → choose engine → define requirements"
+      "Choose, provision, connect, build and query",
+      "Create chart, delete database, choose service",
+      "Upload images, ignore connectivity",
+      "Create indexes, choose engine, define requirements"
     ],
     "correctAnswer": 0,
     "explanation": "Plan first: choose, provision, connect, then build and query.",
