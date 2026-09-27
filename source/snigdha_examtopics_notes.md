@@ -19,6 +19,23 @@ Source: https://www.examtopics.com/exams/microsoft/dp-900/view/
   its own explanation block), all of pages 2–33 (captcha-blocked — never
   guessed). If the user supplies an ExamTopics login or pastes more pages,
   those questions can be appended here as snig-012+ (same-source continuation).
+
+## Page 2 (user-supplied screenshot, Q11–Q20 → snig-012..022)
+
+- Hotspot/drag-drop exhibits read directly; marked answers cross-checked
+  against standard DP-900 references.
+- Q16's pick-two became two single-answer questions (engine scores one
+  answer): readable out-of-region copy → RA-GRS; single-datacenter only → LRS.
+
+## Page 3 (user-supplied screenshot, Q21–Q30 → snig-023..028)
+
+- Included: Q21 data-type mapping, Q23 real-time characteristic (pick-several
+  reduced to single answer), Q24 Data Factory mapping, Q25 workload mapping,
+  Q27 Q4 projection cone → predictive, Q28 UPDATE as DML (stem differentiated
+  from snig-020's identical stem to avoid a same-question clash).
+- Skipped: Q22 (ADLS Gen2 hierarchy mapping not legibly verifiable), Q26
+  (exact duplicate of snig-014), Q29 (near-duplicate of snig-005),
+  Q30 (near-duplicate of snig-015).
 - Explanations rewritten in our own words; original reference links from the
   page were used only to confirm facts (ETL, batch latency, star schema,
   MPP compute nodes, clustered index).

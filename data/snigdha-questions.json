@@ -174,5 +174,277 @@
     "topic": "Snigdha Questions",
     "subtopic": "Indexes",
     "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-012",
+    "question": "A relational database is appropriate for scenarios that involve a high volume of:",
+    "options": [
+      "changes to relationships between entities",
+      "geographically distributed writes",
+      "transactional writes",
+      "writes that have varying data structures"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Relational databases are built for high-volume transactional (OLTP) writes. Geo-distributed writes point to Cosmos DB, relationship changes to graphs, varying structures to NoSQL.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Workloads",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-013",
+    "question": "Batch processing outputs were reviewed: to a file store, to a relational database, to a NoSQL database. Which evaluations (Yes/No) are correct?",
+    "options": [
+      "Yes, Yes, Yes",
+      "Yes, No, No",
+      "No, Yes, No",
+      "No, No, No"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Batch pipelines can land results in files, relational tables and NoSQL stores alike — all three statements are Yes.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Workloads",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-014",
+    "question": "A CRM-to-warehouse ELT process has stages Extract, Load and Transform with locations: the CRM system, the data warehouse, an in-memory integration tool. Which mapping is correct?",
+    "options": [
+      "Extract: CRM system, Load: data warehouse, Transform: data warehouse",
+      "Extract: data warehouse, Load: CRM system, Transform: CRM system",
+      "Extract: in-memory tool, Load: CRM system, Transform: data warehouse",
+      "Extract: CRM system, Load: in-memory tool, Transform: CRM system"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ELT extracts from the source (CRM), loads raw into the target, and transforms inside the warehouse — Transform lives in the data warehouse, not in transit.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Pipelines",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-015",
+    "question": "A visualization shows a university's current enrollment versus maximum capacity. This is an example of:",
+    "options": [
+      "cognitive analytics.",
+      "descriptive analytics.",
+      "prescriptive analytics.",
+      "predictive analytics."
+    ],
+    "correctAnswer": 1,
+    "explanation": "Current-versus-capacity describes what is happening now: descriptive analytics.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Analytics",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-016",
+    "question": "Match each description to its visualization: nested colored rectangles sized and colored by values; major contributors of a result; relationship between two numbers. Which mapping is correct?",
+    "options": [
+      "Treemap, Scatter, Key influencer",
+      "Key influencer, Scatter, Treemap",
+      "Scatter, Key influencer, Treemap",
+      "Treemap, Key influencer, Scatter"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Nested rectangles are a treemap, top contributors come from key-influencer analysis, and two-number relationships are scatter plots.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Power BI",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-017",
+    "question": "A storage account must keep a readable copy outside its primary region. Which replication type meets this?",
+    "options": [
+      "Zone-redundant storage (ZRS)",
+      "Read-access geo-redundant storage (RA-GRS)",
+      "Locally-redundant storage (LRS)",
+      "Geo-redundant storage (GRS)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Only RA-GRS keeps a readable secondary in another region. GRS copies out-of-region but unreadably; ZRS and LRS never leave the primary region.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Storage",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-018",
+    "question": "Which replication option keeps copies within a single datacenter only?",
+    "options": [
+      "Geo-redundant storage (GRS)",
+      "Locally-redundant storage (LRS)",
+      "Zone-redundant storage (ZRS)",
+      "Read-access geo-redundant storage (RA-GRS)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "LRS replicates inside one datacenter. ZRS spans zones, GRS/RA-GRS span regions.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Storage",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-019",
+    "question": "Three PaaS statements are reviewed: (1) PaaS databases need less setup than IaaS ones. (2) PaaS lets end users control OS versions. (3) All PaaS offerings can be paused to save money. Which evaluations (Yes/No) are correct?",
+    "options": [
+      "Yes, Yes, Yes",
+      "Yes, No, No",
+      "No, Yes, Yes",
+      "No, No, No"
+    ],
+    "correctAnswer": 1,
+    "explanation": "PaaS removes setup effort (Yes), but hides the OS from users (No), and only some offerings support pausing (No).",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Azure Services",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-020",
+    "question": "Which statement is an example of Data Manipulation Language (DML)?",
+    "options": [
+      "REVOKE",
+      "DISABLE",
+      "INSERT",
+      "GRANT"
+    ],
+    "correctAnswer": 2,
+    "explanation": "INSERT manipulates data. REVOKE and GRANT control permissions (DCL); DISABLE alters state, not data.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "SQL",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-021",
+    "question": "A SQL query combining customer and order data with calculated columns must be rerunnable by other users. What should you create?",
+    "options": [
+      "an index",
+      "a view",
+      "a scalar function",
+      "a table"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A view saves the query as a reusable virtual table. Indexes speed lookups, functions compute values, tables store data — none rerun a query.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Objects",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-022",
+    "question": "A key/value data store is optimized for:",
+    "options": [
+      "enforcing constraints",
+      "simple lookups",
+      "table joins",
+      "transactions"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Key-value stores trade rich querying for fast lookups by key.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Models",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-023",
+    "question": "Match each data type to its Azure service: Image files, Key/value pairs, Relationships between employees. Which mapping is correct?",
+    "options": [
+      "Images to Blob storage, Key/value to Table storage, Relationships to Gremlin API",
+      "Images to Table storage, Key/value to Blob storage, Relationships to Gremlin API",
+      "Images to Gremlin API, Key/value to Table storage, Relationships to Blob storage",
+      "Images to Blob storage, Key/value to Gremlin API, Relationships to Table storage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Images are unstructured blobs, key/value pairs fit Table storage, and employee relationships need the Gremlin graph API.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Azure Services",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-024",
+    "question": "Which is a characteristic of real-time data processing?",
+    "options": [
+      "Data is processed periodically",
+      "Data is stored",
+      "High latency is acceptable",
+      "Data is processed as it is created"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Real-time means acting on data as it arrives. Periodic processing and tolerable latency describe batch instead.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Workloads",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-025",
+    "question": "Match each Data Factory component to its description: Dataset, Linked service, Pipeline. Which mapping is correct?",
+    "options": [
+      "Dataset holds connection info, Linked service groups activities, Pipeline describes data structures",
+      "Dataset describes data structures, Linked service holds connection info, Pipeline groups schedulable activities",
+      "Dataset groups activities, Linked service describes structures, Pipeline holds connections",
+      "Dataset holds connections, Linked service describes structures, Pipeline is unschedulable"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Datasets describe structures, linked services connect to resources, pipelines group schedulable activities.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Pipelines",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-026",
+    "question": "Match each workload to its type: catalog loaded every 12 hours, thousands of datasets per second in real time, inventory updates every 1 million transactions. Which mapping is correct?",
+    "options": [
+      "Streaming, Streaming, Batch",
+      "Batch, Streaming, Batch",
+      "Batch, Batch, Streaming",
+      "Streaming, Batch, Batch"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Twelve-hour loads and per-million-transaction updates are scheduled batches; per-second real-time loads are streaming.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Workloads",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-027",
+    "question": "A sales chart shows actuals through Q3 and a widening projection cone in Q4. Which analysis does Q4 show?",
+    "options": [
+      "predictive",
+      "prescriptive",
+      "descriptive",
+      "diagnostic"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A projection cone forecasts likely future values, which is predictive analytics.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Analytics",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-028",
+    "question": "Which DML statement modifies data already stored in a table?",
+    "options": [
+      "REVOKE",
+      "DISABLE",
+      "CREATE",
+      "UPDATE"
+    ],
+    "correctAnswer": 3,
+    "explanation": "UPDATE manipulates data. REVOKE controls permissions, DISABLE alters state, CREATE defines objects.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "SQL",
+    "source": "ExamTopics DP-900"
   }
 ]
