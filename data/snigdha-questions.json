@@ -446,5 +446,469 @@
     "topic": "Snigdha Questions",
     "subtopic": "SQL",
     "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-029",
+    "question": "Three normalization claims are reviewed: (1) Normalizing increases write throughput. (2) Analytics systems are more normalized than transactional ones. (3) Normalization leads to queries needing more joins. Which evaluations (Yes/No) are correct?",
+    "options": [
+      "Yes, Yes, Yes",
+      "No, No, Yes",
+      "Yes, No, No",
+      "No, Yes, No"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Normalization costs write speed and adds joins, and analytical models are typically less normalized (star schemas) — so No, No, Yes.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Normalization",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-030",
+    "question": "Which database type natively supports the analysis of relationships between entities?",
+    "options": [
+      "Column family databases",
+      "Document databases",
+      "Graph databases",
+      "Key-value stores"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Graph databases traverse relationships natively; the other models are not relationship-first.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Models",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-031",
+    "question": "In an infrastructure as a service (IaaS) instance of Microsoft SQL Server on Azure, you manage the ___ that hosts SQL Server.",
+    "options": [
+      "elastic pool",
+      "MySQL server",
+      "PostgreSQL server",
+      "virtual machine"
+    ],
+    "correctAnswer": 3,
+    "explanation": "IaaS means you manage the virtual machine itself; elastic pools belong to managed SQL Database.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Azure Services",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-032",
+    "question": "Varying fields for each entity in a JSON document is an example of ___ data.",
+    "options": [
+      "relational data",
+      "semi-structured data",
+      "structured data",
+      "unstructured data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Field variability within organized JSON is the hallmark of semi-structured data.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Models",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-033",
+    "question": "A JSON document is an example of ___ data.",
+    "options": [
+      "graph data",
+      "relational data",
+      "semi-structured data",
+      "unstructured data"
+    ],
+    "correctAnswer": 2,
+    "explanation": "JSON carries organized keys and nesting without a rigid table, so it is semi-structured.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Models",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-034",
+    "question": "Which property of a transactional workload guarantees each transaction is treated as a single unit that either succeeds completely or fails completely?",
+    "options": [
+      "atomicity",
+      "isolation",
+      "durability",
+      "consistency"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Atomicity makes each transaction all-or-nothing. Isolation separates concurrent transactions, durability survives crashes, consistency keeps rules valid.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Workloads",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-035",
+    "question": "An exhibit shows employees linked to departments by Works in and Reports to connections. Which type of data store is this?",
+    "options": [
+      "key/value",
+      "object data",
+      "graph",
+      "time series"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Entities joined by named relationships (Works in, Reports to) form a graph of nodes and edges.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Models",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-036",
+    "question": "Which type of database contains nodes and edges?",
+    "options": [
+      "graph",
+      "key-value",
+      "columnar",
+      "time series"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Graphs are built from nodes (entities) connected by edges (relationships).",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Models",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-037",
+    "question": "___ is responsible for identifying which business rules will be applied to the data of a company.",
+    "options": [
+      "A data analyst",
+      "A data engineer",
+      "A data scientist",
+      "A database administrator"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The data analyst works with stakeholders to define the business rules reporting and analysis must follow.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Roles",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-038",
+    "question": "A block of code that runs in a database is called:",
+    "options": [
+      "a stored procedure",
+      "a table",
+      "a view",
+      "an index"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A stored procedure is saved executable logic. Tables store, views present queries, indexes speed lookups.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Objects",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-039",
+    "question": "A company logo detector finds logos inside PDF documents. Which analytics type is this?",
+    "options": [
+      "Diagnostic",
+      "Descriptive",
+      "Predictive",
+      "Cognitive"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Recognizing images inside documents is computer vision, a cognitive capability.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Analytics",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-040",
+    "question": "Three non-relational claims are reviewed: (1) Data is always stored in tables. (2) Data always uses a fixed schema. (3) Two entities in one collection can hold different fields. Which evaluations (Yes/No) are correct?",
+    "options": [
+      "Yes, Yes, Yes",
+      "No, No, Yes",
+      "Yes, No, No",
+      "No, Yes, No"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Non-relational stores drop tables and fixed schemas, and allow varying fields — so No, No, Yes.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Models",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-041",
+    "question": "Which type of database is Azure Database for PostgreSQL?",
+    "options": [
+      "Platform as a service (PaaS)",
+      "Infrastructure as a service (IaaS)",
+      "Microsoft SQL Server",
+      "on-premises"
+    ],
+    "correctAnswer": 0,
+    "explanation": "It is a managed platform service, not VMs, SQL Server, or on-premises hardware.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Azure Services",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-042",
+    "question": "Which storage solution supports access control lists (ACLs) at the file and folder level?",
+    "options": [
+      "Azure Data Lake Storage",
+      "Azure Queue storage",
+      "Azure Blob storage",
+      "Azure Cosmos DB"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data Lake Storage Gen2 adds hierarchical ACLs. Queue, Blob and Cosmos DB do not offer file-level ACLs.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Storage",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-043",
+    "question": "A chart of colored rectangles sized by relative value, able to nest hierarchically, is a:",
+    "options": [
+      "line chart",
+      "matrix",
+      "scatter chart",
+      "treemap"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Nested rectangles sized and colored by value define a treemap.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Power BI",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-044",
+    "question": "What is a characteristic of batch processing?",
+    "options": [
+      "Data must be processed the instant it is received",
+      "Large datasets must be split under 1 GB first",
+      "There is a noticeable delay between ingestion and results",
+      "Batch only handles structured data"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Batch collects and processes on a schedule, so result delays are expected and accepted.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Workloads",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-045",
+    "question": "In a SQL statement, ___ and ___ are examples of aggregate functions.",
+    "options": [
+      "FROM and WHERE",
+      "GROUP BY and ORDER BY",
+      "JOIN and MERGE",
+      "MAX and MIN"
+    ],
+    "correctAnswer": 3,
+    "explanation": "MAX and MIN aggregate many values into one. The other pairs filter, group, sort or combine.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "SQL",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-046",
+    "question": "Three workload claims are reviewed: (1) Daily sales processing is batch. (2) Rolling temperature averages are streaming. (3) Last month's average revenue per product is streaming. Which evaluations (Yes/No) are correct?",
+    "options": [
+      "Yes, Yes, Yes",
+      "Yes, Yes, No",
+      "Yes, No, Yes",
+      "No, Yes, No"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Daily and monthly aggregates are batch; only the rolling live average is streaming — Yes, Yes, No.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Workloads",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-047",
+    "question": "In a relational database, each row in a table has:",
+    "options": [
+      "a different set of columns",
+      "a key/value pair",
+      "the same set of columns",
+      "unstructured data"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Relational rows share one fixed column set — the opposite of key/value or unstructured stores.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Databases",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-048",
+    "question": "A customer record with nested address, arrays and phone numbers is shown as JSON. Which type of data is this?",
+    "options": [
+      "unstructured",
+      "semi-structured",
+      "structured",
+      "relational"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Organized JSON with nesting but no rigid table is semi-structured data.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Models",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-049",
+    "question": "You need an Azure resource to store data in Table storage. Which command should you run?",
+    "options": [
+      "az storage share create",
+      "az storage account create",
+      "az cosmosdb create",
+      "az storage container create"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Tables live in a storage account, so create it first. Shares and containers belong to Files and Blob.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Storage",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-050",
+    "question": "The Azure Cosmos DB ___ API enables SELECT statements to retrieve documents.",
+    "options": [
+      "Core (SQL)",
+      "Gremlin",
+      "MongoDB",
+      "Table"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The Core (SQL) API queries JSON documents with SQL syntax; the others speak different protocols.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Azure Services",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-051",
+    "question": "You must modify a view by adding a column. Which statement should you use?",
+    "options": [
+      "MERGE",
+      "ALTER",
+      "INSERT",
+      "UPDATE"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ALTER redefines the view. INSERT and UPDATE change data, MERGE synchronizes rows.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "SQL",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-052",
+    "question": "Three ETL claims are reviewed: (1) ETL can reduce sensitive data reaching targets. (2) ELT uses compute independent of source and target. (3) ELT minimizes time to copy large volumes. Which evaluations (Yes/No) are correct?",
+    "options": [
+      "Yes, Yes, Yes",
+      "No, No, Yes",
+      "Yes, No, Yes",
+      "No, Yes, No"
+    ],
+    "correctAnswer": 2,
+    "explanation": "ETL masks data before loading (Yes); ELT transforms inside the target, not on independent compute (No); loading raw first copies faster (Yes).",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Pipelines",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-053",
+    "question": "To deploy PostgreSQL on Azure VMs versus Azure Database for PostgreSQL, which hosting mapping is correct?",
+    "options": [
+      "VMs to PaaS, Azure Database to IaaS",
+      "VMs to SaaS, Azure Database to PaaS",
+      "VMs to IaaS, Azure Database to SaaS",
+      "VMs to IaaS, Azure Database to PaaS"
+    ],
+    "correctAnswer": 3,
+    "explanation": "VMs are infrastructure you manage (IaaS); Azure Database for PostgreSQL is a managed platform (PaaS).",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Azure Services",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-054",
+    "question": "You need a PaaS solution hosting a relational database with built-in autoscaling. Which service should you implement?",
+    "options": [
+      "Azure SQL Database",
+      "SQL Server on Azure Virtual Machines",
+      "Azure SQL Managed Instance",
+      "Azure SQL Edge"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Azure SQL Database offers serverless autoscaling as PaaS. VMs are IaaS, Managed Instance targets compatibility, Edge targets IoT.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Azure Services",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-055",
+    "question": "Which Azure storage solution provides native POSIX-compliant access control lists (ACLs)?",
+    "options": [
+      "Azure Table storage",
+      "Azure Data Lake Storage",
+      "Azure Blob storage",
+      "Azure Files"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Data Lake Storage Gen2 natively supports POSIX ACLs on files and folders.",
+    "difficulty": "medium",
+    "topic": "Snigdha Questions",
+    "subtopic": "Storage",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-056",
+    "question": "Relational data is stored in:",
+    "options": [
+      "a file system as unstructured data",
+      "tabular form of rows and columns",
+      "comma-separated values (CSV) files",
+      "a graph of nodes and edges"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Relational means tables of rows and columns — not files, CSV text, or graphs.",
+    "difficulty": "easy",
+    "topic": "Snigdha Questions",
+    "subtopic": "Databases",
+    "source": "ExamTopics DP-900"
+  },
+  {
+    "id": "snig-057",
+    "question": "Three Azure SQL claims are reviewed: (1) One managed instance supports cross-database queries across databases. (2) Elastic pools share resources across SQL Server VM instances. (3) SQL Database is fully compatible with on-premises SQL Server. Which evaluations (Yes/No) are correct?",
+    "options": [
+      "Yes, Yes, Yes",
+      "Yes, No, No",
+      "No, Yes, No",
+      "No, No, Yes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Managed Instances do support cross-database queries (Yes); elastic pools belong to SQL Database, not VMs (No); SQL Database is not fully on-premises compatible (No).",
+    "difficulty": "hard",
+    "topic": "Snigdha Questions",
+    "subtopic": "Azure Services",
+    "source": "ExamTopics DP-900"
   }
 ]

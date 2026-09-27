@@ -36,6 +36,16 @@ Source: https://www.examtopics.com/exams/microsoft/dp-900/view/
 - Skipped: Q22 (ADLS Gen2 hierarchy mapping not legibly verifiable), Q26
   (exact duplicate of snig-014), Q29 (near-duplicate of snig-005),
   Q30 (near-duplicate of snig-015).
+
+## Pages 4–6 (user-supplied screenshots, Q31–Q60 → snig-029..057)
+
+- Q33 skipped (duplicate of snig-022); Q42 boxes 1–2 skipped (duplicates of
+  snig-006/007); all other exhibits legible with verifiable answers.
+- Q40 (business-rules role → data analyst) and Q55 (ETL Yes/No/Yes) included
+  on standard DP-900 grounding: analysts define reporting rules; ETL masks
+  before loading while ELT transforms in-target.
+- Q28's stem differentiated from snig-020's identical stem to avoid a
+  same-question clash.
 - Explanations rewritten in our own words; original reference links from the
   page were used only to confirm facts (ETL, batch latency, star schema,
   MPP compute nodes, clustered index).
