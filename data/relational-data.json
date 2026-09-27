@@ -3,10 +3,10 @@
     "id": "rel-001",
     "question": "Which statement best describes a relational database?",
     "options": [
-      "It stores only JSON",
-      "It organizes related data into tables with defined structure and relationships",
-      "It stores only media",
-      "It cannot enforce rules"
+      "It stores only schemaless JSON documents",
+      "Related data in tables with defined structure and relationships",
+      "It stores only audio and media files",
+      "It cannot enforce integrity rules at all"
     ],
     "correctAnswer": 1,
     "explanation": "Relational databases organize related data into tables with a defined schema and relationships.",
@@ -163,10 +163,10 @@
     "id": "rel-011",
     "question": "What is the primary purpose of a foreign key?",
     "options": [
-      "Sort rows",
-      "Compress tables",
+      "Sort rows into order",
+      "Compress tables to save space",
       "Establish a relationship to a referenced key",
-      "Encrypt the database"
+      "Encrypt the whole database"
     ],
     "correctAnswer": 2,
     "explanation": "Foreign keys link a row to a key in another table, enforcing the relationship.",
@@ -179,10 +179,10 @@
     "id": "rel-012",
     "question": "Referential integrity helps prevent:",
     "options": [
-      "Slow internet",
+      "Slow network connections",
       "Invalid references between related tables",
-      "Duplicate backups",
-      "Large files"
+      "Duplicate backup copies",
+      "Large files on disk"
     ],
     "correctAnswer": 1,
     "explanation": "Referential integrity keeps relationships valid by blocking dangling references.",
@@ -403,10 +403,10 @@
     "id": "rel-026",
     "question": "CREATE is generally used to:",
     "options": [
-      "Read rows",
+      "Read rows from tables",
       "Define/create database objects",
-      "Sort rows",
-      "Change one value"
+      "Sort rows into order",
+      "Change a single stored value"
     ],
     "correctAnswer": 1,
     "explanation": "CREATE defines new database objects such as tables.",
@@ -420,9 +420,9 @@
     "question": "ALTER generally:",
     "options": [
       "Changes an existing object's definition",
-      "Reads rows",
-      "Inserts rows",
-      "Creates a chart"
+      "Reads rows from a table",
+      "Inserts new rows",
+      "Creates a dashboard chart"
     ],
     "correctAnswer": 0,
     "explanation": "ALTER modifies the definition of an existing object.",
@@ -451,10 +451,10 @@
     "id": "rel-029",
     "question": "A common purpose of an index is to:",
     "options": [
-      "Enforce every business rule",
+      "Enforce all business rules",
       "Improve retrieval performance for suitable queries",
-      "Replace tables",
-      "Store passwords"
+      "Replace tables altogether",
+      "Store passwords securely"
     ],
     "correctAnswer": 1,
     "explanation": "Indexes speed up lookups and suitable queries.",
@@ -468,9 +468,9 @@
     "question": "An index trade-off is:",
     "options": [
       "It can consume storage and add maintenance overhead",
-      "It prevents SELECT",
-      "It removes keys",
-      "It makes every write faster"
+      "It prevents SELECT queries entirely",
+      "It removes all primary keys",
+      "It makes every single write faster"
     ],
     "correctAnswer": 0,
     "explanation": "Indexes cost storage and must be maintained on writes.",

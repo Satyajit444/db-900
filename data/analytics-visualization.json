@@ -4,9 +4,9 @@
     "question": "An analytics workload is best described as:",
     "options": [
       "Turning raw data into insights that support decisions",
-      "Compressing log files",
-      "Managing user passwords",
-      "Backing up virtual machines"
+      "Backing up virtual machines on a schedule",
+      "Compressing archived logs to save storage",
+      "Managing user passwords and access rights"
     ],
     "correctAnswer": 0,
     "explanation": "Analytics exists to extract meaning and guide decisions.",
@@ -83,10 +83,10 @@
     "id": "anv-006",
     "question": "Large-scale analytics fundamentally requires the ability to:",
     "options": [
-      "Avoid all storage",
+      "Avoiding storage costs by deleting raw data",
       "Ingest, process, store and analyze massive data",
-      "Delete old reports",
-      "Use one laptop"
+      "Deleting outdated reports on a schedule",
+      "Running the whole workload on one laptop"
     ],
     "correctAnswer": 1,
     "explanation": "Scale analytics means a pipeline from ingestion to insight over huge volumes.",
@@ -99,10 +99,10 @@
     "id": "anv-007",
     "question": "Batch processing means:",
     "options": [
-      "Streaming video to users",
-      "Processing each event the millisecond it arrives",
-      "Collecting data over time and processing it together on a schedule",
-      "Deleting data continuously"
+      "Streaming video content to end users",
+      "Processing each event the instant it arrives",
+      "Collecting data over time for scheduled joint processing",
+      "Deleting accumulated data continuously"
     ],
     "correctAnswer": 2,
     "explanation": "Batch = bounded chunks on a schedule, e.g. nightly sales loads.",
@@ -115,9 +115,9 @@
     "id": "anv-008",
     "question": "ELT differs from ETL mainly because ELT:",
     "options": [
-      "Only works on laptops",
-      "Deletes the source data",
-      "Skips transformation entirely",
+      "Works only on laptop-scale datasets",
+      "Deletes source data after each load",
+      "Skips the transformation step entirely",
       "Loads raw data first, then transforms inside the target platform"
     ],
     "correctAnswer": 3,
@@ -131,10 +131,10 @@
     "id": "anv-009",
     "question": "A data warehouse differs from a data lake in that the warehouse holds:",
     "options": [
-      "Raw data of any format",
+      "Raw data of absolutely any format",
       "Curated structured data optimized for reporting",
-      "Temporary passwords",
-      "Only video files"
+      "Temporary password vault entries",
+      "Only archived video files"
     ],
     "correctAnswer": 1,
     "explanation": "Warehouses serve clean modeled data; lakes keep raw everything.",
@@ -147,10 +147,10 @@
     "id": "anv-010",
     "question": "A lakehouse architecture combines:",
     "options": [
-      "Email and chat",
+      "Email and chat combined into one inbox",
       "Lake flexibility for raw data with warehouse-style performance and management",
-      "Two relational databases",
-      "Backup and DNS"
+      "Two relational databases running side by side",
+      "Backups combined with DNS management"
     ],
     "correctAnswer": 1,
     "explanation": "Lakehouse = store anything like a lake, query reliably like a warehouse.",
@@ -163,10 +163,10 @@
     "id": "anv-011",
     "question": "Parquet is preferred for large analytic scans because it is:",
     "options": [
-      "A database engine",
-      "Row-based and uncompressed",
+      "A managed database engine service",
+      "Row-based and entirely uncompressed",
       "Columnar and compressed, so queries read only needed columns",
-      "An image format"
+      "An image format for pictures"
     ],
     "correctAnswer": 2,
     "explanation": "Columnar layout drastically cuts data scanned by aggregations.",
@@ -179,9 +179,9 @@
     "id": "anv-012",
     "question": "Data ingestion in an analytics solution is the stage that:",
     "options": [
-      "Trains end users",
-      "Sells reports",
-      "Deletes stale dashboards",
+      "Trains end users on new reports",
+      "Sells finished reports to customers",
+      "Deletes stale dashboards every night",
       "Brings data from source systems into the platform"
     ],
     "correctAnswer": 3,
@@ -196,9 +196,9 @@
     "question": "Microsoft Fabric is best described as:",
     "options": [
       "A SaaS analytics platform unifying workloads on OneLake",
-      "A backup tool",
-      "A programming language",
-      "A virtual machine size"
+      "A scheduled backup and restore tool",
+      "A general-purpose programming language",
+      "A virtual machine size family"
     ],
     "correctAnswer": 0,
     "explanation": "Fabric bundles ingestion, engineering, warehousing and BI as one SaaS.",
@@ -212,9 +212,9 @@
     "question": "OneLake in Microsoft Fabric provides:",
     "options": [
       "A single logical data lake for the whole organization",
-      "One database table",
-      "A password vault",
-      "A video stream"
+      "One shared database table for all teams",
+      "A central vault for all passwords",
+      "A live video streaming feed for events"
     ],
     "correctAnswer": 0,
     "explanation": "OneLake gives every workload one shared lake to build on.",
@@ -227,10 +227,10 @@
     "id": "anv-015",
     "question": "Azure Databricks is built for:",
     "options": [
-      "Password rotation",
-      "DNS management",
+      "Automated password rotation service",
+      "Managed DNS name resolution",
       "Spark-based collaborative analytics with notebooks",
-      "File archiving"
+      "Long-term file archiving"
     ],
     "correctAnswer": 2,
     "explanation": "Databricks runs Apache Spark with shared notebooks for data teams.",
@@ -243,10 +243,10 @@
     "id": "anv-016",
     "question": "Notebooks help data teams because they combine:",
     "options": [
-      "Backups and firewalls",
-      "Emails and calendars",
+      "Backups plus firewall rulebooks",
+      "Emails plus shared calendars",
       "Code, results and documentation in one explorable place",
-      "Hardware and cables"
+      "Hardware plus network cables"
     ],
     "correctAnswer": 2,
     "explanation": "Notebooks mix live code, charts and notes for exploration.",
@@ -260,9 +260,9 @@
     "question": "Apache Spark fits workloads that need:",
     "options": [
       "Distributed processing of huge datasets in parallel",
-      "Printing invoices",
-      "Storing passwords",
-      "Single-row lookups"
+      "Printing customer invoices in bulk",
+      "Storing encrypted user passwords",
+      "Single-row key lookups in tables"
     ],
     "correctAnswer": 0,
     "explanation": "Spark splits massive jobs across many workers.",
@@ -275,10 +275,10 @@
     "id": "anv-018",
     "question": "Fabric, Databricks and Power BI typically work together as:",
     "options": [
-      "Three competing backups",
-      "Ingest and prepare, process at scale, then visualize for decisions",
-      "Identical copies of one database",
-      "Unrelated products"
+      "Three competing backup products",
+      "Ingest and prepare, process at scale, then visualize",
+      "Identical copies of a single database",
+      "Completely unrelated rival products"
     ],
     "correctAnswer": 1,
     "explanation": "A pipeline: land data, engineer it, analyze, then report.",
@@ -291,10 +291,10 @@
     "id": "anv-019",
     "question": "Stream processing analyzes data that is:",
     "options": [
-      "Deleted immediately",
-      "Archived for ten years",
+      "Deleted immediately after arrival",
+      "Archived untouched for ten years",
       "Arriving continuously, close to real time",
-      "Printed on paper"
+      "Printed onto paper reports"
     ],
     "correctAnswer": 2,
     "explanation": "Streams are unbounded flows analyzed as they arrive.",
@@ -307,10 +307,10 @@
     "id": "anv-020",
     "question": "The core difference between batch and stream processing is:",
     "options": [
-      "Programming language",
-      "File size",
-      "Cost only",
-      "Bounded historical chunks on a schedule versus unbounded continuous flow"
+      "Programming language choice for the code",
+      "Maximum file size the store allows",
+      "Total monthly cost of the service",
+      "Scheduled historical chunks versus continuous live flow"
     ],
     "correctAnswer": 3,
     "explanation": "Batch = scheduled chunks; stream = always-on flow.",
@@ -339,10 +339,10 @@
     "id": "anv-022",
     "question": "Windowing in stream analytics is used to:",
     "options": [
-      "Resize application windows",
+      "Resize application windows on screens",
       "Group events into time slices for aggregates like counts per minute",
-      "Delete old hardware",
-      "Compress videos"
+      "Delete outdated hardware devices",
+      "Compress archived video files"
     ],
     "correctAnswer": 1,
     "explanation": "Windows (tumbling/hopping/sliding) bound the endless stream for math.",
@@ -355,10 +355,10 @@
     "id": "anv-023",
     "question": "Azure Event Hubs is designed to:",
     "options": [
-      "Store passwords",
-      "Host static websites",
+      "Store encrypted passwords",
+      "Host static marketing websites",
       "Ingest millions of events per second",
-      "Run SQL Server"
+      "Run SQL Server databases"
     ],
     "correctAnswer": 2,
     "explanation": "Event Hubs is the front door for massive event streams.",
@@ -371,9 +371,9 @@
     "id": "anv-024",
     "question": "IoT Hub goes beyond Event Hubs mainly by adding:",
     "options": [
-      "Faster CPUs",
-      "Free domains",
-      "Cheaper blob tiers",
+      "Faster underlying processor hardware",
+      "Free custom domain names included",
+      "Cheaper blob storage tier pricing",
       "Device management and two-way device-to-cloud communication"
     ],
     "correctAnswer": 3,
@@ -388,9 +388,9 @@
     "question": "Azure Stream Analytics lets you process streams using:",
     "options": [
       "Familiar SQL-like queries over live data",
-      "Paper forms",
-      "Manual spreadsheets",
-      "Only machine code"
+      "Paper intake forms",
+      "Manual spreadsheet reviews",
+      "Raw machine code only"
     ],
     "correctAnswer": 0,
     "explanation": "Stream Analytics applies SQL-style logic to moving data.",
@@ -403,9 +403,9 @@
     "id": "anv-026",
     "question": "A Stream Analytics job typically reads from Event Hubs or IoT Hub and writes to:",
     "options": [
-      "Only printers",
+      "Only network printers",
       "Power BI, Blob Storage, SQL or Cosmos DB",
-      "Floppy disks",
+      "Legacy floppy disk drives",
       "Email inboxes only"
     ],
     "correctAnswer": 1,

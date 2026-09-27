@@ -67,10 +67,10 @@
     "id": "cdc-005",
     "question": "Why is JSON generally considered semi-structured?",
     "options": [
-      "It has no information about structure",
+      "It carries no structural information at all",
       "It can contain keys, values, arrays, and nested objects",
-      "It is always stored in SQL",
-      "It only stores numbers"
+      "It is always stored inside SQL tables",
+      "It can only store plain numbers"
     ],
     "correctAnswer": 1,
     "explanation": "JSON has organizational features but does not require a rigid table structure.",
@@ -500,9 +500,9 @@
     "question": "Which scenario most strongly indicates OLTP?",
     "options": [
       "Thousands of small order transactions per minute",
-      "Five-year trend analysis",
-      "Executive dashboard",
-      "Historical data mining"
+      "Five-year sales trend analysis",
+      "Executive monthly dashboard",
+      "Historical data mining project"
     ],
     "correctAnswer": 0,
     "explanation": "OLTP is designed for frequent, small, operational transactions.",
@@ -532,9 +532,9 @@
     "question": "Why can analytical queries be expensive?",
     "options": [
       "They may scan and aggregate large amounts of data",
-      "They always contain images",
-      "They never use indexes",
-      "They only process one row"
+      "They always contain large image files",
+      "They never use any indexes at all",
+      "They only ever process a single row"
     ],
     "correctAnswer": 0,
     "explanation": "Analytical queries often scan, join, and aggregate large datasets.",
@@ -691,10 +691,10 @@
     "id": "cdc-044",
     "question": "Which statement best distinguishes files from databases?",
     "options": [
-      "Databases generally provide data management and querying capabilities beyond simple file storage",
-      "Files cannot contain data",
-      "Databases can only store images",
-      "Files always require SQL"
+      "Databases add querying, indexing, transactions and recovery",
+      "Files cannot contain any data at all",
+      "Databases can only store image files",
+      "Files always require SQL to open"
     ],
     "correctAnswer": 0,
     "explanation": "Databases add capabilities such as querying, indexing, transactions, security, and recovery.",
@@ -708,9 +708,9 @@
     "question": "A CSV file containing sales records is best described as:",
     "options": [
       "A file containing structured/tabular data",
-      "An unstructured video",
-      "A relational database",
-      "A NoSQL database"
+      "An unstructured video file",
+      "A relational database server",
+      "A NoSQL database service"
     ],
     "correctAnswer": 0,
     "explanation": "CSV files commonly contain structured, tabular data, although a CSV file is not itself a database.",
@@ -756,9 +756,9 @@
     "question": "Which question is analytical?",
     "options": [
       "What was total revenue by region last year?",
-      "Create order #10025",
-      "Update a customer's phone number",
-      "Process a payment"
+      "Create order number 10025",
+      "Update one customer's phone number",
+      "Process a single payment"
     ],
     "correctAnswer": 0,
     "explanation": "Revenue by region for a previous year requires analysis and aggregation.",
@@ -787,10 +787,10 @@
     "id": "cdc-050",
     "question": "Why might an organization separate operational and analytical systems?",
     "options": [
-      "Their workloads have different access patterns and requirements",
-      "Data can never be copied",
-      "Analytical systems cannot store data",
-      "Transactional systems cannot use databases"
+      "Operational and analytical access patterns differ",
+      "Analytical queries only need one row at a time",
+      "Transactional systems prohibit concurrent users",
+      "Both workloads access stored data identically"
     ],
     "correctAnswer": 0,
     "explanation": "Operational systems handle transactions, while analytical systems are optimized for large queries and aggregations.",

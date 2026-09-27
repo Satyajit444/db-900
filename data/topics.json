@@ -77,7 +77,7 @@
     "sourceName": "DP-900 Challenge Mode",
     "createdAt": "2026-09-26",
     "questionFile": "data/challenge-mode.json",
-    "questionCount": 40,
+    "questionCount": 56,
     "name": "Challenge Mode",
     "file": "data/challenge-mode.json",
     "examWeight": "DP-900 · Competitive practice",

@@ -5,8 +5,8 @@
     "options": [
       "Data that must always fit rigid tables with fixed columns",
       "Data stored without a fixed tabular schema, often with flexible structure",
-      "Data that can only be stored on virtual machines",
-      "Data that cannot be queried"
+      "Data that can only live on virtual machines",
+      "Data that can never be queried at all"
     ],
     "correctAnswer": 1,
     "explanation": "Non-relational data drops the rigid table schema, allowing flexible structures.",
@@ -20,9 +20,9 @@
     "question": "A key reason modern apps choose NoSQL stores is:",
     "options": [
       "They scale out across servers and accept flexible, varied data shapes",
-      "They remove the need for backups",
-      "They only support one programming language",
-      "They always use less storage"
+      "They eliminate the need for backups entirely",
+      "They work with only one programming language",
+      "They always use less storage than SQL"
     ],
     "correctAnswer": 0,
     "explanation": "NoSQL systems scale horizontally and handle large volumes of varied data.",
@@ -35,7 +35,7 @@
     "id": "nrel-003",
     "question": "Schema flexibility in a NoSQL store means:",
     "options": [
-      "Schemas are stored on virtual machines",
+      "All schemas must be stored on virtual machines",
       "Queries must always use JOINs",
       "Every record must have identical fields",
       "Different records can carry different fields without altering a schema"
@@ -51,10 +51,10 @@
     "id": "nrel-004",
     "question": "Which workload fits non-relational storage best?",
     "options": [
-      "Printing fixed monthly invoices",
+      "Printing identical monthly invoices",
       "Payroll with strict fixed reporting tables",
       "A fast-growing app with varied semi-structured data and global users",
-      "A single-user desktop spreadsheet"
+      "A single-user spreadsheet on one laptop"
     ],
     "correctAnswer": 2,
     "explanation": "Varied, fast-growing, globally distributed data suits NoSQL.",
@@ -69,8 +69,8 @@
     "options": [
       "Rigid schemas and vertical scaling only",
       "Flexible schemas, horizontal scale-out, and tunable consistency",
-      "Storing only numeric data",
-      "Manual sharding by end users in all cases"
+      "Storing only numeric measurements",
+      "Manual sharding done by end users"
     ],
     "correctAnswer": 1,
     "explanation": "NoSQL trades rigid guarantees for scale, flexibility and options like eventual consistency.",
@@ -115,9 +115,9 @@
     "id": "nrel-008",
     "question": "Which is a typical unstructured example in Azure?",
     "options": [
-      "A PartitionKey",
-      "A SQL table",
-      "A JSON document",
+      "A Table Storage PartitionKey",
+      "A relational SQL table",
+      "A semi-structured JSON document",
       "A video stored in Blob Storage"
     ],
     "correctAnswer": 3,
@@ -163,9 +163,9 @@
     "id": "nrel-011",
     "question": "In a graph data model, information is represented with:",
     "options": [
-      "Folders and files",
-      "Blobs and containers",
-      "Tables and foreign keys only",
+      "Folders holding files inside",
+      "Blobs stored inside containers",
+      "Tables linked by foreign keys",
       "Nodes connected by edges that show relationships"
     ],
     "correctAnswer": 3,
@@ -179,10 +179,10 @@
     "id": "nrel-012",
     "question": "Azure Blob Storage is best suited for:",
     "options": [
-      "Virtual machine operating systems only",
+      "Only virtual machine operating systems",
       "Small relational lookup tables",
       "Massive unstructured objects such as images, videos and backups",
-      "Active Directory authentication"
+      "Active Directory authentication services"
     ],
     "correctAnswer": 2,
     "explanation": "Blob Storage holds huge volumes of object data.",
@@ -291,10 +291,10 @@
     "id": "nrel-019",
     "question": "Page blobs are commonly used for:",
     "options": [
-      "Long-term archives",
-      "Static website assets",
-      "Storing photos",
-      "Random read/write workloads such as virtual hard disks"
+      "Long-term compliance archives",
+      "Static website assets and images",
+      "Storing photo collections",
+      "Random read/write workloads like virtual disks"
     ],
     "correctAnswer": 3,
     "explanation": "Page blobs support random access, e.g. VHDs.",
@@ -340,8 +340,8 @@
     "question": "Automatically moving aging blobs to cooler tiers is done with:",
     "options": [
       "Lifecycle management policies",
-      "Foreign keys",
-      "Views",
+      "Foreign key constraints",
+      "Database views",
       "Stored procedures"
     ],
     "correctAnswer": 0,

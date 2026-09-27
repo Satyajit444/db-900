@@ -51,10 +51,10 @@
     "id": "snig-004",
     "question": "In batch processing:",
     "options": [
-      "data is always inserted one row at a time.",
-      "data is processed in real-time.",
+      "data is always inserted one single row at a time.",
+      "data is processed immediately in real-time.",
       "latency in delivering data processing results is acceptable.",
-      "processing can only execute serially."
+      "processing can only ever execute serially."
     ],
     "correctAnswer": 2,
     "explanation": "Batch runs on a schedule, so delayed results are expected and acceptable.",
