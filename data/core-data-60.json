@@ -1,0 +1,962 @@
+[
+  {
+    "id": "cd60-001",
+    "question": "A retail company stores customer names, order dates, product IDs, and order amounts in structured tables. What type of data is being stored?",
+    "options": [
+      "Unstructured data",
+      "Semi-structured data",
+      "Structured data",
+      "Streaming data"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Named columns in structured tables are structured data, not media, documents or streams.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-002",
+    "question": "A marketing team receives customer profiles in JSON format. Different profiles may contain different properties. Which characteristic best describes this data?",
+    "options": [
+      "It has a rigid tabular schema",
+      "Flexible schema with tags or pairs",
+      "It contains only binary content",
+      "It cannot be queried at all"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Varying JSON properties mean a flexible tagged schema, not rigid tables, binary-only content, or unqueryable data.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-003",
+    "question": "A media company stores videos, photographs, and recorded interviews. Which type of data is this?",
+    "options": [
+      "Unstructured data",
+      "Transactional data",
+      "Structured data",
+      "Relational data"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Media files follow no predefined schema, so they are unstructured rather than tabular or transactional.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-004",
+    "question": "A bank records every deposit and withdrawal made by its customers. Each record includes an account number, timestamp, amount, and transaction type. What is the primary purpose of this data?",
+    "options": [
+      "Training a recommendation model",
+      "Rendering dashboards only",
+      "Storing application source code",
+      "Supporting transactions"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Recording deposits and withdrawals runs the bank's operations, so the data exists to support transactions.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-005",
+    "question": "A company wants to understand why sales declined in a particular region during the previous quarter. Analysts will explore historical sales data and compare trends. Which type of workload is required?",
+    "options": [
+      "Transactional workload",
+      "Analytical workload",
+      "Operational workload",
+      "Authentication workload"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Exploring history for trends and causes is analysis, not live transactions, operations or logins.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-006",
+    "question": "An online store must ensure that an order is either completely processed or not processed at all. Updating inventory without creating the order would be unacceptable. Which ACID property is most relevant?",
+    "options": [
+      "Consistency",
+      "Isolation",
+      "Atomicity",
+      "Durability"
+    ],
+    "correctAnswer": 2,
+    "explanation": "All-or-nothing execution is atomicity; the other properties cover rules, concurrency and survival.",
+    "difficulty": "medium",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-007",
+    "question": "Two users attempt to update the same customer record at nearly the same time. The database must prevent one transaction from seeing incomplete changes made by the other. Which ACID property addresses this requirement?",
+    "options": [
+      "Isolation",
+      "Durability",
+      "Atomicity",
+      "Consistency"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Shielding concurrent transactions from each other's partial work is isolation.",
+    "difficulty": "medium",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-008",
+    "question": "A payment system must preserve valid account balances after every transaction. An account must not have an invalid negative balance caused by a rule violation. Which ACID property is being applied?",
+    "options": [
+      "Isolation",
+      "Atomicity",
+      "Durability",
+      "Consistency"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Keeping data within its defined rules is consistency; the scenario is about validity, not atomicity or survival.",
+    "difficulty": "medium",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-009",
+    "question": "A database confirms that a payment has been completed. Immediately afterward, the server loses power. The payment must still be present when the database restarts. Which ACID property provides this guarantee?",
+    "options": [
+      "Atomicity",
+      "Durability",
+      "Consistency",
+      "Isolation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Surviving crashes and restarts is durability; atomicity covers all-or-nothing, not power loss.",
+    "difficulty": "medium",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-010",
+    "question": "A university stores students in one table and courses in another. A separate enrollment table connects students to the courses they take. Which relationship is represented by the enrollment table?",
+    "options": [
+      "One-to-one",
+      "One-to-many",
+      "Many-to-many",
+      "Hierarchical"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Students take many courses and courses hold many students, so the bridge table models many-to-many.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Modeling",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-011",
+    "question": "A company stores a customer's address repeatedly in every order row. Updating the address requires changing many rows. What problem does this design create?",
+    "options": [
+      "Data redundancy",
+      "Data encryption",
+      "Data streaming",
+      "Data serialization"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Repeating the same fact across rows is redundancy; nothing here involves encryption, streams or formats.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Normalization",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-012",
+    "question": "A database designer separates customer information from order information so that each fact is stored in one appropriate location. Which concept is being applied?",
+    "options": [
+      "Partitioning",
+      "Replication",
+      "Denormalization",
+      "Normalization"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Storing each fact once in its proper table is normalization — the opposite of denormalization, partitioning or copying.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Normalization",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-013",
+    "question": "A business intelligence team combines sales, product, and region data to identify patterns and produce management reports. Which activity is this an example of?",
+    "options": [
+      "Data analysis",
+      "Data deletion",
+      "Data serialization",
+      "Data authentication"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Finding patterns for reports is analysis, not deleting, reformatting or verifying identity.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Analytics & BI",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-014",
+    "question": "A company collects raw data from applications, devices, and external partners before transforming it for reporting. What is the primary role of data ingestion?",
+    "options": [
+      "Encrypting every data field",
+      "Creating user accounts",
+      "Removing all duplicate records automatically",
+      "Moving data into a system for storage or processing"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Ingestion moves data in; encryption, accounts and automatic dedup are separate concerns.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Pipelines",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-015",
+    "question": "A data engineer changes dates into a standard format and converts temperature values from Fahrenheit to Celsius before analysis. Which process is being performed?",
+    "options": [
+      "Data indexing",
+      "Data visualization",
+      "Data transformation",
+      "Data replication"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Reformatting and converting values is transformation, not copying, indexing or charting.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Pipelines",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-016",
+    "question": "An organization wants to store a large collection of raw files in their original formats, including CSV files, images, and log files. Which data storage approach is most appropriate?",
+    "options": [
+      "Data mart only",
+      "Data lake",
+      "Relational index",
+      "Transaction log"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Raw files in native formats belong in a data lake, not an index, a log or a curated mart.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Storage",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-017",
+    "question": "A finance department stores cleaned and modeled data prepared for fast reporting by business managers. Which storage concept best matches this requirement?",
+    "options": [
+      "Data warehouse",
+      "Data lake",
+      "Message queue",
+      "File cache"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cleaned, modeled reporting data is a warehouse; lakes hold raw files, queues move messages, caches speed access.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Storage",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-018",
+    "question": "A company copies data from several operational systems into one central repository for reporting and analysis. What is the main purpose of this repository?",
+    "options": [
+      "Replacing all source applications",
+      "Providing internet connectivity",
+      "Managing employee passwords",
+      "Consolidating data for analytical workloads"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Centralized copies exist to serve analysis without touching live systems or replacing them.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-019",
+    "question": "An application records sensor readings continuously from factory equipment. Managers want to see abnormal readings within seconds. What type of data processing is required?",
+    "options": [
+      "Batch processing",
+      "Stream processing",
+      "Manual processing",
+      "Archival processing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Continuous readings with second-level reaction need streams; batch, manual and archival paths are all too slow.",
+    "difficulty": "medium",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-020",
+    "question": "A payroll system collects employee hours throughout the week and calculates salaries every Friday night. Which processing method is being used?",
+    "options": [
+      "Event-driven querying",
+      "Stream processing",
+      "Batch processing",
+      "Real-time visualization"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Scheduled weekly calculation over collected data is batch, not streaming or live.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-021",
+    "question": "A delivery company receives location updates from vehicles and wants to identify vehicles that remain stationary for more than 15 minutes. Which processing approach is most suitable?",
+    "options": [
+      "Stream processing",
+      "Batch processing once a year",
+      "Static file storage",
+      "Manual data entry"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Continuous location tracking with timely detection needs streams; yearly batches, static files and manual entry cannot react.",
+    "difficulty": "medium",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-022",
+    "question": "A company processes millions of historical web logs overnight to calculate monthly usage statistics. Immediate results are not required. Which approach should be used?",
+    "options": [
+      "Stream processing",
+      "Transaction isolation",
+      "Real-time event routing",
+      "Batch processing"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Overnight historical computation without urgency is textbook batch.",
+    "difficulty": "medium",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-023",
+    "question": "A business receives records from several systems. One system uses 'United States,' another uses 'US,' and a third uses 'USA.' Which data quality issue is illustrated?",
+    "options": [
+      "Excessive normalization",
+      "Missing encryption",
+      "Inconsistent values",
+      "Insufficient bandwidth"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Same value in different forms is inconsistency; bandwidth, normalization and encryption are unrelated.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Quality",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-024",
+    "question": "A customer database contains two records for the same person because the customer registered through two different channels. Which data quality issue is present?",
+    "options": [
+      "Aggregation",
+      "Duplication",
+      "Latency",
+      "Serialization"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Two records for one person is duplication, not speed, formatting or summarization.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Quality",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-025",
+    "question": "A sales report contains orders with no customer ID. Analysts cannot associate those orders with customers. Which data quality dimension is most directly affected?",
+    "options": [
+      "Completeness",
+      "Availability",
+      "Durability",
+      "Isolation"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Missing required values is incompleteness; the data exists but is unusable for joins.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Quality",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-026",
+    "question": "A data analyst checks whether every product code in a sales file matches a valid product code in the product catalog. Which data quality characteristic is being evaluated?",
+    "options": [
+      "Accuracy",
+      "Validity",
+      "Latency",
+      "Redundancy"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Conformance to a defined valid set is validity; accuracy would mean matching real-world truth.",
+    "difficulty": "medium",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Quality",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-027",
+    "question": "A company wants to present monthly revenue totals using charts, filters, and interactive visuals for business users. Which type of tool is most appropriate?",
+    "options": [
+      "Transaction processor",
+      "Operating system",
+      "File compression tool",
+      "Data visualization tool"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Interactive charts for business users are visualization tools, not processors, platforms or compressors.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Analytics & BI",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-028",
+    "question": "A manager views a chart showing sales by month and notices a steady decline over six months. What is the chart primarily helping the manager identify?",
+    "options": [
+      "A transaction lock",
+      "A network protocol",
+      "A data trend",
+      "A database schema"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A steady multi-month movement is a trend; schemas, locks and protocols are unrelated.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Analytics & BI",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-029",
+    "question": "A data team combines customer demographics, purchase history, and website activity to create a single view of each customer. What is this activity commonly called?",
+    "options": [
+      "Data integration",
+      "Data encryption",
+      "Data serialization",
+      "Data deletion"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Blending sources into one view is integration, not encryption, formatting or removal.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Pipelines",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-030",
+    "question": "A company receives data in CSV, XML, JSON, and relational table formats. It needs to combine the data for reporting. What challenge is the company facing?",
+    "options": [
+      "Cross-format data integration",
+      "ACID durability",
+      "Hardware virtualization",
+      "User authentication"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Merging CSV, XML, JSON and tables is a format-integration challenge.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Pipelines",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-031",
+    "question": "A database stores information about employees, departments, and office locations. Each employee belongs to one department, and each department can have many employees. What type of relationship exists between departments and employees?",
+    "options": [
+      "One-to-one",
+      "One-to-many",
+      "Many-to-many",
+      "Recursive only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "One department to many employees is one-to-many.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Modeling",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-032",
+    "question": "A hotel system allows a guest to make multiple reservations, while each reservation belongs to one guest. What type of relationship exists between guests and reservations?",
+    "options": [
+      "Unrelated",
+      "One-to-one",
+      "One-to-many",
+      "Many-to-many"
+    ],
+    "correctAnswer": 2,
+    "explanation": "One guest to many reservations is one-to-many, not one-to-one or many-to-many.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Modeling",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-033",
+    "question": "A company stores product details in rows and product attributes such as name, price, and category in columns. What is a row in this structure commonly called?",
+    "options": [
+      "Record",
+      "Field",
+      "Schema",
+      "Index"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A row is a record; columns are fields, the blueprint is the schema, indexes speed lookups.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Modeling",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-034",
+    "question": "A customer table contains columns for CustomerID, Name, Email, and PhoneNumber. What does the Email column represent?",
+    "options": [
+      "A record",
+      "A relationship",
+      "A database instance",
+      "A field or attribute"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A column is a field/attribute; rows are records and neither is a relationship or instance.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Modeling",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-035",
+    "question": "A database administrator defines the tables, columns, data types, and relationships before an application is deployed. What is being defined?",
+    "options": [
+      "The backup schedule",
+      "The visualization canvas",
+      "The database schema",
+      "The data stream"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Tables, types and relationships defined up front are the schema.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Modeling",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-036",
+    "question": "A company wants to store data that does not need to follow a fixed structure, such as images, audio files, and videos. Which data format is most suitable for these items?",
+    "options": [
+      "Decimal columns",
+      "Binary data",
+      "Relational rows",
+      "Foreign keys"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Media without fixed structure is stored as binary data, not rows, keys or numeric columns.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-037",
+    "question": "A software application sends a JSON document containing nested customer and address information. Which data model is best suited to represent this content?",
+    "options": [
+      "Document data model",
+      "Tabular-only model",
+      "Graph edge model only",
+      "Key-only model"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Nested JSON maps directly to the document model, not flat tables, pure edges or bare keys.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-038",
+    "question": "A social network stores users and the connections between them. The system must efficiently find friends of friends. Which data model is most appropriate?",
+    "options": [
+      "Relational table only",
+      "Flat file",
+      "Time series only",
+      "Graph"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Multi-hop connection queries are what graph models are built for.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-039",
+    "question": "A factory stores the temperature of a machine every second, along with the time each measurement was taken. Which type of data is being collected?",
+    "options": [
+      "Relational metadata only",
+      "Static reference data",
+      "Time-series data",
+      "Hierarchical organizational data"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Timestamped measurements form time-series data, not org charts, metadata or static values.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-040",
+    "question": "A logistics company stores the current status of each shipment using a shipment ID and a status value. Which non-relational model naturally represents this data?",
+    "options": [
+      "Columnar warehouse",
+      "Key-value",
+      "Graph",
+      "Document hierarchy"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An ID plus one value is the key-value pattern, not a graph, document tree or warehouse.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-041",
+    "question": "A data team must explain where a metric in a dashboard originated, including the source table and transformations applied. What concept helps provide this information?",
+    "options": [
+      "Data lineage",
+      "Data partitioning",
+      "Data compression",
+      "Data isolation"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Lineage traces origins and transformations; partitioning, compression and isolation do not.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Governance",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-042",
+    "question": "An analyst wants to know the meaning, format, owner, and refresh frequency of each dataset in an organization. Which resource provides this information?",
+    "options": [
+      "Transaction log",
+      "Network gateway",
+      "Query cache",
+      "Data catalog"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Catalogs document meaning, ownership and freshness; logs, gateways and caches do not.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Governance",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-043",
+    "question": "A company classifies employee salary information as confidential and restricts access to authorized users. Which data governance activity is being performed?",
+    "options": [
+      "Data replication",
+      "Data serialization",
+      "Data classification",
+      "Data aggregation"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Labeling sensitivity and restricting access is classification, not summarizing, copying or reformatting.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Governance",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-044",
+    "question": "A report calculates the average order value by dividing total order revenue by the number of orders. What type of value is this calculation?",
+    "options": [
+      "Unstructured data",
+      "Derived data",
+      "Raw data",
+      "Duplicate data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Computed results are derived data, not raw inputs, copies or schemaless content.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Aggregation",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-045",
+    "question": "A company stores millions of records and wants to summarize them by month, product category, and region. What operation is being performed when records are combined into totals?",
+    "options": [
+      "Aggregation",
+      "Normalization",
+      "Encryption",
+      "Serialization"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Combining records into totals is aggregation, not restructuring, securing or reformatting.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Aggregation",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-046",
+    "question": "A monitoring system receives a notification whenever a server exceeds a temperature threshold. What is the notification best described as?",
+    "options": [
+      "A schema",
+      "A dimension",
+      "A foreign key",
+      "An event"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A threshold notification is an event; schemas, dimensions and keys describe structure.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Events",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-047",
+    "question": "An application publishes an event when a customer completes a purchase. Several systems independently receive and process that event. Which architecture concept is illustrated?",
+    "options": [
+      "Manual data entry",
+      "Static reporting",
+      "Event-driven processing",
+      "Batch-only processing"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Publish-and-subscribe reactions are event-driven architecture, not batch, manual or static work.",
+    "difficulty": "medium",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Events",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-048",
+    "question": "A company must choose between retaining every individual transaction and storing only daily totals. Analysts need to investigate individual customer purchases later. Which choice best supports this requirement?",
+    "options": [
+      "Store only chart images",
+      "Retain the detailed transaction data",
+      "Store only daily totals",
+      "Delete records after aggregation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Future drill-down needs detail; totals, deletion and chart images all destroy it.",
+    "difficulty": "medium",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Storage",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-049",
+    "question": "A business uses a dashboard to display current website visits, while a separate report compares visits across the previous five years. Which statement best describes the two workloads?",
+    "options": [
+      "Both purely transactional workloads",
+      "Live dashboard plus analytical report",
+      "Batch dashboard plus event-ingested report",
+      "Both require unstructured data only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Live current-state views are near-real-time analysis while multi-year comparisons are analytical processing.",
+    "difficulty": "medium",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-050",
+    "question": "A company wants to answer questions such as 'What happened?' and 'Which region had the highest revenue last year?' Which workload is it performing?",
+    "options": [
+      "Descriptive analytics",
+      "Predictive analytics",
+      "Prescriptive analytics",
+      "Transaction processing"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Looking backward at what happened is descriptive, not forecasting, recommending or transacting.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-051",
+    "question": "A retailer uses historical customer behavior to estimate which customers are likely to stop buying next month. Which type of analytics is being used?",
+    "options": [
+      "Diagnostic analytics only",
+      "Transactional analytics",
+      "Descriptive analytics",
+      "Predictive analytics"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Estimating future behavior from history is predictive analytics.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-052",
+    "question": "A healthcare organization investigates the causes of increased appointment cancellations by comparing cancellations with locations, times, and patient categories. Which type of analytics is being performed?",
+    "options": [
+      "Transaction processing",
+      "Data serialization",
+      "Diagnostic analytics",
+      "Prescriptive analytics"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Investigating causes of a past outcome is diagnostic analytics.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-053",
+    "question": "A delivery company uses data to recommend the most efficient routes for tomorrow's deliveries. Which type of analytics is this?",
+    "options": [
+      "Descriptive analytics",
+      "Diagnostic analytics",
+      "Predictive analytics",
+      "Prescriptive analytics"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Recommending tomorrow's actions goes beyond prediction into prescriptive analytics.",
+    "difficulty": "easy",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-054",
+    "question": "A company needs to process information from devices continuously as it arrives and identify threshold violations immediately. Which pair of characteristics describes this workload?",
+    "options": [
+      "Low-latency processing and stream processing",
+      "Monthly-only processing and historical archiving",
+      "Low-latency processing and monthly-only processing",
+      "Stream processing without any analysis"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Continuous arrival plus immediate detection means stream processing with low latency; monthly, archive-only or analysis-free options contradict the scenario.",
+    "difficulty": "hard",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-055",
+    "question": "A retailer wants to calculate the total revenue for each store at the end of every day from many individual sales transactions. Which pair of actions is appropriate?",
+    "options": [
+      "Treat each transaction as an unrelated schema",
+      "Aggregate by store in real time instead",
+      "Aggregate transactions by store using batch processing",
+      "Discard all source records before validation"
+    ],
+    "correctAnswer": 2,
+    "explanation": "End-of-day store totals call for batch aggregation; discarding unvalidated data, inventing schemas or paying for real-time all miss the requirement.",
+    "difficulty": "hard",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Pipelines",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-056",
+    "question": "A company is designing a data platform for reporting. It wants to retain raw source data, apply transformations, and make curated data available to analysts. Which pair of activities is part of a typical data pipeline?",
+    "options": [
+      "Skip ingestion and query sources directly",
+      "Ingest data from sources and transform it",
+      "Replace all source applications",
+      "Block analysts from curated data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Ingestion plus transformation is the pipeline core; replacing sources, blocking analysts or skipping ingestion contradict the stated goals.",
+    "difficulty": "hard",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Pipelines",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-057",
+    "question": "An organization receives customer data from multiple applications and wants reliable reporting. Some records are incomplete, duplicated, or inconsistent. Which pair of data preparation tasks should be performed?",
+    "options": [
+      "Remove duplicates and standardize values",
+      "Add unrelated fields randomly",
+      "Ignore missing values in every calculation",
+      "Keep duplicates and skip standardization"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Deduping and standardizing directly fix the stated problems; random fields, ignoring gaps or keeping duplicates all preserve them.",
+    "difficulty": "hard",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Quality",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-058",
+    "question": "A company wants to determine whether a dataset is suitable for a regulatory report. The dataset should be accurate, complete, and current. Which pair of checks is relevant?",
+    "options": [
+      "Check presence, correctness and period",
+      "Convert every value to an image",
+      "Remove all historical records",
+      "Check presence, ignore correctness"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Presence plus correctness-and-currency checks cover accuracy, completeness and timeliness; images, deletion and ignoring correctness all fail the brief.",
+    "difficulty": "hard",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Data Quality",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-059",
+    "question": "A business stores sales transactions for daily operations and copies the data into a separate system for long-term trend analysis. What is the main reason for separating these workloads?",
+    "options": [
+      "Analytics tuned without hurting transactions",
+      "Transactional systems store no numbers",
+      "Analytics serves only authentication",
+      "Separation fixes all quality issues"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Separation lets each system optimize for its own pattern; the alternatives state falsehoods about numbers, auth-only analytics or automatic quality.",
+    "difficulty": "medium",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts.txt"
+  },
+  {
+    "id": "cd60-060",
+    "question": "A company wants employees to understand how a dashboard metric was calculated, which datasets were used, and who owns those datasets. Which combination of capabilities supports this requirement?",
+    "options": [
+      "Randomized deletion alone",
+      "Catalog information, lineage and ownership metadata",
+      "Catalog information with randomized deletion",
+      "Lineage with randomized deletion"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Meaning plus origins plus ownership jointly answer the brief; any option involving randomized deletion destroys rather than explains.",
+    "difficulty": "hard",
+    "topic": "Core Data - 60 (New Questions)",
+    "subtopic": "Governance",
+    "source": "Part 1 Core Data Concepts.txt"
+  }
+]

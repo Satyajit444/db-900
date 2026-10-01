@@ -1,5 +1,18 @@
 [
   {
+    "id": "core-data-60",
+    "title": "Core Data - 60 (New Questions)",
+    "description": "60 scenario-based core data questions: types, workloads, ACID, modeling, pipelines, quality and governance.",
+    "sourceType": "Text File",
+    "sourceName": "Part 1 Core Data Concepts.txt",
+    "createdAt": "2026-10-01",
+    "questionFile": "data/core-data-60.json",
+    "questionCount": 60,
+    "name": "Core Data - 60 (New Questions)",
+    "file": "data/core-data-60.json",
+    "examWeight": "DP-900 · Core data practice"
+  },
+  {
     "id": "snigdha-questions",
     "title": "Snigdha Questions",
     "description": "Exam-style DP-900 questions from ExamTopics: analytics, normalization, pipelines, JSON, modeling, Synapse and indexes.",

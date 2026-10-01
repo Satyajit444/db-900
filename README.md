@@ -97,8 +97,8 @@ Rules:
 
 ## Current content
 
-- **Sets (newest first):** Snigdha Questions (57, `snig-001`–`snig-057`, ExamTopics DP-900 pp. 1–6) · Analytics & Visualization (56, `anv-001`–`anv-056`, YouTube Eps 4–6) · Non-Relational Data in Azure (56, `nrel-001`–`nrel-056`, YouTube Episode 3) · Relational Data (100, `rel-001`–`rel-100`, PDF Episode 2) · Core Data Concepts (50, `cdc-001`–`cdc-050`, `dp900.py`)
-- **Total questions:** 319 normal + 56 Challenge Mode (independent count, excluded from Random Practice and totals)
+- **Sets (newest first):** Core Data - 60 (60, `cd60-001`–`cd60-060`, text file) · Snigdha Questions (57, `snig-001`–`snig-057`, ExamTopics DP-900 pp. 1–6) · Analytics & Visualization (56, `anv-001`–`anv-056`, YouTube Eps 4–6) · Non-Relational Data in Azure (56, `nrel-001`–`nrel-056`, YouTube Episode 3) · Relational Data (100, `rel-001`–`rel-100`, PDF Episode 2) · Core Data Concepts (50, `cdc-001`–`cdc-050`, `dp900.py`)
+- **Total questions:** 379 normal + 56 Challenge Mode (independent count, excluded from Random Practice and totals)
 - **Quality bar:** all options length-balanced and plausible (no longest-answer giveaways); Challenge answers spread 14/14/14/14
 - **Analytics distribution:** easy 21 · medium 23 · hard 12
 - **Non-relational distribution:** easy 16 · medium 23 · hard 17
