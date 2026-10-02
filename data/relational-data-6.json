@@ -1,0 +1,946 @@
+[
+  {
+    "id": "rda6-001",
+    "question": "A company needs a fully managed relational database service in Azure that supports automatic backups and high availability without managing infrastructure. Which Azure service should they use?",
+    "options": [
+      "Azure Virtual Machines",
+      "Azure SQL Database",
+      "Azure Blob Storage",
+      "Azure Cosmos DB"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A fully managed relational service needs no infrastructure care, unlike VMs, Blob or Cosmos DB.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-002",
+    "question": "An organization wants to migrate an on-premises SQL Server database to Azure with minimal changes to the application code. Which Azure service is most suitable?",
+    "options": [
+      "Azure SQL Managed Instance",
+      "Azure Cosmos DB",
+      "Azure Data Lake Storage",
+      "Azure Synapse Analytics"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Managed Instance offers near-complete SQL Server compatibility for minimal-change migration.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Migration",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-003",
+    "question": "A startup needs a relational database that automatically scales compute and storage independently based on workload demands. Which Azure SQL deployment option supports this?",
+    "options": [
+      "Single database",
+      "Elastic pool",
+      "Serverless tier",
+      "Hyperscale tier"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Serverless auto-scales compute and pauses to save cost, ideal for a startup.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-004",
+    "question": "A company wants to run complex analytical queries across multiple relational databases without moving data. Which Azure feature enables this?",
+    "options": [
+      "Azure Data Factory",
+      "Azure SQL Database elastic pools",
+      "Azure SQL Database linked servers",
+      "Azure Synapse Link"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Synapse Link queries across databases without moving data first.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-005",
+    "question": "An application requires a relational database with built-in intelligent performance tuning and threat detection. Which Azure service provides these capabilities?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Cosmos DB",
+      "Azure Table Storage",
+      "Azure Queue Storage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Azure SQL Database bundles intelligent tuning with threat detection.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-006",
+    "question": "A business needs to host multiple databases from different applications on shared compute resources to optimize costs. Which Azure SQL feature should they use?",
+    "options": [
+      "Single database",
+      "Elastic pool",
+      "Managed Instance",
+      "SQL Server on VM"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Elastic pools share compute across databases with different apps to cut cost.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-007",
+    "question": "A company wants to query relational data using T-SQL while also running machine learning models directly in the database. Which Azure service supports this?",
+    "options": [
+      "Azure Blob Storage",
+      "Azure Cosmos DB",
+      "Azure Data Lake Storage",
+      "Azure SQL Database"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Only a relational SQL engine runs T-SQL and in-database machine learning.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-008",
+    "question": "An organization needs a relational database service that supports cross-database queries within the same logical server. Which Azure deployment supports this?",
+    "options": [
+      "Azure Table Storage",
+      "Azure SQL Database single database",
+      "Azure SQL Managed Instance",
+      "Azure Cosmos DB"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Cross-database queries on one logical server are a Managed Instance strength.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-009",
+    "question": "A retail company experiences seasonal traffic spikes and needs a database that can automatically pause during low-usage periods. Which Azure SQL tier is most cost-effective?",
+    "options": [
+      "General Purpose",
+      "Business Critical",
+      "Serverless",
+      "Hyperscale"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Serverless pauses during idle periods, minimizing low-usage cost.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-010",
+    "question": "A company wants to implement row-level security in their Azure relational database to restrict data access by user role. Which service supports this feature?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Blob Storage",
+      "Azure Cosmos DB",
+      "Azure Data Lake Storage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Row-level security by user role is an Azure SQL Database feature.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-011",
+    "question": "An application needs to store relational data with automatic geo-replication across multiple Azure regions for disaster recovery. Which Azure service provides this?",
+    "options": [
+      "Azure Blob Storage account",
+      "Azure Cosmos DB account",
+      "Azure Queue Storage queues",
+      "SQL Database with geo-replication"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Active geo-replication keeps readable regional copies for recovery.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Availability",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-012",
+    "question": "A company wants to use Azure Active Directory authentication for their relational database instead of SQL authentication. Which Azure service supports this?",
+    "options": [
+      "Azure Data Lake Storage",
+      "Azure SQL Database",
+      "Azure Table Storage",
+      "Azure Cosmos DB"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Microsoft Entra authentication replaces SQL logins on Azure SQL Database.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-013",
+    "question": "An organization needs to run SQL Server Integration Services (SSIS) packages in Azure alongside their relational database. Which deployment option supports SSIS?",
+    "options": [
+      "Azure SQL Database single database",
+      "Azure SQL Managed Instance",
+      "Azure Cosmos DB",
+      "Azure Synapse Analytics"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SSIS packages run alongside Managed Instance databases.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Migration",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-014",
+    "question": "A business wants to minimize latency for users across multiple geographic regions by placing database replicas closer to them. Which Azure SQL feature enables this?",
+    "options": [
+      "Active geo-replication",
+      "Auto-failover groups",
+      "Read-scale replicas",
+      "Zone-redundant storage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Readable replicas near users come from active geo-replication.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Availability",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-015",
+    "question": "A company needs a relational database that supports dynamic data masking to hide sensitive information from certain users. Which Azure service provides this?",
+    "options": [
+      "Azure Blob Storage",
+      "Azure Cosmos DB",
+      "Azure Table Storage",
+      "Azure SQL Database"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Dynamic data masking hides sensitive values in Azure SQL Database.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-016",
+    "question": "An application requires point-in-time restore capability for their relational database up to the last 7 days. Which Azure service offers this?",
+    "options": [
+      "Azure Blob Storage",
+      "Azure Data Lake Storage",
+      "Azure SQL Database",
+      "Azure Cosmos DB"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Point-in-time restore covers the last 7 days on Azure SQL Database.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Backup",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-017",
+    "question": "A company wants to use PolyBase to query external data sources from their relational database in Azure. Which service supports PolyBase?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Cosmos DB",
+      "Azure Table Storage",
+      "Azure Queue Storage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PolyBase external tables are supported from Azure SQL Database.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-018",
+    "question": "An organization needs a database migration strategy that allows them to keep their on-premises SQL Server while extending to Azure. Which approach is this?",
+    "options": [
+      "Lift and shift to Azure VM",
+      "Migrate to Azure SQL Database",
+      "Use Azure SQL Managed Instance",
+      "Implement hybrid with Azure Arc"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Azure Arc extends on-premises SQL Server into Azure as hybrid.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Migration",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-019",
+    "question": "A startup wants a fully PaaS relational database with automatic patching and version upgrades. Which Azure service provides this?",
+    "options": [
+      "SQL Server on Azure VM",
+      "Azure SQL Database",
+      "Azure Cosmos DB",
+      "Azure Data Lake Storage"
+    ],
+    "correctAnswer": 1,
+    "explanation": "PaaS patching and upgrades come standard with Azure SQL Database.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-020",
+    "question": "A company needs to implement transparent data encryption (TDE) for their relational database to protect data at rest. Which Azure services support TDE?",
+    "options": [
+      "Azure Blob Storage accounts",
+      "Only Azure SQL Database",
+      "SQL Database and Managed Instance",
+      "Only Azure Cosmos DB"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Transparent data encryption spans SQL Database and Managed Instance.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-021",
+    "question": "An application requires a relational database with built-in query performance insights and automatic index recommendations. Which Azure service provides this?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Cosmos DB",
+      "Azure Table Storage",
+      "Azure Blob Storage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Built-in performance insights with index advice come from Azure SQL Database.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Performance",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-022",
+    "question": "A business wants to consolidate multiple databases with varying usage patterns onto shared resources to reduce costs. Which Azure SQL feature should they implement?",
+    "options": [
+      "Single database with reserved capacity",
+      "Elastic pool",
+      "Hyperscale tier",
+      "Serverless tier"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Elastic pools consolidate varying workloads onto shared resources.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-023",
+    "question": "A company needs to ensure their relational database can handle millions of transactions per second with low latency. Which Azure SQL tier is designed for this?",
+    "options": [
+      "Serverless",
+      "Basic",
+      "General Purpose",
+      "Business Critical"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Business Critical serves the highest throughput with low latency.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Performance",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-024",
+    "question": "An organization wants to use change data capture (CDC) to track modifications in their Azure relational database. Which service supports CDC?",
+    "options": [
+      "Azure Table Storage",
+      "Azure Blob Storage",
+      "Azure SQL Managed Instance",
+      "Azure Cosmos DB"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Change data capture tracking is a Managed Instance capability.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-025",
+    "question": "A company needs to implement always encrypted columns in their relational database to protect sensitive data even from database administrators. Which Azure service supports this?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Cosmos DB",
+      "Azure Data Lake Storage",
+      "Azure Blob Storage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Always Encrypted columns hide data even from administrators on SQL Database.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-026",
+    "question": "An application requires automatic failover to a secondary region in case of a regional outage. Which Azure SQL feature provides this?",
+    "options": [
+      "Active geo-replication",
+      "Auto-failover groups",
+      "Zone-redundant storage",
+      "Read-scale replicas"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Automatic cross-region failover comes from auto-failover groups.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Availability",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-027",
+    "question": "A business wants to use Azure Monitor and Log Analytics to track database performance metrics and set up alerts. Which Azure services integrate with these tools?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Cosmos DB",
+      "Azure Blob Storage",
+      "All of the above"
+    ],
+    "correctAnswer": 3,
+    "explanation": "SQL Database, Cosmos DB and Blob Storage all emit metrics to Monitor.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-028",
+    "question": "A company needs to run legacy applications that require SQL Server Agent jobs in Azure. Which deployment option supports SQL Server Agent?",
+    "options": [
+      "Azure Synapse Analytics",
+      "Azure SQL Database single database",
+      "Azure SQL Managed Instance",
+      "Azure Cosmos DB"
+    ],
+    "correctAnswer": 2,
+    "explanation": "SQL Server Agent jobs require Managed Instance in Azure PaaS.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Migration",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-029",
+    "question": "An organization wants to implement database-level firewall rules to restrict access to specific IP addresses. Which Azure service supports this?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Cosmos DB",
+      "Azure Blob Storage",
+      "Azure Data Lake Storage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Database-level IP firewall rules are an Azure SQL Database feature.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-030",
+    "question": "A company needs to store relational data that must comply with GDPR requirements including data residency in specific regions. Which Azure feature helps with this?",
+    "options": [
+      "Azure Cosmos DB multi-region writes",
+      "Azure Blob Storage geo-redundancy",
+      "Azure Data Lake Storage hierarchical namespace",
+      "Azure SQL Database region selection"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Choosing the deployment region keeps resident data compliant.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-031",
+    "question": "A business needs to implement data classification and labeling for sensitive information in their relational database. Which Azure service provides this capability?",
+    "options": [
+      "Azure Table Storage",
+      "Azure Blob Storage",
+      "Azure SQL Database",
+      "Azure Cosmos DB"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Classification and labeling of sensitive data is an Azure SQL Database capability.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-032",
+    "question": "A company wants to use Azure SQL Database to host a data warehouse with columnstore indexes for analytical queries. Is this supported?",
+    "options": [
+      "Yes, but only in the Premium tier",
+      "Yes, Azure SQL Database supports columnstore indexes",
+      "No, only Azure Synapse Analytics supports columnstore",
+      "No, only SQL Server on VM supports columnstore"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Columnstore indexes for analytics are supported by Azure SQL Database.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Performance",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-033",
+    "question": "An organization needs to migrate 50 databases from on-premises to Azure with minimal application changes. Which migration approach is most efficient?",
+    "options": [
+      "Migrate each to Azure SQL Database single database",
+      "Use Azure SQL Managed Instance for compatibility",
+      "Deploy SQL Server on Azure VM",
+      "Use Azure Cosmos DB"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Fifty databases move with least friction to Managed Instance.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Migration",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-034",
+    "question": "A company wants to implement query store to track query performance history in their Azure relational database. Which services support Query Store?",
+    "options": [
+      "Azure SQL Database",
+      "Azure SQL Managed Instance",
+      "Both A and B",
+      "Neither A nor B"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Query Store history is available in both SQL Database and Managed Instance.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Performance",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-035",
+    "question": "A business needs to ensure their relational database has a recovery point objective (RPO) of less than 5 seconds. Which Azure SQL configuration achieves this?",
+    "options": [
+      "Business Critical with local redundancy",
+      "Serverless tier databases",
+      "Standard geo-redundant backup",
+      "Zone-redundant storage option"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business Critical offers the strongest local data protection for strict RPO.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Availability",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-036",
+    "question": "A company wants to use Azure SQL Database to support an application that requires distributed transactions across multiple databases. Is this supported?",
+    "options": [
+      "No, Azure SQL Database does not support distributed transactions",
+      "Yes, but only with Managed Instance",
+      "Yes, but only in the Premium tier",
+      "Yes, with elastic transactions"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Elastic transactions span databases in Azure SQL Database.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-037",
+    "question": "An organization needs to implement vulnerability assessment for their relational database to identify security weaknesses. Which Azure service provides this?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Cosmos DB",
+      "Azure Blob Storage",
+      "Azure Data Lake Storage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Vulnerability assessment findings come from Azure SQL Database.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-038",
+    "question": "A company wants to use Azure SQL Database with a specific SQL Server compatibility level for legacy application support. Is this configurable?",
+    "options": [
+      "No, Azure SQL Database always uses the latest compatibility level",
+      "Yes, but only in Managed Instance",
+      "No, compatibility level is fixed",
+      "Yes, compatibility level can be set at database level"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Compatibility level is configurable per database on Azure SQL Database.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-039",
+    "question": "A business needs to implement backup retention policies for their relational database ranging from 1 to 35 days. Which Azure service supports configurable backup retention?",
+    "options": [
+      "Azure Table Storage",
+      "Azure Blob Storage",
+      "Azure SQL Database",
+      "Azure Cosmos DB"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Backup retention from 1 to 35 days is configurable on Azure SQL Database.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Backup",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-040",
+    "question": "A company wants to use Azure SQL Database to host a multi-tenant application where each tenant has a separate database. Which deployment model is most appropriate?",
+    "options": [
+      "Managed Instance with database per tenant",
+      "All of the above are valid approaches",
+      "Single database per tenant",
+      "Elastic pool with multiple databases"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Single, pooled and MI deployments are all valid multi-tenant models.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-041",
+    "question": "An organization needs to implement long-term backup retention for compliance, keeping backups for up to 10 years. Which Azure SQL feature supports this?",
+    "options": [
+      "Point-in-time restore",
+      "Long-term retention (LTR) backups",
+      "Geo-redundant backup storage",
+      "Auto-failover groups"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Ten-year compliance retention needs long-term retention backups.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Backup",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-042",
+    "question": "A company wants to use Azure SQL Database to support an application that requires full SQL Server surface area compatibility. Which option provides the highest compatibility?",
+    "options": [
+      "Azure SQL Managed Instance",
+      "Azure SQL Database elastic pool",
+      "Azure Synapse Analytics",
+      "Azure SQL Database single database"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The fullest SQL Server surface area in PaaS is Managed Instance.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Migration",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-043",
+    "question": "A business needs to implement database auditing to track all queries and modifications for compliance. Which Azure services support auditing?",
+    "options": [
+      "Azure SQL Database",
+      "Azure SQL Managed Instance",
+      "Both A and B",
+      "Neither A nor B"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Auditing is supported by both SQL Database and Managed Instance.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-044",
+    "question": "A company wants to use Azure SQL Database with automatic tuning enabled to optimize query performance. Which tuning options are available?",
+    "options": [
+      "Neither A nor B",
+      "Create index",
+      "Force plan",
+      "Both A and B"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Automatic tuning covers both index creation and plan forcing.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Performance",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-045",
+    "question": "An organization needs to ensure their relational database can scale storage up to 100 TB. Which Azure SQL tier supports this?",
+    "options": [
+      "General Purpose",
+      "Business Critical",
+      "Hyperscale",
+      "Serverless"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Hyperscale grows storage toward 100 TB.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-046",
+    "question": "A company wants to implement private endpoints for their Azure SQL Database to ensure traffic stays on the Microsoft backbone network. Is this supported?",
+    "options": [
+      "Yes, Azure SQL Database supports private endpoints",
+      "No, only public endpoints are supported",
+      "Yes, but only for Managed Instance",
+      "No, use VNet service endpoints instead"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Private endpoints keep SQL Database traffic on the backbone.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-047",
+    "question": "A business needs to use Azure SQL Database to support an application that requires cross-database transactions. Is this supported?",
+    "options": [
+      "No, cross-database transactions are not supported",
+      "Yes, but only with elastic pools",
+      "Yes, but only in the Premium tier",
+      "Yes, within the same logical server"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Same-server cross-database transactions are supported.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-048",
+    "question": "A company wants to implement geo-restore capability for their relational database to recover in a different Azure region. Which backup configuration enables this?",
+    "options": [
+      "Zone-redundant backup",
+      "Geo-redundant backup",
+      "All of the above",
+      "Locally redundant backup"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Geo-restore to another region needs geo-redundant backups.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Backup",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-049",
+    "question": "An organization needs to use Azure SQL Database to support an application that requires memory-optimized tables for high performance. Is this supported?",
+    "options": [
+      "Yes, in Premium and Business Critical tiers",
+      "No, memory-optimized tables are not supported",
+      "Yes, but only in Managed Instance",
+      "Yes, but only in the General Purpose tier"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Memory-optimized tables run in Premium and Business Critical tiers.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Performance",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-050",
+    "question": "A company wants to implement database-level containment in their Azure relational database to simplify user management. Which Azure service supports contained databases?",
+    "options": [
+      "Azure SQL Database",
+      "Azure SQL Managed Instance",
+      "Both A and B",
+      "Neither A nor B"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Contained databases work in both SQL Database and Managed Instance.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-051",
+    "question": "A business needs to use Azure SQL Database to support an application that requires temporal tables for tracking historical data. Is this supported?",
+    "options": [
+      "No, temporal tables are only available in SQL Server on VM",
+      "Yes, but only in the Premium tier",
+      "No, use Azure Cosmos DB instead",
+      "Yes, Azure SQL Database supports temporal tables"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Temporal history tables are supported by Azure SQL Database.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-052",
+    "question": "A company wants to implement database cloning to quickly create copies of their production database for testing. Which Azure SQL feature supports this?",
+    "options": [
+      "Serverless tier",
+      "Database copy",
+      "Elastic pool",
+      "Hyperscale tier"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Fast test copies come from the database copy feature.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-053",
+    "question": "An organization needs to use Azure SQL Database to support an application that requires graph database capabilities. Is this supported?",
+    "options": [
+      "Yes, Azure SQL Database supports graph tables",
+      "No, graph capabilities are only in Azure Cosmos DB",
+      "Yes, but only in Managed Instance",
+      "No, use Azure Synapse Analytics instead"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Graph tables are supported by Azure SQL Database itself.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-054",
+    "question": "A company wants to implement database-level encryption using Always Encrypted with secure enclaves. Which Azure service supports this?",
+    "options": [
+      "Azure SQL Database",
+      "Azure SQL Managed Instance",
+      "Both A and B",
+      "Neither A nor B"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Always Encrypted with enclaves spans both SQL Database and Managed Instance.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-055",
+    "question": "A business needs to use Azure SQL Database to support an application that requires full-text search capabilities. Is this supported?",
+    "options": [
+      "No, full-text search is not supported",
+      "Yes, but only in the Premium tier",
+      "No, use Azure Cognitive Search instead",
+      "Yes, Azure SQL Database supports full-text search"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Full-text search is supported by Azure SQL Database.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-056",
+    "question": "A company wants to implement database-level resource governance to limit resource consumption by specific workloads. Which Azure SQL feature provides this?",
+    "options": [
+      "Serverless tier",
+      "Resource Governor",
+      "Elastic pool",
+      "Hyperscale tier"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Per-workload resource limits come from Resource Governor.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Performance",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-057",
+    "question": "An organization needs to use Azure SQL Database to support an application that requires service broker for asynchronous messaging. Is this supported?",
+    "options": [
+      "No, unsupported in SQL Database",
+      "Yes, fully supported in all tiers",
+      "Yes, but only in Managed Instance",
+      "Yes, but only in the Premium tier"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Service Broker messaging is not available in Azure SQL Database.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-058",
+    "question": "A company wants to implement database-level threat detection to identify anomalous activities and potential threats. Which Azure service provides this?",
+    "options": [
+      "Azure Cosmos DB",
+      "Azure Blob Storage",
+      "Azure Data Lake Storage",
+      "Azure SQL Database"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Anomaly and threat detection comes from Azure SQL Database.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  },
+  {
+    "id": "rda6-059",
+    "question": "A business needs to use Azure SQL Database to support an application that requires distributed replay for performance testing. Is this supported?",
+    "options": [
+      "Yes, but only in Managed Instance",
+      "Yes, but only in the Premium tier",
+      "No, Distributed Replay is unsupported",
+      "Yes, fully supported in all tiers"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Distributed Replay testing is not available in Azure SQL Database.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – 6",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - 6.txt"
+  }
+]

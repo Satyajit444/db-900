@@ -1,0 +1,962 @@
+[
+  {
+    "id": "cds3-001",
+    "question": "A company stores customer feedback as text comments without any predefined fields or structure. How is this data classified?",
+    "options": [
+      "Structured data",
+      "Semi-structured data",
+      "Unstructured data",
+      "Relational data"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Unstructured data has no predefined schema or organization, like free-form text comments.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-002",
+    "question": "An application receives data where each record is a self-describing object with field names and values in curly braces. What format is this?",
+    "options": [
+      "XML",
+      "JSON",
+      "TSV",
+      "CSV"
+    ],
+    "correctAnswer": 1,
+    "explanation": "JSON uses curly braces {} to define objects with name-value pairs.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-003",
+    "question": "A database ensures that all transactions follow business rules, such as account balances never going negative. Which ACID property enforces these rules?",
+    "options": [
+      "Consistency",
+      "Isolation",
+      "Durability",
+      "Atomicity"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Consistency ensures transactions maintain database rules and constraints.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-004",
+    "question": "A company processes daily sales reports by collecting all transactions from the day and generating summaries overnight. What processing model is this?",
+    "options": [
+      "Real-time processing",
+      "Event-driven processing",
+      "Stream processing",
+      "Batch processing"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Batch processing collects data over time and processes it in groups at scheduled intervals.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-005",
+    "question": "A system stores employee records in tables with rows for each employee and columns for attributes like name, ID, and department. What data organization is this?",
+    "options": [
+      "Document-based",
+      "Graph-based",
+      "Tabular/Relational",
+      "Key-value"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Tabular or relational data uses rows and columns to organize information.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Modeling",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-006",
+    "question": "A financial system must ensure that a fund transfer either completes entirely or not at all, with no partial updates. Which ACID property guarantees this?",
+    "options": [
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Durability"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Atomicity ensures transactions are all-or-nothing operations.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-007",
+    "question": "A company receives data in a format where fields are enclosed in tags like <name> and </name> with hierarchical nesting. What format is this?",
+    "options": [
+      "CSV",
+      "XML",
+      "Avro",
+      "JSON"
+    ],
+    "correctAnswer": 1,
+    "explanation": "XML uses opening and closing tags to define fields and supports hierarchical structures.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-008",
+    "question": "A database prevents two users from modifying the same record simultaneously, avoiding conflicts. Which concept handles this?",
+    "options": [
+      "Data partitioning",
+      "Schema validation",
+      "Data normalization",
+      "Transaction isolation"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Isolation prevents concurrent transactions from interfering with each other.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-009",
+    "question": "A company designs tables so that each field contains only a single value, not multiple values in one cell. Which normal form is this?",
+    "options": [
+      "First Normal Form (1NF)",
+      "Second Normal Form (2NF)",
+      "Third Normal Form (3NF)",
+      "Boyce-Codd Normal Form (BCNF)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "1NF requires atomic (single) values in each column.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Normalization",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-010",
+    "question": "A streaming service analyzes user viewing patterns as they happen to provide instant recommendations. What processing approach is this?",
+    "options": [
+      "Batch processing",
+      "Stream processing",
+      "Scheduled processing",
+      "Deferred processing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Stream processing analyzes data in real time as it arrives.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-011",
+    "question": "A company stores product images, videos, and audio files that don't follow any schema. How are these files classified?",
+    "options": [
+      "Structured data",
+      "Semi-structured data",
+      "Unstructured data",
+      "Relational data"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Media files like images and videos are unstructured data without predefined fields.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-012",
+    "question": "A database ensures that once a transaction is saved, the data persists even after a system crash. Which ACID property ensures this?",
+    "options": [
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Durability"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Durability guarantees committed transactions survive system failures.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-013",
+    "question": "A company receives IoT sensor data in a format where each message is a lightweight document with varying fields based on sensor type. Which format is most suitable?",
+    "options": [
+      "Fixed-width text",
+      "JSON",
+      "Binary executable",
+      "Encrypted archive"
+    ],
+    "correctAnswer": 1,
+    "explanation": "JSON supports flexible schemas with optional or varying fields per record.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-014",
+    "question": "A database removes duplicate data by splitting information into separate related tables. What design technique is this?",
+    "options": [
+      "Normalization",
+      "Partitioning",
+      "Indexing",
+      "Denormalization"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Normalization reduces redundancy by organizing data into related tables.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Normalization",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-015",
+    "question": "A company processes website clickstream data by grouping events into 1-minute windows and computing aggregates. What processing pattern is this?",
+    "options": [
+      "Transactional processing",
+      "Interactive querying",
+      "Pure batch",
+      "Micro-batch processing"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Micro-batch processes data in small, frequent batches for near-real-time results.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-016",
+    "question": "A system stores configuration settings as simple name-value pairs for fast lookup by key. Which data model is this?",
+    "options": [
+      "Relational",
+      "Document",
+      "Key-value",
+      "Graph"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Key-value stores use simple pairs for fast retrieval by key.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Modeling",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-017",
+    "question": "A company ensures that all dates in their database use the same format (YYYY-MM-DD) for consistency. What data practice is this?",
+    "options": [
+      "Data standardization",
+      "Data encryption",
+      "Data compression",
+      "Data replication"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Standardization ensures consistent formats across data elements.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Governance",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-018",
+    "question": "A database must guarantee that foreign key relationships are maintained, preventing orphaned records. Which ACID property relates to this?",
+    "options": [
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Durability"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Consistency enforces referential integrity and foreign key constraints.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-019",
+    "question": "A company stores scientific data in a columnar file format optimized for analytical queries on specific columns. Which format is this?",
+    "options": [
+      "CSV",
+      "JSON",
+      "Parquet",
+      "XML"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Parquet is a columnar storage format optimized for analytics.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-020",
+    "question": "An application logs events where each log entry has a timestamp, event type, and optional metadata fields. Which format supports this flexibility?",
+    "options": [
+      "Fixed-width",
+      "TSV",
+      "CSV",
+      "JSON"
+    ],
+    "correctAnswer": 3,
+    "explanation": "JSON allows optional fields and varying structures per record.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-021",
+    "question": "A company processes end-of-month financial reports by aggregating all transactions from the month. What processing type is this?",
+    "options": [
+      "Real-time streaming",
+      "Batch processing",
+      "Interactive querying",
+      "Transactional processing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Monthly aggregation is classic batch processing.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-022",
+    "question": "A database ensures that each table has a primary key and all records are uniquely identifiable. What concept is this?",
+    "options": [
+      "Entity integrity",
+      "Referential integrity",
+      "Data redundancy",
+      "Data fragmentation"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Entity integrity ensures each record has a unique primary key.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Modeling",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-023",
+    "question": "A company receives partner data in files where records are separated by newlines and fields by commas. What format is this?",
+    "options": [
+      "JSON",
+      "XML",
+      "CSV",
+      "Avro"
+    ],
+    "correctAnswer": 2,
+    "explanation": "CSV (Comma-Separated Values) uses commas to delimit fields.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-024",
+    "question": "A system must prevent a transaction from reading uncommitted data from another concurrent transaction. Which ACID property prevents this?",
+    "options": [
+      "Durability",
+      "Atomicity",
+      "Consistency",
+      "Isolation"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Isolation prevents dirty reads from uncommitted transactions.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-025",
+    "question": "A company stores social media posts with hashtags, mentions, and embedded links in a flexible structure. How is this data classified?",
+    "options": [
+      "Structured",
+      "Semi-structured",
+      "Unstructured",
+      "Relational"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Social media posts are semi-structured with some organization but flexible schema.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-026",
+    "question": "A database design ensures non-key fields depend on the entire primary key, not just part of it. Which normal form is this?",
+    "options": [
+      "2NF",
+      "3NF",
+      "BCNF",
+      "1NF"
+    ],
+    "correctAnswer": 0,
+    "explanation": "2NF requires full dependency on the entire primary key.",
+    "difficulty": "hard",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Normalization",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-027",
+    "question": "A company archives old transaction records to reduce active database size while keeping history accessible. What is this practice?",
+    "options": [
+      "Data partitioning",
+      "Data sharding",
+      "Data normalization",
+      "Data archiving"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Archiving moves old data to separate storage while retaining access.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Storage",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-028",
+    "question": "An application processes stock prices in real time to trigger alerts when thresholds are breached. What processing approach is needed?",
+    "options": [
+      "Deferred processing",
+      "Batch processing",
+      "Stream processing",
+      "Scheduled processing"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Real-time threshold monitoring requires stream processing.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-029",
+    "question": "A company stores metadata about files, including creation date, author, and file type. What is this descriptive information called?",
+    "options": [
+      "Schema",
+      "Metadata",
+      "Index",
+      "Partition"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Metadata is data about data, describing file attributes.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Governance",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-030",
+    "question": "A database ensures that all required fields are populated before allowing a record to be saved. What data quality principle is this?",
+    "options": [
+      "Data completeness",
+      "Data redundancy",
+      "Data archiving",
+      "Data partitioning"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Completeness ensures all required data is present.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Quality",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-031",
+    "question": "A company receives data in a binary format with a separate schema definition, optimized for high-volume streaming. Which format is this?",
+    "options": [
+      "JSON",
+      "CSV",
+      "Avro",
+      "XML"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Avro is a binary format with schema separation, ideal for streaming.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-032",
+    "question": "A system stores hierarchical organizational data with parent-child relationships between employees. Which data model fits this?",
+    "options": [
+      "Key-value",
+      "Columnar",
+      "Relational",
+      "Hierarchical"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Hierarchical models naturally represent parent-child relationships.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Modeling",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-033",
+    "question": "A company processes sensor data by aggregating readings hourly and storing summaries. What processing model is this?",
+    "options": [
+      "Stream processing",
+      "Batch processing",
+      "Real-time processing",
+      "Event-driven processing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Hourly aggregation is batch processing at regular intervals.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-034",
+    "question": "A database prevents deletion of a parent record if child records still reference it. What constraint enforces this?",
+    "options": [
+      "Foreign key",
+      "Unique",
+      "Check",
+      "Primary key"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Foreign key constraints maintain referential integrity.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Modeling",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-035",
+    "question": "A company stores time-stamped stock price data for trend analysis over time. What type of data is this?",
+    "options": [
+      "Unstructured",
+      "Binary",
+      "Cross-sectional",
+      "Time-series"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Time-series data has timestamps for sequential analysis.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-036",
+    "question": "A database ensures all users see the same data when querying simultaneously, regardless of location. What consistency model is this?",
+    "options": [
+      "Weak consistency",
+      "Causal consistency",
+      "Strong consistency",
+      "Eventual consistency"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Strong consistency ensures all reads return the most recent write.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-037",
+    "question": "A company receives data where each line is a record with tab-separated fields, some containing commas within text. What format is this?",
+    "options": [
+      "CSV",
+      "TSV",
+      "JSON",
+      "XML"
+    ],
+    "correctAnswer": 1,
+    "explanation": "TSV (Tab-Separated Values) uses tabs as delimiters.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-038",
+    "question": "A system must handle high-velocity data from mobile apps while maintaining quality. What data challenge is this?",
+    "options": [
+      "Data velocity",
+      "Data variety",
+      "Data volume",
+      "Data veracity"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Velocity refers to the speed of data generation and processing.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-039",
+    "question": "A company designs tables to eliminate transitive dependencies between non-key fields. Which normal form is this?",
+    "options": [
+      "1NF",
+      "2NF",
+      "3NF",
+      "BCNF"
+    ],
+    "correctAnswer": 2,
+    "explanation": "3NF removes transitive dependencies.",
+    "difficulty": "hard",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Normalization",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-040",
+    "question": "A database automatically updates indexes when data changes to maintain query performance. What feature is this?",
+    "options": [
+      "Data encryption",
+      "Data compression",
+      "Data replication",
+      "Index maintenance"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Automatic index maintenance keeps indexes current with data changes.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Performance",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-041",
+    "question": "A company stores research documents as PDFs that require OCR to extract text for analysis. How are these classified?",
+    "options": [
+      "Structured",
+      "Semi-structured",
+      "Unstructured",
+      "Relational"
+    ],
+    "correctAnswer": 2,
+    "explanation": "PDFs are unstructured until processed with OCR.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-042",
+    "question": "A system validates that numeric values fall within acceptable ranges before saving. What data concept is this?",
+    "options": [
+      "Data validation",
+      "Data encryption",
+      "Data compression",
+      "Data replication"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Validation ensures data meets defined criteria.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Quality",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-043",
+    "question": "A company processes web logs nightly by extracting fields and loading into a warehouse. What processing type is this?",
+    "options": [
+      "Real-time streaming",
+      "Batch ETL",
+      "Interactive querying",
+      "Transactional processing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Nightly log processing is batch ETL (Extract, Transform, Load).",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-044",
+    "question": "A database ensures character encoding is consistent across all text fields to prevent corruption. What practice is this?",
+    "options": [
+      "Data encryption",
+      "Data compression",
+      "Data replication",
+      "Encoding standardization"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Consistent character encoding prevents data corruption.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Governance",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-045",
+    "question": "A company stores machine learning predictions as numerical arrays with confidence scores. Which format is suitable?",
+    "options": [
+      "Plain CSV text files",
+      "Plain JSON text files",
+      "Binary format like NumPy",
+      "Plain XML text files"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Binary formats like NumPy efficiently store numerical arrays.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-046",
+    "question": "A system must maintain a history of all changes to records for audit purposes. What feature provides this?",
+    "options": [
+      "Change tracking/auditing",
+      "Data encryption",
+      "Data compression",
+      "Data replication"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Change tracking or auditing maintains modification history.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Governance",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-047",
+    "question": "A company receives streaming data and must process it within seconds for anomaly detection. What requirement is this?",
+    "options": [
+      "High throughput",
+      "Batch processing",
+      "Scheduled processing",
+      "Low latency"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Low latency ensures quick processing from ingestion to action.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Events",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-048",
+    "question": "A database prevents concurrent transactions from causing data corruption during simultaneous updates. What concept addresses this?",
+    "options": [
+      "Schema validation",
+      "Concurrency control",
+      "Data compression",
+      "Data encryption"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Concurrency control manages simultaneous data access.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-049",
+    "question": "A company stores product catalogs with flexible attributes that vary by category. Which data model supports this?",
+    "options": [
+      "Relational",
+      "Document",
+      "Graph",
+      "Key-value"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Document models handle flexible, varying schemas per record.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Modeling",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-050",
+    "question": "A system ensures monetary values use consistent currency and decimal precision. What practice is this?",
+    "options": [
+      "Data standardization",
+      "Data encryption",
+      "Data compression",
+      "Data replication"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Standardization ensures consistent formats and precision.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Governance",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-051",
+    "question": "A company processes clickstream data to identify user behavior patterns in real time. What processing approach is this?",
+    "options": [
+      "Scheduled processing",
+      "Deferred processing",
+      "Batch processing",
+      "Stream processing"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Real-time behavior analysis requires stream processing.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-052",
+    "question": "A database ensures each entity has a unique identifier distinguishing it from all other records. What is this called?",
+    "options": [
+      "Constraint",
+      "Foreign key",
+      "Primary key",
+      "Index"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Primary keys uniquely identify each record.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Modeling",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-053",
+    "question": "A company stores audio recordings that are later transcribed for analysis. How are raw audio files classified?",
+    "options": [
+      "Structured",
+      "Semi-structured",
+      "Unstructured",
+      "Tabular"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Raw audio is unstructured until processed.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-054",
+    "question": "A system extracts hashtags and mentions from social media text for trend analysis. What operation is this?",
+    "options": [
+      "Data transformation",
+      "Data encryption",
+      "Data compression",
+      "Data replication"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Extracting structured elements from text is data transformation.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Pipelines",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-055",
+    "question": "A company receives data in a row-based format optimized for write operations. Which format is this?",
+    "options": [
+      "ORC",
+      "CSV",
+      "Columnar",
+      "Parquet"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CSV is row-based and optimized for writes.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-056",
+    "question": "A database design reduces duplicate storage by organizing data into related tables. What benefit does this provide?",
+    "options": [
+      "Faster read performance",
+      "Simplified query writing",
+      "Improved data encryption",
+      "Less storage and fewer anomalies"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Normalization reduces redundancy and update issues.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Normalization",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-057",
+    "question": "A company processes IoT data from thousands of devices, aggregating readings every hour. What processing model is this?",
+    "options": [
+      "Stream processing",
+      "Batch processing",
+      "Real-time processing",
+      "Event-driven processing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Hourly aggregation is batch processing.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-058",
+    "question": "A system must ensure numeric precision to avoid rounding errors in financial calculations. What concept is this?",
+    "options": [
+      "Data type selection",
+      "Data encryption",
+      "Data compression",
+      "Data replication"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Proper data types ensure accurate numeric precision.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Modeling",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-059",
+    "question": "A company stores satellite imagery as pixel data without inherent schema. How are these files classified?",
+    "options": [
+      "Structured",
+      "Semi-structured",
+      "Unstructured",
+      "Tabular"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Raw imagery is unstructured data.",
+    "difficulty": "easy",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  },
+  {
+    "id": "cds3-060",
+    "question": "A database ensures queries return results based on committed data only, not intermediate states. Which ACID property guarantees this?",
+    "options": [
+      "Durability",
+      "Atomicity",
+      "Consistency",
+      "Isolation"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Isolation ensures transactions don't see uncommitted changes from others.",
+    "difficulty": "medium",
+    "topic": "Core Data Concepts – Set 3",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts - Set 3.txt"
+  }
+]
