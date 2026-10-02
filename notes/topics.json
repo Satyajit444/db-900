@@ -52,7 +52,15 @@
     "title": "Analytics & Visualization",
     "description": "Workloads, streaming and Power BI from Episodes 4–6 — one consolidated guide.",
     "file": "notes/analytics-visualization.json",
-    "practiceTopicId": "analytics-visualization",
-    "updatedAt": "2026-09-26"
+      "practiceTopicId": "analytics-visualization",
+      "updatedAt": "2026-09-26"
+  },
+  {
+      "id": "analytics-new-notes",
+      "title": "Analytics & Visualization – New Notes",
+      "description": "Warehouses, lakes, ETL/ELT, Synapse, Data Factory and Power BI — Chapter 4 revision.",
+      "file": "notes/analytics-new-notes.json",
+      "practiceTopicId": "analytics-visualization",
+      "updatedAt": "2026-10-03"
   }
 ]

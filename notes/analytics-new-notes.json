@@ -1,0 +1,203 @@
+{
+  "id": "analytics-new-notes",
+  "title": "Analytics & Visualization – New Notes",
+  "subtitle": "Warehouses, lakes, lakehouses, ETL/ELT, Synapse, Data Factory and Power BI — Chapter 4 revision with exam clues.",
+  "practiceTopicId": "analytics-visualization",
+  "updatedAt": "2026-10-03",
+  "what": {
+    "body": "Data analytics turns data into useful information and insights. Modern data platforms collect, prepare, store, analyze and visualize data: operational systems feed ingestion pipelines, which fill lakes and warehouses, where analytics runs and Power BI visualizes the results.",
+    "example": "Five years of sales flow from orders systems and files through Data Factory into a warehouse, where a star schema lets analysts slice revenue by product, region and month — and Power BI turns it into a dashboard answering: which region generates the most revenue?"
+  },
+  "concepts": [
+    {
+      "term": "Data analytics",
+      "body": "Examining data to discover information, patterns, trends and insights. Goal: turn data into information that supports decisions. Example questions: which products sell most, which region earns most, which month peaked?"
+    },
+    {
+      "term": "OLTP vs OLAP",
+      "body": "OLTP runs day-to-day operations (place an order: frequent INSERT/UPDATE/DELETE on current data, fast individual transactions). OLAP analyzes data (yearly sales: analytical reads and aggregations over historical/integrated data, complex queries)."
+    },
+    {
+      "term": "Data warehouse",
+      "body": "Centralized analytical store for reporting and BI. Integrates data from multiple operational systems; stores curated, historical data; optimized for analytical queries; keeps analytics off operational systems. Traits: subject-oriented (sales, customers, products), integrated, historical, analytical."
+    },
+    {
+      "term": "Fact table",
+      "body": "Stores measurable business events/metrics: keys plus numbers like Quantity and SalesAmount. Memory: fact = what you measure."
+    },
+    {
+      "term": "Dimension table",
+      "body": "Stores descriptive context used to slice facts: ProductName, Category, Brand. Memory: dimension = how you describe the measurement."
+    },
+    {
+      "term": "Star schema",
+      "body": "Central fact table surrounded by dimension tables (date, product, customer dimensions around a sales fact). Simpler dimensions, fewer joins. DP-900 clue: central fact + surrounding dimensions = star."
+    },
+    {
+      "term": "Snowflake schema",
+      "body": "Like star, but dimensions are further normalized into related tables (Product -> Category -> Department). More normalized, can need more joins."
+    },
+    {
+      "term": "ETL vs ELT",
+      "body": "ETL = Extract, Transform, Load: transform BEFORE loading (traditional warehouse pattern). ELT = Extract, Load, Transform: load first, transform inside the target (common in modern cloud platforms)."
+    },
+    {
+      "term": "Data ingestion, batch, streaming",
+      "body": "Ingestion brings data in from databases, files, APIs, apps, IoT and event systems. Batch = scheduled groups (last night's sales every night). Streaming = continuous, very-low-latency event flow (IoT sensor readings)."
+    },
+    {
+      "term": "Data lake",
+      "body": "Large-scale storage holding raw or relatively raw data of all kinds: structured, semi-structured and unstructured (CSV, JSON, logs, images, video, extracts). Memory: lake = flexible storage for many data types. Often schema-on-read."
+    },
+    {
+      "term": "Data lakehouse",
+      "body": "Lake flexibility + warehouse-style analytics in one shared platform, serving BI, analytics, data engineering and data science."
+    },
+    {
+      "term": "Schema-on-write vs schema-on-read",
+      "body": "Schema-on-write: structure first, then store (transform to fit before/as written). Schema-on-read: store first, interpret later (structure applied when read or analyzed)."
+    },
+    {
+      "term": "Data mart and aggregation",
+      "body": "A data mart is a smaller analytical store for one area (sales, finance, marketing, HR). Analytics summarizes with SUM/COUNT/AVG, often grouped: SUM(SalesAmount), GROUP BY Region."
+    },
+    {
+      "term": "Types of analytics",
+      "body": "Descriptive: what happened? (sales were 10 crore). Diagnostic: why? (supply issues). Predictive: what may happen? (sales may rise). Prescriptive: what should we do? (increase inventory)."
+    },
+    {
+      "term": "Big data 3 Vs and data quality",
+      "body": "Volume (large amounts), Velocity (speed of generation/processing), Variety (formats/sources) — plus Veracity and Value. Results depend on quality: watch missing values, duplicates, incorrect/inconsistent/outdated/invalid data; cleanse and transform before analysis."
+    }
+  ],
+  "examples": [
+    {
+      "title": "Star schema in one picture",
+      "body": "A Sales fact (DateKey, ProductKey, CustomerKey, Quantity, SalesAmount) sits in the center; Date, Product and Customer dimensions surround it. Slicing total sales by Brand A vs Brand B joins the fact to the Product dimension.",
+      "table": {
+        "head": ["Fact holds", "Dimensions describe"],
+        "rows": [
+          ["Quantity, SalesAmount (measures)", "Product: Laptop, Computers, Brand A"],
+          ["DateKey, CustomerKey (links)", "Date: month, quarter, year"]
+        ]
+      }
+    },
+    {
+      "title": "ETL or ELT?",
+      "body": "Nightly job extracts shop sales, cleans them, then loads the warehouse: ETL (transform before load). IoT JSON lands raw in the lake and Spark SQL reshapes it later: ELT (load first, transform after)."
+    },
+    {
+      "title": "End-to-end modern pipeline",
+      "body": "Operational databases + files + APIs + IoT feed Data Factory ingestion, which fills the Data Lake / Warehouse; Synapse or SQL/Spark analyzes; Power BI reports. Sources -> Ingestion -> Storage -> Transformation -> Analytics -> Visualization."
+    }
+  ],
+  "comparisons": [
+    {
+      "title": "Operational database vs data warehouse",
+      "head": ["Operational Database", "Data Warehouse"],
+      "rows": [
+        ["Optimized for transactions", "Optimized for analytics"],
+        ["Current operational data", "Historical and integrated data"],
+        ["Frequent small transactions", "Large analytical queries"],
+        ["Order processing", "Sales reporting"]
+      ]
+    },
+    {
+      "title": "Warehouse vs lake vs lakehouse",
+      "head": ["", "Warehouse", "Lake", "Lakehouse"],
+      "rows": [
+        ["Data", "Curated analytical", "Raw + curated, all formats", "Lake data + warehouse analytics"],
+        ["Schema", "Defined for analysis", "Often schema-on-read", "Both patterns"],
+        ["Serves", "BI and reporting", "Engineering, science, analytics", "BI + engineering + science"]
+      ]
+    },
+    {
+      "title": "ETL vs ELT, batch vs streaming, star vs snowflake",
+      "head": ["Pair", "First", "Second"],
+      "rows": [
+        ["ETL / ELT", "Transform before loading", "Load first, transform later"],
+        ["Batch / Streaming", "Scheduled groups of data", "Continuous event flow"],
+        ["Star / Snowflake", "Simpler dimensions, fewer joins", "Dimensions further normalized"]
+      ]
+    },
+    {
+      "title": "Analytics types and 3 Vs",
+      "head": ["Concept", "Asks", "Example"],
+      "rows": [
+        ["Descriptive", "What happened?", "Sales were 10 crore last year"],
+        ["Diagnostic", "Why did it happen?", "Sales fell on supply issues"],
+        ["Predictive", "What may happen?", "Sales may rise next quarter"],
+        ["Prescriptive", "What should we do?", "Increase inventory"]
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "Azure Synapse Analytics",
+      "what": "Microsoft analytics service combining enterprise data warehousing, big data analytics and data integration.",
+      "data": "Large-scale analytical and historical data.",
+      "when": "Large-scale Azure analytics and warehousing workloads.",
+      "scenario": "Question says 'large-scale Azure analytics' or enterprise data warehousing."
+    },
+    {
+      "name": "Azure Data Factory",
+      "what": "Cloud data-integration service: build pipelines that move and orchestrate data between sources and destinations.",
+      "data": "Data in motion between systems.",
+      "when": "Copying, scheduling or orchestrating data movement (SQL Database -> pipeline -> lake/warehouse).",
+      "scenario": "Question says 'move/orchestrate data between sources' or mentions pipelines."
+    },
+    {
+      "name": "Azure Data Lake Storage Gen2",
+      "what": "Azure storage built for large-scale data lake and analytics scenarios, with a hierarchical namespace.",
+      "data": "Structured, semi-structured and unstructured data at scale.",
+      "when": "You need data-lake storage feeding analytics.",
+      "scenario": "Question says 'data lake storage + hierarchical namespace + analytics'."
+    },
+    {
+      "name": "Power BI",
+      "what": "Microsoft business analytics and visualization platform: reports, dashboards, charts, interactive visuals.",
+      "data": "Analytical results turned into insights.",
+      "when": "Dashboards and visual reports over analyzed data.",
+      "scenario": "Question says 'dashboards/visual reports' — think Power BI."
+    }
+  ],
+  "remember": [
+    "OLTP runs the business (transactions). OLAP analyzes it (history, aggregations).",
+    "Warehouse = curated analytical data from many sources. Lake = raw + curated, all formats.",
+    "Lakehouse = lake flexibility + warehouse-style analytics.",
+    "Fact = measures (quantity, revenue). Dimension = descriptive context (product, region).",
+    "Star = fact in center, dimensions around. Snowflake = dimensions further normalized.",
+    "ETL = transform BEFORE loading. ELT = load first, transform later.",
+    "Batch = scheduled groups. Streaming = continuous event flow.",
+    "Schema-on-write = structure first. Schema-on-read = store first, interpret later.",
+    "Data Factory = pipelines + integration. Synapse = enterprise analytics. ADLS Gen2 = lake storage. Power BI = visualization.",
+    "Descriptive (what) -> Diagnostic (why) -> Predictive (what next) -> Prescriptive (what to do).",
+    "3 Vs: Volume, Velocity, Variety. Cleanse data before analysis."
+  ],
+  "quickCheck": [
+    {
+      "q": "Central store of curated historical data for reporting?",
+      "a": "Data warehouse. Raw multi-format storage = data lake; both combined = lakehouse."
+    },
+    {
+      "q": "Table with Quantity and SalesAmount vs table with ProductName and Brand?",
+      "a": "First is a fact table (measures); second is a dimension table (descriptive context)."
+    },
+    {
+      "q": "Central fact surrounded by dimensions — and its normalized cousin?",
+      "a": "Star schema; dimensions further normalized into related tables = snowflake schema."
+    },
+    {
+      "q": "Transform before loading or load before transforming?",
+      "a": "Transform before = ETL (traditional warehouses). Load first = ELT (modern cloud)."
+    },
+    {
+      "q": "Nightly sales load vs live IoT sensor feed?",
+      "a": "Nightly groups = batch. Continuous events = streaming."
+    },
+    {
+      "q": "Move data between sources on a schedule — and visualize the result?",
+      "a": "Move/orchestrate with Data Factory pipelines; visualize with Power BI dashboards."
+    }
+  ]
+}
