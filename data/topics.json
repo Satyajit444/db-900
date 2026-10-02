@@ -1,5 +1,18 @@
 [
   {
+    "id": "core-data-set-4",
+    "title": "Core Data Concepts – Set 4",
+    "description": "45 scenario questions: types, ACID, modeling, streaming, quality and governance.",
+    "sourceType": "Text File",
+    "sourceName": "Part 1 Core Data Concepts - Set 4.txt",
+    "createdAt": "2026-10-02",
+    "questionFile": "data/core-data-set-4.json",
+    "questionCount": 45,
+    "name": "Core Data Concepts – Set 4",
+    "file": "data/core-data-set-4.json",
+    "examWeight": "DP-900 · Core data practice"
+  },
+  {
     "id": "analytics-set-5",
     "title": "Analytics Workloads on Azure – Set 5",
     "description": "60 scenario questions: Synapse, Data Factory, Stream Analytics, Databricks and Power BI.",
