@@ -784,22 +784,6 @@
     "source": "Part 4 Analytics Workloads on Azure set-2.txt"
   },
   {
-    "id": "an2-050",
-    "question": "A business wants to query data from Azure SQL Database, Blob Storage, and Cosmos DB using a single T-SQL endpoint. Which Azure service should they use?",
-    "options": [
-      "Azure SQL Database",
-      "Azure Synapse Analytics",
-      "Azure Data Factory",
-      "Azure Stream Analytics"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Synapse Analytics provides single T-SQL endpoint to query multiple Azure data sources.",
-    "difficulty": "easy",
-    "topic": "Analytics Workloads on Azure – Set 2",
-    "subtopic": "Synapse Analytics",
-    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
-  },
-  {
     "id": "an2-051",
     "question": "A company needs to schedule incremental data loads from on-premises SQL Server to Azure every hour. Which Azure service should they use?",
     "options": [

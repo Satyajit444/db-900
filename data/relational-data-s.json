@@ -624,22 +624,6 @@
     "source": "Part 2 Relational Data on Azure - S.txt"
   },
   {
-    "id": "rdas-040",
-    "question": "A business needs to ensure their database has a recovery point objective (RPO) of less than 5 seconds. Which tier configuration achieves this?",
-    "options": [
-      "Basic tier",
-      "General Purpose with local redundancy",
-      "Business Critical with local redundancy",
-      "Serverless tier"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Business Critical with local redundancy provides RPO < 5 seconds.",
-    "difficulty": "medium",
-    "topic": "Relational Data on Azure – S",
-    "subtopic": "Availability",
-    "source": "Part 2 Relational Data on Azure - S.txt"
-  },
-  {
     "id": "rdas-041",
     "question": "A company wants to use private connectivity to their database without exposing it to the public internet. Which feature should they implement?",
     "options": [
@@ -653,22 +637,6 @@
     "difficulty": "easy",
     "topic": "Relational Data on Azure – S",
     "subtopic": "Security",
-    "source": "Part 2 Relational Data on Azure - S.txt"
-  },
-  {
-    "id": "rdas-042",
-    "question": "A business needs to support multiple databases from different applications with shared compute to optimize costs. Which Azure SQL feature should they use?",
-    "options": [
-      "Elastic pool",
-      "Managed Instance per application",
-      "SQL Server on VM",
-      "Single database per application"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Elastic pools share compute across multiple databases cost-effectively.",
-    "difficulty": "easy",
-    "topic": "Relational Data on Azure – S",
-    "subtopic": "Azure SQL",
     "source": "Part 2 Relational Data on Azure - S.txt"
   },
   {
@@ -797,22 +765,6 @@
     "difficulty": "easy",
     "topic": "Relational Data on Azure – S",
     "subtopic": "Azure SQL",
-    "source": "Part 2 Relational Data on Azure - S.txt"
-  },
-  {
-    "id": "rdas-051",
-    "question": "A company wants to scan their database for security weaknesses and receive remediation guidance. Which feature provides this?",
-    "options": [
-      "Advanced Threat Protection",
-      "Vulnerability Assessment",
-      "Auditing",
-      "Data Classification"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Vulnerability Assessment scans for security issues with remediation guidance.",
-    "difficulty": "easy",
-    "topic": "Relational Data on Azure – S",
-    "subtopic": "Security",
     "source": "Part 2 Relational Data on Azure - S.txt"
   },
   {

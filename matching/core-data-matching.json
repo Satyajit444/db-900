@@ -144,22 +144,6 @@
     "source": "Part 1 Core Data Concepts - Matching.txt"
   },
   {
-    "id": "cmm-010",
-    "question": "All steps in an order fulfillment process must succeed together or the entire transaction rolls back. Which ACID property?",
-    "options": [
-      "Atomicity",
-      "Consistency",
-      "Isolation",
-      "Durability"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Joint success-or-rollback is atomicity.",
-    "difficulty": "medium",
-    "topic": "Core Data Matching",
-    "subtopic": "ACID Properties",
-    "source": "Part 1 Core Data Concepts - Matching.txt"
-  },
-  {
     "id": "cmm-011",
     "question": "Which format uses curly braces with key-value pairs and supports nested objects and arrays?",
     "options": [

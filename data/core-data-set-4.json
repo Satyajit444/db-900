@@ -16,22 +16,6 @@
     "source": "Part 1 Core Data Concepts - Set 4.txt"
   },
   {
-    "id": "cds4-002",
-    "question": "An application receives weather data in a format where each reading contains nested objects for location, temperature, humidity, and forecast arrays. How is this data classified?",
-    "options": [
-      "Structured",
-      "Semi-structured",
-      "Unstructured",
-      "Relational"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Nested objects and arrays with flexible schema make this semi-structured.",
-    "difficulty": "easy",
-    "topic": "Core Data Concepts – Set 4",
-    "subtopic": "Data Types",
-    "source": "Part 1 Core Data Concepts - Set 4.txt"
-  },
-  {
     "id": "cds4-003",
     "question": "A database must ensure that inventory counts are accurately updated after each sale, preventing overselling. Which ACID property addresses concurrent access?",
     "options": [
@@ -93,22 +77,6 @@
     "difficulty": "medium",
     "topic": "Core Data Concepts – Set 4",
     "subtopic": "ACID Properties",
-    "source": "Part 1 Core Data Concepts - Set 4.txt"
-  },
-  {
-    "id": "cds4-007",
-    "question": "A company receives data where each record is encoded in a compact binary format with schema defined in a separate file. Which format is this?",
-    "options": [
-      "JSON",
-      "CSV",
-      "Avro",
-      "XML"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Avro uses binary encoding with separate schema definitions.",
-    "difficulty": "easy",
-    "topic": "Core Data Concepts – Set 4",
-    "subtopic": "Data Types",
     "source": "Part 1 Core Data Concepts - Set 4.txt"
   },
   {
@@ -429,22 +397,6 @@
     "difficulty": "easy",
     "topic": "Core Data Concepts – Set 4",
     "subtopic": "Storage",
-    "source": "Part 1 Core Data Concepts - Set 4.txt"
-  },
-  {
-    "id": "cds4-028",
-    "question": "An application monitors server metrics in real time to detect performance issues as they occur. What processing approach is needed?",
-    "options": [
-      "Scheduled processing",
-      "Deferred processing",
-      "Batch processing",
-      "Stream processing"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Real-time monitoring requires stream processing.",
-    "difficulty": "easy",
-    "topic": "Core Data Concepts – Set 4",
-    "subtopic": "Workloads",
     "source": "Part 1 Core Data Concepts - Set 4.txt"
   },
   {

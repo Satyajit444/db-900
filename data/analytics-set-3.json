@@ -272,22 +272,6 @@
     "source": "Part 4 Analytics Workloads on Azureset-3.txt"
   },
   {
-    "id": "an3-018",
-    "question": "A business wants to query data from Azure SQL Database, Cosmos DB, and Blob Storage using T-SQL from single endpoint. Which Azure service should they use?",
-    "options": [
-      "Azure SQL Database",
-      "Azure Synapse Analytics",
-      "Azure Data Factory",
-      "Azure Stream Analytics"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Synapse Analytics queries multiple Azure data sources using T-SQL from single endpoint.",
-    "difficulty": "easy",
-    "topic": "Analytics Workloads on Azure – Set 3",
-    "subtopic": "Synapse Analytics",
-    "source": "Part 4 Analytics Workloads on Azureset-3.txt"
-  },
-  {
     "id": "an3-019",
     "question": "A company needs to store raw clickstream data and process it later with Spark, SQL, and machine learning. Which Azure service should they use for storage?",
     "options": [
@@ -608,38 +592,6 @@
     "source": "Part 4 Analytics Workloads on Azureset-3.txt"
   },
   {
-    "id": "an3-039",
-    "question": "A company needs to query XML files in Data Lake Storage using T-SQL OPENROWSET with schema definition. Which Azure service should they use?",
-    "options": [
-      "Azure SQL Database",
-      "Azure Synapse Analytics serverless SQL pool",
-      "Azure Cosmos DB",
-      "Azure Data Factory"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Synapse serverless SQL pool queries XML files with T-SQL OPENROWSET and schema.",
-    "difficulty": "easy",
-    "topic": "Analytics Workloads on Azure – Set 3",
-    "subtopic": "Synapse Analytics",
-    "source": "Part 4 Analytics Workloads on Azureset-3.txt"
-  },
-  {
-    "id": "an3-040",
-    "question": "A business wants to build an analytics platform that combines data engineering, data warehousing, and data science. Which Azure service should they use?",
-    "options": [
-      "Azure SQL Database",
-      "Azure Synapse Analytics",
-      "Azure Cosmos DB",
-      "Azure Cache for Redis"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Synapse Analytics combines data engineering, warehousing, and data science in one platform.",
-    "difficulty": "medium",
-    "topic": "Analytics Workloads on Azure – Set 3",
-    "subtopic": "Synapse Analytics",
-    "source": "Part 4 Analytics Workloads on Azureset-3.txt"
-  },
-  {
     "id": "an3-041",
     "question": "A company needs to apply Azure ML models to streaming data for real-time anomaly detection on sensor data. Which Azure service should they use?",
     "options": [
@@ -784,22 +736,6 @@
     "source": "Part 4 Analytics Workloads on Azureset-3.txt"
   },
   {
-    "id": "an3-050",
-    "question": "A business wants to query data from Azure SQL Database, Data Lake Storage, and external SQL Server from single workspace. Which Azure service should they use?",
-    "options": [
-      "Azure SQL Database",
-      "Azure Synapse Analytics",
-      "Azure Data Factory",
-      "Azure Stream Analytics"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Synapse Analytics queries Azure SQL, Data Lake, and external SQL Server from single workspace.",
-    "difficulty": "easy",
-    "topic": "Analytics Workloads on Azure – Set 3",
-    "subtopic": "Synapse Analytics",
-    "source": "Part 4 Analytics Workloads on Azureset-3.txt"
-  },
-  {
     "id": "an3-051",
     "question": "A company needs to schedule daily incremental data loads from MySQL to Azure with change tracking. Which Azure service should they use?",
     "options": [
@@ -925,22 +861,6 @@
     "difficulty": "easy",
     "topic": "Analytics Workloads on Azure – Set 3",
     "subtopic": "Power BI",
-    "source": "Part 4 Analytics Workloads on Azureset-3.txt"
-  },
-  {
-    "id": "an3-059",
-    "question": "A company needs to build a pipeline that extracts from REST API with certificate-based authentication to Azure SQL. Which Azure service should they use?",
-    "options": [
-      "Azure Data Factory",
-      "Azure Stream Analytics",
-      "Azure Synapse Analytics",
-      "Power BI"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Data Factory supports REST API extraction with certificate-based authentication.",
-    "difficulty": "easy",
-    "topic": "Analytics Workloads on Azure – Set 3",
-    "subtopic": "Data Factory",
     "source": "Part 4 Analytics Workloads on Azureset-3.txt"
   },
   {

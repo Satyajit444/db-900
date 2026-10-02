@@ -98,8 +98,8 @@ Rules:
 ## Current content
 
 - **Sets (chapter order):** Core Data Concepts, Sets 1/2/3/4/6 + Matching · Relational Data, Sets 6/S/3&4 · Non-Relational in Azure, Sets 2/3 · Analytics & Visualization, Sets 2/3/5 + Matching · Snigdha Questions · Challenge Mode (last)
-- **Total questions:** 1071 normal + 56 Challenge Mode (independent count, excluded from Random Practice and totals)
-- **Matching Practice section:** `matching/` holds exam-style matching sets (`core-data-matching` 40, `analytics-matching` 16), flagged in `topics.json`, same engine and rules
+- **Total questions:** 1005 normal + 56 Challenge Mode (independent count, excluded from Random Practice and totals)
+- **Matching Practice section:** `matching/` holds exam-style matching sets (`core-data-matching` 39, `analytics-matching` 12), flagged in `topics.json`, same engine and rules
 - **Quality bar:** all options length-balanced and plausible (no longest-answer giveaways); Challenge answers spread 14/14/14/14
 - **Analytics distribution:** easy 21 · medium 23 · hard 12
 - **Non-relational distribution:** easy 16 · medium 23 · hard 17

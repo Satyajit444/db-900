@@ -1,37 +1,5 @@
 [
   {
-    "id": "rs34-001",
-    "question": "A startup wants to minimize costs by paying only for actual database usage with automatic scaling during active periods. Which Azure SQL compute model is most cost-effective?",
-    "options": [
-      "Provisioned compute",
-      "Serverless compute",
-      "Hyperscale compute",
-      "Business Critical compute"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Serverless bills per second of actual use and scales automatically; provisioned, Hyperscale and Business Critical charge for reserved capacity.",
-    "difficulty": "easy",
-    "topic": "Relational Data on Azure – Sets 3 & 4",
-    "subtopic": "Azure SQL",
-    "source": "relational database.txt"
-  },
-  {
-    "id": "rs34-002",
-    "question": "A company needs a database that automatically handles OS patching, backups, and high availability without any infrastructure management. Which Azure SQL deployment provides this?",
-    "options": [
-      "SQL Server on Azure VM",
-      "Azure SQL Database (PaaS)",
-      "Azure Cosmos DB",
-      "Azure Data Lake Storage"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Full PaaS management is Azure SQL Database; VMs need OS care and the others are not relational engines.",
-    "difficulty": "easy",
-    "topic": "Relational Data on Azure – Sets 3 & 4",
-    "subtopic": "Azure SQL",
-    "source": "relational database.txt"
-  },
-  {
     "id": "rs34-003",
     "question": "A retail company wants to reduce the load on its primary Azure SQL Database by directing reporting queries to a read-only copy. Which feature should they use?",
     "options": [

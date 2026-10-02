@@ -112,22 +112,6 @@
     "source": "Part 3 Non-relational Data on Azure set-3.txt"
   },
   {
-    "id": "nr3-008",
-    "question": "A business wants the strongest consistency guarantee where all reads return the most recent write across all regions. Which consistency level should they choose?",
-    "options": [
-      "Bounded staleness",
-      "Session consistency",
-      "Eventual consistency",
-      "Strong consistency"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Strong consistency ensures all reads return the most recent committed write globally.",
-    "difficulty": "medium",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Consistency",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
     "id": "nr3-009",
     "question": "A company wants to allow reads to lag behind writes by a maximum of 10 seconds or 5 versions. Which consistency level should they configure?",
     "options": [
@@ -224,22 +208,6 @@
     "source": "Part 3 Non-relational Data on Azure set-3.txt"
   },
   {
-    "id": "nr3-015",
-    "question": "A company needs to store virtual machine disk (VHD) files that require random read/write access patterns. Which blob type should they use?",
-    "options": [
-      "Block blobs",
-      "Append blobs",
-      "Page blobs",
-      "Azure Files"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Page blobs are optimized for random read/write operations like VHD files.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Blob Types",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
     "id": "nr3-016",
     "question": "A business wants to recover accidentally deleted blobs within a 30-day retention period. Which feature should they enable?",
     "options": [
@@ -320,22 +288,6 @@
     "source": "Part 3 Non-relational Data on Azure set-3.txt"
   },
   {
-    "id": "nr3-021",
-    "question": "A company wants to authenticate users to blob storage using their corporate Azure Active Directory credentials. Is this supported?",
-    "options": [
-      "Yes, Azure AD with RBAC roles",
-      "No, only storage account keys are supported",
-      "Yes, but only for premium storage accounts",
-      "No, use SAS tokens instead"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Azure AD authentication is supported for blob storage with appropriate RBAC role assignments.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Security",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
     "id": "nr3-022",
     "question": "A business wants to encrypt blob data at rest using encryption keys they control and rotate periodically. Which encryption option should they use?",
     "options": [
@@ -368,134 +320,6 @@
     "source": "Part 3 Non-relational Data on Azure set-3.txt"
   },
   {
-    "id": "nr3-024",
-    "question": "A business wants to query data in Data Lake Storage using T-SQL without provisioning dedicated SQL servers. Which Azure service should they use?",
-    "options": [
-      "Azure SQL Database engine",
-      "Azure Cosmos DB service",
-      "Synapse serverless SQL pool",
-      "Azure Cache for Redis cache"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Synapse serverless SQL pool enables T-SQL queries on Data Lake Storage without infrastructure.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Data Lake & Files",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
-    "id": "nr3-025",
-    "question": "A company needs hierarchical namespace with directories and subdirectories for organizing big data analytics workloads. Which Azure service provides this?",
-    "options": [
-      "Azure Blob Storage",
-      "Azure Data Lake Storage Gen2",
-      "Azure Cosmos DB",
-      "Azure Cache for Redis"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Data Lake Storage Gen2 provides hierarchical namespace with directory structure.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Data Lake & Files",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
-    "id": "nr3-026",
-    "question": "A business wants to serve static website content (HTML, CSS, JavaScript, images) directly from storage without web servers. Which Azure feature should they use?",
-    "options": [
-      "Blob static website hosting",
-      "Azure SQL Database engine",
-      "Azure Cosmos DB service",
-      "Azure Files shares"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Blob Storage supports static website hosting for serving web content directly.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Data Lake & Files",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
-    "id": "nr3-027",
-    "question": "A company needs to share files across multiple Azure VMs using standard file protocols (SMB/NFS). Which Azure service should they use?",
-    "options": [
-      "Azure Data Lake Storage",
-      "Azure Cosmos DB",
-      "Azure Blob Storage",
-      "Azure Files"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Azure Files provides SMB/NFS-based file shares accessible by multiple VMs.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Data Lake & Files",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
-    "id": "nr3-028",
-    "question": "A business wants to cache frequently accessed content at edge locations closer to users globally for faster delivery. Which Azure service should they use?",
-    "options": [
-      "Azure Data Lake Storage",
-      "Azure Blob Storage",
-      "Azure CDN",
-      "Azure Files"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Azure CDN caches content at edge locations for faster global delivery.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "CDN & Edge",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
-    "id": "nr3-029",
-    "question": "A company wants to replicate their blob storage data to a secondary region for disaster recovery purposes. Which redundancy option should they choose?",
-    "options": [
-      "Locally redundant storage (LRS)",
-      "Zone-redundant storage (ZRS)",
-      "Geo-redundant storage (GRS)",
-      "Read-access geo-redundant storage (RA-GRS)"
-    ],
-    "correctAnswer": 2,
-    "explanation": "GRS replicates data to a secondary region for disaster recovery.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Redundancy",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
-    "id": "nr3-030",
-    "question": "A business wants their blob storage to be readable from the secondary region even before failover occurs for read-heavy workloads. Which redundancy option provides this?",
-    "options": [
-      "Locally redundant storage (LRS)",
-      "Zone-redundant storage (ZRS)",
-      "Geo-redundant storage (GRS)",
-      "Read-access geo-redundant storage (RA-GRS)"
-    ],
-    "correctAnswer": 3,
-    "explanation": "RA-GRS allows read access to secondary region before failover.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Redundancy",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
-    "id": "nr3-031",
-    "question": "A company wants to protect their storage account from accidental deletion by administrators or automated scripts. Which feature should they implement?",
-    "options": [
-      "Soft delete for blobs",
-      "Resource lock (CanNotDelete)",
-      "Blob versioning",
-      "Lifecycle management policies"
-    ],
-    "correctAnswer": 1,
-    "explanation": "CanNotDelete resource lock prevents storage account deletion.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Security",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
     "id": "nr3-032",
     "question": "A business wants to restrict blob storage access to only their Azure virtual network and specific IP addresses. Which combination should they configure?",
     "options": [
@@ -512,22 +336,6 @@
     "source": "Part 3 Non-relational Data on Azure set-3.txt"
   },
   {
-    "id": "nr3-033",
-    "question": "A company wants to analyze Cosmos DB data using Azure Synapse Analytics without copying or moving data. Is this supported?",
-    "options": [
-      "Yes, with Synapse Link for Cosmos DB",
-      "No, data must be copied to Synapse first",
-      "Yes, but only for MongoDB API",
-      "No, use Data Factory instead"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Synapse Link enables analyzing Cosmos DB data without data movement.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Cosmos Features",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
     "id": "nr3-034",
     "question": "A business wants Cosmos DB to automatically index all fields for fast query performance without manual index management. Is this enabled by default?",
     "options": [
@@ -541,54 +349,6 @@
     "difficulty": "easy",
     "topic": "Non-Relational Data on Azure – Set 3",
     "subtopic": "Cosmos Features",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
-    "id": "nr3-035",
-    "question": "A company wants to share provisioned throughput across multiple containers in Cosmos DB to optimize costs. At which level should they provision throughput?",
-    "options": [
-      "Account level",
-      "Partition level",
-      "Database level",
-      "Container level"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Database-level throughput is shared across all containers in the database.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Throughput",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
-    "id": "nr3-036",
-    "question": "A business needs dedicated throughput for a specific high-traffic container in Cosmos DB. At which level should they provision throughput?",
-    "options": [
-      "Database level",
-      "Container level",
-      "Account level",
-      "Partition level"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Container-level throughput provides dedicated resources for that specific container.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Throughput",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
-    "id": "nr3-037",
-    "question": "A company has unpredictable workloads with sporadic traffic and wants pay-per-request pricing in Cosmos DB. Which throughput option should they choose?",
-    "options": [
-      "Provisioned throughput",
-      "Serverless throughput",
-      "Manual throughput",
-      "Auto-scale throughput"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Serverless throughput provides pay-per-request pricing for unpredictable workloads.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Throughput",
     "source": "Part 3 Non-relational Data on Azure set-3.txt"
   },
   {
@@ -624,38 +384,6 @@
     "source": "Part 3 Non-relational Data on Azure set-3.txt"
   },
   {
-    "id": "nr3-040",
-    "question": "A business needs to store compliance data that is rarely accessed but must be retained for 7 years at the lowest possible cost. Which Blob Storage tier should they use?",
-    "options": [
-      "Hot tier",
-      "Cool tier",
-      "Archive tier",
-      "Premium tier"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Archive tier is lowest cost for rarely accessed data with long retention requirements.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Blob Tiers",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
-    "id": "nr3-041",
-    "question": "A company needs data immediately available with low latency for a real-time trading application. Which Blob Storage tier should they use?",
-    "options": [
-      "Hot tier",
-      "Cool tier",
-      "Archive tier",
-      "Cold tier"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Hot tier provides immediate availability with low latency for frequent access.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Blob Tiers",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
     "id": "nr3-042",
     "question": "A business wants to store data that is accessed approximately once every 2 months and needs availability within seconds. Which Blob Storage tier should they use?",
     "options": [
@@ -669,38 +397,6 @@
     "difficulty": "easy",
     "topic": "Non-Relational Data on Azure – Set 3",
     "subtopic": "Blob Tiers",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
-    "id": "nr3-043",
-    "question": "A company wants to achieve 99.999% availability SLA for their mission-critical globally distributed application. Which Azure service provides this?",
-    "options": [
-      "Azure SQL Database engine",
-      "Azure Blob Storage accounts",
-      "Azure Cache for Redis cache",
-      "Cosmos DB multi-region writes"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Cosmos DB with multi-region writes provides 99.999% availability SLA.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Cosmos Features",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
-    "id": "nr3-044",
-    "question": "A business wants to minimize latency for users across multiple geographic regions by placing writable data closer to them. Which Cosmos DB feature should they use?",
-    "options": [
-      "Read-scale replicas",
-      "Single-region write",
-      "Multi-region writes",
-      "Zone-redundant storage"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Multi-region writes place data in multiple regions for low-latency access.",
-    "difficulty": "easy",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Cosmos Features",
     "source": "Part 3 Non-relational Data on Azure set-3.txt"
   },
   {
@@ -746,22 +442,6 @@
     ],
     "correctAnswer": 2,
     "explanation": "Cassandra API is optimized for time-series data with high write throughput.",
-    "difficulty": "medium",
-    "topic": "Non-Relational Data on Azure – Set 3",
-    "subtopic": "Cosmos DB APIs",
-    "source": "Part 3 Non-relational Data on Azure set-3.txt"
-  },
-  {
-    "id": "nr3-048",
-    "question": "A business wants to store social network connections, friend relationships, and recommendation graphs. Which Cosmos DB API should they use?",
-    "options": [
-      "Table API",
-      "Core SQL API",
-      "MongoDB API",
-      "Gremlin API"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Gremlin API is designed for graph data with nodes and edges.",
     "difficulty": "medium",
     "topic": "Non-Relational Data on Azure – Set 3",
     "subtopic": "Cosmos DB APIs",

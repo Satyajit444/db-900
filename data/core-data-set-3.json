@@ -224,22 +224,6 @@
     "source": "Part 1 Core Data Concepts - Set 3.txt"
   },
   {
-    "id": "cds3-015",
-    "question": "A company processes website clickstream data by grouping events into 1-minute windows and computing aggregates. What processing pattern is this?",
-    "options": [
-      "Transactional processing",
-      "Interactive querying",
-      "Pure batch",
-      "Micro-batch processing"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Micro-batch processes data in small, frequent batches for near-real-time results.",
-    "difficulty": "medium",
-    "topic": "Core Data Concepts – Set 3",
-    "subtopic": "Workloads",
-    "source": "Part 1 Core Data Concepts - Set 3.txt"
-  },
-  {
     "id": "cds3-016",
     "question": "A system stores configuration settings as simple name-value pairs for fast lookup by key. Which data model is this?",
     "options": [
@@ -368,22 +352,6 @@
     "source": "Part 1 Core Data Concepts - Set 3.txt"
   },
   {
-    "id": "cds3-024",
-    "question": "A system must prevent a transaction from reading uncommitted data from another concurrent transaction. Which ACID property prevents this?",
-    "options": [
-      "Durability",
-      "Atomicity",
-      "Consistency",
-      "Isolation"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Isolation prevents dirty reads from uncommitted transactions.",
-    "difficulty": "medium",
-    "topic": "Core Data Concepts – Set 3",
-    "subtopic": "ACID Properties",
-    "source": "Part 1 Core Data Concepts - Set 3.txt"
-  },
-  {
     "id": "cds3-025",
     "question": "A company stores social media posts with hashtags, mentions, and embedded links in a flexible structure. How is this data classified?",
     "options": [
@@ -413,22 +381,6 @@
     "difficulty": "hard",
     "topic": "Core Data Concepts – Set 3",
     "subtopic": "Normalization",
-    "source": "Part 1 Core Data Concepts - Set 3.txt"
-  },
-  {
-    "id": "cds3-027",
-    "question": "A company archives old transaction records to reduce active database size while keeping history accessible. What is this practice?",
-    "options": [
-      "Data partitioning",
-      "Data sharding",
-      "Data normalization",
-      "Data archiving"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Archiving moves old data to separate storage while retaining access.",
-    "difficulty": "easy",
-    "topic": "Core Data Concepts – Set 3",
-    "subtopic": "Storage",
     "source": "Part 1 Core Data Concepts - Set 3.txt"
   },
   {
@@ -464,22 +416,6 @@
     "source": "Part 1 Core Data Concepts - Set 3.txt"
   },
   {
-    "id": "cds3-030",
-    "question": "A database ensures that all required fields are populated before allowing a record to be saved. What data quality principle is this?",
-    "options": [
-      "Data completeness",
-      "Data redundancy",
-      "Data archiving",
-      "Data partitioning"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Completeness ensures all required data is present.",
-    "difficulty": "easy",
-    "topic": "Core Data Concepts – Set 3",
-    "subtopic": "Data Quality",
-    "source": "Part 1 Core Data Concepts - Set 3.txt"
-  },
-  {
     "id": "cds3-031",
     "question": "A company receives data in a binary format with a separate schema definition, optimized for high-volume streaming. Which format is this?",
     "options": [
@@ -493,22 +429,6 @@
     "difficulty": "easy",
     "topic": "Core Data Concepts – Set 3",
     "subtopic": "Data Types",
-    "source": "Part 1 Core Data Concepts - Set 3.txt"
-  },
-  {
-    "id": "cds3-032",
-    "question": "A system stores hierarchical organizational data with parent-child relationships between employees. Which data model fits this?",
-    "options": [
-      "Key-value",
-      "Columnar",
-      "Relational",
-      "Hierarchical"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Hierarchical models naturally represent parent-child relationships.",
-    "difficulty": "easy",
-    "topic": "Core Data Concepts – Set 3",
-    "subtopic": "Data Modeling",
     "source": "Part 1 Core Data Concepts - Set 3.txt"
   },
   {
@@ -528,22 +448,6 @@
     "source": "Part 1 Core Data Concepts - Set 3.txt"
   },
   {
-    "id": "cds3-034",
-    "question": "A database prevents deletion of a parent record if child records still reference it. What constraint enforces this?",
-    "options": [
-      "Foreign key",
-      "Unique",
-      "Check",
-      "Primary key"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Foreign key constraints maintain referential integrity.",
-    "difficulty": "easy",
-    "topic": "Core Data Concepts – Set 3",
-    "subtopic": "Data Modeling",
-    "source": "Part 1 Core Data Concepts - Set 3.txt"
-  },
-  {
     "id": "cds3-035",
     "question": "A company stores time-stamped stock price data for trend analysis over time. What type of data is this?",
     "options": [
@@ -557,22 +461,6 @@
     "difficulty": "easy",
     "topic": "Core Data Concepts – Set 3",
     "subtopic": "Data Types",
-    "source": "Part 1 Core Data Concepts - Set 3.txt"
-  },
-  {
-    "id": "cds3-036",
-    "question": "A database ensures all users see the same data when querying simultaneously, regardless of location. What consistency model is this?",
-    "options": [
-      "Weak consistency",
-      "Causal consistency",
-      "Strong consistency",
-      "Eventual consistency"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Strong consistency ensures all reads return the most recent write.",
-    "difficulty": "medium",
-    "topic": "Core Data Concepts – Set 3",
-    "subtopic": "ACID Properties",
     "source": "Part 1 Core Data Concepts - Set 3.txt"
   },
   {
@@ -688,22 +576,6 @@
     "source": "Part 1 Core Data Concepts - Set 3.txt"
   },
   {
-    "id": "cds3-044",
-    "question": "A database ensures character encoding is consistent across all text fields to prevent corruption. What practice is this?",
-    "options": [
-      "Data encryption",
-      "Data compression",
-      "Data replication",
-      "Encoding standardization"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Consistent character encoding prevents data corruption.",
-    "difficulty": "easy",
-    "topic": "Core Data Concepts – Set 3",
-    "subtopic": "Governance",
-    "source": "Part 1 Core Data Concepts - Set 3.txt"
-  },
-  {
     "id": "cds3-045",
     "question": "A company stores machine learning predictions as numerical arrays with confidence scores. Which format is suitable?",
     "options": [
@@ -717,22 +589,6 @@
     "difficulty": "medium",
     "topic": "Core Data Concepts – Set 3",
     "subtopic": "Data Types",
-    "source": "Part 1 Core Data Concepts - Set 3.txt"
-  },
-  {
-    "id": "cds3-046",
-    "question": "A system must maintain a history of all changes to records for audit purposes. What feature provides this?",
-    "options": [
-      "Change tracking/auditing",
-      "Data encryption",
-      "Data compression",
-      "Data replication"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Change tracking or auditing maintains modification history.",
-    "difficulty": "easy",
-    "topic": "Core Data Concepts – Set 3",
-    "subtopic": "Governance",
     "source": "Part 1 Core Data Concepts - Set 3.txt"
   },
   {
@@ -941,22 +797,6 @@
     "difficulty": "easy",
     "topic": "Core Data Concepts – Set 3",
     "subtopic": "Data Types",
-    "source": "Part 1 Core Data Concepts - Set 3.txt"
-  },
-  {
-    "id": "cds3-060",
-    "question": "A database ensures queries return results based on committed data only, not intermediate states. Which ACID property guarantees this?",
-    "options": [
-      "Durability",
-      "Atomicity",
-      "Consistency",
-      "Isolation"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Isolation ensures transactions don't see uncommitted changes from others.",
-    "difficulty": "medium",
-    "topic": "Core Data Concepts – Set 3",
-    "subtopic": "ACID Properties",
     "source": "Part 1 Core Data Concepts - Set 3.txt"
   }
 ]
