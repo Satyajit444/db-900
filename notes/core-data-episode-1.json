@@ -1,0 +1,259 @@
+{
+  "id": "core-data-episode-1",
+  "title": "Core Data Concepts – New Notes",
+  "subtitle": "Episode 1: core data concepts and Azure services — the foundation for the rest of DP-900.",
+  "practiceTopicId": "core-data-concepts",
+  "updatedAt": "2026-10-02",
+  "what": {
+    "body": "This session builds the foundation for the whole DP-900: which data formats exist, how files and databases store data, how transactional and analytical workloads differ, who works with data, and which Azure service each role reaches for.",
+    "example": "A business tracks customers, products and orders (entities with attributes like name, address, phone). It collects that data, processes it, and uses the outcomes — e.g. a predefined sales table for daily operations."
+  },
+  "concepts": [
+    {
+      "term": "Structured data",
+      "body": "Follows a defined schema: every record uses the same fields and types. Easy to store, search and analyze. Example: a sales table with fixed columns."
+    },
+    {
+      "term": "Semi-structured data",
+      "body": "Organized but flexible — records may carry different attributes. Often name–value pairs like JSON, where one record has email + phone and another only email. Flexible and compact, but needs extra logic to process."
+    },
+    {
+      "term": "Unstructured data",
+      "body": "No predefined fields or schema; stored as files. Examples: documents, images, audio, video — each file is one item. Easy to store, harder to query without extra processing."
+    },
+    {
+      "term": "CSV (delimited text)",
+      "body": "Plain text, one row per line, commas or tabs separate columns. Works well for structured lists like products, customers and logs."
+    },
+    {
+      "term": "JSON",
+      "body": "Hierarchical objects with nested objects and collections. Great for optional or varying fields; used in web apps, templates and login systems."
+    },
+    {
+      "term": "XML",
+      "body": "Text with markup tags describing each value. Still found in older systems and industry integrations, but less common than JSON."
+    },
+    {
+      "term": "BLOBs",
+      "body": "Binary Large Objects: Word docs, PDFs, images, videos. Each BLOB is an independent object (often a block blob) in Blob storage."
+    },
+    {
+      "term": "Avro",
+      "body": "Row-based compact binary with a small JSON header describing the schema. Efficient for storage and network transfer."
+    },
+    {
+      "term": "ORC and Parquet",
+      "body": "Columnar formats with indexing, statistics and metadata. Engines like Hive skip unneeded chunks, so analytics over huge datasets runs far faster. Parquet also handles nested types well."
+    },
+    {
+      "term": "Relational databases",
+      "body": "Structured data in tables for entities (customer, product, orders). Each instance has a primary key; foreign keys link tables. Normalization removes duplication, and everything is managed with SQL."
+    },
+    {
+      "term": "NoSQL databases",
+      "body": "Flexible, non-relational stores: key-value (unique key + value), document (key + JSON document the engine can query), column-family (related column groups), graph (nodes + relationships, best when connections matter most)."
+    },
+    {
+      "term": "OLTP (transactional)",
+      "body": "Runs live business systems — order entry, payments. Optimized for frequent reads/writes where each transaction updates operational state and must stay accurate and consistent."
+    },
+    {
+      "term": "ACID transactions",
+      "body": "Atomicity (all-or-nothing), Consistency (one valid state to another), Isolation (concurrent transactions don't interfere), Durability (committed work survives failures)."
+    },
+    {
+      "term": "OLAP (analytical)",
+      "body": "Understands the business instead of running it: trends, comparisons and patterns like month-over-month sales. Aggregates data and reads huge volumes for reporting and decisions."
+    },
+    {
+      "term": "ETL",
+      "body": "Extract from operational (OLTP) sources, Transform (clean and reshape), Load into a dedicated analytical environment so analysis never slows production."
+    },
+    {
+      "term": "Data lake",
+      "body": "Huge volumes of raw data in files. In Azure: Data Lake Storage Gen2."
+    },
+    {
+      "term": "Data warehouse",
+      "body": "Structured data in relational tables for analytics. In Azure: Synapse Analytics, Microsoft Fabric Warehouse."
+    },
+    {
+      "term": "Data lakehouse",
+      "body": "Lake flexibility plus warehouse-style tabular structure and transactions. In Azure: Fabric Lakehouse, Databricks Lakehouse."
+    },
+    {
+      "term": "OLAP cubes",
+      "body": "Multi-dimensional models (time, product, region) with precomputed totals and comparisons, so dashboards answer instantly without recalculating."
+    },
+    {
+      "term": "Database Administrator (DBA)",
+      "body": "Keeps databases reliable, secure and available: provisioning, access/security, backups and recovery, performance monitoring. Focus: operational and relational systems."
+    },
+    {
+      "term": "Data Engineer",
+      "body": "Moves and prepares data: builds pipelines and ETL so data lands in lakes, lakehouses and warehouses in the right place, format and time."
+    },
+    {
+      "term": "Data Analyst",
+      "body": "Works with prepared data to build analytical models, reports and dashboards that reveal trends for decisions."
+    },
+    {
+      "term": "Data Scientist & Data Architect",
+      "body": "Scientists do advanced analytics and machine learning; architects design the overall data platform and structure. Awareness-level for DP-900."
+    }
+  ],
+  "examples": [
+    {
+      "title": "One record, three formats",
+      "body": "The same customer in CSV (flat row), JSON (nested address object) and a table row — shape changes, facts don't.",
+      "code": "42,Asha,Hyderabad\n{\n  \"id\": 42,\n  \"address\": { \"city\": \"Hyderabad\" }\n}"
+    },
+    {
+      "title": "From OLTP to OLAP",
+      "body": "Nightly ETL copies orders out of the live SQL database, cleans them, and loads a warehouse — Monday's trend report never touches Friday's checkout queue."
+    },
+    {
+      "title": "Pick the analytical store",
+      "body": "Raw files at scale → lake. Structured relational analytics → warehouse. Lake files plus SQL tables with transactions → lakehouse.",
+      "table": {
+        "head": ["Need", "Choose", "Azure home"],
+        "rows": [
+          ["Raw files at scale", "Data lake", "Data Lake Storage Gen2"],
+          ["Structured analytics", "Data warehouse", "Synapse / Fabric Warehouse"],
+          ["Both combined", "Lakehouse", "Fabric / Databricks Lakehouse"]
+        ]
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "title": "Structured vs Semi-structured vs Unstructured",
+      "head": ["", "Structured", "Semi-structured", "Unstructured"],
+      "rows": [
+        ["Schema", "Fixed rows/columns", "Flexible fields", "None"],
+        ["Example", "Sales table", "JSON/XML", "Images, video, PDFs"]
+      ]
+    },
+    {
+      "title": "OLTP vs OLAP",
+      "head": ["", "OLTP", "OLAP"],
+      "rows": [
+        ["Job", "Run daily operations", "Understand trends"],
+        ["Pattern", "Frequent small reads/writes", "Big aggregations over history"],
+        ["Example", "Order entry, payments", "Regional growth, top products"]
+      ]
+    },
+    {
+      "title": "Lake vs Warehouse vs Lakehouse",
+      "head": ["", "Lake", "Warehouse", "Lakehouse"],
+      "rows": [
+        ["Holds", "Raw files", "Structured tables", "Both"],
+        ["Best for", "Unknown future analysis", "Fast reporting", "Flexible + governed analytics"]
+      ]
+    },
+    {
+      "title": "DBA vs Data Engineer vs Data Analyst",
+      "head": ["Role", "Owns"],
+      "rows": [
+        ["DBA", "Backups, recovery, availability"],
+        ["Data Engineer", "Pipelines and ETL (e.g. in Data Factory)"],
+        ["Data Analyst", "Reports and dashboards"]
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "Azure SQL Database",
+      "what": "Fully managed relational PaaS.",
+      "data": "Structured transactional data.",
+      "when": "App databases with no server management.",
+      "scenario": "The live order-entry system."
+    },
+    {
+      "name": "Azure SQL Managed Instance",
+      "what": "PaaS with higher SQL Server compatibility.",
+      "data": "Structured, near-complete engine surface.",
+      "when": "Migrating SQL Server workloads mostly unchanged.",
+      "scenario": "Lifting an on-premises ERP database."
+    },
+    {
+      "name": "SQL Server on Azure VM",
+      "what": "Full SQL Server you control.",
+      "data": "Anything SQL Server runs.",
+      "when": "You need full customization and accept the management.",
+      "scenario": "A legacy app needing exact version behavior."
+    },
+    {
+      "name": "MariaDB / MySQL / PostgreSQL",
+      "what": "Managed open-source engines.",
+      "data": "Engine-specific relational workloads.",
+      "when": "The app requires that engine.",
+      "scenario": "A Django app that only speaks PostgreSQL."
+    },
+    {
+      "name": "Azure Cosmos DB",
+      "what": "Globally distributed multi-model NoSQL.",
+      "data": "Semi-structured and flexible data at scale.",
+      "when": "Worldwide users with millisecond reads.",
+      "scenario": "Product catalogs served on every continent."
+    },
+    {
+      "name": "Azure Storage + Data Lake",
+      "what": "Files, blobs, tables and lake storage.",
+      "data": "Unstructured files and raw analytic data.",
+      "when": "Files, or hierarchical-namespace lake storage.",
+      "scenario": "Years of clickstream logs awaiting analysis."
+    },
+    {
+      "name": "Microsoft Fabric",
+      "what": "SaaS analytics platform in one place.",
+      "data": "Ingestion, lakehouse, warehouse, ML, real-time, visualization.",
+      "when": "One SaaS suite instead of many wired services.",
+      "scenario": "A team wanting pipelines, warehouse, Spark and Power BI together."
+    },
+    {
+      "name": "Azure Databricks",
+      "what": "PaaS Spark for parallel processing.",
+      "data": "Large-scale analytic and ML workloads.",
+      "when": "Python/Scala data engineering at scale.",
+      "scenario": "Training models over terabytes of logs."
+    },
+    {
+      "name": "Microsoft Purview",
+      "what": "Data governance service.",
+      "data": "Catalogs, lineage and policy metadata.",
+      "when": "Mapping data and applying policies consistently.",
+      "scenario": "Finding every dataset holding customer PII."
+    }
+  ],
+  "remember": [
+    "Fixed rows/columns → structured · JSON/XML flexible → semi-structured · media/files → unstructured.",
+    "Columnar formats (ORC, Parquet) exist for analytics speed at scale.",
+    "ETL copies from OLTP, cleans, and loads a separate analytical store.",
+    "Raw files → lake · relational analytics → warehouse · lake + SQL tables → lakehouse.",
+    "Backup/recovery → DBA · ETL pipelines → Data Engineer · reports/dashboards → Data Analyst.",
+    "SaaS analytics with lakehouse + warehouse + real-time + Power BI → Microsoft Fabric."
+  ],
+  "quickCheck": [
+    {
+      "q": "Optional email/phone fields in JSON records: which type?",
+      "a": "Semi-structured — organized but varying by record."
+    },
+    {
+      "q": "Hourly fraud checks on live payments: OLTP or OLAP?",
+      "a": "OLTP — real-time operational transactions."
+    },
+    {
+      "q": "Which ACID property survives a power cut after commit?",
+      "a": "Durability."
+    },
+    {
+      "q": "Raw logs now, unknown analysis later: lake or warehouse?",
+      "a": "Data lake — raw files at scale."
+    },
+    {
+      "q": "Who builds the nightly ETL pipeline?",
+      "a": "The Data Engineer."
+    }
+  ]
+}

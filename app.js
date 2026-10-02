@@ -507,7 +507,7 @@
       '<p class="section-sub">Random for mixed drills, Exam to simulate, Daily to build the habit — or master one set at a time below.</p>' +
       '<div class="mode-grid">' +
       '<div class="mode-card"><span class="mode-ico">🎲</span><h3>Random Practice</h3>' +
-      "<p>Live-mixed and reshuffled every attempt. Nothing stored, instant feedback.</p>" +
+      "<p>Live-mixed and reshuffled every attempt. Nothing stored, instant feedback. Tip: <strong>All</strong> serves the full set in fixed serial order — ideal for practicing together.</p>" +
       '<label class="sr-only" for="random-scope">Random Practice topic scope</label>' +
       '<select class="select" id="random-scope">' + randomScopeOptions() + "</select>" +
       '<div class="size-btns" role="group" aria-label="Random Practice size">' +
@@ -946,11 +946,18 @@
     return shuffle(picked);
   }
 
-  /** Build a session: pick N random, shuffle options while preserving the key. */
+  /** Build a session: pick N random, shuffle options while preserving the key.
+      Serial sessions (Random-All) keep bank order and original option order
+      so two people practicing remotely see the same question at each number. */
   function buildSession(meta, pool, kind, count) {
     var n = Math.max(1, Math.min(count || QUESTIONS_PER_SESSION, pool.length));
-    var picked = (kind === "random") ? pickRandom(pool, n) : shuffle(pool).slice(0, n);
+    var serial = !!(meta && meta.serial);
+    var picked = serial ? pool.slice(0, n)
+      : (kind === "random") ? pickRandom(pool, n) : shuffle(pool).slice(0, n);
     var sessionQs = picked.map(function (q) {
+      if (serial) {
+        return { src: q, options: q.options.slice(), correctIndex: q.correctAnswer };
+      }
       var indexed = q.options.map(function (text, i) { return { text: text, isCorrect: i === q.correctAnswer }; });
       var sh = shuffle(indexed), nc = 0;
       sh.forEach(function (o, i) { if (o.isCorrect) nc = i; });
@@ -959,7 +966,7 @@
     var now = Date.now();
     recordPracticed(sessionQs.map(function (q) { return q.src.id; }));
     state.session = {
-      kind: kind, count: n, topic: meta, questions: sessionQs, index: 0,
+      kind: kind, count: n, serial: serial, topic: meta, questions: sessionQs, index: 0,
       answers: sessionQs.map(function () { return null; }),
       startTime: now, elapsed: 0, remaining: kind === "exam" ? EXAM_SECONDS : null,
       timerId: null, finished: false, hideFeedback: kind === "exam"
@@ -1029,6 +1036,11 @@
       if (kind === "challenge") pool = questionsOf("challenge-mode");
       if (wantAll) count = pool.length;
       else count = Math.max(1, Math.min(count, pool.length));
+      if (kind === "random" && wantAll) {
+        meta.serial = true; // full-set sessions run in fixed bank order for shared practice
+        meta.title = meta.name = "🎲 Random Practice · " + scopeTitle + " · serial order";
+        meta.scopeLabel = scopeTitle + " · serial";
+      }
       if (!pool.length) {
         app.innerHTML = '<div class="card error-card"><h2>No questions available yet.</h2><p><button class="btn" id="btn-back" type="button">Back</button></p></div>';
         document.getElementById("btn-back").addEventListener("click", renderHome);
@@ -1371,7 +1383,7 @@
     document.getElementById("btn-retry").addEventListener("click", function () {
       playSound("click");
       if (s.kind === "practice") startQuiz(s.topic.id, { kind: "practice", count: s.count || QUESTIONS_PER_SESSION });
-      else startMixed(s.kind === "daily" ? "daily" : s.kind, s.count || QUESTIONS_PER_SESSION,
+      else startMixed(s.kind === "daily" ? "daily" : s.kind, s.serial ? "all" : (s.count || QUESTIONS_PER_SESSION),
         s.topic.scopeId || undefined);
     });
     document.getElementById("btn-quick").addEventListener("click", function () { playSound("click"); startMixed("random", s.count || 15, s.topic.scopeId || undefined); });
