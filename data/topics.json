@@ -1,5 +1,31 @@
 [
   {
+    "id": "non-relational-set-2",
+    "title": "Non-Relational Data on Azure – Set 2",
+    "description": "Cosmos DB, tiers, redundancy and services plus exam-style matching practice.",
+    "sourceType": "Text File",
+    "sourceName": "Part 3 Non-relational Data on Azure- set 2.txt",
+    "createdAt": "2026-10-02",
+    "questionFile": "data/non-relational-set-2.json",
+    "questionCount": 49,
+    "name": "Non-Relational Data on Azure – Set 2",
+    "file": "data/non-relational-set-2.json",
+    "examWeight": "DP-900 · Non-relational Azure practice"
+  },
+  {
+    "id": "non-relational-set-3",
+    "title": "Non-Relational Data on Azure – Set 3",
+    "description": "60 scenario questions: Cosmos DB, blobs, tiers, security and services.",
+    "sourceType": "Text File",
+    "sourceName": "Part 3 Non-relational Data on Azure set-3.txt",
+    "createdAt": "2026-10-02",
+    "questionFile": "data/non-relational-set-3.json",
+    "questionCount": 60,
+    "name": "Non-Relational Data on Azure – Set 3",
+    "file": "data/non-relational-set-3.json",
+    "examWeight": "DP-900 · Non-relational Azure practice"
+  },
+  {
     "id": "relational-sets-3-4",
     "title": "Relational Data on Azure – Sets 3 & 4",
     "description": "Serverless cost control, PaaS management, read-scale reporting and day/night scaling.",
