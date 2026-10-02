@@ -1,5 +1,18 @@
 [
   {
+    "id": "relational-sets-3-4",
+    "title": "Relational Data on Azure – Sets 3 & 4",
+    "description": "Serverless cost control, PaaS management, read-scale reporting and day/night scaling.",
+    "sourceType": "Chat Export",
+    "sourceName": "relational database.txt",
+    "createdAt": "2026-10-02",
+    "questionFile": "data/relational-sets-3-4.json",
+    "questionCount": 4,
+    "name": "Relational Data on Azure – Sets 3 & 4",
+    "file": "data/relational-sets-3-4.json",
+    "examWeight": "DP-900 · Relational Azure practice"
+  },
+  {
     "id": "relational-data-s",
     "title": "Relational Data on Azure – S",
     "description": "59 Azure SQL questions: deployment, security, performance, backup and features.",
