@@ -1,0 +1,642 @@
+[
+  {
+    "id": "cmm-001",
+    "question": "Which data type is this: data with no predefined schema or organization, like images and videos?",
+    "options": [
+      "Structured data",
+      "Semi-structured data",
+      "Unstructured data",
+      "Relational data"
+    ],
+    "correctAnswer": 2,
+    "explanation": "No predefined schema means unstructured data.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-002",
+    "question": "Which data type is this: data organized in rows and columns with defined relationships?",
+    "options": [
+      "Structured data",
+      "Semi-structured data",
+      "Unstructured data",
+      "Relational data"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Rows, columns and relationships define relational data.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-003",
+    "question": "Which data type is this: data with some organizational properties but flexible schema, like JSON and XML?",
+    "options": [
+      "Structured data",
+      "Semi-structured data",
+      "Unstructured data",
+      "Relational data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Partial organization with flexibility is semi-structured data.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-004",
+    "question": "Which data type is this: data with fixed schema and well-defined data model?",
+    "options": [
+      "Structured data",
+      "Semi-structured data",
+      "Unstructured data",
+      "Relational data"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Fixed schema with a defined model is structured data.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-005",
+    "question": "Emails with headers, body and attachments are best classified as:",
+    "options": [
+      "Structured data",
+      "Semi-structured data",
+      "Unstructured data",
+      "Relational data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Headers give some structure but content stays flexible: semi-structured.",
+    "difficulty": "medium",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Types",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-006",
+    "question": "A fund transfer must debit one account and credit another as a single unit or not at all. Which ACID property?",
+    "options": [
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Durability"
+    ],
+    "correctAnswer": 0,
+    "explanation": "All-or-nothing execution is atomicity.",
+    "difficulty": "medium",
+    "topic": "Core Data Matching",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-007",
+    "question": "Once a transaction is committed, the data must persist even after a power failure. Which ACID property?",
+    "options": [
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Durability"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Surviving failures after commit is durability.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-008",
+    "question": "Account balance must never go negative, enforcing business rules on every transaction. Which ACID property?",
+    "options": [
+      "Durability",
+      "Atomicity",
+      "Consistency",
+      "Isolation"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Enforcing business rules on every transaction is consistency.",
+    "difficulty": "medium",
+    "topic": "Core Data Matching",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-009",
+    "question": "Two concurrent transactions must not interfere with each other when updating the same record. Which ACID property?",
+    "options": [
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Durability"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Preventing concurrent interference is isolation.",
+    "difficulty": "medium",
+    "topic": "Core Data Matching",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-010",
+    "question": "All steps in an order fulfillment process must succeed together or the entire transaction rolls back. Which ACID property?",
+    "options": [
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Durability"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Joint success-or-rollback is atomicity.",
+    "difficulty": "medium",
+    "topic": "Core Data Matching",
+    "subtopic": "ACID Properties",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-011",
+    "question": "Which format uses curly braces with key-value pairs and supports nested objects and arrays?",
+    "options": [
+      "CSV",
+      "JSON",
+      "XML",
+      "Parquet"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Curly braces with nesting define JSON.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Formats",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-012",
+    "question": "Which format uses angle brackets with opening and closing tags and hierarchical structure?",
+    "options": [
+      "Parquet",
+      "CSV",
+      "JSON",
+      "XML"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Tags with hierarchy define XML.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Formats",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-013",
+    "question": "Which format holds comma-separated values with one record per line?",
+    "options": [
+      "CSV",
+      "JSON",
+      "XML",
+      "Parquet"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Comma-separated rows define CSV.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Formats",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-014",
+    "question": "Which format stores data column by column for analytics queries?",
+    "options": [
+      "CSV",
+      "JSON",
+      "XML",
+      "Parquet"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Columnar storage for analytics is Parquet.",
+    "difficulty": "medium",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Formats",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-015",
+    "question": "Which human-readable text format is commonly used for data exports?",
+    "options": [
+      "XML",
+      "Parquet",
+      "CSV",
+      "JSON"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Simple readable exports are typically CSV.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Formats",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-016",
+    "question": "Ensuring all phone numbers follow the format +1-XXX-XXX-XXXX is an example of:",
+    "options": [
+      "Data validation",
+      "Data standardization",
+      "Data completeness",
+      "Metadata"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Uniform formats are standardization.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Quality",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-017",
+    "question": "Checking that emails contain @ and a valid domain before saving is an example of:",
+    "options": [
+      "Data validation",
+      "Data standardization",
+      "Data completeness",
+      "Metadata"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Checking values meet rules is validation.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Quality",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-018",
+    "question": "Information about data files including size, creation date and author is:",
+    "options": [
+      "Data validation",
+      "Data standardization",
+      "Data completeness",
+      "Metadata"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Data about data is metadata.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Quality",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-019",
+    "question": "Ensuring all required fields are populated before saving is an example of:",
+    "options": [
+      "Data validation",
+      "Data standardization",
+      "Data completeness",
+      "Metadata"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Populated required fields mean completeness.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Quality",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-020",
+    "question": "Verifying that ages are between 0 and 120 before storing is an example of:",
+    "options": [
+      "Metadata",
+      "Data validation",
+      "Data standardization",
+      "Data completeness"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Range checks are validation.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Quality",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-021",
+    "question": "Storing user sessions with fast lookup by session ID best fits:",
+    "options": [
+      "Relational model",
+      "Document model",
+      "Key-value model",
+      "Graph model"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Fast key lookups are the key-value pattern.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Models",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-022",
+    "question": "Modeling social network connections and friend relationships best fits:",
+    "options": [
+      "Relational model",
+      "Document model",
+      "Key-value model",
+      "Graph model"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Connections between entities are graph data.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Models",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-023",
+    "question": "Storing customer orders with defined relationships to products and customers best fits:",
+    "options": [
+      "Relational model",
+      "Document model",
+      "Key-value model",
+      "Graph model"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Defined entity relationships are relational.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Models",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-024",
+    "question": "Storing product catalogs with varying attributes by category best fits:",
+    "options": [
+      "Relational model",
+      "Document model",
+      "Key-value model",
+      "Graph model"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Varying flexible attributes fit documents.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Models",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-025",
+    "question": "Simple caching with fast retrieval by key best fits:",
+    "options": [
+      "Relational model",
+      "Document model",
+      "Key-value model",
+      "Graph model"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Cache-by-key is key-value usage.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Models",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-026",
+    "question": "Storing analytical data optimized for column-based queries best fits:",
+    "options": [
+      "CSV",
+      "JSON",
+      "Avro",
+      "Parquet"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Column-based analytics means Parquet.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Formats",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-027",
+    "question": "Exchanging data between web APIs with nested structures best fits:",
+    "options": [
+      "CSV",
+      "JSON",
+      "Avro",
+      "Parquet"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Nested API payloads are JSON territory.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Formats",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-028",
+    "question": "Simple data export from a database to a spreadsheet best fits:",
+    "options": [
+      "CSV",
+      "JSON",
+      "Avro",
+      "Parquet"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Spreadsheet exports are classically CSV.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Formats",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-029",
+    "question": "High-volume streaming data with schema evolution support best fits:",
+    "options": [
+      "CSV",
+      "JSON",
+      "Avro",
+      "Parquet"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Evolving binary streams point to Avro.",
+    "difficulty": "medium",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Formats",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-030",
+    "question": "Human-readable data exchange with flexible schema best fits:",
+    "options": [
+      "CSV",
+      "JSON",
+      "Avro",
+      "Parquet"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Readable flexible exchange is JSON.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Formats",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-031",
+    "question": "Data about data that describes characteristics of files is:",
+    "options": [
+      "Metadata",
+      "Index",
+      "Partition",
+      "Schema"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Descriptive data about data is metadata.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Concepts",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-032",
+    "question": "A structure definition specifying columns, data types and constraints is a:",
+    "options": [
+      "Metadata",
+      "Index",
+      "Partition",
+      "Schema"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Column and type blueprints are the schema.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Concepts",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-033",
+    "question": "Dividing large tables into smaller, manageable pieces is called:",
+    "options": [
+      "Schema",
+      "Metadata",
+      "Index",
+      "Partition"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Splitting tables for manageability is partitioning.",
+    "difficulty": "medium",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Concepts",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-034",
+    "question": "A structure that improves query performance with quick lookups is an:",
+    "options": [
+      "Schema",
+      "Metadata",
+      "Index",
+      "Partition"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Fast lookups come from indexes.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Concepts",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-035",
+    "question": "A blueprint defining how data is organized in a database is a:",
+    "options": [
+      "Schema",
+      "Metadata",
+      "Index",
+      "Partition"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The organization blueprint is the schema.",
+    "difficulty": "easy",
+    "topic": "Core Data Matching",
+    "subtopic": "Data Concepts",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-036",
+    "question": "Match each use case to its processing model: real-time fraud detection, end-of-month reports, 5-minute sensor aggregates, daily sales reports, millisecond stock alerts. Which mapping is correct?",
+    "options": [
+      "Fraud Micro-batch, month-end Batch, sensors Batch, daily Stream, stocks Micro-batch",
+      "Fraud Stream, month-end Batch, sensors Micro-batch, daily Batch, stocks Stream",
+      "Fraud Batch, month-end Stream, sensors Batch, daily Micro-batch, stocks Stream",
+      "Fraud Stream, month-end Micro-batch, sensors Stream, daily Batch, stocks Batch"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Instant reactions need streams, scheduled aggregates need batch, minute intervals need micro-batch.",
+    "difficulty": "medium",
+    "topic": "Core Data Matching",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-037",
+    "question": "Match each rule to its normal form: atomic single values, full key dependency, no transitive dependencies, key plus atomic values, key/whole-key/nothing-but-key. Which mapping is correct?",
+    "options": [
+      "Atomic to 1NF, full-key to 2NF, no-transitive to 3NF, key+atomic to 1NF, classic to 3NF",
+      "Atomic to 2NF, full-key to 3NF, no-transitive to 1NF, key+atomic to 3NF, classic to 1NF",
+      "Atomic to 3NF, full-key to 1NF, no-transitive to 2NF, key+atomic to 2NF, classic to 2NF",
+      "Atomic to 1NF, full-key to 3NF, no-transitive to 1NF, key+atomic to 3NF, classic to 2NF"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Atomic values are 1NF, full-key dependence is 2NF, no transitive dependence is 3NF.",
+    "difficulty": "medium",
+    "topic": "Core Data Matching",
+    "subtopic": "Normalization",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-038",
+    "question": "Match each behavior to its model: same data everywhere, latest write immediately, converging stale reads, max availability, same view on any replica. Which mapping is correct?",
+    "options": [
+      "Same-data Eventual, latest Eventual, converging Strong, availability Strong, same-view Eventual",
+      "Same-data Strong, latest Eventual, converging Strong, availability Eventual, same-view Strong",
+      "Same-data Eventual, latest Strong, converging Eventual, availability Strong, same-view Eventual",
+      "Same-data Strong, latest Strong, converging Eventual, availability Eventual, same-view Strong"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Immediate sameness is Strong; convergence and availability trade-offs are Eventual.",
+    "difficulty": "medium",
+    "topic": "Core Data Matching",
+    "subtopic": "Consistency",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-039",
+    "question": "Match each description to its V: generation speed, stored amount, source variety, TB/PB scale, real-time sensor feeds. Which mapping is correct?",
+    "options": [
+      "Speed Variety, amount Volume, variety Velocity, TB/PB Velocity, feeds Volume",
+      "Speed Velocity, amount Variety, variety Volume, TB/PB Volume, feeds Volume",
+      "Speed Velocity, amount Volume, variety Variety, TB/PB Volume, feeds Velocity",
+      "Speed Volume, amount Velocity, variety Volume, TB/PB Variety, feeds Variety"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Speed is velocity, amount and scale are volume, source diversity is variety, feeds are velocity.",
+    "difficulty": "medium",
+    "topic": "Core Data Matching",
+    "subtopic": "Big Data",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  },
+  {
+    "id": "cmm-040",
+    "question": "Match each model to its characteristic: batch jobs, stream jobs, micro-batch jobs, daily ETL, millisecond fraud detection. Which mapping is correct?",
+    "options": [
+      "Batch scheduled throughput, Stream small intervals, Micro real-time latency, daily Micro, fraud Micro",
+      "Batch scheduled throughput, Stream real-time latency, Micro small intervals, daily Batch, fraud Stream",
+      "Batch real-time latency, Stream scheduled throughput, Micro real-time latency, daily Stream, fraud Batch",
+      "Batch small intervals, Stream small intervals, Micro scheduled throughput, daily Stream, fraud Micro"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Batch is scheduled throughput, Stream is real-time latency, Micro-batch is small intervals.",
+    "difficulty": "medium",
+    "topic": "Core Data Matching",
+    "subtopic": "Workloads",
+    "source": "Part 1 Core Data Concepts - Matching.txt"
+  }
+]

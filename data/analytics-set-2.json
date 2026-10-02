@@ -1,0 +1,962 @@
+[
+  {
+    "id": "an2-001",
+    "question": "A company needs to analyze customer behavior data stored in Azure Data Lake Storage using T-SQL queries without provisioning dedicated SQL servers. Which Azure service should they use?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Synapse Analytics serverless SQL pool",
+      "Azure Cosmos DB",
+      "Azure Data Factory"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Synapse serverless SQL pool queries Data Lake Storage with T-SQL without dedicated infrastructure.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-002",
+    "question": "A business wants to create executive dashboards that combine data from Azure SQL Database, Excel, and cloud services with automatic refresh. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Power BI",
+      "Azure Stream Analytics",
+      "Azure Databricks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Power BI creates executive dashboards from multiple sources with automatic data refresh.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Power BI",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-003",
+    "question": "A company needs to build ETL pipelines that extract from Oracle database, transform using data flows, and load to Azure Synapse. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Databricks",
+      "Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data Factory builds ETL pipelines with visual mapping data flows for transformation.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Data Factory",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-004",
+    "question": "A business wants to process real-time telemetry from 10,000 IoT devices and trigger alerts when temperature exceeds threshold. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Synapse Analytics",
+      "Azure Databricks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Stream Analytics processes real-time IoT telemetry and triggers alerts based on conditions.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Stream Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-005",
+    "question": "A company needs to perform collaborative data science using Apache Spark with Python, R, and Scala support. Which Azure service should they use?",
+    "options": [
+      "Azure Synapse Analytics",
+      "Azure Databricks",
+      "Azure Data Factory",
+      "Azure Stream Analytics"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Databricks provides collaborative data science with Spark supporting Python, R, and Scala.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Databricks",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-006",
+    "question": "A business wants to build an enterprise data warehouse with petabyte-scale analytics and MPP architecture. Which Azure service should they use?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Synapse Analytics dedicated SQL pool",
+      "Azure Cosmos DB",
+      "Azure Data Lake Storage"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Synapse dedicated SQL pool provides enterprise data warehousing with MPP architecture.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-007",
+    "question": "A company needs to store structured transaction data, semi-structured logs, and unstructured images for analytics processing. Which Azure service should they use for storage?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Data Lake Storage Gen2",
+      "Azure Cosmos DB",
+      "Azure Cache for Redis"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Data Lake Storage Gen2 stores all data types (structured, semi-structured, unstructured) for analytics.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Data Lake Storage",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-008",
+    "question": "A business wants to create mobile-friendly reports that business users can access on tablets and phones. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Power BI",
+      "Azure Stream Analytics",
+      "Azure Databricks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Power BI creates mobile-optimized reports accessible on tablets and phones.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Power BI",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-009",
+    "question": "A company needs to copy data from Salesforce CRM to Azure SQL Database every 6 hours for reporting. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Synapse Analytics",
+      "Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data Factory copies data from Salesforce on scheduled intervals (every 6 hours).",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Data Factory",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-010",
+    "question": "A business wants to analyze clickstream data from website visitors in real-time to personalize user experience. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Synapse Analytics",
+      "Azure Databricks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Stream Analytics analyzes real-time clickstream data for personalization.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Stream Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-011",
+    "question": "A company needs to transform data using Spark notebooks with version control and collaborative development. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Databricks",
+      "Azure Stream Analytics",
+      "Power BI"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Databricks provides Spark notebooks with version control and collaboration features.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Databricks",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-012",
+    "question": "A business wants to query CSV and Parquet files directly in Azure Blob Storage using serverless SQL. Which Azure service should they use?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Synapse Analytics serverless SQL pool",
+      "Azure Cosmos DB",
+      "Azure Data Factory"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Synapse serverless SQL pool queries CSV/Parquet files in Blob Storage without infrastructure.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-013",
+    "question": "A company needs to consolidate data from ERP, CRM, and HR systems into a single analytics platform. Which Azure service should they use?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Synapse Analytics",
+      "Azure Cosmos DB",
+      "Azure Cache for Redis"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Synapse Analytics consolidates data from multiple business systems into unified platform.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-014",
+    "question": "A business wants to create pixel-perfect invoices and financial statements for regulatory compliance. Which service should they use?",
+    "options": [
+      "Power BI (paginated reports)",
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Databricks"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Power BI paginated reports create pixel-perfect documents for compliance.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Power BI",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-015",
+    "question": "A company needs to process streaming data from Azure Event Hubs and apply machine learning models for predictions. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics with Azure ML",
+      "Azure Synapse Analytics",
+      "Azure Databricks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Stream Analytics integrates with Azure ML for real-time predictions on streaming data.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Stream Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-016",
+    "question": "A business wants to orchestrate a workflow where data is extracted, transformed in Databricks, and loaded to Synapse. Which Azure service should orchestrate this?",
+    "options": [
+      "Azure Data Factory",
+      "Power BI",
+      "Azure Stream Analytics",
+      "Azure SQL Database"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data Factory orchestrates workflows integrating Databricks and Synapse.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Data Factory",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-017",
+    "question": "A company needs to perform advanced analytics using Spark MLlib for customer churn prediction. Which Azure service should they use?",
+    "options": [
+      "Azure Synapse Analytics",
+      "Azure Databricks",
+      "Azure Data Factory",
+      "Power BI"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Databricks supports Spark MLlib for advanced analytics and churn prediction.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Databricks",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-018",
+    "question": "A business wants to query data from Azure SQL Database, Data Lake Storage, and Cosmos DB from a single workspace. Which Azure service should they use?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Synapse Analytics",
+      "Azure Data Factory",
+      "Azure Stream Analytics"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Synapse Analytics provides unified workspace to query multiple Azure data sources.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-019",
+    "question": "A company needs to store raw sensor data in its native format and process it later with different analytics engines. Which Azure service should they use for storage?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Data Lake Storage Gen2",
+      "Azure Cosmos DB",
+      "Azure Cache for Redis"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Data Lake Storage Gen2 stores raw data in native format for flexible processing.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Data Lake Storage",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-020",
+    "question": "A business wants to create live dashboards that update every second from streaming stock market data. Which combination should they use?",
+    "options": [
+      "Azure Data Factory + Power BI",
+      "Azure Stream Analytics + Power BI",
+      "Azure Databricks + Power BI",
+      "Azure Synapse + Power BI"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Stream Analytics processes streaming data, Power BI displays live updating dashboards.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Stream Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-021",
+    "question": "A company needs to schedule weekly data loads from SAP HANA to Azure data lake for analytics. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Databricks",
+      "Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data Factory schedules weekly data loads from SAP HANA to Azure.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Data Factory",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-022",
+    "question": "A business wants to analyze data using Spark SQL, Python, and .NET notebooks in a unified analytics workspace. Which Azure service should they use?",
+    "options": [
+      "Azure Synapse Analytics",
+      "Azure Databricks",
+      "Azure Data Factory",
+      "Azure Stream Analytics"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Synapse Analytics supports Spark SQL, Python, and .NET in unified workspace.",
+    "difficulty": "hard",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-023",
+    "question": "A company needs to process 1 million events per second from social media feeds with millisecond latency. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Synapse Analytics",
+      "Azure Databricks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Stream Analytics processes millions of events per second with millisecond latency.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Stream Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-024",
+    "question": "A business wants to create a unified data model that combines sales, inventory, and customer data for reporting. Which Azure service should they use?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Synapse Analytics",
+      "Azure Cosmos DB",
+      "Azure Cache for Redis"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Synapse Analytics creates unified data models combining multiple business domains.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-025",
+    "question": "A company needs to transform data using visual drag-and-drop interface without writing Spark code. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory (mapping data flows)",
+      "Azure Databricks",
+      "Azure Stream Analytics",
+      "Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data Factory mapping data flows provide visual transformation without Spark code.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Data Factory",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-026",
+    "question": "A business wants to analyze Cosmos DB data from Synapse without replicating data to Synapse storage. Is this supported?",
+    "options": [
+      "Yes, with Synapse Link for Cosmos DB",
+      "No, data must be copied first",
+      "Yes, but only for Core SQL API",
+      "No, use Data Factory instead"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Synapse Link enables analyzing Cosmos DB data without replication.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-027",
+    "question": "A company needs to build a lakehouse that supports both data lake flexibility and data warehouse governance. Which Azure service should they use?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Synapse Analytics",
+      "Azure Cosmos DB",
+      "Azure Cache for Redis"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Synapse Analytics provides lakehouse architecture with lake flexibility and warehouse governance.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-028",
+    "question": "A business wants to monitor pipeline failures and receive email alerts when ETL jobs fail. Which Azure service combination should they use?",
+    "options": [
+      "Azure Data Factory + Azure Monitor",
+      "Azure Stream Analytics + Power BI",
+      "Azure Databricks + Power BI",
+      "Azure Synapse + Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data Factory integrates with Azure Monitor for pipeline monitoring and email alerts.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Monitoring",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-029",
+    "question": "A company needs to process streaming data with sliding window aggregations for rolling averages. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Synapse Analytics",
+      "Azure Databricks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Stream Analytics supports sliding window aggregations for rolling calculations.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Stream Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-030",
+    "question": "A business wants to enable business users to create their own reports without IT involvement. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Power BI (self-service)",
+      "Azure Stream Analytics",
+      "Azure Databricks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Power BI self-service enables business users to create reports independently.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Power BI",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-031",
+    "question": "A company needs to run Spark workloads that auto-scale from 10 to 100 nodes based on data volume. Which Azure service should they use?",
+    "options": [
+      "Azure Synapse Analytics",
+      "Azure Databricks",
+      "Azure Data Factory",
+      "Azure Stream Analytics"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Databricks provides auto-scaling Spark clusters from 10 to 100 nodes.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Databricks",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-032",
+    "question": "A business wants to load data from REST API with pagination support to Azure SQL Database daily. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Databricks",
+      "Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data Factory handles REST API pagination and loads data on daily schedule.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Data Factory",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-033",
+    "question": "A company needs to analyze data using serverless Spark without managing cluster configuration. Which Azure service should they use?",
+    "options": [
+      "Azure Synapse Analytics",
+      "Azure Databricks",
+      "Azure Data Factory",
+      "Azure Stream Analytics"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Synapse Analytics provides serverless Spark pools without cluster management.",
+    "difficulty": "hard",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-034",
+    "question": "A business wants to discover, classify, and govern data assets across their organization. Which Azure service should they use?",
+    "options": [
+      "Azure Purview",
+      "Azure Data Factory",
+      "Azure Synapse Analytics",
+      "Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Azure Purview provides data discovery, classification, and governance.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Governance",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-035",
+    "question": "A company needs to process streaming data from IoT Hub and output to SQL Database and Blob Storage simultaneously. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Synapse Analytics",
+      "Azure Databricks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Stream Analytics writes to multiple outputs (SQL Database, Blob Storage) simultaneously.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Stream Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-036",
+    "question": "A business wants to build a data warehouse with polybase support for querying external data sources. Which Azure service should they use?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Synapse Analytics dedicated SQL pool",
+      "Azure Cosmos DB",
+      "Azure Data Lake Storage"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Synapse dedicated SQL pool supports PolyBase for querying external data sources.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-037",
+    "question": "A company needs to integrate data from MySQL, PostgreSQL, and MongoDB into Azure data lake. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Databricks",
+      "Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data Factory integrates data from MySQL, PostgreSQL, MongoDB and 90+ connectors.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Data Factory",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-038",
+    "question": "A business wants to perform data exploration using collaborative notebooks with Git integration. Which Azure service should they use?",
+    "options": [
+      "Azure Synapse Analytics",
+      "Azure Databricks",
+      "Azure Data Factory",
+      "Azure Stream Analytics"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Databricks provides collaborative notebooks with Git version control integration.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Databricks",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-039",
+    "question": "A company needs to query JSON files in Data Lake Storage using T-SQL OPENROWSET. Which Azure service should they use?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Synapse Analytics serverless SQL pool",
+      "Azure Cosmos DB",
+      "Azure Data Factory"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Synapse serverless SQL pool queries JSON files with T-SQL OPENROWSET.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-040",
+    "question": "A business wants to build an analytics platform that combines data integration, warehousing, and Spark analytics. Which Azure service should they use?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Synapse Analytics",
+      "Azure Cosmos DB",
+      "Azure Cache for Redis"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Synapse Analytics combines data integration, warehousing, and Spark analytics.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-041",
+    "question": "A company needs to apply pre-trained Azure ML models to streaming data for real-time sentiment analysis. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics with Azure ML",
+      "Azure Synapse Analytics",
+      "Power BI"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Stream Analytics integrates with Azure ML for real-time sentiment analysis on streaming data.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Stream Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-042",
+    "question": "A business wants to create a dashboard that shows sales by region with drill-down to city level. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Power BI",
+      "Azure Stream Analytics",
+      "Azure Databricks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Power BI creates dashboards with drill-down capabilities from region to city.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Power BI",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-043",
+    "question": "A company needs to orchestrate a pipeline with conditional branching based on data quality checks. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Synapse Analytics",
+      "Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data Factory supports conditional branching based on data quality checks.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Data Factory",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-044",
+    "question": "A business wants to analyze large datasets using Spark DataFrames with SQL queries in notebooks. Which Azure service should they use?",
+    "options": [
+      "Azure Synapse Analytics",
+      "Azure Databricks",
+      "Azure Data Factory",
+      "Azure Stream Analytics"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Databricks supports Spark DataFrames with SQL queries in collaborative notebooks.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Databricks",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-045",
+    "question": "A company needs to build a data warehouse that can scale from 100 GB to 100 TB with independent compute scaling. Which Azure service should they use?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Synapse Analytics dedicated SQL pool",
+      "Azure Cosmos DB",
+      "Azure Data Lake Storage"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Synapse dedicated SQL pool scales from 100 GB to 100+ TB with independent compute scaling.",
+    "difficulty": "hard",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-046",
+    "question": "A business wants to process streaming data from Event Hubs and detect fraud patterns in real-time. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Synapse Analytics",
+      "Azure Databricks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Stream Analytics processes Event Hubs streams for real-time fraud detection.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Stream Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-047",
+    "question": "A company needs to build a data lake that supports ACID transactions for reliable analytics. Which Azure service should they use for storage?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Data Lake Storage Gen2",
+      "Azure Cosmos DB",
+      "Azure Cache for Redis"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Data Lake Storage Gen2 supports ACID transactions for reliable analytics workloads.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Data Lake Storage",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-048",
+    "question": "A business wants to create reports that can be scheduled for email delivery to stakeholders every Monday. Which Azure service should they use?",
+    "options": [
+      "Power BI (scheduled email)",
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Databricks"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Power BI supports scheduled email delivery of reports to stakeholders.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Power BI",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-049",
+    "question": "A company needs to run Spark ETL that joins data from multiple sources and writes to data warehouse. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Databricks",
+      "Azure Stream Analytics",
+      "Power BI"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Databricks runs Spark ETL jobs that join multiple sources and write to warehouse.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Databricks",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-050",
+    "question": "A business wants to query data from Azure SQL Database, Blob Storage, and Cosmos DB using a single T-SQL endpoint. Which Azure service should they use?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Synapse Analytics",
+      "Azure Data Factory",
+      "Azure Stream Analytics"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Synapse Analytics provides single T-SQL endpoint to query multiple Azure data sources.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-051",
+    "question": "A company needs to schedule incremental data loads from on-premises SQL Server to Azure every hour. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Databricks",
+      "Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data Factory schedules incremental/hourly data loads from on-premises to Azure.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Data Factory",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-052",
+    "question": "A business wants to process streaming data with session windowing to analyze user activity sessions. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Synapse Analytics",
+      "Azure Databricks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Stream Analytics supports session windowing for user activity analysis.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Stream Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-053",
+    "question": "A company needs to build a data platform that supports both SQL analytics and Spark machine learning. Which Azure service should they use?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Synapse Analytics",
+      "Azure Cosmos DB",
+      "Azure Cache for Redis"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Synapse Analytics supports both SQL analytics and Spark ML in unified platform.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-054",
+    "question": "A business wants to train machine learning models using distributed Spark processing on large datasets. Which Azure service should they use?",
+    "options": [
+      "Azure Synapse Analytics",
+      "Azure Databricks",
+      "Azure Data Factory",
+      "Azure Stream Analytics"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Databricks trains ML models using distributed Spark processing on large datasets.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Databricks",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-055",
+    "question": "A company needs to integrate data from 90+ cloud and on-premises sources with built-in connectors. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Synapse Analytics",
+      "Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data Factory provides 90+ built-in connectors for cloud and on-premises integration.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Data Factory",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-056",
+    "question": "A business wants to build a data warehouse optimized for star schema queries with columnstore indexes. Which Azure service should they use?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Synapse Analytics dedicated SQL pool",
+      "Azure Cosmos DB",
+      "Azure Data Lake Storage"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Synapse dedicated SQL pool optimizes star schema queries with columnstore indexes.",
+    "difficulty": "hard",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-057",
+    "question": "A company needs to route streaming data to different destinations based on message content and conditions. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Synapse Analytics",
+      "Azure Databricks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Stream Analytics routes streaming data to different outputs based on conditions.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Stream Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-058",
+    "question": "A business wants to create reports with bookmarks and personalized views for different user roles. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Power BI",
+      "Azure Stream Analytics",
+      "Azure Databricks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Power BI supports bookmarks and personalized views for different user roles.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Power BI",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-059",
+    "question": "A company needs to build a pipeline that copies data from REST API with OAuth authentication to Azure SQL Database. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Synapse Analytics",
+      "Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data Factory supports REST API with OAuth authentication for data copying.",
+    "difficulty": "easy",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Data Factory",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  },
+  {
+    "id": "an2-060",
+    "question": "A business wants to analyze both historical batch data and real-time streaming data in a single platform. Which Azure service should they use?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Synapse Analytics",
+      "Azure Cosmos DB",
+      "Azure Cache for Redis"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Synapse Analytics analyzes both historical batch and real-time streaming data together.",
+    "difficulty": "medium",
+    "topic": "Analytics Workloads on Azure – Set 2",
+    "subtopic": "Synapse Analytics",
+    "source": "Part 4 Analytics Workloads on Azure set-2.txt"
+  }
+]

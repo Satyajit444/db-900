@@ -1,0 +1,258 @@
+[
+  {
+    "id": "anm-001",
+    "question": "A company needs to copy data from Salesforce CRM to Azure SQL Database every 6 hours for reporting. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Stream Analytics",
+      "Azure Synapse Analytics",
+      "Power BI"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Scheduled SaaS copies are Data Factory's home turf.",
+    "difficulty": "medium",
+    "topic": "Analytics Matching",
+    "subtopic": "Services",
+    "source": "Part 4 Analytics Workloads on Azure-matching-set-last.txt"
+  },
+  {
+    "id": "anm-002",
+    "question": "A company needs to transform data using Spark with Delta Lake for schema enforcement and evolution. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Azure Databricks",
+      "Azure Stream Analytics",
+      "Power BI"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Spark plus Delta Lake is Databricks territory.",
+    "difficulty": "medium",
+    "topic": "Analytics Matching",
+    "subtopic": "Services",
+    "source": "Part 4 Analytics Workloads on Azure-matching-set-last.txt"
+  },
+  {
+    "id": "anm-003",
+    "question": "A business wants to analyze clickstream data from website visitors in real-time to personalize user experience. Which Azure service should they use?",
+    "options": [
+      "Azure Synapse Analytics",
+      "Power BI",
+      "Azure Data Factory",
+      "Azure Stream Analytics"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Real-time clickstream personalization is Stream Analytics work.",
+    "difficulty": "medium",
+    "topic": "Analytics Matching",
+    "subtopic": "Services",
+    "source": "Part 4 Analytics Workloads on Azure-matching-set-last.txt"
+  },
+  {
+    "id": "anm-004",
+    "question": "A company needs to load data from REST API with pagination support to Azure SQL Database daily. Which Azure service should they use?",
+    "options": [
+      "Azure Databricks",
+      "Power BI",
+      "Azure Data Factory",
+      "Azure Stream Analytics"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Paginated REST loads on a schedule are Data Factory work.",
+    "difficulty": "medium",
+    "topic": "Analytics Matching",
+    "subtopic": "Services",
+    "source": "Part 4 Analytics Workloads on Azure-matching-set-last.txt"
+  },
+  {
+    "id": "anm-005",
+    "question": "A business wants to run complex ETL pipelines that transform data before loading into data warehouse. Which Azure service should they use?",
+    "options": [
+      "Azure Data Factory",
+      "Power BI",
+      "Azure Stream Analytics",
+      "Azure SQL Database"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Complex transform-before-load pipelines are Data Factory's core job.",
+    "difficulty": "medium",
+    "topic": "Analytics Matching",
+    "subtopic": "Services",
+    "source": "Part 4 Analytics Workloads on Azure-matching-set-last.txt"
+  },
+  {
+    "id": "anm-006",
+    "question": "Match each workload to its service: on-premises ETL to Data Lake, real-time IoT with sub-second latency, collaborative Spark notebooks for ML, unified querying across SQL/Lake/Cosmos. Which mapping is correct?",
+    "options": [
+      "ETL to Stream Analytics, IoT to Databricks, notebooks to Synapse, unified to Data Factory",
+      "ETL to Databricks, IoT to Synapse, notebooks to Data Factory, unified to Stream Analytics",
+      "ETL to Synapse, IoT to Data Factory, notebooks to Stream Analytics, unified to Databricks",
+      "ETL to Data Factory, IoT to Stream Analytics, notebooks to Databricks, unified to Synapse"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Factory moves data, Stream Analytics handles live IoT, Databricks hosts Spark notebooks, Synapse unifies queries. (Interactive dashboards would need Power BI, which is deliberately not among these options.)",
+    "difficulty": "medium",
+    "topic": "Analytics Matching",
+    "subtopic": "Services",
+    "source": "Part 4 Analytics Workloads on Azure-matching-set-last.txt"
+  },
+  {
+    "id": "anm-007",
+    "question": "Match each function to its Synapse component: T-SQL on the lake without infrastructure, MPP warehousing, Spark jobs, pay-per-query, materialized views. Which mapping is correct?",
+    "options": [
+      "Lake queries to Spark, MPP to Serverless, Spark to Dedicated, pay-per-query to Spark, views to Serverless",
+      "Lake queries to Serverless, MPP to Spark, Spark to Serverless, pay-per-query to Dedicated, views to Dedicated",
+      "Lake queries to Serverless, MPP to Dedicated, Spark to Spark pool, pay-per-query to Serverless, views to Dedicated",
+      "Lake queries to Dedicated, MPP to Spark, Spark to Serverless, pay-per-query to Dedicated, views to Spark"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Serverless queries the lake pay-per-query; Dedicated warehouses with MPP and materialized views; Spark pool runs Spark.",
+    "difficulty": "medium",
+    "topic": "Analytics Matching",
+    "subtopic": "Synapse",
+    "source": "Part 4 Analytics Workloads on Azure-matching-set-last.txt"
+  },
+  {
+    "id": "anm-008",
+    "question": "Match each purpose to its Data Factory component: connection info, structure plus location, orchestrated activities, SQL Database reference, control plus data flow. Which mapping is correct?",
+    "options": [
+      "Connections to Linked Service, structure to Dataset, orchestration to Dataset, SQL ref to Pipeline, flows to Pipeline",
+      "Connections to Linked Service, structure to Dataset, orchestration to Pipeline, SQL ref to Linked Service, flows to Pipeline",
+      "Connections to Pipeline, structure to Linked Service, orchestration to Dataset, SQL ref to Dataset, flows to Linked Service",
+      "Connections to Dataset, structure to Pipeline, orchestration to Linked Service, SQL ref to Pipeline, flows to Dataset"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Linked services connect, datasets describe structure and location, pipelines orchestrate.",
+    "difficulty": "medium",
+    "topic": "Analytics Matching",
+    "subtopic": "Data Factory",
+    "source": "Part 4 Analytics Workloads on Azure-matching-set-last.txt"
+  },
+  {
+    "id": "anm-009",
+    "question": "Match each scenario to its window: hourly non-overlapping aggregates, sessions ending after inactivity, 5-minute moving average, hourly billing counts, variable customer sessions. Which mapping is correct?",
+    "options": [
+      "Hourly to Tumbling, inactivity to Session, average to Sliding, billing to Tumbling, variable to Session",
+      "Hourly to Sliding, inactivity to Tumbling, average to Session, billing to Session, variable to Tumbling",
+      "Hourly to Session, inactivity to Sliding, average to Tumbling, billing to Sliding, variable to Sliding",
+      "Hourly to Tumbling, inactivity to Session, average to Session, billing to Tumbling, billing to Tumbling"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Fixed hourly counts are tumbling, inactivity-bounded activity is session, moving averages slide.",
+    "difficulty": "medium",
+    "topic": "Analytics Matching",
+    "subtopic": "Streaming",
+    "source": "Part 4 Analytics Workloads on Azure-matching-set-last.txt"
+  },
+  {
+    "id": "anm-010",
+    "question": "Match each description to its Power BI component: single-page canvas, multi-page interactive view, imported data collection, drill-through pages, streaming tiles. Which mapping is correct?",
+    "options": [
+      "Canvas to Report, multi-page to Dashboard, collection to Report, drill-through to Dataset, tiles to Report",
+      "Canvas to Dataset, multi-page to Report, collection to Dashboard, drill-through to Dashboard, tiles to Dataset",
+      "Canvas to Dashboard, multi-page to Dataset, collection to Dataset, drill-through to Report, tiles to Report",
+      "Canvas to Dashboard, multi-page to Report, collection to Dataset, drill-through to Report, tiles to Dashboard"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Single-page canvases and live tiles are dashboards; multi-page drill-through views are reports; collections are datasets.",
+    "difficulty": "medium",
+    "topic": "Analytics Matching",
+    "subtopic": "Power BI",
+    "source": "Part 4 Analytics Workloads on Azure-matching-set-last.txt"
+  },
+  {
+    "id": "anm-011",
+    "question": "Match each use case to its storage: native-format raw for Spark and SQL, transactional ACID workloads, hierarchical folders, operational T-SQL apps, batch plus real-time source. Which mapping is correct?",
+    "options": [
+      "Raw to ADLS Gen2, transactional to ADLS Gen2, folders to SQL Database, T-SQL apps to SQL Database, dual source to ADLS Gen2",
+      "Raw to SQL Database, transactional to SQL Database, folders to ADLS Gen2, T-SQL apps to ADLS Gen2, dual source to SQL Database",
+      "Raw to ADLS Gen2, transactional to SQL Database, folders to ADLS Gen2, T-SQL apps to SQL Database, dual source to ADLS Gen2",
+      "Raw to SQL Database, transactional to ADLS Gen2, folders to SQL Database, T-SQL apps to ADLS Gen2, dual source to SQL Database"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Raw, hierarchical and dual-purpose analytic storage is ADLS Gen2; transactional and operational T-SQL is SQL Database.",
+    "difficulty": "medium",
+    "topic": "Analytics Matching",
+    "subtopic": "Storage",
+    "source": "Part 4 Analytics Workloads on Azure-matching-set-last.txt"
+  },
+  {
+    "id": "anm-012",
+    "question": "Match each benefit to its feature: analyze Cosmos DB without movement, auto RU/s adjustment, lake queries without infrastructure, ACID Spark with schema enforcement. Which mapping is correct?",
+    "options": [
+      "No-movement to Synapse Link, RU/s to Delta Lake, lake queries to Auto-scale, ACID Spark to Serverless",
+      "No-movement to Synapse Link, RU/s to Auto-scale, lake queries to Serverless, ACID Spark to Delta Lake",
+      "No-movement to Auto-scale, RU/s to Delta Lake, lake queries to Synapse Link, ACID Spark to Serverless",
+      "No-movement to Delta Lake, RU/s to Serverless, lake queries to Auto-scale, ACID Spark to Synapse Link"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Synapse Link avoids movement, auto-scale adjusts RU/s, serverless queries the lake, Delta Lake brings ACID to Spark.",
+    "difficulty": "medium",
+    "topic": "Analytics Matching",
+    "subtopic": "Cosmos DB",
+    "source": "Part 4 Analytics Workloads on Azure-matching-set-last.txt"
+  },
+  {
+    "id": "anm-013",
+    "question": "Match each window to its time behavior: fixed non-overlapping periods, overlapping slide intervals, activity-based dynamic periods, sliding's other name, exactly-one-window events. Which mapping is correct?",
+    "options": [
+      "Fixed to Tumbling, overlapping to Sliding, dynamic to Session, other-name to Hopping, exactly-one to Tumbling",
+      "Fixed to Sliding, overlapping to Session, dynamic to Tumbling, other-name to Tumbling, exactly-one to Sliding",
+      "Fixed to Session, overlapping to Tumbling, dynamic to Sliding, other-name to Sliding, exactly-one to Session",
+      "Fixed to Tumbling, overlapping to Session, dynamic to Session, exactly-one to Hopping, latest to Tumbling"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Tumbling is fixed and exclusive, sliding overlaps, session follows activity, hopping is sliding's alias.",
+    "difficulty": "medium",
+    "topic": "Analytics Matching",
+    "subtopic": "Streaming",
+    "source": "Part 4 Analytics Workloads on Azure-matching-set-last.txt"
+  },
+  {
+    "id": "anm-014",
+    "question": "Match each ML scenario to its service: Spark MLlib classification, pre-trained models on streams, regression forecasting, fraud detection on IoT, notebooks for features. Which mapping is correct?",
+    "options": [
+      "MLlib to Stream+ML, streams to Databricks, regression to Stream+ML, fraud to Databricks, notebooks to Stream+ML",
+      "MLlib to Databricks, streams to Databricks, regression to Stream+ML, fraud to Stream+ML, notebooks to Stream+ML",
+      "MLlib to Stream+ML, streams to Stream+ML, regression to Databricks, fraud to Databricks, notebooks to Databricks",
+      "MLlib to Databricks, streams to Stream+ML, regression to Databricks, fraud to Stream+ML, notebooks to Databricks"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Spark MLlib training is Databricks; live scoring with Azure ML is Stream Analytics.",
+    "difficulty": "medium",
+    "topic": "Analytics Matching",
+    "subtopic": "Services",
+    "source": "Part 4 Analytics Workloads on Azure-matching-set-last.txt"
+  },
+  {
+    "id": "anm-015",
+    "question": "Match each approach to its tool: visual drag-and-drop, Spark code in Python/Scala, T-SQL in dedicated and serverless pools, Delta Lake ETL. Which mapping is correct?",
+    "options": [
+      "Visual to Synapse, Spark to Data Factory, T-SQL to Databricks, Delta ETL to Power BI",
+      "Visual to Data Factory, Spark to Databricks, T-SQL to Data Factory, Delta ETL to Databricks",
+      "Visual to Data Factory, Spark to Databricks, T-SQL to Synapse pools, Delta ETL to Databricks",
+      "Visual to Databricks, Spark to Synapse, T-SQL to Data Factory, Delta ETL to Stream Analytics"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Visual flows are Data Factory, Spark code is Databricks, T-SQL is Synapse pools, Delta ETL is Databricks.",
+    "difficulty": "medium",
+    "topic": "Analytics Matching",
+    "subtopic": "Services",
+    "source": "Part 4 Analytics Workloads on Azure-matching-set-last.txt"
+  },
+  {
+    "id": "anm-016",
+    "question": "Match each capability to its service: millions of events with millisecond latency, live updating dashboards, reference-data joins, streaming tiles, batch plus streaming together. Which mapping is correct?",
+    "options": [
+      "Volume to Stream, live dashboards to Power BI, joins to Power BI, tiles to Stream, unified to Stream",
+      "Volume to Stream, live dashboards to Power BI, joins to Stream, tiles to Power BI, unified to Synapse",
+      "Volume to Power BI, live dashboards to Stream, joins to Synapse, tiles to Synapse, unified to Stream",
+      "Volume to Synapse, live dashboards to Synapse, joins to Power BI, tiles to Power BI, unified to Power BI"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Stream handles volume and joins, Power BI shows live dashboards and tiles, Synapse unifies batch and stream.",
+    "difficulty": "medium",
+    "topic": "Analytics Matching",
+    "subtopic": "Services",
+    "source": "Part 4 Analytics Workloads on Azure-matching-set-last.txt"
+  }
+]

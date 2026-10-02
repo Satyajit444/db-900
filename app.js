@@ -543,6 +543,15 @@
       }).join("") + "</select></div>" +
       '<div class="topic-grid" id="topic-grid">' + topicCardsHtml(progress) + "</div>";
 
+    /* matching practice (separate folder, same card design) */
+    var matchingList = sortedTopics().filter(function (t) { return !!t.matching; });
+    var matchingHtml = matchingList.length ?
+      '<h2 class="section-title" id="matching-heading">Matching Practice</h2>' +
+      '<p class="section-sub">Exam-style matching sets from <code>matching/</code> — same quiz engine, same rules.</p>' +
+      '<div class="topic-grid" id="matching-grid">' + matchingList.map(function (t) {
+        return matchingCardHtml(t, progress);
+      }).join("") + "</div>" : "";
+
     /* progress dashboard */
     var acc = stats.answered ? (100 * stats.correct / stats.answered) : 0;
     var ach = achievementDefs();
@@ -562,7 +571,7 @@
         return '<div class="ach' + (a.done || un ? " unlocked" : "") + '"><span class="em">' + a.em + "</span><strong>" + escapeHtml(a.name) + "</strong><small>" + escapeHtml(a.done || un ? "Unlocked ✓" : a.desc) + "</small></div>";
       }).join("") + "</div>";
 
-    app.innerHTML = hero + cont + notesHtml + modes + topicsHtml + dash +
+    app.innerHTML = hero + cont + notesHtml + modes + topicsHtml + matchingHtml + dash +
       '<h2 class="section-title">How it works</h2><div class="how-grid">' +
       '<div class="how-card"><h3>1 · Pick a mode</h3><p>Single-set practice, mixed Random (15/30/50), timed Exam, or Daily streak builder.</p></div>' +
       '<div class="how-card"><h3>2 · Answer &amp; learn</h3><p>Practice shows instant feedback + explanations. Exam holds everything until the end.</p></div>' +
@@ -779,7 +788,7 @@
   }
 
   function topicCardsHtml(progress) {
-    var list = sortedTopics().filter(function (t) { return topicMatchesFilter(t, progress); });
+    var list = sortedTopics().filter(function (t) { return !t.matching && topicMatchesFilter(t, progress); });
     if (!state.topics.length) return '<div class="card"><p>No question sets found. Add a question bank to <code>data/</code> and list it in <code>data/topics.json</code> to get started.</p></div>';
     if (!list.length) return '<div class="card"><p>No question sets match this search. Clear the search or choose another filter.</p></div>';
     return list.map(function (t) {
@@ -846,6 +855,30 @@
         renderBank();
       });
     });
+  }
+
+  /** Matching-set card: same visual design and interaction as normal cards. */
+  function matchingCardHtml(t, progress) {
+    var s = state.topicStats[t.id];
+    var count = topicCount(t);
+    var e = progress[t.id];
+    var bestPct = e && e.bestTotal ? Math.round(100 * e.bestScore / e.bestTotal) : 0;
+    var statusLine = e && e.attempts
+      ? "Best: " + e.bestScore + "/" + e.bestTotal + " · " + e.attempts + (e.attempts === 1 ? " attempt" : " attempts")
+      : "Not started";
+    var sourceLine = t.sourceName
+      ? '<div class="topic-source">Source: ' + escapeHtml(t.sourceName) + (t.sourceType ? " · " + escapeHtml(t.sourceType) : "") + "</div>"
+      : "";
+    return '<article class="topic-card" aria-label="' + escapeHtml(topicTitle(t)) + '">' +
+      '<div class="topic-top"><div class="topic-icon">' + topicIcon(t) + "</div>" +
+      "<div><h3>" + escapeHtml(topicTitle(t)) + "</h3>" +
+      (t.examWeight ? '<div class="exam-weight">' + escapeHtml(t.examWeight) + "</div>" : "") + "</div></div>" +
+      '<p class="desc">' + escapeHtml(topicDesc(t)) + "</p>" + sourceLine +
+      '<div class="topic-meta"><span class="pill"><strong>' + (s && s.error ? "Unavailable" : count === null ? "…" : count + (count === 1 ? " question" : " questions")) + "</strong></span>" +
+      '<span class="pill">' + escapeHtml(statusLine) + "</span></div>" +
+      '<div class="meter" role="progressbar" aria-valuenow="' + bestPct + '" aria-valuemin="0" aria-valuemax="100" aria-label="Best score for ' + escapeHtml(topicTitle(t)) + '"><div style="width:' + bestPct + '%"></div></div>' +
+      '<div class="card-actions"><button class="btn small" type="button" data-start="' + escapeHtml(t.id) + '">Start Practice →</button>' +
+      '<button class="btn secondary small" type="button" data-browse="' + escapeHtml(t.id) + '">Browse</button></div></article>';
   }
 
   /* ================= quiz loading ================= */
