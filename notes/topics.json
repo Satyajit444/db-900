@@ -1,27 +1,19 @@
 [
   {
-    "id": "core-data-episode-1",
-    "title": "Core Data Concepts – New Notes",
-    "description": "Episode 1 study notes: formats, workloads, roles and Azure services.",
-    "file": "notes/core-data-episode-1.json",
-    "practiceTopicId": "core-data-concepts",
-    "updatedAt": "2026-10-02"
-  },
-  {
-    "id": "analytics-visualization",
-    "title": "Analytics & Visualization",
-    "description": "Workloads, streaming and Power BI from Episodes 4–6 — one consolidated guide.",
-    "file": "notes/analytics-visualization.json",
-    "practiceTopicId": "analytics-visualization",
-    "updatedAt": "2026-09-26"
-  },
-  {
     "id": "core-data-concepts",
     "title": "Core Data Concepts",
     "description": "Data types, workloads, roles and the ideas every DP-900 question builds on.",
     "file": "notes/core-data-concepts.json",
     "practiceTopicId": "core-data-concepts",
     "updatedAt": "2026-09-19"
+  },
+  {
+    "id": "core-data-episode-1",
+    "title": "Core Data Concepts – New Notes",
+    "description": "Episode 1 study notes: formats, workloads, roles and Azure services.",
+    "file": "notes/core-data-episode-1.json",
+    "practiceTopicId": "core-data-concepts",
+    "updatedAt": "2026-10-02"
   },
   {
     "id": "relational-data",
@@ -38,5 +30,13 @@
     "file": "notes/non-relational-data.json",
     "practiceTopicId": "non-relational-data-azure",
     "updatedAt": "2026-09-19"
+  },
+  {
+    "id": "analytics-visualization",
+    "title": "Analytics & Visualization",
+    "description": "Workloads, streaming and Power BI from Episodes 4–6 — one consolidated guide.",
+    "file": "notes/analytics-visualization.json",
+    "practiceTopicId": "analytics-visualization",
+    "updatedAt": "2026-09-26"
   }
 ]

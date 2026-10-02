@@ -98,13 +98,23 @@
     return isNaN(ms) ? 0 : ms;
   }
 
-  /** Newest sets first — new sources automatically float to the top.
-      Sets flagged pinned:"last" (e.g. Challenge Mode) always sink last. */
+  /** Display order: pinned-last, then chapter group, then title — so cards
+      always read Core → Relational → Non-Relational → Analytics → Snigdha. */
+  var GROUP_ORDER = { core: 0, relational: 1, nonrel: 2, analytics: 3, snigdha: 4, challenge: 5 };
+  function groupRank(t) {
+    var g = t && t.group;
+    return Object.prototype.hasOwnProperty.call(GROUP_ORDER, g) ? GROUP_ORDER[g] : 99;
+  }
   function sortedTopics() {
     return state.topics.slice().sort(function (a, b) {
       var pa = a && a.pinned === "last" ? 1 : 0, pb = b && b.pinned === "last" ? 1 : 0;
       if (pa !== pb) return pa - pb;
-      return topicCreatedAt(b) - topicCreatedAt(a);
+      var ga = groupRank(a), gb = groupRank(b);
+      if (ga !== gb) return ga - gb;
+      var ta = topicTitle(a).toLowerCase(), tb = topicTitle(b).toLowerCase();
+      if (ta < tb) return -1;
+      if (ta > tb) return 1;
+      return 0;
     });
   }
 

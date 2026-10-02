@@ -97,7 +97,7 @@ Rules:
 
 ## Current content
 
-- **Sets (newest first):** Core Data Concepts – Set 4 (45, partial file) · Analytics Workloads – Set 2 (60) · Set 3 (60) · Set 5 (60) · Non-Relational Data on Azure – Set 2 (49) · Set 3 (60) · Relational Data on Azure – Sets 3 & 4 (4, partial file) · Relational Data on Azure – S (59) · Core Data Concepts – Set 2 (60) · Set 3 (60) · Set 6 (60) · Relational Data on Azure – 6 (59) · Core Data - 60 (60, `cd60-001`–`cd60-060`, text file) · Snigdha Questions (57, `snig-001`–`snig-057`, ExamTopics DP-900 pp. 1–6) · Analytics & Visualization (56, `anv-001`–`anv-056`, YouTube Eps 4–6) · Non-Relational Data in Azure (56, `nrel-001`–`nrel-056`, YouTube Episode 3) · Relational Data (100, `rel-001`–`rel-100`, PDF Episode 2) · Core Data Concepts (50, `cdc-001`–`cdc-050`, `dp900.py`)
+- **Sets (chapter order):** Core Data Concepts, Sets 1/2/3/4/6 + Matching · Relational Data, Sets 6/S/3&4 · Non-Relational in Azure, Sets 2/3 · Analytics & Visualization, Sets 2/3/5 + Matching · Snigdha Questions · Challenge Mode (last)
 - **Total questions:** 1071 normal + 56 Challenge Mode (independent count, excluded from Random Practice and totals)
 - **Matching Practice section:** `matching/` holds exam-style matching sets (`core-data-matching` 40, `analytics-matching` 16), flagged in `topics.json`, same engine and rules
 - **Quality bar:** all options length-balanced and plausible (no longest-answer giveaways); Challenge answers spread 14/14/14/14
