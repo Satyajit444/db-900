@@ -1,0 +1,193 @@
+{
+  "id": "relational-data-new-notes",
+  "title": "Relational Database – New Notes",
+  "subtitle": "Tables, keys, SQL, normalization, ACID and OLTP/OLAP — beginner-friendly revision with examples.",
+  "practiceTopicId": "relational-data",
+  "updatedAt": "2026-10-03",
+  "what": {
+    "body": "A relational database organizes structured data into tables (rows + columns) and connects those tables using keys and relationships. If the data naturally fits rows and columns with clear links between entities, think relational.",
+    "example": "A Customers table (CustomerID, Name, City) plus an Orders table where Orders.CustomerID points back to Customers.CustomerID. One customer can have many orders, and a JOIN answers questions like: which customer placed order 101?"
+  },
+  "concepts": [
+    {
+      "term": "Table, row, column, schema",
+      "body": "Table = related data in rows and columns (e.g. Customers). Row/record = one instance (one customer). Column/field = one attribute (Name, City). Schema = the database's structure: tables, columns, types, keys, relationships, constraints."
+    },
+    {
+      "term": "Primary key",
+      "body": "Uniquely identifies each row. No duplicates, no NULLs. One primary-key definition per table (it may span multiple columns). Example: CustomerID in Customers."
+    },
+    {
+      "term": "Foreign key",
+      "body": "A column that references a key in another table, creating the relationship. Orders.CustomerID references Customers.CustomerID. Memory: primary key identifies, foreign key connects."
+    },
+    {
+      "term": "Composite key",
+      "body": "Two or more columns that together uniquely identify a row. Neither OrderID nor ProductID alone is unique per order line, but OrderID + ProductID together is."
+    },
+    {
+      "term": "Relationships (1:1, 1:N, M:N)",
+      "body": "One-to-one: person → passport. One-to-many: one customer → many orders (most common). Many-to-many: students ↔ courses, normally via a junction/link table (StudentCourses)."
+    },
+    {
+      "term": "Data types",
+      "body": "INT (IDs, counts), DECIMAL (prices), VARCHAR (names/text), DATE and DATETIME, BOOLEAN/BIT (yes/no). The type decides what a column may store."
+    },
+    {
+      "term": "NULL",
+      "body": "Missing, unknown or unavailable value. NULL is not zero, not an empty string, not FALSE."
+    },
+    {
+      "term": "Constraints",
+      "body": "Rules that protect integrity: PRIMARY KEY (unique row), FOREIGN KEY (valid relationship), NOT NULL, UNIQUE, CHECK (values must satisfy a condition), DEFAULT (value supplied when none is given)."
+    },
+    {
+      "term": "Referential integrity",
+      "body": "Foreign-key relationships must stay valid: an order must not reference a customer ID that does not exist."
+    },
+    {
+      "term": "Normalization",
+      "body": "Organizing data into related tables to reduce duplication and improve integrity. Benefits: less redundancy, no inconsistent copies, easier updates."
+    },
+    {
+      "term": "1NF / 2NF / 3NF",
+      "body": "1NF: one atomic value per cell (split multi-value cells into rows). 2NF: 1NF + no partial dependency (non-key columns depend on the whole composite key). 3NF: 2NF + no transitive dependency (no non-key column depending on another non-key column). Memory: depend on the key, the whole key, and nothing but the key."
+    },
+    {
+      "term": "SQL basics",
+      "body": "SELECT retrieves, WHERE filters, INSERT adds, UPDATE changes, DELETE removes, ORDER BY sorts, GROUP BY groups rows (often with COUNT/SUM). Example: SELECT CustomerID, COUNT(*) FROM Orders GROUP BY CustomerID;"
+    },
+    {
+      "term": "JOINs",
+      "body": "Combine related tables. INNER = matching records only. LEFT = everything from the left table + matching right (gaps become NULL). RIGHT mirrors LEFT. FULL OUTER = everything from both sides."
+    },
+    {
+      "term": "Transactions and ACID",
+      "body": "A transaction is a group of operations treated as one unit (bank transfer: debit A + credit B; COMMIT on success, ROLLBACK on failure). ACID: Atomicity = all or nothing; Consistency = follow the rules (one valid state to another); Isolation = concurrent transactions don't corrupt each other; Durability = committed data survives crashes."
+    },
+    {
+      "term": "OLTP vs OLAP",
+      "body": "OLTP (Online Transaction Processing) runs day-to-day business: banking, shopping, bookings — frequent inserts/updates on current data. OLAP (Online Analytical Processing) analyzes large/historical data for reports and dashboards. Memory: OLTP runs the business, OLAP analyzes it."
+    }
+  ],
+  "examples": [
+    {
+      "title": "JOIN customers to their orders",
+      "body": "INNER JOIN returns only customers that actually have orders, with the matching amount on each row.",
+      "code": "SELECT Customers.Name, Orders.Amount\nFROM Customers\nINNER JOIN Orders\n  ON Customers.CustomerID = Orders.CustomerID;"
+    },
+    {
+      "title": "Why normalize: the 1NF fix",
+      "body": "One cell holding two phone numbers breaks 1NF. Splitting into one row per value fixes it.",
+      "table": {
+        "head": ["", "Before (not 1NF)", "After (1NF)"],
+        "rows": [
+          ["Rahul's phones", "9876543210, 9123456780", "Two rows: one number each"]
+        ]
+      }
+    },
+    {
+      "title": "ACID bank transfer",
+      "body": "Deduct 2000 from Account A and add 2000 to Account B as one transaction. Atomicity: both happen or neither does. Consistency: no negative balances if the rules forbid them. Isolation: a simultaneous transfer can't corrupt the balance. Durability: once committed, the result survives a server crash."
+    }
+  ],
+  "comparisons": [
+    {
+      "title": "JOIN types",
+      "head": ["JOIN", "Returns"],
+      "rows": [
+        ["INNER", "Matching records from both tables"],
+        ["LEFT", "Everything from left + matching right"],
+        ["RIGHT", "Everything from right + matching left"],
+        ["FULL OUTER", "Everything from both sides"]
+      ]
+    },
+    {
+      "title": "OLTP vs OLAP",
+      "head": ["OLTP", "OLAP"],
+      "rows": [
+        ["Day-to-day transactions", "Analysis and reporting"],
+        ["Frequent inserts and updates", "Mostly reads over large datasets"],
+        ["Current operational data", "Large / historical datasets"],
+        ["Example: bank transaction", "Example: sales report by region"]
+      ]
+    },
+    {
+      "title": "Normal forms",
+      "head": ["Form", "Rule"],
+      "rows": [
+        ["1NF", "One atomic value per cell"],
+        ["2NF", "1NF + no partial dependency on part of the key"],
+        ["3NF", "2NF + no transitive dependency via another non-key column"]
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "Azure SQL Database",
+      "what": "Fully managed PaaS relational database on the SQL Server engine.",
+      "data": "Structured transactional data.",
+      "when": "You want a managed SQL database without managing infrastructure.",
+      "scenario": "Question says 'managed SQL database' with no VM/server management."
+    },
+    {
+      "name": "Azure SQL Managed Instance",
+      "what": "Managed Azure SQL with broader SQL Server compatibility and instance-level capabilities.",
+      "data": "Structured data for migrated SQL Server workloads.",
+      "when": "Migrating SQL Server workloads that need instance-level features, still fully managed.",
+      "scenario": "Question mentions near-full SQL Server compatibility but PaaS management."
+    },
+    {
+      "name": "SQL Server on Azure VMs",
+      "what": "SQL Server running on an Azure virtual machine — most control, most responsibility.",
+      "data": "Structured data where OS/VM control matters.",
+      "when": "You need control over the VM and operating system.",
+      "scenario": "Question says 'SQL Server with VM/OS control' or managing the server yourself."
+    },
+    {
+      "name": "Azure Database for PostgreSQL / MySQL",
+      "what": "Managed open-source relational database services on Azure.",
+      "data": "Structured data for PostgreSQL or MySQL workloads.",
+      "when": "Your app targets PostgreSQL or MySQL and you want a managed service.",
+      "scenario": "Question names PostgreSQL or MySQL on Azure."
+    }
+  ],
+  "remember": [
+    "Relational = tables + relationships; row = record, column = attribute, schema = structure.",
+    "Primary key identifies a row (unique, never NULL). Foreign key connects tables.",
+    "Composite key: multiple columns together form the key. M:N needs a junction table.",
+    "NULL is not 0, not empty string, not FALSE.",
+    "Referential integrity = foreign keys always point at rows that exist.",
+    "1NF = one value per cell. 2NF = no partial dependency. 3NF = no transitive dependency.",
+    "INNER = matching only; LEFT = all left + matches; FULL OUTER = everything.",
+    "ACID = Atomicity (all or nothing), Consistency (follow rules), Isolation (no interference), Durability (committed survives crashes).",
+    "OLTP runs the business (transactions). OLAP analyzes it (reports, trends).",
+    "Managed SQL with no servers to manage = Azure SQL Database. VM/OS control = SQL Server on Azure VMs."
+  ],
+  "quickCheck": [
+    {
+      "q": "What uniquely identifies each row in a table?",
+      "a": "The primary key — unique values, no NULLs."
+    },
+    {
+      "q": "Orders.CustomerID points to Customers.CustomerID. What is Orders.CustomerID?",
+      "a": "A foreign key — it connects the two tables (one-to-many: one customer, many orders)."
+    },
+    {
+      "q": "A cell holds two phone numbers. Which normal form is violated?",
+      "a": "1NF — each cell must hold one atomic value; split into separate rows."
+    },
+    {
+      "q": "Debit A and credit B must succeed or fail together. Which property is that?",
+      "a": "Atomicity (all or nothing) — with COMMIT on success and ROLLBACK on failure."
+    },
+    {
+      "q": "Daily banking transactions vs yearly sales trend analysis?",
+      "a": "Banking = OLTP (run the business). Sales trends = OLAP (analyze the business)."
+    },
+    {
+      "q": "You need SQL Server but must control the OS. Which Azure option?",
+      "a": "SQL Server on Azure Virtual Machines. Fully managed with no servers = Azure SQL Database."
+    }
+  ]
+}

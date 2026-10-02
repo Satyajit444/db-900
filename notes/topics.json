@@ -20,16 +20,32 @@
     "title": "Relational Database",
     "description": "Tables, keys, SQL and Azure relational services in plain language.",
     "file": "notes/relational-data.json",
-    "practiceTopicId": "relational-data",
-    "updatedAt": "2026-09-19"
+      "practiceTopicId": "relational-data",
+      "updatedAt": "2026-09-19"
+  },
+  {
+      "id": "relational-data-new-notes",
+      "title": "Relational Database – New Notes",
+      "description": "Keys, SQL, normalization, ACID and OLTP/OLAP — beginner-friendly revision with examples.",
+      "file": "notes/relational-data-new-notes.json",
+      "practiceTopicId": "relational-data",
+      "updatedAt": "2026-10-03"
   },
   {
     "id": "non-relational-data",
     "title": "Non-Relational Database",
     "description": "Blob, Data Lake, Files, Tables and Cosmos DB without the jargon.",
     "file": "notes/non-relational-data.json",
-    "practiceTopicId": "non-relational-data-azure",
-    "updatedAt": "2026-09-19"
+      "practiceTopicId": "non-relational-data-azure",
+      "updatedAt": "2026-09-19"
+  },
+  {
+      "id": "non-relational-data-new-notes",
+      "title": "Non-Relational Database – New Notes",
+      "description": "Document, key-value, graph, Cosmos DB and partitioning — model vs data, made simple.",
+      "file": "notes/non-relational-data-new-notes.json",
+      "practiceTopicId": "non-relational-data-azure",
+      "updatedAt": "2026-10-03"
   },
   {
     "id": "analytics-visualization",

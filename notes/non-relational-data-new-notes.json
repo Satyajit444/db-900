@@ -1,0 +1,156 @@
+{
+  "id": "non-relational-data-new-notes",
+  "title": "Non-Relational Database – New Notes",
+  "subtitle": "Document, key-value, column-family, graph, Cosmos DB and partitioning — the critical model-vs-data distinction.",
+  "practiceTopicId": "non-relational-data-azure",
+  "updatedAt": "2026-10-03",
+  "what": {
+    "body": "Non-relational describes the database MODEL: document, key-value, column-family or graph instead of tables joined by keys. It does NOT mean unstructured. Structured, semi-structured and unstructured describe the DATA: JSON is semi-structured data that often lives in a non-relational document database, while an image is unstructured data usually kept in blob storage.",
+    "example": "A customer with name, email, several addresses, preferences and order history fits naturally in one JSON-like document instead of being forced across five fixed tables — especially when different customers carry different fields."
+  },
+  "concepts": [
+    {
+      "term": "Why non-relational?",
+      "body": "Modern apps often have data that changes frequently, nests information, or must spread across many machines. Document stores handle this naturally. Neither model is automatically better — the choice depends on the workload and data model."
+    },
+    {
+      "term": "Structured data",
+      "body": "Follows a predefined organization, commonly rows and columns: CustomerID | Name | Age | City. Examples: customer records, bank transactions, inventory."
+    },
+    {
+      "term": "Semi-structured data",
+      "body": "No rigid table structure, but organized via keys, values, tags or nested objects. Examples: JSON, XML, HTML, logs, many email formats. Example: { \"name\": \"Rahul\", \"age\": 28, \"skills\": [\"Python\", \"SQL\"] }."
+    },
+    {
+      "term": "Unstructured data",
+      "body": "No predefined tabular or key-value model: images, videos, audio files, PDFs and other free-form documents. Commonly stored in object/blob storage."
+    },
+    {
+      "term": "The critical distinction",
+      "body": "Non-relational database != unstructured data. The database model (relational vs non-relational) and the data organization (structured vs semi-structured vs unstructured) are two separate exam questions. Always ask both: what kind of data is it, and what database model is used?"
+    },
+    {
+      "term": "Flexible schema",
+      "body": "Document databases let different documents carry different fields — Document 1 has name + email, Document 2 adds phone + city. Useful when attributes evolve or records naturally differ."
+    },
+    {
+      "term": "Scale-out (horizontal scaling)",
+      "body": "Distributing data and workload across multiple machines instead of one bigger server. Many non-relational technologies are designed around distributed, scale-out workloads."
+    },
+    {
+      "term": "Document database",
+      "body": "Stores JSON-like documents with nested objects and arrays. Good for product catalogs, user profiles, content management, mobile and web apps. Memory: document = documents / JSON-like data."
+    },
+    {
+      "term": "Key-value database",
+      "body": "Each unique key maps to a value (101 -> Rahul), where the value can be a complex object. Good for caching, sessions, shopping carts and simple lookups. Memory: key -> value."
+    },
+    {
+      "term": "Column-family database",
+      "body": "Organizes data into groups of related columns; built for large-scale distributed workloads. Examples: Apache Cassandra, Apache HBase. For DP-900, remember the idea (large distributed datasets), not implementation details."
+    },
+    {
+      "term": "Graph database",
+      "body": "Entities are nodes, relationships are edges, with properties on either. Good for social networks, recommendations, network analysis and fraud detection. Memory: graph = nodes + relationships."
+    },
+    {
+      "term": "Azure Cosmos DB",
+      "body": "Globally distributed Azure database for scalable apps, with multiple APIs/models: NoSQL/document, MongoDB, Cassandra, Gremlin (graph) and Table. For exam questions: identify it as the globally distributed, multi-model service."
+    },
+    {
+      "term": "Partitioning and partition key",
+      "body": "Very large data is split into partitions so storage and workload distribute (1 billion documents -> partition 1 + 2 + 3). The partition key (e.g. customerId) decides how data spreads. A bad key concentrates traffic/data on one hot partition."
+    },
+    {
+      "term": "When to use non-relational",
+      "body": "Data fits documents/key-value/graph/column-family; schema must flex; very large or distributed scale; high throughput or low latency; data won't fit normalized tables; the model changes often. Relational still wins for strong relationships, fixed schemas, SQL and transactional workloads."
+    }
+  ],
+  "examples": [
+    {
+      "title": "Cosmos DB document with nesting",
+      "body": "Nested specifications and a colors array live inside one document — no joins needed.",
+      "code": "{ \"id\": \"P1001\", \"name\": \"MacBook\", \"brand\": \"Apple\",\n  \"price\": 120000,\n  \"specifications\": { \"ram\": \"16GB\", \"storage\": \"512GB\" },\n  \"colors\": [\"Silver\", \"Midnight\"] }"
+    },
+    {
+      "title": "Flexible schema in practice",
+      "body": "Two customer documents side by side: the second simply carries extra fields. A rigid table would need schema changes or NULL columns.",
+      "code": "Document 1: { \"id\": 1, \"name\": \"Rahul\", \"email\": \"rahul@gmail.com\" }\nDocument 2: { \"id\": 2, \"name\": \"Amit\", \"email\": \"amit@gmail.com\",\n  \"phone\": \"9123456780\", \"city\": \"Cuttack\" }"
+    },
+    {
+      "title": "The two-question trick",
+      "body": "Question 1: what kind of data? Structured, semi-structured or unstructured. Question 2: what database model? Relational or non-relational. JSON in Cosmos DB = semi-structured data + non-relational model. A photo in Blob storage = unstructured data + object storage, not a database at all."
+    }
+  ],
+  "comparisons": [
+    {
+      "title": "Relational vs non-relational",
+      "head": ["Feature", "Relational", "Non-Relational"],
+      "rows": [
+        ["Data model", "Tables", "Document, key-value, graph, column-family"],
+        ["Schema", "Usually predefined", "Often more flexible"],
+        ["Relationships", "Strong table relationships", "Model-dependent"],
+        ["Query language", "SQL commonly used", "Depends on technology/API"],
+        ["Scaling", "Vertical and horizontal", "Designed around distributed scale-out"],
+        ["Typical data", "Structured", "Often semi-structured or model-specific"],
+        ["Azure example", "Azure SQL Database", "Azure Cosmos DB"]
+      ]
+    },
+    {
+      "title": "Pick the non-relational model",
+      "head": ["Model", "Basic idea", "Good for"],
+      "rows": [
+        ["Document", "JSON-like documents", "Product catalogs, user profiles, content"],
+        ["Key-value", "Key -> value", "Cache, sessions, shopping carts"],
+        ["Column-family", "Groups of related columns", "Large distributed datasets"],
+        ["Graph", "Nodes + relationships", "Social networks, recommendations, fraud"]
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "Azure Cosmos DB",
+      "what": "Globally distributed database service for scalable applications, with NoSQL/document, MongoDB, Cassandra, Gremlin (graph) and Table APIs.",
+      "data": "Semi-structured and model-specific data (JSON documents, graphs, key-values).",
+      "when": "You need global distribution, elastic scale, or a specific API/model such as MongoDB or Gremlin.",
+      "scenario": "Question says 'globally distributed Azure database' or names MongoDB / Cassandra / Gremlin / Table API on Azure."
+    }
+  ],
+  "remember": [
+    "Non-relational = database MODEL. Structured/semi-structured/unstructured = DATA organization.",
+    "JSON/XML = semi-structured. Images, video, audio, PDFs = unstructured (blob storage).",
+    "Document = JSON-like (catalogs, profiles). Key-value = key -> value (cache, sessions, carts).",
+    "Column-family = groups of columns, huge distributed datasets (Cassandra, HBase).",
+    "Graph = nodes + relationships (social, recommendations, fraud).",
+    "Cosmos DB = globally distributed, multi-model: NoSQL, MongoDB, Cassandra, Gremlin, Table.",
+    "Partition = split of data across machines. Partition key decides placement; bad key = hot partition.",
+    "Flexible schema: different documents may carry different fields.",
+    "Neither model is automatically better — match the workload and data model."
+  ],
+  "quickCheck": [
+    {
+      "q": "Is a JSON customer profile structured, semi-structured or unstructured?",
+      "a": "Semi-structured — organized via keys and nesting, no rigid table schema."
+    },
+    {
+      "q": "Sessions and shopping carts need fast key lookups. Which model?",
+      "a": "Key-value: each unique key maps to its value."
+    },
+    {
+      "q": "Users connected by friendships, plus fraud rings to detect. Which model?",
+      "a": "Graph — nodes for entities, edges for relationships."
+    },
+    {
+      "q": "Globally distributed app using the MongoDB API on Azure?",
+      "a": "Azure Cosmos DB — globally distributed with MongoDB, Cassandra, Gremlin, Table and NoSQL APIs."
+    },
+    {
+      "q": "What decides how data spreads across partitions?",
+      "a": "The partition key (e.g. customerId). A poor choice creates a hot partition."
+    },
+    {
+      "q": "One document has email only, another adds phone and city. What allows this?",
+      "a": "Flexible schema in a document database — documents need not share identical fields."
+    }
+  ]
+}
