@@ -514,6 +514,7 @@
       '<button class="btn small" data-mode="random" data-count="15" type="button">15</button>' +
       '<button class="btn small" data-mode="random" data-count="30" type="button">30</button>' +
       '<button class="btn small" data-mode="random" data-count="50" type="button">50</button>' +
+      '<button class="btn small" data-mode="random" data-count="all" type="button">All</button>' +
       "</div></div>" +
       '<div class="mode-card"><span class="mode-ico">🎯</span><h3>Exam Mode</h3>' +
       "<p>15 mixed questions, 15:00 timer, answers locked in — feedback only at the end.</p>" +
@@ -590,7 +591,8 @@
       b.addEventListener("click", function () {
         playSound("click");
         var mode = b.getAttribute("data-mode");
-        startMixed(mode, parseInt(b.getAttribute("data-count") || "15", 10),
+        var rawCount = b.getAttribute("data-count") || "15";
+        startMixed(mode, rawCount === "all" ? "all" : (parseInt(rawCount, 10) || 15),
           mode === "random" ? state.randomScope : undefined);
       });
     });
@@ -993,7 +995,8 @@
       Nothing is stored — each attempt reshuffles a fresh combination. */
   function startMixed(kind, count, scopeId) {
     if (kind === "quick") kind = "random"; // legacy alias
-    count = Math.max(1, count || QUESTIONS_PER_SESSION);
+    var wantAll = (count === "all");
+    if (!wantAll) count = Math.max(1, count || QUESTIONS_PER_SESSION);
     if (kind === "random") scopeId = scopeId || state.randomScope || "all";
     var scopeTitle = "All topics";
     if (kind === "random" && scopeId && scopeId !== "all") {
@@ -1008,7 +1011,7 @@
     var meta = { id: "__mixed__", title: labels[kind] || "Mixed Practice", name: labels[kind] || "Mixed Practice" };
     meta.scopeId = (kind === "random") ? scopeId : "all";
     meta.scopeLabel = scopeTitle;
-    app.innerHTML = '<div class="loading-card" role="status"><div class="skeleton skeleton-hero"></div><p>Drawing ' + count + " random questions…</p></div>";
+    app.innerHTML = '<div class="loading-card" role="status"><div class="skeleton skeleton-hero"></div><p>Drawing ' + (wantAll ? "all" : count) + " random questions…</p></div>";
     ensureAllLoaded().then(function () {
       var scoped = null;
       if (kind === "random" && scopeId && scopeId !== "all") {
@@ -1024,6 +1027,8 @@
       }
       var pool = scoped ? questionsOf(scopeId) : allQuestions();
       if (kind === "challenge") pool = questionsOf("challenge-mode");
+      if (wantAll) count = pool.length;
+      else count = Math.max(1, Math.min(count, pool.length));
       if (!pool.length) {
         app.innerHTML = '<div class="card error-card"><h2>No questions available yet.</h2><p><button class="btn" id="btn-back" type="button">Back</button></p></div>';
         document.getElementById("btn-back").addEventListener("click", renderHome);
