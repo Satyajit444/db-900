@@ -20,3 +20,13 @@ maintenance" → key says read-scale replicas) has no valid answer among
 its options, so it was dropped rather than guessed. All other 59 keep
 the file's answers (verified: serverless autoscale, MI compatibility,
 TDE/Query Store/auditing on both, Hyperscale 100 TB, etc.).
+
+## Relational Data on Azure – S — separate newer file, also added
+
+"Part 2 Relational Data on Azure – S.txt" is a different file from the
+"– 6" one: 60 questions + 60 explanation repeats, inline answers verified
+against every stem (VM control, PaaS patching, serverless, elastic pools,
+Hyperscale, MI migration, masking, Query Store, temporal, enclaves,
+Service Broker unsupported, etc.). Imported 59 as rdas-001..059; its Q33
+is the same unverifiable maintenance item skipped in the – 6 set.
+The Set 6 repaste matched the disk build, so no action was needed there.

@@ -1,5 +1,18 @@
 [
   {
+    "id": "relational-data-s",
+    "title": "Relational Data on Azure – S",
+    "description": "59 Azure SQL questions: deployment, security, performance, backup and features.",
+    "sourceType": "Text File",
+    "sourceName": "Part 2 Relational Data on Azure - S.txt",
+    "createdAt": "2026-10-01",
+    "questionFile": "data/relational-data-s.json",
+    "questionCount": 59,
+    "name": "Relational Data on Azure – S",
+    "file": "data/relational-data-s.json",
+    "examWeight": "DP-900 · Relational Azure practice"
+  },
+  {
     "id": "core-data-set-2",
     "title": "Core Data Concepts – Set 2",
     "description": "60 scenario questions: types, workloads, ACID, modeling, pipelines, quality and governance.",

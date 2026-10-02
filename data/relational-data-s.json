@@ -1,0 +1,946 @@
+[
+  {
+    "id": "rdas-001",
+    "question": "A company wants to deploy a relational database in Azure where they retain full control over the operating system and SQL Server version. Which deployment model should they choose?",
+    "options": [
+      "Azure SQL Database (PaaS) service",
+      "SQL Server on Azure Virtual Machine (IaaS)",
+      "Azure Cosmos DB NoSQL service",
+      "Azure Synapse Analytics workspaces"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SQL Server on Azure VM (IaaS) gives full OS and SQL Server version control.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Migration",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-002",
+    "question": "An organization needs a database that automatically handles OS patching, backups, and high availability without any infrastructure management. Which Azure SQL deployment provides this?",
+    "options": [
+      "Azure SQL Database (PaaS)",
+      "Azure Cosmos DB",
+      "Azure Data Lake Storage",
+      "SQL Server on Azure VM"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Azure SQL Database (PaaS) handles all infrastructure management automatically.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-003",
+    "question": "A startup wants to minimize costs by paying only for actual database usage with automatic scaling during active periods. Which Azure SQL compute model is most cost-effective?",
+    "options": [
+      "Hyperscale compute",
+      "Business Critical compute",
+      "Provisioned compute",
+      "Serverless compute"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Serverless compute charges per second of actual usage and auto-scales.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-004",
+    "question": "A company has 15 databases with varying usage patterns and wants to share compute resources to reduce overall costs. Which Azure SQL feature should they implement?",
+    "options": [
+      "SQL Server on VM",
+      "Individual single databases",
+      "Elastic pool",
+      "Managed Instance per database"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Elastic pools share compute resources across multiple databases cost-effectively.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-005",
+    "question": "A business needs a relational database that can scale storage up to 100 TB with fast backup and restore operations. Which Azure SQL tier supports this?",
+    "options": [
+      "General Purpose",
+      "Business Critical",
+      "Hyperscale",
+      "Serverless"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Hyperscale tier supports up to 100 TB storage with fast backup/restore.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-006",
+    "question": "A company wants to migrate their SQL Server database to Azure with minimal changes but needs support for cross-database transactions. Which Azure service should they choose?",
+    "options": [
+      "Azure SQL Database single database",
+      "Azure SQL Managed Instance",
+      "Azure Cosmos DB",
+      "Azure Blob Storage"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Managed Instance supports cross-database transactions within the instance.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Migration",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-007",
+    "question": "A business needs to ensure their database remains available even if an entire Azure datacenter fails within a region. Which configuration provides this protection?",
+    "options": [
+      "Zone-redundant database",
+      "Geo-redundant backup storage",
+      "Read-scale replicas",
+      "Locally redundant storage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Zone-redundant databases span multiple availability zones for datacenter failure protection.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Availability",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-008",
+    "question": "A company wants to implement encryption where they manage the encryption keys using Azure Key Vault. Which feature should they configure?",
+    "options": [
+      "Always Encrypted",
+      "Connection encryption",
+      "TDE with service-managed keys",
+      "TDE with customer-managed keys (BYOK)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "TDE with customer-managed keys (Bring Your Own Key) uses Azure Key Vault.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-009",
+    "question": "A startup needs a database solution that automatically creates indexes and fixes query plan regressions without manual intervention. Which Azure SQL feature provides this?",
+    "options": [
+      "Query Store",
+      "Automatic tuning",
+      "Intelligent Insights",
+      "Query Performance Insight"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Automatic tuning automatically creates indexes and fixes plan regressions.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Performance",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-010",
+    "question": "A company wants to protect sensitive data by showing only the last 4 digits of credit card numbers to certain users. Which feature should they implement?",
+    "options": [
+      "Transparent Data Encryption",
+      "Always Encrypted",
+      "Dynamic data masking",
+      "Row-level security"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Dynamic data masking shows partial data (e.g., last 4 digits) to unauthorized users.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-011",
+    "question": "A business needs to track all database operations including SELECT queries for compliance auditing. Which Azure SQL feature should they enable?",
+    "options": [
+      "Auditing",
+      "Vulnerability Assessment",
+      "Automatic tuning",
+      "Threat Detection"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Auditing tracks all database operations including SELECT queries.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-012",
+    "question": "A company wants to automatically fail over to a secondary region if the primary region becomes unavailable. Which Azure SQL feature provides automatic regional failover?",
+    "options": [
+      "Zone-redundant storage",
+      "Read-scale replicas",
+      "Active geo-replication",
+      "Auto-failover groups"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Auto-failover groups provide automatic regional failover for disaster recovery.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Availability",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-013",
+    "question": "A business needs to keep database backups for 5 years to meet regulatory compliance requirements. Which feature should they implement?",
+    "options": [
+      "Point-in-time restore",
+      "Long-term retention (LTR) backups",
+      "Geo-redundant backups",
+      "Database copy"
+    ],
+    "correctAnswer": 1,
+    "explanation": "LTR backups retain backups for up to 10 years for compliance.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Backup",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-014",
+    "question": "A company wants to restrict database access to only their Azure virtual network, blocking all public internet access. Which feature should they configure?",
+    "options": [
+      "Virtual network rules with private endpoint",
+      "Azure AD authentication method",
+      "Transparent Data Encryption at rest",
+      "Database-level firewall IP rules"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Private endpoints with VNet rules restrict access to Azure VNet only.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-015",
+    "question": "A business needs to identify and classify sensitive data like credit card numbers and social security numbers in their database. Which feature provides this capability?",
+    "options": [
+      "Vulnerability Assessment",
+      "Threat Detection",
+      "Auditing",
+      "Data Discovery & Classification"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Data Discovery & Classification identifies and labels sensitive data.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-016",
+    "question": "A company wants to query data from Azure Data Lake Storage directly from their relational database using T-SQL. Which feature enables this?",
+    "options": [
+      "Logic Apps",
+      "Linked servers",
+      "PolyBase or OPENROWSET",
+      "Data Factory"
+    ],
+    "correctAnswer": 2,
+    "explanation": "PolyBase and OPENROWSET enable querying external data sources.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-017",
+    "question": "A business needs to track query performance over time and identify which queries have regressed. Which feature should they use?",
+    "options": [
+      "Automatic tuning",
+      "Query Store",
+      "Dynamic Management Views",
+      "Extended Events"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Query Store tracks query performance history and identifies regressions.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Performance",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-018",
+    "question": "A company wants to implement high availability with automatic failover and no data loss within a region. Which Azure SQL tier configuration provides this?",
+    "options": [
+      "Business Critical with zone redundancy",
+      "Serverless tier",
+      "Basic tier",
+      "General Purpose with zone redundancy"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business Critical with zone redundancy provides automatic failover with zero data loss.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Availability",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-019",
+    "question": "A business needs to support an application that requires memory-optimized tables for sub-millisecond response times. Which Azure SQL tier supports In-Memory OLTP?",
+    "options": [
+      "Serverless",
+      "Hyperscale",
+      "General Purpose",
+      "Business Critical"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Business Critical tier supports In-Memory OLTP with memory-optimized tables.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Performance",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-020",
+    "question": "A company wants to automatically track historical changes to their data without writing custom code. Which feature should they implement?",
+    "options": [
+      "Triggers",
+      "Change tracking",
+      "Temporal tables",
+      "CDC (Change Data Capture)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Temporal tables automatically track historical data changes.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-021",
+    "question": "A business needs to restrict which rows different users can see based on their department or role. Which security feature should they implement?",
+    "options": [
+      "Dynamic data masking",
+      "Row-level security",
+      "Column-level encryption",
+      "Transparent Data Encryption"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Row-level security restricts row access based on user context.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-022",
+    "question": "A company wants to scan their database for security misconfigurations and receive remediation recommendations. Which feature provides this?",
+    "options": [
+      "Vulnerability Assessment",
+      "Auditing",
+      "Data Classification",
+      "Advanced Threat Protection"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Vulnerability Assessment scans for security issues and provides recommendations.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-023",
+    "question": "A business needs to detect suspicious activities like SQL injection attempts and unusual access patterns. Which feature should they enable?",
+    "options": [
+      "Auditing",
+      "Data Classification",
+      "Vulnerability Assessment",
+      "Advanced Threat Protection"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Advanced Threat Protection detects suspicious activities and anomalies.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-024",
+    "question": "A company wants to create a transactionally consistent copy of their production database for testing purposes. Which feature should they use?",
+    "options": [
+      "Export to BACPAC",
+      "Database restore",
+      "Database copy",
+      "Backup"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Database copy creates a transactionally consistent copy.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Backup",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-025",
+    "question": "A business needs to support an application that models complex relationships like social networks or recommendation graphs. Which Azure SQL feature supports this?",
+    "options": [
+      "Relational tables",
+      "Graph tables",
+      "Temporal tables",
+      "Columnstore indexes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Graph tables model complex relationships natively.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-026",
+    "question": "A company wants to optimize analytical queries on large tables by storing data in columnar format. Which feature should they implement?",
+    "options": [
+      "Columnstore indexes",
+      "Full-text indexes",
+      "Spatial indexes",
+      "Rowstore indexes"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Columnstore indexes optimize analytical queries with columnar storage.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Performance",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-027",
+    "question": "A business needs to ensure their database can handle sudden traffic spikes without manual intervention. Which Azure SQL compute model supports automatic scaling?",
+    "options": [
+      "Hyperscale storage only",
+      "Basic tier",
+      "Provisioned compute",
+      "Serverless compute"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Serverless compute automatically scales based on workload demand.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-028",
+    "question": "A company wants to implement database-level firewall rules to allow access only from specific Azure services. Which configuration should they use?",
+    "options": [
+      "Virtual network rules",
+      "Private endpoints",
+      "All of the above",
+      "Allow Azure services and resources option"
+    ],
+    "correctAnswer": 2,
+    "explanation": "All options can restrict access to specific Azure services.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-029",
+    "question": "A business needs to authenticate users using their corporate Azure Active Directory credentials. Which authentication method should they configure?",
+    "options": [
+      "SQL authentication",
+      "Azure AD authentication",
+      "Windows authentication",
+      "Certificate authentication"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Azure AD authentication uses corporate Azure AD credentials.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-030",
+    "question": "A company wants to encrypt specific columns containing sensitive data and keep them encrypted even during query processing. Which feature should they implement?",
+    "options": [
+      "Always Encrypted",
+      "Dynamic data masking",
+      "Row-level security",
+      "Transparent Data Encryption"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Always Encrypted keeps data encrypted even during processing.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-031",
+    "question": "A business needs to support distributed transactions across multiple databases in Azure. Which feature enables this?",
+    "options": [
+      "Linked servers",
+      "Service Broker",
+      "Distributed Replay",
+      "Elastic transactions"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Elastic transactions support distributed transactions across Azure SQL databases.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-032",
+    "question": "A company wants to offload read-only reporting queries from the primary database to improve performance. Which feature should they use?",
+    "options": [
+      "Active geo-replication",
+      "Auto-failover groups",
+      "All of the above",
+      "Read-scale replicas"
+    ],
+    "correctAnswer": 2,
+    "explanation": "All these features support read-only routing for reporting workloads.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Availability",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-033",
+    "question": "A company wants to use Azure Monitor to set up alerts when database CPU usage exceeds 80%. Is this supported?",
+    "options": [
+      "Yes, integrates with Azure Monitor",
+      "No, use separate monitoring tools",
+      "Yes, but only for Managed Instance",
+      "No, use Query Store only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Azure SQL Database fully integrates with Azure Monitor for alerts.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-034",
+    "question": "A business needs to implement resource limits to prevent specific workloads from consuming excessive resources. Which feature provides this in Managed Instance?",
+    "options": [
+      "Elastic pool",
+      "Hyperscale tier",
+      "Serverless tier",
+      "Resource Governor"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Resource Governor limits resource consumption by workloads.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Performance",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-035",
+    "question": "A company wants to support full-text search for searching text data in their database. Is this supported in Azure SQL Database?",
+    "options": [
+      "Yes, but only in Premium tier",
+      "No, only in SQL Server on VM",
+      "Yes, full-text search is supported",
+      "No, use Azure Cognitive Search"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Full-text search is supported in Azure SQL Database.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-036",
+    "question": "A business needs to capture all data changes for integration with downstream systems. Which feature should they implement?",
+    "options": [
+      "Triggers",
+      "Change Data Capture (CDC)",
+      "Temporal tables",
+      "Change tracking"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CDC captures all data changes for downstream integration.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Performance",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-037",
+    "question": "A company wants to ensure their database meets data residency requirements by storing data in specific Azure regions. Which feature helps with this?",
+    "options": [
+      "Region selection during deployment",
+      "Geo-redundant backups",
+      "Active geo-replication",
+      "Auto-failover groups"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Selecting specific Azure regions ensures data residency compliance.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-038",
+    "question": "A business needs to support an application that requires SQL Server Integration Services (SSIS) packages. Which Azure deployment supports SSIS?",
+    "options": [
+      "Azure SQL Database single database",
+      "Azure SQL Managed Instance",
+      "Azure Cosmos DB",
+      "Azure Synapse Analytics serverless"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Managed Instance supports SSIS through Integration Runtime.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Migration",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-039",
+    "question": "A company wants to implement database scoped credentials to access external data sources securely. Is this supported in Azure SQL Database?",
+    "options": [
+      "No, this is not supported",
+      "Yes, but only in Managed Instance",
+      "No, use linked servers instead",
+      "Yes, scoped credentials are supported"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Database scoped credentials are supported for external data access.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-040",
+    "question": "A business needs to ensure their database has a recovery point objective (RPO) of less than 5 seconds. Which tier configuration achieves this?",
+    "options": [
+      "Basic tier",
+      "General Purpose with local redundancy",
+      "Business Critical with local redundancy",
+      "Serverless tier"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Business Critical with local redundancy provides RPO < 5 seconds.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Availability",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-041",
+    "question": "A company wants to use private connectivity to their database without exposing it to the public internet. Which feature should they implement?",
+    "options": [
+      "Public endpoint",
+      "Private endpoint",
+      "Service endpoint",
+      "VPN gateway"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Private endpoints provide private connectivity over Azure backbone.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-042",
+    "question": "A business needs to support multiple databases from different applications with shared compute to optimize costs. Which Azure SQL feature should they use?",
+    "options": [
+      "Elastic pool",
+      "Managed Instance per application",
+      "SQL Server on VM",
+      "Single database per application"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Elastic pools share compute across multiple databases cost-effectively.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-043",
+    "question": "A company wants to implement sensitivity labels on columns containing personal data for GDPR compliance. Which feature provides this?",
+    "options": [
+      "Vulnerability Assessment",
+      "Auditing",
+      "Threat Detection",
+      "Data Discovery & Classification"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Data Discovery & Classification adds sensitivity labels for compliance.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-044",
+    "question": "A business needs to track historical data changes with automatic versioning of rows. Which feature should they implement?",
+    "options": [
+      "CDC",
+      "Triggers",
+      "Temporal tables",
+      "Change tracking"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Temporal tables automatically version rows for historical tracking.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-045",
+    "question": "A company wants to ensure automatic patching and version upgrades without any manual intervention. Which deployment model provides this?",
+    "options": [
+      "SQL Server on Azure VM",
+      "Azure SQL Database (PaaS)",
+      "Both A and B",
+      "Neither A nor B"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Azure SQL Database (PaaS) provides automatic patching and upgrades.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-046",
+    "question": "A business needs to support an application that requires cross-database queries within the same logical server. Which deployment supports this?",
+    "options": [
+      "Single database",
+      "Elastic pool",
+      "Managed Instance",
+      "Hyperscale"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Managed Instance supports cross-database queries.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Migration",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-047",
+    "question": "A company wants to implement column-level encryption where they control the encryption keys. Which feature should they use?",
+    "options": [
+      "Always Encrypted",
+      "Connection encryption",
+      "TDE with service-managed keys",
+      "TDE with customer-managed keys"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Always Encrypted provides column-level encryption with customer-controlled keys.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-048",
+    "question": "A business needs to ensure their database can scale compute and storage independently. Which Azure SQL tier supports this?",
+    "options": [
+      "Serverless",
+      "General Purpose",
+      "Business Critical",
+      "Hyperscale"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Hyperscale tier allows independent scaling of compute and storage.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-049",
+    "question": "A company wants to use query hints to force specific execution plans for performance optimization. Is this supported in Azure SQL Database?",
+    "options": [
+      "Yes, query hints are supported",
+      "No, not supported",
+      "Yes, but only with automatic tuning off",
+      "No, use Query Store instead"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Query hints are supported to influence execution plans.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-050",
+    "question": "A business needs to implement database-level containment to simplify user management across databases. Which deployments support contained databases?",
+    "options": [
+      "Azure SQL Database",
+      "Azure SQL Managed Instance",
+      "Both A and B",
+      "Neither A nor B"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Both Azure SQL Database and Managed Instance support contained databases.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-051",
+    "question": "A company wants to scan their database for security weaknesses and receive remediation guidance. Which feature provides this?",
+    "options": [
+      "Advanced Threat Protection",
+      "Vulnerability Assessment",
+      "Auditing",
+      "Data Classification"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Vulnerability Assessment scans for security issues with remediation guidance.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-052",
+    "question": "A business needs to support an application that requires Service Broker for message queuing. Is this supported in Azure SQL Database?",
+    "options": [
+      "Yes, fully supported",
+      "Yes, but only in Premium tier",
+      "Yes, but only in Managed Instance",
+      "No, Service Broker is not supported"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Service Broker is not supported in Azure SQL Database or Managed Instance.",
+    "difficulty": "medium",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-053",
+    "question": "A company wants to implement row-level security based on user attributes like department or region. Which feature should they use?",
+    "options": [
+      "Dynamic data masking",
+      "Row-level security",
+      "Column-level encryption",
+      "Transparent Data Encryption"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Row-level security restricts access based on user attributes.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-054",
+    "question": "A business needs to ensure their relational database supports T-SQL queries, stored procedures, functions, and views. Which Azure services support this?",
+    "options": [
+      "Only Azure SQL Database",
+      "Only Azure SQL Managed Instance",
+      "Both SQL Database and Managed Instance",
+      "Neither, use Azure Cosmos DB"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Both services support full T-SQL capabilities.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-055",
+    "question": "A company wants to implement backup retention policies configurable from 1 to 35 days. Which Azure service supports this?",
+    "options": [
+      "Azure SQL Database",
+      "Azure Cosmos DB",
+      "Azure Blob Storage",
+      "Azure Data Lake Storage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Azure SQL Database supports configurable backup retention 1-35 days.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Backup",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-056",
+    "question": "A business needs to detect anomalies like unusual data access patterns or potential SQL injection attempts. Which feature should they enable?",
+    "options": [
+      "Auditing",
+      "Data Classification",
+      "Vulnerability Assessment",
+      "Advanced Threat Protection"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Advanced Threat Protection detects anomalies and suspicious activities.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-057",
+    "question": "A company wants to use Azure SQL Database to support a multi-tenant SaaS application with separate databases per tenant. Which approaches are valid?",
+    "options": [
+      "Single database per tenant",
+      "Elastic pool with multiple tenant databases",
+      "Managed Instance with database per tenant",
+      "All of the above"
+    ],
+    "correctAnswer": 3,
+    "explanation": "All approaches are valid depending on isolation and cost requirements.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-058",
+    "question": "A business needs to ensure their relational database integrates with Azure Active Directory for authentication and access control. Which Azure services support Azure AD authentication?",
+    "options": [
+      "Azure SQL Database only",
+      "Azure SQL Managed Instance only",
+      "Both Azure SQL Database and Managed Instance",
+      "Neither, use SQL authentication only"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Both services support Azure AD authentication.",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Security",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  },
+  {
+    "id": "rdas-059",
+    "question": "A company wants to implement a relational database solution that provides high availability, automatic backups, and intelligent performance tuning without managing infrastructure. Which Azure service should they choose?",
+    "options": [
+      "SQL Server on Azure VM",
+      "Azure SQL Database",
+      "Azure Cosmos DB",
+      "Azure Data Lake Storage"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Azure SQL Database provides all these benefits as a fully managed PaaS service. Explanations)",
+    "difficulty": "easy",
+    "topic": "Relational Data on Azure – S",
+    "subtopic": "Azure SQL",
+    "source": "Part 2 Relational Data on Azure - S.txt"
+  }
+]
